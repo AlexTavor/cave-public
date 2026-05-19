@@ -1,0 +1,89 @@
+{
+  "id": "foraging",
+  "label": "",
+  "tags": [
+    "anim:spawn",
+    "foraging"
+  ],
+  "components": {
+    "display": {
+      "label": "foraging",
+      "display_key": "foraging",
+      "glyphKey": "foraging",
+      "style": "foraging"
+    },
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 100,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "body": {
+            "base": 74,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mind": {
+            "base": 26,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "production": [
+        {
+          "id": "Fu47YI4NG6qAU9hFKC2_V",
+          "resource": "food",
+          "amount": {
+            "base": 40,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "target": "",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Foraging",
+        "icon": "foraging",
+        "glyphKey": "foraging",
+        "description": "Produces [icon=food]food.\n\n[i]Foraging in the forest for nuts and berries.\nMy bodies can eat these, and that makes me happy.[/i]\n\n",
+        "styleId": "foraging",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "outside"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 1038.4213919345998,
+        "y": 2137.385864552579,
+        "radius": {
+          "min": 60,
+          "max": 60
+        }
+      },
+      "unifiedBlueprints": [
+        {
+          "tag": "outside",
+          "spawnWhenPeerSpawns": false
+        }
+      ]
+    }
+  }
+}

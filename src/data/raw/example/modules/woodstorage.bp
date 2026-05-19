@@ -1,0 +1,64 @@
+{
+  "id": "woodstorage",
+  "label": "",
+  "tags": [
+    "anim:spawn"
+  ],
+  "components": {
+    "display": {
+      "label": "woodstorage",
+      "display_key": "woodstorage",
+      "style": "woodstorage"
+    },
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "storage": [
+        {
+          "resource": "wood",
+          "displayName": "Wood",
+          "initialValue": 0,
+          "capacity": {
+            "base": 1200,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": true,
+          "entropy": {
+            "base": 0,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "bottom_right",
+          "barColorHex": "#4caf50",
+          "barPaletteColorKey": "green",
+          "allowDeposit": true,
+          "allowWithdraw": true,
+          "priority": 10
+        }
+      ],
+      "passport": {
+        "label": "Wood Storage",
+        "icon": "wood_storage",
+        "glyphKey": "wood",
+        "description": "Just a place to store my [icon=wood]wood.",
+        "styleId": "woodstorage",
+        "nervousVein": false,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 1755.8882777131707,
+        "y": 1456.766706155951,
+        "radius": {
+          "min": 20,
+          "max": 80,
+          "valueRef": "self.state.wood.value",
+          "maxRef": "self.state.wood.max"
+        }
+      }
+    }
+  }
+}

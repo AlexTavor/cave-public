@@ -1,0 +1,111 @@
+{
+  "id": "kidnap_hommlet_merchant",
+  "label": "",
+  "tags": [
+    "hommlet",
+    "hommlet_merchant",
+    "anim:spawn",
+    "anim:kill"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 3000,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "body": {
+            "base": 80,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mind": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": true,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "8CmYrOd1bRfOpqp1ZKlzt",
+          "blueprintId": "newbody",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn_body",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [
+            "Merchant",
+            "Man"
+          ],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Kidnap the Merchant of Hommlet",
+        "icon": "kidnap_merchant_of_hommlet",
+        "description": "I can kidnap the merchant: walk into his shop, tie him up, and carry him to the cave.\n\nIt's an act of crude violence, and is sure to draw a lot of unwanted attention.",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "hommlet_merchant_root"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 2558.028455461999,
+        "y": 4142.701035684908,
+        "radius": {
+          "min": 60,
+          "max": 60
+        }
+      },
+      "updater": [
+        {
+          "id": "McR32eRG7a-pEffhZaly3",
+          "target": "sys_world.state.purge_progress.value",
+          "op": "ADD",
+          "value": "80",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "notifications": [
+        {
+          "title": "Live By The Sword",
+          "text": "I waited for the merchant to leave his shop, keeping my bodies in the shadows.\nHe must have felt something was wrong; when I rushed him, he screamed and struggled. Even though I stuffed a rug into his mouth and tied him up quickly, this was noticed.\n\nI left a body to observe [icon=hommlet]Hommlet, as the rest of my bodies carried the merchant to the cave.\n\nSoon, people will come looking for him. I should absorb the merchant quickly.\n\nI don't like it when people are looking for my bodies.",
+          "imageUrl": null,
+          "id": "ztXdNrkytUFMxmAmnbAy5"
+        }
+      ],
+      "unifiedBlueprints": [
+        {
+          "tag": "hommlet_merchant",
+          "spawnWhenPeerSpawns": true
+        }
+      ]
+    }
+  }
+}

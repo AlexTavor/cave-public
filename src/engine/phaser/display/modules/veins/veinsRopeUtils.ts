@@ -1,0 +1,2 @@
+export { buildRopePointsFull } from "./veinsRopePath";
+

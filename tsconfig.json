@@ -1,0 +1,46 @@
+{
+    "compilerOptions": {
+        "types": ["vitest/globals"],
+        "target": "es2022",
+        "useDefineForClassFields": true,
+        "lib": ["es2022", "DOM", "DOM.Iterable"],
+        "module": "ESNext",
+        "skipLibCheck": true,
+        /* Bundler mode */
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react-jsx",
+
+        /* Linting */
+        "strict": true,
+        "strictPropertyInitialization": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
+    },
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "exclude": [
+        "src/ui/runtime/telemetry/**",
+        "src/ui/runtime/state/useRuntimeTerminalStore.ts",
+        "src/ui/runtime/terminal/RuntimeTerminal.tsx",
+        "src/ui/runtime/terminal/RuntimeTerminal.styles.ts",
+        "src/ui/runtime/world/selection/swarm/SwarmRowItem.test.tsx",
+        "src/data/schemas/layout.ts",
+        "src/ui/devtools/state/selectors/selectLayoutPhysics.ts",
+        "src/ui/runtime/world/layout/**",
+        "src/ui/devtools/shell/hooks/useGlobalKeys.ts",
+        "src/ui/runtime/shell/SaveLoadMenu.styles.ts",
+        "src/ui/runtime/shell/SaveLoadMenu.test.tsx",
+        "src/ui/runtime/shell/SaveLoadMenu.tsx",
+        "src/ui/runtime/shell/SaveSlotRow.tsx",
+        "src/ui/devtools/editors/fields/module-explorer/asset-grid/mergeDisplayAssets.ts",
+        "src/ui/devtools/editors/fields/module-explorer/asset-grid/mergeDisplayAssets.test.ts"
+    ],
+    "references": [{ "path": "./tsconfig.node.json" }]
+}
+

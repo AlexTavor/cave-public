@@ -1,0 +1,74 @@
+{
+  "id": "absorption",
+  "label": "",
+  "tags": [
+    "anim:spawn",
+    "absorption",
+    "killer"
+  ],
+  "components": {
+    "display": {
+      "label": "absorption",
+      "display_key": "absorption",
+      "glyphKey": "absorption",
+      "style": "absorption"
+    },
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "assignment": {
+        "slots": 10000,
+        "locking": true,
+        "filter": [],
+        "minimums": [],
+        "duration": 20,
+        "showProgress": true,
+        "oneOff": false,
+        "results": [
+          {
+            "type": "spawn_resource",
+            "resource": "xp",
+            "source": "lifetime_xp",
+            "factor": 0.1,
+            "target": "sys_world"
+          },
+          {
+            "type": "transfer_habiti"
+          },
+          {
+            "type": "destroy_assigned_bodies"
+          }
+        ]
+      },
+      "passport": {
+        "label": "Still Pool",
+        "icon": "absorption",
+        "glyphKey": "absorption",
+        "description": "The pool where I can absorb my bodies. \nIt records their lifetime experiences in me.\n\nThis is how I grow.\n\nI don't like losing bodies...\nBut I love growing!\n",
+        "styleId": "absorption",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "inside"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 3614.2788931506147,
+        "y": 1843.5343059358436,
+        "radius": {
+          "min": 70,
+          "max": 70
+        }
+      },
+      "unifiedBlueprints": [
+        {
+          "tag": "inside",
+          "spawnWhenPeerSpawns": false
+        }
+      ]
+    }
+  }
+}

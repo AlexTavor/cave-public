@@ -1,0 +1,92 @@
+{
+  "id": "lure_accountant",
+  "label": "",
+  "tags": [
+    "anin:kill",
+    "anim:spawn",
+    "accountant"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "assignment": {
+        "slots": 1,
+        "locking": true,
+        "filter": [
+          {
+            "kind": "required_habiti_all",
+            "ids": [
+              "Woman",
+              "Shaman",
+              "Heterosexual"
+            ]
+          }
+        ],
+        "minimums": [],
+        "duration": 30,
+        "showProgress": true,
+        "oneOff": true,
+        "results": []
+      },
+      "spawner": [
+        {
+          "id": "X6R6Itb0Y-l7NYQk80FMf",
+          "blueprintId": "newbody",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn_body",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [
+            "Man",
+            "Accountant",
+            "Heterosexual"
+          ],
+          "triggers": [
+            "assignment_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Lure Accountant",
+        "icon": "lure_accountant",
+        "description": "I can walk in wearing his lover’s body and ask him to come with me.\n\nThey adore each other. I am warmed by the memory of her love.\n\nHe will follow her anywhere.”",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "investigate_accoutant_2"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 4192.551038374526,
+        "y": 3567.785246576327,
+        "radius": {
+          "min": 50,
+          "max": 50
+        }
+      },
+      "notifications": [
+        {
+          "title": "Lovers Reunited",
+          "text": "The accountant went pale when I walked his lover's body into his office.\n\nTerrified of discovery, he agreed to follow me into the forest. This body had loved him dearly. I could still feel the warmth of that love, and I savored it.\n\nOnce we were gone, I dragged a slave's corpse in from the market and set the office ablaze.\n\nWith luck, the Purge Inquisitors will take it for an accident and look no deeper.\n\nNow I can absorb them both.\n\nTheir love will become part of me forever.",
+          "imageUrl": null,
+          "id": "2W13MZEbqrThFnTpC1fBq"
+        }
+      ],
+      "unifiedBlueprints": [
+        {
+          "tag": "accountant",
+          "spawnWhenPeerSpawns": false
+        }
+      ]
+    }
+  }
+}

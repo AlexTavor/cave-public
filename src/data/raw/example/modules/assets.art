@@ -1,0 +1,4024 @@
+{
+  "displays": {
+    "unknown": {
+      "type": "resource",
+      "styleId": "egg",
+      "glyphKey": "egg"
+    },
+    "loading": {
+      "type": "resource",
+      "styleId": "hearth",
+      "glyphKey": "hearth"
+    },
+    "attr_body": {
+      "type": "attribute_pool",
+      "attribute": "body",
+      "glyphKey": "attr_body"
+    },
+    "attr_mind": {
+      "type": "attribute_pool",
+      "attribute": "mind",
+      "glyphKey": "attr_mind"
+    },
+    "attr_social": {
+      "type": "attribute_pool",
+      "attribute": "social",
+      "glyphKey": "attr_social"
+    },
+    "wood": {
+      "defaultLineThickness": 10,
+      "type": "resource",
+      "styleId": "wood_transfer",
+      "glyphKey": "wood",
+      "transferNodeRadiusByValue": {
+        "minValue": 1,
+        "minRadius": 20,
+        "maxValue": 100,
+        "maxRadius": 50
+      }
+    },
+    "heat": {
+      "type": "resource",
+      "styleId": "heat",
+      "glyphKey": "heat",
+      "transferNodeRadiusByValue": {
+        "minValue": 1,
+        "minRadius": 10,
+        "maxValue": 100,
+        "maxRadius": 40
+      }
+    },
+    "food": {
+      "type": "resource",
+      "styleId": "food",
+      "glyphKey": "food",
+      "transferNodeRadiusByValue": {
+        "minValue": 1,
+        "minRadius": 20,
+        "maxValue": 100,
+        "maxRadius": 50
+      }
+    },
+    "egg": {
+      "type": "resource",
+      "styleId": "egg",
+      "glyphKey": "egg"
+    },
+    "foraging": {
+      "type": "resource",
+      "styleId": "foraging",
+      "glyphKey": "food"
+    },
+    "explore": {
+      "type": "resource",
+      "styleId": "explore",
+      "glyphKey": "explore"
+    },
+    "wood_storage": {
+      "type": "resource",
+      "styleId": "storage_style",
+      "glyphKey": "wood"
+    },
+    "hearth": {
+      "type": "resource",
+      "styleId": "hearth",
+      "glyphKey": "hearth"
+    },
+    "larder": {
+      "type": "resource",
+      "styleId": "storage_style",
+      "glyphKey": "food"
+    },
+    "gather_wood": {
+      "type": "resource",
+      "styleId": "gather_wood",
+      "glyphKey": "wood"
+    },
+    "body": {
+      "type": "body"
+    },
+    "cave_xp": {
+      "type": "resource",
+      "styleId": "cave_xp",
+      "glyphKey": "cave_xp"
+    },
+    "cave_level": {
+      "type": "resource",
+      "styleId": "cave_xp",
+      "glyphKey": "cave_level"
+    },
+    "luretraveler": {
+      "type": "resource",
+      "styleId": "luretraveler",
+      "glyphKey": "luretraveler"
+    },
+    "outside": {
+      "type": "resource",
+      "styleId": "outside",
+      "glyphKey": "outside"
+    },
+    "cave_body": {
+      "type": "resource",
+      "styleId": "cave_xp",
+      "glyphKey": "cave_body"
+    },
+    "butcher": {
+      "type": "resource",
+      "styleId": "butcher",
+      "glyphKey": "butcher"
+    },
+    "absorption": {
+      "type": "resource",
+      "styleId": "absorption",
+      "glyphKey": "absorption"
+    },
+    "health": {
+      "type": "resource",
+      "styleId": "health",
+      "glyphKey": "health"
+    },
+    "activity": {
+      "type": "resource",
+      "styleId": "activity",
+      "glyphKey": "activity"
+    },
+    "xp": {
+      "type": "resource",
+      "styleId": "cave_xp",
+      "glyphKey": "cave_xp",
+      "transferNodeRadiusByValue": {
+        "minValue": 1,
+        "minRadius": 20,
+        "maxValue": 1000,
+        "maxRadius": 70
+      }
+    },
+    "coin": {
+      "tags": [
+        "coin"
+      ],
+      "type": "resource",
+      "styleId": "coin",
+      "glyphKey": "coin",
+      "transferNodeRadiusByValue": {
+        "minValue": 1,
+        "minRadius": 20,
+        "maxValue": 100,
+        "maxRadius": 40
+      }
+    },
+    "hommlet": {
+      "type": "resource",
+      "styleId": "hommlet",
+      "glyphKey": "hommlet"
+    },
+    "lodging_hommlet": {
+      "type": "resource",
+      "styleId": "lodging_hommlet",
+      "glyphKey": "lodging_hommlet"
+    },
+    "buy_coins_chest": {
+      "type": "resource",
+      "styleId": "buy_coins_chest",
+      "glyphKey": "buy_coins_chest"
+    },
+    "know_thyself": {
+      "type": "resource",
+      "styleId": "know_thyself",
+      "glyphKey": "know_thyself"
+    },
+    "coinchest": {
+      "type": "resource",
+      "styleId": "coinchest",
+      "glyphKey": "coinchest"
+    },
+    "lure_homlet_native": {
+      "type": "resource",
+      "styleId": "lure_homlet_native",
+      "glyphKey": "lure_homlet_native"
+    },
+    "merchant_of_hommlet": {
+      "type": "resource",
+      "styleId": "merchant_of_hommlet",
+      "glyphKey": "merchant_of_hommlet"
+    },
+    "kidnap_merchant_of_hommlet": {
+      "type": "resource",
+      "styleId": "kidnap_merchant_of_hommlet",
+      "glyphKey": "merchant_of_hommlet"
+    },
+    "lure_merchant_of_hommlet": {
+      "type": "resource",
+      "styleId": "lure_merchant_of_hommlet",
+      "glyphKey": "merchant_of_hommlet"
+    },
+    "trading_post": {
+      "type": "resource",
+      "styleId": "trading_post",
+      "glyphKey": "trading_post"
+    },
+    "slave_market": {
+      "type": "resource",
+      "styleId": "slave_market",
+      "glyphKey": "slave_market"
+    },
+    "sell_wood": {
+      "type": "resource",
+      "styleId": "sell_wood",
+      "glyphKey": "sell_wood"
+    },
+    "tax_office": {
+      "type": "resource",
+      "styleId": "tax_office",
+      "glyphKey": "tax_office"
+    },
+    "kidnap_accountant": {
+      "type": "resource",
+      "styleId": "kidnap_accountant",
+      "glyphKey": "tax_office"
+    },
+    "investigate_accountant": {
+      "type": "resource",
+      "styleId": "investigate_accountant",
+      "glyphKey": "tax_office"
+    },
+    "trick_accountant": {
+      "type": "resource",
+      "styleId": "trick_accountant",
+      "glyphKey": "tax_office"
+    },
+    "lure_accountant": {
+      "type": "resource",
+      "styleId": "lure_accountant",
+      "glyphKey": "lure_accountant"
+    },
+    "slave_uprising": {
+      "type": "resource",
+      "styleId": "slave_uprising",
+      "glyphKey": "slave_uprising"
+    },
+    "day_labor": {
+      "type": "resource",
+      "styleId": "day_labor",
+      "glyphKey": "coin"
+    },
+    "inside": {
+      "defaultLineThickness": 30,
+      "type": "resource",
+      "styleId": "inside",
+      "glyphKey": "inside"
+    },
+    "what_am_I": {
+      "type": "resource",
+      "styleId": "what_am_I",
+      "glyphKey": "what_am_I"
+    },
+    "how_did_i_come_to_be": {
+      "type": "resource",
+      "styleId": "what_am_I",
+      "glyphKey": "how_did_i_come_to_be"
+    },
+    "do_locals_know_of_me": {
+      "type": "resource",
+      "styleId": "what_am_I",
+      "glyphKey": "do_locals_know_of_me"
+    },
+    "how_hard_can_i_go": {
+      "type": "resource",
+      "styleId": "what_am_I",
+      "glyphKey": "how_hard_can_i_go"
+    },
+    "does_patriarchy_know_of_me": {
+      "type": "resource",
+      "styleId": "what_am_I",
+      "glyphKey": "does_patriarchy_know_of_me"
+    },
+    "how_big_can_i_get": {
+      "type": "resource",
+      "styleId": "what_am_I",
+      "glyphKey": "how_big_can_i_get"
+    },
+    "carrier": {
+      "defaultLineThickness": 5,
+      "type": "resource",
+      "styleId": "carrier",
+      "glyphKey": "carrier"
+    }
+  },
+  "glyphs": {
+    "egg": {
+      "placements": [
+        {
+          "shape": "hex_ring",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 3.4,
+          "colorHex": "#660000",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -12,
+        "rotationDeltaMaxDeg": 12,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "wood": {
+      "placements": [
+        {
+          "shape": "line",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 2.4,
+          "colorHex": "#006400",
+          "paletteColorKey": "green",
+          "lineThickness": 24,
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.99,
+            "distanceFromCenterMaxFactor": 1,
+            "scalePulseMin": 0.59,
+            "scalePulseMax": 0.66,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 6,
+          "rotationDeg": 132,
+          "scale": 2.5,
+          "colorHex": "#006400",
+          "paletteColorKey": "green",
+          "lineThickness": 16,
+          "radialPositionFactor": 0.29,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.99,
+            "distanceFromCenterMaxFactor": 1,
+            "scalePulseMin": 0.38,
+            "scalePulseMax": 0.48,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 2,
+          "rotationDeg": 40,
+          "scale": 1.7,
+          "colorHex": "#000000",
+          "paletteColorKey": "green",
+          "lineThickness": 20,
+          "radialPositionFactor": 0.52,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.57,
+            "distanceFromCenterMaxFactor": 0.63,
+            "scalePulseMin": 0.84,
+            "scalePulseMax": 0.92,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.95,
+        "scalePulseMax": 1.05,
+        "rotationDeltaMinDeg": -6,
+        "rotationDeltaMaxDeg": 6,
+        "delayMsByPosition": [
+          17,
+          0,
+          46,
+          77,
+          0,
+          109,
+          137,
+          0,
+          176
+        ]
+      }
+    },
+    "foraging": {
+      "placements": [
+        {
+          "shape": "circle",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#006400",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "ring",
+          "position": 0,
+          "rotationDeg": 0,
+          "scale": 1.9,
+          "colorHex": "#006400",
+          "radialPositionFactor": 0,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.28,
+            "distanceFromCenterMaxFactor": 1,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "ring",
+          "position": 1,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#006400",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.45999999999999996,
+            "distanceFromCenterMaxFactor": 0.71,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "ring",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#006400",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.49,
+            "distanceFromCenterMaxFactor": 0.63,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "ring",
+          "position": 3,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#006400",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.48,
+            "distanceFromCenterMaxFactor": 0.63,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "ring",
+          "position": 5,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#006400",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.49,
+            "distanceFromCenterMaxFactor": 0.61,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.95,
+        "scalePulseMax": 1.05,
+        "rotationDeltaMinDeg": -6,
+        "rotationDeltaMaxDeg": 6,
+        "delayMsByPosition": [
+          6,
+          21,
+          34,
+          46,
+          64,
+          90,
+          108,
+          126,
+          148
+        ]
+      }
+    },
+    "hearth": {
+      "placements": [
+        {
+          "shape": "triangle",
+          "position": 4,
+          "rotationDeg": 180,
+          "scale": 1,
+          "colorHex": "#a84c00",
+          "radialPositionFactor": 0.77,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.58,
+            "distanceFromCenterMaxFactor": 0.7,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 1,
+          "rotationDeg": 177,
+          "scale": 1.6,
+          "colorHex": "#a84c00",
+          "radialPositionFactor": 0.83,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.39,
+            "distanceFromCenterMaxFactor": 0.6,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.07,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 6,
+          "rotationDeg": 30,
+          "scale": 1.1,
+          "colorHex": "#a84c00",
+          "radialPositionFactor": 0.49,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.68,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.32,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 8,
+          "rotationDeg": 324,
+          "scale": 1.2,
+          "colorHex": "#a84c00",
+          "radialPositionFactor": 0.54,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.52,
+            "distanceFromCenterMaxFactor": 0.62,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.5,
+        "distanceFromCenterMaxFactor": 0.7,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -4,
+        "rotationDeltaMaxDeg": 4,
+        "delayMsByPosition": [
+          13,
+          29,
+          44,
+          61,
+          92,
+          115,
+          139,
+          158,
+          180
+        ]
+      }
+    },
+    "luretraveler": {
+      "placements": [
+        {
+          "shape": "hole",
+          "position": 3,
+          "rotationDeg": 0,
+          "scale": 1.7,
+          "colorHex": "#ffffff",
+          "radialPositionFactor": 0.47,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.86,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "hole",
+          "position": 5,
+          "rotationDeg": 0,
+          "scale": 1.6,
+          "colorHex": "#ffffff",
+          "radialPositionFactor": 0.54,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.78,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -6,
+        "rotationDeltaMaxDeg": 6,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          16,
+          0,
+          98,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "explore": {
+      "placements": [
+        {
+          "shape": "ring",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 1.2,
+          "colorHex": "#f5f5f5",
+          "paletteColorKey": "purple",
+          "lineThickness": 10,
+          "radialPositionFactor": 0,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.7,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 1,
+          "rotationDeg": 178,
+          "scale": 1.4,
+          "colorHex": "#000000",
+          "paletteColorKey": "purple",
+          "radialPositionFactor": 0.51,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.7,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 1.9,
+          "colorHex": "#ffffff",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.7,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": 180,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.5,
+        "distanceFromCenterMaxFactor": 0.7,
+        "scalePulseMin": 0.94,
+        "scalePulseMax": 1.06,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "butcher": {
+      "placements": [
+        {
+          "shape": "pixel",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 4,
+          "colorHex": "#000000",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.74,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 1.99,
+            "scalePulseMax": 2,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -12,
+        "rotationDeltaMaxDeg": 12,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "absorption": {
+      "placements": [
+        {
+          "shape": "star5",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 2.6,
+          "colorHex": "#ff9800",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.95,
+        "scalePulseMax": 1.05,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "attr_body": {
+      "placements": [
+        {
+          "shape": "plus_rounded",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 4,
+          "colorHex": "#ffffff",
+          "lineThickness": 26,
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.56,
+            "scalePulseMin": 0.66,
+            "scalePulseMax": 0.67,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -4,
+        "rotationDeltaMaxDeg": 4,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "attr_mind": {
+      "placements": [
+        {
+          "shape": "chevron_up_rounded",
+          "position": 4,
+          "rotationDeg": 8,
+          "scale": 3.2,
+          "colorHex": "#ffffff",
+          "lineThickness": 20,
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.56,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -8,
+            "rotationDeltaMaxDeg": -7,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.95,
+        "scalePulseMax": 1.05,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "attr_social": {
+      "placements": [
+        {
+          "shape": "triple_circle",
+          "position": 4,
+          "rotationDeg": 11,
+          "scale": 2.6,
+          "colorHex": "#ffffff",
+          "lineThickness": 20,
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.61,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -12,
+            "rotationDeltaMaxDeg": -11,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.94,
+        "scalePulseMax": 1.06,
+        "rotationDeltaMinDeg": -12,
+        "rotationDeltaMaxDeg": 12,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "heat": {
+      "placements": [
+        {
+          "shape": "crescent",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 4,
+          "colorHex": "#b34700",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.56,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 0.95,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.94,
+        "scalePulseMax": 1.06,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "food": {
+      "placements": [
+        {
+          "shape": "ring",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 2.2,
+          "colorHex": "#ffffff",
+          "paletteColorKey": "purple",
+          "lineThickness": 20,
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.62,
+            "scalePulseMin": 0.92,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "ring",
+          "position": 3,
+          "rotationDeg": 0,
+          "scale": 2.1,
+          "colorHex": "#ffffff",
+          "paletteColorKey": "purple",
+          "lineThickness": 20,
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.33,
+            "distanceFromCenterMaxFactor": 0.47,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "ring",
+          "position": 5,
+          "rotationDeg": 0,
+          "scale": 2,
+          "colorHex": "#f5f5f5",
+          "paletteColorKey": "purple",
+          "lineThickness": 20,
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.3,
+            "distanceFromCenterMaxFactor": 0.46,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -6,
+        "rotationDeltaMaxDeg": 6,
+        "delayMsByPosition": [
+          0,
+          7,
+          19,
+          38,
+          60,
+          92,
+          122,
+          148,
+          174
+        ]
+      }
+    },
+    "cave_xp": {
+      "placements": [
+        {
+          "shape": "star5",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 1.5,
+          "colorHex": "#ff9800",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.55,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -153,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "star5",
+          "position": 0,
+          "rotationDeg": 0,
+          "scale": 1.8,
+          "colorHex": "#ff9800",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.39,
+            "distanceFromCenterMaxFactor": 0.5,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -153,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "star5",
+          "position": 2,
+          "rotationDeg": 0,
+          "scale": 1.9,
+          "colorHex": "#ff9800",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.38,
+            "distanceFromCenterMaxFactor": 0.48,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -144,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "star5",
+          "position": 8,
+          "rotationDeg": 0,
+          "scale": 2.1,
+          "colorHex": "#ff9800",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.37,
+            "distanceFromCenterMaxFactor": 0.52,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -158,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "star5",
+          "position": 6,
+          "rotationDeg": 0,
+          "scale": 2,
+          "colorHex": "#ff9800",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.41,
+            "distanceFromCenterMaxFactor": 0.51,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -150,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.5,
+        "distanceFromCenterMaxFactor": 0.7,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -6,
+        "rotationDeltaMaxDeg": 6,
+        "delayMsByPosition": [
+          158,
+          128,
+          95,
+          69,
+          43,
+          20,
+          31,
+          57,
+          84
+        ]
+      }
+    },
+    "cave_level": {
+      "placements": [
+        {
+          "shape": "star5",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 3.6,
+          "colorHex": "#ff9800",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.99,
+            "distanceFromCenterMaxFactor": 1,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.31,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -4,
+        "rotationDeltaMaxDeg": 4,
+        "delayMsByPosition": [
+          13,
+          32,
+          61,
+          82,
+          109,
+          131,
+          143,
+          156,
+          175
+        ]
+      }
+    },
+    "cave_bodies": {
+      "placements": [
+        {
+          "shape": "circle",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 3.8,
+          "colorHex": "#fcfcfc",
+          "radialPositionFactor": 1
+        },
+        {
+          "shape": "circle",
+          "position": 1,
+          "rotationDeg": 0,
+          "scale": 2,
+          "colorHex": "#ffffff",
+          "radialPositionFactor": 1
+        },
+        {
+          "shape": "line",
+          "position": 5,
+          "rotationDeg": 104,
+          "scale": 2.2,
+          "colorHex": "#ffffff",
+          "radialPositionFactor": 1
+        },
+        {
+          "shape": "line",
+          "position": 3,
+          "rotationDeg": 72,
+          "scale": 2.5,
+          "colorHex": "#ffffff",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -8,
+            "rotationDeltaMaxDeg": 8,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.95,
+        "scalePulseMax": 1.05,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          18,
+          38,
+          61,
+          85,
+          106,
+          124,
+          142,
+          166
+        ]
+      }
+    },
+    "cave_body": {
+      "placements": [
+        {
+          "shape": "circle",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 4,
+          "colorHex": "#f5f5f5",
+          "radialPositionFactor": 1
+        },
+        {
+          "shape": "circle",
+          "position": 1,
+          "rotationDeg": 0,
+          "scale": 2,
+          "colorHex": "#fafafa",
+          "radialPositionFactor": 1
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.94,
+        "scalePulseMax": 1.06,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "health": {
+      "placements": [
+        {
+          "shape": "chevron_up_rounded",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 3.2,
+          "colorHex": "#8a0000",
+          "lineThickness": 60,
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.94,
+        "scalePulseMax": 1.06,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "activity": {
+      "placements": [
+        {
+          "shape": "ring",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 3.3,
+          "colorHex": "#ffffff",
+          "lineThickness": 16,
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.61,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 0.95,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 5,
+          "rotationDeg": 176,
+          "scale": 2,
+          "colorHex": "#ffffff",
+          "lineThickness": 16,
+          "radialPositionFactor": 0.88,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.8,
+            "distanceFromCenterMaxFactor": 0.81,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 0.95,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.94,
+        "scalePulseMax": 1.06,
+        "rotationDeltaMinDeg": -12,
+        "rotationDeltaMaxDeg": 12,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "coin": {
+      "placements": [
+        {
+          "shape": "circle",
+          "position": 1,
+          "rotationDeg": 0,
+          "scale": 4,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 0,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.51,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 0.97,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "pixel",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 4,
+          "colorHex": "#000000",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.7,
+            "scalePulseMin": 1.99,
+            "scalePulseMax": 2,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.5,
+        "distanceFromCenterMaxFactor": 0.7,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -4,
+        "rotationDeltaMaxDeg": 4,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "hommlet": {
+      "placements": [
+        {
+          "shape": "pixel",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 4,
+          "colorHex": "#e6e6e6",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.83,
+            "distanceFromCenterMaxFactor": 0.98,
+            "scalePulseMin": 1.99,
+            "scalePulseMax": 2,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "triangle",
+          "position": 1,
+          "rotationDeg": 61,
+          "scale": 2,
+          "colorHex": "#6b0000",
+          "radialPositionFactor": 0.87,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.65,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.09,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.95,
+        "scalePulseMax": 1.05,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          98,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "lodging_hommlet": {
+      "placements": [
+        {
+          "shape": "pixel",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 4,
+          "colorHex": "#ffffff",
+          "radialPositionFactor": 0.39,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.79,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 1.1199999999999999,
+            "scalePulseMax": 1.13,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "circle",
+          "position": 1,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#fab702",
+          "radialPositionFactor": 0.37,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.57,
+            "distanceFromCenterMaxFactor": 1,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -8,
+            "rotationDeltaMaxDeg": 8,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "triangle",
+          "position": 4,
+          "rotationDeg": 62,
+          "scale": 1,
+          "colorHex": "#6b0000",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.79,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "buy_coins_chest": {
+      "placements": [
+        {
+          "shape": "circle",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#fab700",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.4,
+            "rotationDeltaMinDeg": -8,
+            "rotationDeltaMaxDeg": 8,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 1,
+          "rotationDeg": 91,
+          "scale": 1.4,
+          "colorHex": "#000000",
+          "paletteColorKey": "green",
+          "radialPositionFactor": 0.65,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -162,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 5,
+          "rotationDeg": 0,
+          "scale": 1.2,
+          "colorHex": "#000000",
+          "paletteColorKey": "green",
+          "radialPositionFactor": 0.69,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 3,
+          "rotationDeg": 0,
+          "scale": 1.2,
+          "colorHex": "#000000",
+          "paletteColorKey": "green",
+          "radialPositionFactor": 0.67,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 7,
+          "rotationDeg": 89,
+          "scale": 1.4,
+          "colorHex": "#000000",
+          "paletteColorKey": "green",
+          "radialPositionFactor": 0.64,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.94,
+        "scalePulseMax": 1.06,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          19,
+          0,
+          66,
+          0,
+          171,
+          0,
+          120,
+          0
+        ]
+      }
+    },
+    "know_thyself": {
+      "placements": [
+        {
+          "shape": "line",
+          "position": 1,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "radialPositionFactor": 0.35,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.11,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "circle",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 0.6,
+          "colorHex": "#000000",
+          "radialPositionFactor": 0.44,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.94,
+        "scalePulseMax": 1.06,
+        "rotationDeltaMinDeg": -4,
+        "rotationDeltaMaxDeg": 4,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          98,
+          0
+        ]
+      }
+    },
+    "coinchest": {
+      "placements": [
+        {
+          "shape": "circle",
+          "position": 1,
+          "rotationDeg": 0,
+          "scale": 0.8,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 0.01,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.99,
+            "distanceFromCenterMaxFactor": 1,
+            "scalePulseMin": 1.99,
+            "scalePulseMax": 2,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "pixel",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 4,
+          "colorHex": "#000000",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "square_ring",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 4,
+          "colorHex": "#000000",
+          "paletteColorKey": "green",
+          "lineThickness": 3,
+          "radialPositionFactor": 0,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.72,
+            "distanceFromCenterMaxFactor": 0.73,
+            "scalePulseMin": 0.63,
+            "scalePulseMax": 0.64,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -6,
+        "rotationDeltaMaxDeg": 6,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "lure_homlet_native": {
+      "placements": [
+        {
+          "shape": "triangle",
+          "position": 4,
+          "rotationDeg": 62,
+          "scale": 1.3,
+          "colorHex": "#79270c",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.61,
+            "scalePulseMin": 1.05,
+            "scalePulseMax": 1.41,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "pixel",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 4,
+          "colorHex": "#ffffff",
+          "radialPositionFactor": 0.65,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 1.8,
+            "scalePulseMax": 1.81,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "hole",
+          "position": 2,
+          "rotationDeg": 180,
+          "scale": 2,
+          "colorHex": "#f7f7f7",
+          "radialPositionFactor": 0.53,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.49,
+            "scalePulseMax": 0.75,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "hole",
+          "position": 0,
+          "rotationDeg": 174,
+          "scale": 2.5,
+          "colorHex": "#ffffff",
+          "radialPositionFactor": 0.52,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.47,
+            "scalePulseMax": 0.71,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.94,
+        "scalePulseMax": 1.06,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          31,
+          0,
+          82,
+          0,
+          123,
+          0,
+          0,
+          160,
+          0
+        ]
+      }
+    },
+    "merchant_of_hommlet": {
+      "placements": [
+        {
+          "shape": "circle",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 1.3,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.39,
+            "distanceFromCenterMaxFactor": 0.54,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -4,
+            "rotationDeltaMaxDeg": 4,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "circle",
+          "position": 8,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.36,
+            "distanceFromCenterMaxFactor": 0.48,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -4,
+            "rotationDeltaMaxDeg": 4,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "circle",
+          "position": 6,
+          "rotationDeg": 0,
+          "scale": 1.1,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.34,
+            "distanceFromCenterMaxFactor": 0.47000000000000003,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 0.95,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "pixel",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 4,
+          "colorHex": "#fdfcfc",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.88,
+            "distanceFromCenterMaxFactor": 0.89,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "triangle",
+          "position": 1,
+          "rotationDeg": 61,
+          "scale": 1.2,
+          "colorHex": "#000000",
+          "paletteColorKey": "red",
+          "radialPositionFactor": 0.52,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.69,
+            "distanceFromCenterMaxFactor": 0.7,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 0.95,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.5,
+        "distanceFromCenterMaxFactor": 0.7,
+        "scalePulseMin": 0.94,
+        "scalePulseMax": 1.06,
+        "rotationDeltaMinDeg": -4,
+        "rotationDeltaMaxDeg": 4,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "trading_post": {
+      "placements": [
+        {
+          "shape": "circle",
+          "position": 3,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 0.88
+        },
+        {
+          "shape": "circle",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 1
+        },
+        {
+          "shape": "circle",
+          "position": 5,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 0.88
+        },
+        {
+          "shape": "chevron",
+          "position": 1,
+          "rotationDeg": 0,
+          "scale": 2,
+          "colorHex": "#000000",
+          "paletteColorKey": "red",
+          "radialPositionFactor": 0.57,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 7,
+          "rotationDeg": 179,
+          "scale": 1.8,
+          "colorHex": "#000000",
+          "paletteColorKey": "red",
+          "radialPositionFactor": 0.61,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          25,
+          52,
+          97,
+          0,
+          135,
+          0
+        ]
+      }
+    },
+    "slave_market": {
+      "placements": [
+        {
+          "shape": "hole",
+          "position": 3,
+          "rotationDeg": 0,
+          "scale": 2.1,
+          "colorHex": "#ffffff",
+          "radialPositionFactor": 0.55,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.61,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.8,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "hole",
+          "position": 5,
+          "rotationDeg": 0,
+          "scale": 2.2,
+          "colorHex": "#ffffff",
+          "radialPositionFactor": 0.58,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.82,
+            "scalePulseMin": 0.78,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 1,
+          "rotationDeg": 91,
+          "scale": 2.2,
+          "colorHex": "#000000",
+          "paletteColorKey": "red",
+          "radialPositionFactor": 0.61,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 7,
+          "rotationDeg": 90,
+          "scale": 2.2,
+          "colorHex": "#000000",
+          "paletteColorKey": "red",
+          "radialPositionFactor": 0.6,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -6,
+        "rotationDeltaMaxDeg": 6,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          132,
+          82,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "sell_wood": {
+      "placements": [
+        {
+          "shape": "line",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 2,
+          "colorHex": "#295227",
+          "lineThickness": 25,
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.74,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.13,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 2,
+          "rotationDeg": 225,
+          "scale": 1.4,
+          "colorHex": "#295227",
+          "lineThickness": 15,
+          "radialPositionFactor": 0.48,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -170,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 3,
+          "rotationDeg": 131,
+          "scale": 1.6,
+          "colorHex": "#295227",
+          "lineThickness": 20,
+          "radialPositionFactor": 0.66,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.43,
+            "distanceFromCenterMaxFactor": 0.6,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "circle",
+          "position": 6,
+          "rotationDeg": 0,
+          "scale": 0.8,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 0.56,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.74,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.73,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -8,
+            "rotationDeltaMaxDeg": 8,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "circle",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 0.93,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.66,
+            "scalePulseMin": 0.81,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -8,
+            "rotationDeltaMaxDeg": 8,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "circle",
+          "position": 8,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 0.83,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.39,
+            "distanceFromCenterMaxFactor": 0.6,
+            "scalePulseMin": 0.8,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -8,
+            "rotationDeltaMaxDeg": 8,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.95,
+        "scalePulseMax": 1.05,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          19,
+          0,
+          42,
+          70,
+          98,
+          120,
+          137,
+          152,
+          173
+        ]
+      }
+    },
+    "tax_office": {
+      "placements": [
+        {
+          "shape": "circle",
+          "position": 6,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.4,
+            "distanceFromCenterMaxFactor": 0.51,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.22,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "circle",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.45,
+            "distanceFromCenterMaxFactor": 0.59,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.21,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "circle",
+          "position": 8,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 0.84,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.45,
+            "distanceFromCenterMaxFactor": 0.54,
+            "scalePulseMin": 0.87,
+            "scalePulseMax": 1.18,
+            "rotationDeltaMinDeg": -6,
+            "rotationDeltaMaxDeg": 6,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 1,
+          "rotationDeg": 0,
+          "scale": 2,
+          "colorHex": "#000000",
+          "paletteColorKey": "red",
+          "lineThickness": 20,
+          "radialPositionFactor": 0.42,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -6,
+        "rotationDeltaMaxDeg": 6,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          31,
+          0,
+          71,
+          109,
+          138,
+          169
+        ]
+      }
+    },
+    "lure_accountant": {
+      "placements": [
+        {
+          "shape": "circle",
+          "position": 6,
+          "rotationDeg": 0,
+          "scale": 1.5,
+          "colorHex": "#311617",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 0.66,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.7,
+            "scalePulseMin": 0.52,
+            "scalePulseMax": 0.62,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron_up_rounded",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "red",
+          "lineThickness": 20,
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.7,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "circle",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.37,
+            "distanceFromCenterMaxFactor": 0.69,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -12,
+            "rotationDeltaMaxDeg": 12,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "circle",
+          "position": 8,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 0.68,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.7,
+            "scalePulseMin": 0.79,
+            "scalePulseMax": 0.91,
+            "rotationDeltaMinDeg": -12,
+            "rotationDeltaMaxDeg": 12,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 0,
+          "rotationDeg": 180,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "red",
+          "lineThickness": 20,
+          "radialPositionFactor": 0.53,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.7,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 2,
+          "rotationDeg": 175,
+          "scale": 1,
+          "colorHex": "#000000",
+          "paletteColorKey": "red",
+          "lineThickness": 20,
+          "radialPositionFactor": 0.54,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.7,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.5,
+        "distanceFromCenterMaxFactor": 0.7,
+        "scalePulseMin": 0.95,
+        "scalePulseMax": 1.05,
+        "rotationDeltaMinDeg": -12,
+        "rotationDeltaMaxDeg": 12,
+        "delayMsByPosition": [
+          14,
+          21,
+          148,
+          53,
+          71,
+          90,
+          111,
+          132,
+          161
+        ]
+      }
+    },
+    "slave_uprising": {
+      "placements": [
+        {
+          "shape": "hole",
+          "position": 3,
+          "rotationDeg": 0,
+          "scale": 1.9,
+          "colorHex": "#ffffff",
+          "radialPositionFactor": 0.66,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.53,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.43,
+            "rotationDeltaMinDeg": -4,
+            "rotationDeltaMaxDeg": -3,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "hole",
+          "position": 5,
+          "rotationDeg": 0,
+          "scale": 1.9,
+          "colorHex": "#ffffff",
+          "radialPositionFactor": 0.63,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.47,
+            "distanceFromCenterMaxFactor": 0.69,
+            "scalePulseMin": 0.81,
+            "scalePulseMax": 1.76,
+            "rotationDeltaMinDeg": -4,
+            "rotationDeltaMaxDeg": 4,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 4,
+          "rotationDeg": 36,
+          "scale": 3,
+          "colorHex": "#000000",
+          "paletteColorKey": "red",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -4,
+        "rotationDeltaMaxDeg": 4,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          39,
+          0,
+          146,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "inside": {
+      "placements": [
+        {
+          "shape": "chevron",
+          "position": 2,
+          "rotationDeg": 220,
+          "scale": 1.7,
+          "colorHex": "#4b284e",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 0.51,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.51,
+            "distanceFromCenterMaxFactor": 0.71,
+            "scalePulseMin": 0.39,
+            "scalePulseMax": 1.56,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 0,
+          "rotationDeg": 139,
+          "scale": 1.6,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "lineThickness": 30,
+          "radialPositionFactor": 0.59,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.51,
+            "distanceFromCenterMaxFactor": 0.67,
+            "scalePulseMin": 0.59,
+            "scalePulseMax": 1.51,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 6,
+          "rotationDeg": 52,
+          "scale": 1.7,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 0.66,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.68,
+            "scalePulseMin": 0.45,
+            "scalePulseMax": 1.59,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 8,
+          "rotationDeg": 308,
+          "scale": 1.8,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "radialPositionFactor": 0.65,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.51,
+            "distanceFromCenterMaxFactor": 0.69,
+            "scalePulseMin": 0.53,
+            "scalePulseMax": 1.49,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.95,
+        "scalePulseMax": 1.05,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          0,
+          52,
+          0,
+          0,
+          0,
+          104,
+          0,
+          180
+        ]
+      }
+    },
+    "outside": {
+      "placements": [
+        {
+          "shape": "chevron",
+          "position": 2,
+          "rotationDeg": 38,
+          "scale": 1.7,
+          "colorHex": "#522325",
+          "paletteColorKey": "gold",
+          "lineThickness": 30,
+          "radialPositionFactor": 0.6,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.63,
+            "scalePulseMin": 0.45,
+            "scalePulseMax": 1.49,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 0,
+          "rotationDeg": 319,
+          "scale": 1.8,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "lineThickness": 30,
+          "radialPositionFactor": 0.51,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.51,
+            "distanceFromCenterMaxFactor": 0.7,
+            "scalePulseMin": 0.52,
+            "scalePulseMax": 1.58,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 6,
+          "rotationDeg": 232,
+          "scale": 1.8,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "lineThickness": 30,
+          "radialPositionFactor": 0.71,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.42,
+            "distanceFromCenterMaxFactor": 0.62,
+            "scalePulseMin": 0.57,
+            "scalePulseMax": 1.37,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 8,
+          "rotationDeg": 134,
+          "scale": 1.8,
+          "colorHex": "#000000",
+          "paletteColorKey": "gold",
+          "lineThickness": 30,
+          "radialPositionFactor": 0.64,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.48,
+            "distanceFromCenterMaxFactor": 0.65,
+            "scalePulseMin": 0.51,
+            "scalePulseMax": 1.48,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.5,
+        "distanceFromCenterMaxFactor": 0.7,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          0,
+          54,
+          0,
+          0,
+          0,
+          114,
+          0,
+          180
+        ]
+      }
+    },
+    "what_am_I": {
+      "placements": [
+        {
+          "shape": "ring",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 1.2,
+          "colorHex": "#311617",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.5,
+            "distanceFromCenterMaxFactor": 0.7,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.5,
+        "distanceFromCenterMaxFactor": 0.7,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -12,
+        "rotationDeltaMaxDeg": 12,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "how_did_i_come_to_be": {
+      "placements": [
+        {
+          "shape": "ring",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "radialPositionFactor": 1
+        },
+        {
+          "shape": "line",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 1.6,
+          "colorHex": "#000000",
+          "radialPositionFactor": 0,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -12,
+            "rotationDeltaMaxDeg": 34,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.94,
+        "scalePulseMax": 1.06,
+        "rotationDeltaMinDeg": -12,
+        "rotationDeltaMaxDeg": 12,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          144,
+          0
+        ]
+      }
+    },
+    "do_locals_know_of_me": {
+      "placements": [
+        {
+          "shape": "square_ring",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 0.9,
+          "colorHex": "#000000",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -172,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 1,
+          "rotationDeg": 0,
+          "scale": 1.5,
+          "colorHex": "#000000",
+          "radialPositionFactor": 0
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -12,
+        "rotationDeltaMaxDeg": 12,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          180,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "how_hard_can_i_go": {
+      "placements": [
+        {
+          "shape": "ring",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 1.3,
+          "colorHex": "#000000",
+          "radialPositionFactor": 1
+        },
+        {
+          "shape": "line",
+          "position": 1,
+          "rotationDeg": 91,
+          "scale": 1.7,
+          "colorHex": "#000000",
+          "lineThickness": 10,
+          "radialPositionFactor": 0,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 1.9,
+          "colorHex": "#000000",
+          "radialPositionFactor": 0,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 0.8,
+            "scalePulseMin": 0.94,
+            "scalePulseMax": 1.06,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.94,
+        "scalePulseMax": 1.06,
+        "rotationDeltaMinDeg": -4,
+        "rotationDeltaMaxDeg": 4,
+        "delayMsByPosition": [
+          0,
+          178,
+          0,
+          0,
+          0,
+          0,
+          0,
+          86,
+          0
+        ]
+      }
+    },
+    "does_patriarchy_know_of_me": {
+      "placements": [
+        {
+          "shape": "square_ring",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 1,
+          "rotationDeg": 91,
+          "scale": 1.7,
+          "colorHex": "#000000",
+          "radialPositionFactor": 0,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "line",
+          "position": 7,
+          "rotationDeg": 0,
+          "scale": 1.7,
+          "colorHex": "#000000",
+          "radialPositionFactor": 0,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.55,
+            "distanceFromCenterMaxFactor": 0.75,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.05,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.95,
+        "scalePulseMax": 1.05,
+        "rotationDeltaMinDeg": -8,
+        "rotationDeltaMaxDeg": 8,
+        "delayMsByPosition": [
+          0,
+          86,
+          0,
+          0,
+          0,
+          0,
+          0,
+          180,
+          0
+        ]
+      }
+    },
+    "how_big_can_i_get": {
+      "placements": [
+        {
+          "shape": "ring",
+          "position": 4,
+          "rotationDeg": 30,
+          "scale": 1,
+          "colorHex": "#000000",
+          "radialPositionFactor": 1
+        },
+        {
+          "shape": "chevron",
+          "position": 1,
+          "rotationDeg": 0,
+          "scale": 1,
+          "colorHex": "#000000",
+          "radialPositionFactor": 0.47,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.79,
+            "distanceFromCenterMaxFactor": 1,
+            "scalePulseMin": 0.67,
+            "scalePulseMax": 1.31,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 7,
+          "rotationDeg": 179,
+          "scale": 1,
+          "colorHex": "#000000",
+          "radialPositionFactor": 0.52,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.59,
+            "distanceFromCenterMaxFactor": 1,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 5,
+          "rotationDeg": 88,
+          "scale": 0.9,
+          "colorHex": "#000000",
+          "radialPositionFactor": 0.51,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.7,
+            "distanceFromCenterMaxFactor": 1,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        },
+        {
+          "shape": "chevron",
+          "position": 3,
+          "rotationDeg": 266,
+          "scale": 1,
+          "colorHex": "#000000",
+          "radialPositionFactor": 0.53,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.6,
+            "distanceFromCenterMaxFactor": 1,
+            "scalePulseMin": 0.96,
+            "scalePulseMax": 1.04,
+            "rotationDeltaMinDeg": -180,
+            "rotationDeltaMaxDeg": -179,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.6,
+        "distanceFromCenterMaxFactor": 0.8,
+        "scalePulseMin": 0.96,
+        "scalePulseMax": 1.04,
+        "rotationDeltaMinDeg": -6,
+        "rotationDeltaMaxDeg": 6,
+        "delayMsByPosition": [
+          0,
+          25,
+          0,
+          69,
+          0,
+          117,
+          0,
+          180,
+          0
+        ]
+      }
+    },
+    "carrier": {
+      "placements": [
+        {
+          "shape": "ring",
+          "position": 4,
+          "rotationDeg": 0,
+          "scale": 1.5,
+          "colorHex": "#ecc2f5",
+          "paletteColorKey": "purple",
+          "radialPositionFactor": 1,
+          "animation": {
+            "distanceFromCenterMinFactor": 0.81,
+            "distanceFromCenterMaxFactor": 0.99,
+            "scalePulseMin": 0.95,
+            "scalePulseMax": 1.19,
+            "rotationDeltaMinDeg": -12,
+            "rotationDeltaMaxDeg": 12,
+            "reverseDirection": false
+          }
+        }
+      ],
+      "pulse": {
+        "distanceFromCenterMinFactor": 0.55,
+        "distanceFromCenterMaxFactor": 0.75,
+        "scalePulseMin": 0.95,
+        "scalePulseMax": 1.05,
+        "rotationDeltaMinDeg": -12,
+        "rotationDeltaMaxDeg": 12,
+        "delayMsByPosition": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "styles": {
+    "producer_style": {
+      "cycleProgress": {
+        "family": "square",
+        "familyRotationDeg": 0,
+        "color": "#ffffff"
+      }
+    },
+    "storage_style": {
+      "cycleProgress": {
+        "family": "none",
+        "familyRotationDeg": 45,
+        "color": "#ff9800"
+      }
+    },
+    "style_pool_absorption": {
+      "cycleProgress": {
+        "family": "circle",
+        "familyRotationDeg": 0,
+        "color": "#5D3FD3"
+      }
+    },
+    "egg": {
+      "cycleProgress": {
+        "family": "hex",
+        "familyRotationDeg": 0,
+        "color": "#f7f7f7"
+      }
+    },
+    "wood": {
+      "cycleProgress": {
+        "family": "square",
+        "familyRotationDeg": 0,
+        "color": "#ff9800"
+      },
+      "light": {
+        "color": "#ff9800",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "woodstorage": {
+      "cycleProgress": {
+        "family": "hex",
+        "familyRotationDeg": 0,
+        "color": "#fcfcfc"
+      }
+    },
+    "larder": {
+      "cycleProgress": {
+        "family": "hex",
+        "familyRotationDeg": 91,
+        "color": "#ffffff"
+      }
+    },
+    "foraging": {
+      "cycleProgress": {
+        "family": "square",
+        "familyRotationDeg": 0,
+        "color": "#ff9800"
+      },
+      "light": {
+        "color": "#ff9800",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "hearth": {
+      "cycleProgress": {
+        "family": "square",
+        "familyRotationDeg": 0,
+        "color": "#ff9800"
+      }
+    },
+    "luretraveler": {
+      "cycleProgress": {
+        "family": "circle",
+        "familyRotationDeg": 0,
+        "color": "#ff9800"
+      },
+      "light": {
+        "color": "#ff9800",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "explore": {
+      "cycleProgress": {
+        "family": "triangle",
+        "familyRotationDeg": 28,
+        "color": "#ff9800"
+      },
+      "light": {
+        "color": "#6e59a1",
+        "alpha": 0.38,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "butcher": {
+      "cycleProgress": {
+        "family": "spiky_circle",
+        "familyRotationDeg": 0,
+        "color": "#000000"
+      },
+      "light": {
+        "color": "#990000",
+        "alpha": 1,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "absorption": {
+      "cycleProgress": {
+        "family": "spiky_circle",
+        "familyRotationDeg": 0,
+        "color": "#000000"
+      },
+      "light": {
+        "color": "#990000",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "attr_body": {
+      "cycleProgress": {
+        "family": "circle",
+        "familyRotationDeg": 0,
+        "color": "#e91e63"
+      },
+      "light": {
+        "color": "#e91e63",
+        "alpha": 0.44,
+        "radiusFactor": 1.9,
+        "blendMode": "ADD"
+      }
+    },
+    "attr_mind": {
+      "cycleProgress": {
+        "family": "circle",
+        "familyRotationDeg": 0,
+        "color": "#2196f3"
+      },
+      "light": {
+        "color": "#2196f3",
+        "alpha": 0.5,
+        "radiusFactor": 1.9,
+        "blendMode": "ADD"
+      }
+    },
+    "attr_social": {
+      "cycleProgress": {
+        "family": "circle",
+        "familyRotationDeg": 0,
+        "color": "#ffc107"
+      },
+      "light": {
+        "color": "#ffc107",
+        "alpha": 0.5,
+        "radiusFactor": 1.9,
+        "blendMode": "ADD"
+      }
+    },
+    "heat": {
+      "cycleProgress": {
+        "family": "none",
+        "familyRotationDeg": 0,
+        "color": "#ffffff"
+      },
+      "light": {
+        "color": "#b34700",
+        "alpha": 0.67,
+        "radiusFactor": 2,
+        "blendMode": "ADD"
+      }
+    },
+    "food": {
+      "cycleProgress": {
+        "family": "none",
+        "familyRotationDeg": 0,
+        "color": "#0b6100"
+      }
+    },
+    "gather_wood": {
+      "cycleProgress": {
+        "family": "square",
+        "familyRotationDeg": 0,
+        "color": "#ff9800"
+      },
+      "light": {
+        "color": "#ff9800",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "wood_transfer": {
+      "cycleProgress": {
+        "family": "none",
+        "familyRotationDeg": 0,
+        "color": "#ff9800"
+      }
+    },
+    "cave_xp": {
+      "cycleProgress": {
+        "family": "none",
+        "familyRotationDeg": 0,
+        "color": "#ffffff"
+      }
+    },
+    "health": {
+      "cycleProgress": {
+        "family": "none",
+        "familyRotationDeg": 0,
+        "color": "#e91e63"
+      }
+    },
+    "activity": {
+      "cycleProgress": {
+        "family": "none",
+        "familyRotationDeg": 0,
+        "color": "#ffffff"
+      }
+    },
+    "coin": {
+      "cycleProgress": {
+        "family": "none",
+        "familyRotationDeg": 0,
+        "color": "#fffefa"
+      }
+    },
+    "hommlet": {
+      "cycleProgress": {
+        "family": "hex",
+        "familyRotationDeg": 0,
+        "color": "#4f4f4f"
+      },
+      "light": {
+        "color": "#000000",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "lodging_hommlet": {
+      "cycleProgress": {
+        "family": "square",
+        "familyRotationDeg": 0,
+        "color": "#fab700"
+      },
+      "light": {
+        "color": "#fab700",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "buy_coins_chest": {
+      "cycleProgress": {
+        "family": "square",
+        "familyRotationDeg": 0,
+        "color": "#fab700"
+      },
+      "light": {
+        "color": "#fab700",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "know_thyself": {
+      "cycleProgress": {
+        "family": "none",
+        "familyRotationDeg": 0,
+        "color": "#ffffff"
+      },
+      "light": {
+        "color": "#ffffff",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "coinchest": {
+      "cycleProgress": {
+        "family": "none",
+        "familyRotationDeg": 45,
+        "color": "#fab700"
+      },
+      "light": {
+        "color": "#fab700",
+        "alpha": 0,
+        "radiusFactor": 1.5,
+        "blendMode": "NORMAL"
+      }
+    },
+    "lure_homlet_native": {
+      "cycleProgress": {
+        "family": "circle",
+        "familyRotationDeg": 0,
+        "color": "#fab700"
+      },
+      "light": {
+        "color": "#fab700",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "merchant_of_hommlet": {
+      "cycleProgress": {
+        "family": "hex",
+        "familyRotationDeg": 0,
+        "color": "#787878"
+      },
+      "light": {
+        "color": "#787878",
+        "alpha": 0,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "kidnap_merchant_of_hommlet": {
+      "cycleProgress": {
+        "family": "circle",
+        "familyRotationDeg": 0,
+        "color": "#e91e63"
+      },
+      "light": {
+        "color": "#e91e63",
+        "alpha": 0.51,
+        "radiusFactor": 1.9,
+        "blendMode": "ADD"
+      }
+    },
+    "lure_merchant_of_hommlet": {
+      "cycleProgress": {
+        "family": "circle",
+        "familyRotationDeg": 0,
+        "color": "#ffc107"
+      },
+      "light": {
+        "color": "#ffc107",
+        "alpha": 0.5,
+        "radiusFactor": 1.9,
+        "blendMode": "ADD"
+      }
+    },
+    "trading_post": {
+      "cycleProgress": {
+        "family": "hex",
+        "familyRotationDeg": 0,
+        "color": "#454545"
+      }
+    },
+    "slave_market": {
+      "cycleProgress": {
+        "family": "square",
+        "familyRotationDeg": 0,
+        "color": "#ff9800"
+      },
+      "light": {
+        "color": "#ff9800",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "sell_wood": {
+      "cycleProgress": {
+        "family": "square",
+        "familyRotationDeg": 0,
+        "color": "#ff9800"
+      },
+      "light": {
+        "color": "#ff9800",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "tax_office": {
+      "cycleProgress": {
+        "family": "hex",
+        "familyRotationDeg": 0,
+        "color": "#787878"
+      },
+      "light": {
+        "color": "#ffffff",
+        "alpha": 0,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "kidnap_accountant": {
+      "cycleProgress": {
+        "family": "hex",
+        "familyRotationDeg": 0,
+        "color": "#e91e63"
+      },
+      "light": {
+        "color": "#e91e63",
+        "alpha": 0.5,
+        "radiusFactor": 1.7,
+        "blendMode": "ADD"
+      }
+    },
+    "investigate_accountant": {
+      "cycleProgress": {
+        "family": "hex",
+        "familyRotationDeg": 0,
+        "color": "#2196f3"
+      },
+      "light": {
+        "color": "#2196f3",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "trick_accountant": {
+      "cycleProgress": {
+        "family": "hex",
+        "familyRotationDeg": 0,
+        "color": "#ffc107"
+      },
+      "light": {
+        "color": "#ffc107",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "lure_accountant": {
+      "cycleProgress": {
+        "family": "hex",
+        "familyRotationDeg": 0,
+        "color": "#8888ff"
+      },
+      "light": {
+        "color": "#8888ff",
+        "alpha": 0.44,
+        "radiusFactor": 1.9,
+        "blendMode": "ADD"
+      }
+    },
+    "slave_uprising": {
+      "cycleProgress": {
+        "family": "spiky_circle",
+        "familyRotationDeg": 0,
+        "color": "#e91e63"
+      },
+      "light": {
+        "color": "#e91e63",
+        "alpha": 0.5,
+        "radiusFactor": 1.9,
+        "blendMode": "ADD"
+      }
+    },
+    "day_labor": {
+      "cycleProgress": {
+        "family": "square",
+        "familyRotationDeg": 0,
+        "color": "#ff9800"
+      },
+      "light": {
+        "color": "#ff9800",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "inside": {
+      "cycleProgress": {
+        "family": "hex",
+        "familyRotationDeg": 0,
+        "color": "#5c5c5c"
+      },
+      "light": {
+        "color": "#5c5c5c",
+        "alpha": 0,
+        "radiusFactor": 1.5,
+        "blendMode": "ADD"
+      }
+    },
+    "outside": {
+      "cycleProgress": {
+        "family": "hex",
+        "familyRotationDeg": 1,
+        "color": "#696969"
+      },
+      "light": {
+        "color": "#000000",
+        "alpha": 0.5,
+        "radiusFactor": 1.5,
+        "blendMode": "NORMAL"
+      }
+    },
+    "what_am_I": {
+      "cycleProgress": {
+        "family": "triangle",
+        "familyRotationDeg": 210,
+        "color": "#8888ff"
+      },
+      "light": {
+        "color": "#8888ff",
+        "alpha": 0.5,
+        "radiusFactor": 1.3,
+        "blendMode": "ADD"
+      }
+    },
+    "carrier": {
+      "cycleProgress": {
+        "family": "none",
+        "familyRotationDeg": 0,
+        "color": "#ffffff"
+      },
+      "light": {
+        "color": "#ffffff",
+        "alpha": 0.4,
+        "radiusFactor": 1.2,
+        "blendMode": "ADD"
+      }
+    }
+  },
+  "settings": {
+    "background": {
+      "enabled": true,
+      "base_color": "#020203",
+      "lift_color": "#1e0434",
+      "intensity": 0.2,
+      "large_scale": 0.0028,
+      "small_scale": 0.0065,
+      "large_drift_per_ms": {
+        "x": 0.00005,
+        "y": -0.00004
+      },
+      "small_drift_per_ms": {
+        "x": -0.000013,
+        "y": 0.000018
+      },
+      "threshold_low": 0.3,
+      "threshold_high": 0.72,
+      "heartbeat_amplitude": 0.025
+    },
+    "glyph_view": {
+      "defaultLineThickness": 10
+    },
+    "vein_network": {
+      "thickness": {
+        "min_width": 2,
+        "max_width": 8,
+        "pulse_width_multiplier": 1.1,
+        "taper_start_width_multiplier_min": 1.1,
+        "taper_start_width_multiplier_max": 1.15,
+        "glow_width_multiplier": 1.6
+      },
+      "flow": {
+        "energy_per_blob": 10,
+        "min_blob_spacing_px": 18,
+        "base_blob_speed_px_per_sec": 120,
+        "blob_size_variance": 0.08,
+        "blob_spacing_variance": 0.08
+      },
+      "geometry": {
+        "waviness_per_meter": 1.5,
+        "waviness_simplex_scale": 12,
+        "segments_per_meter": 16,
+        "meander": {
+          "point_count_min": 3,
+          "point_count_max": 6,
+          "offset_min_px": 10,
+          "offset_max_px": 30
+        }
+      },
+      "colors": {
+        "supply_dim_factor": 0.6,
+        "supply_bright_factor": 1.2,
+        "base_body": "#e91e63",
+        "base_mind": "#2196f3",
+        "base_social": "#ffc107",
+        "base_nervous": "#9c27b0",
+        "base_assignable": "#000000",
+        "base_absorption": "#b71c1c",
+        "hue_variance_degrees": 4
+      },
+      "heartbeats": {
+        "blob_saturation_multiplier": 1.25,
+        "blob_saturation_variance": 0.08,
+        "default": "healthy",
+        "presets": {
+          "healthy": {
+            "bpm": 50,
+            "envelope": [
+              {
+                "t": 0,
+                "v": 0
+              },
+              {
+                "t": 0.2,
+                "v": 1
+              },
+              {
+                "t": 0.8,
+                "v": 0
+              }
+            ]
+          },
+          "panic": {
+            "bpm": 120,
+            "envelope": [
+              {
+                "t": 0,
+                "v": 0
+              },
+              {
+                "t": 0.1,
+                "v": 1
+              },
+              {
+                "t": 0.25,
+                "v": 0
+              },
+              {
+                "t": 0.35,
+                "v": 0.6
+              },
+              {
+                "t": 0.5,
+                "v": 0
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "frozen": {
+            "bpm": 30,
+            "envelope": [
+              {
+                "t": 0,
+                "v": 0
+              },
+              {
+                "t": 0.3,
+                "v": 0.6
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          }
+        },
+        "rules": [
+          {
+            "condition": {
+              "id": "comfort_low",
+              "sortKey": "01KGD7XQ2CVWZCF5S5EJEQ94AQ",
+              "tokens": [
+                {
+                  "t": "ref",
+                  "v": "global.comfort"
+                },
+                {
+                  "t": "op",
+                  "v": "<"
+                },
+                {
+                  "t": "val",
+                  "v": 0.5
+                }
+              ]
+            },
+            "preset": "panic"
+          },
+          {
+            "condition": {
+              "id": "heat_low",
+              "sortKey": "01KGD7XQ2C6SSX7V5EZYA3YSM8",
+              "tokens": [
+                {
+                  "t": "ref",
+                  "v": "global.heat"
+                },
+                {
+                  "t": "op",
+                  "v": "<"
+                },
+                {
+                  "t": "val",
+                  "v": 20
+                }
+              ]
+            },
+            "preset": "frozen"
+          }
+        ]
+      }
+    }
+  }
+}

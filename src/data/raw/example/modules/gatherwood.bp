@@ -1,0 +1,87 @@
+{
+  "id": "gatherwood",
+  "label": "",
+  "tags": [
+    "anim:spawn"
+  ],
+  "components": {
+    "display": {
+      "label": "gatherwood",
+      "display_key": "gatherwood",
+      "style": "wood"
+    },
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 100,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "body": {
+            "base": 66,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mind": {
+            "base": 33,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "production": [
+        {
+          "id": "TaGtCCWKuuO7WC7nYzQOF",
+          "resource": "wood",
+          "amount": {
+            "base": 30,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "target": "",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Gather Wood",
+        "icon": "gather_wood",
+        "glyphKey": "wood",
+        "description": "Produces [icon=wood]wood.\nGathering sticks in the forest.\nI can do all kinds of things with the wood.\nEspecially burn it in the hearth for warmth.\n",
+        "styleId": "wood",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "outside"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 1405.3441473570333,
+        "y": 1651.4024813493668,
+        "radius": {
+          "min": 60,
+          "max": 60
+        }
+      },
+      "unifiedBlueprints": [
+        {
+          "tag": "outside",
+          "spawnWhenPeerSpawns": false
+        }
+      ]
+    }
+  }
+}

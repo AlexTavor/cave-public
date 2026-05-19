@@ -1,0 +1,138 @@
+{
+  "id": "investigate_accountant_2",
+  "label": "",
+  "tags": [
+    "accountant",
+    "anim:spawn",
+    "anim:kill",
+    "investigate_accoutant_2"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 3000,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "mind": {
+            "base": 60,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 40,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "aL_tiFlzat3J4xvk-kJ5K",
+          "blueprintId": "newbody",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn_body",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [
+            "Woman",
+            "Shaman"
+          ],
+          "triggers": [
+            "cycle_complete",
+            "assignment_complete"
+          ],
+          "conditions": []
+        },
+        {
+          "id": "vISvAj-OCSJfTxJ_E7u1o",
+          "blueprintId": "lure_accountant",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Investigate Further",
+        "icon": "investigate_accountant",
+        "description": "There are more secrets to the accountant, I think.\n\nWhat is he doing when he's sneaking off to the woods?",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "investigate_accountant"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 4889.015311914759,
+        "y": 3399.1440128131676,
+        "radius": {
+          "min": 50,
+          "max": 50
+        }
+      },
+      "notifications": [
+        {
+          "title": "Shaman!",
+          "text": "I waited, and followed, and watched.\n\nThe accountant visited a hut deep in the forest.\n\nInside, I found a shaman. She mistook me for a spirit and followed me back to the cave.\n\nShe is the accountant's lover.\nHer body may be the easiest way to bring him to me.\n\nI am tempted to absorb her at once, to see the world as she does. ",
+          "imageUrl": null,
+          "id": "UWdxo6Jz90y_s400UiAMU"
+        }
+      ],
+      "conditionalActivation": {
+        "priority": 0,
+        "conditions": [
+          {
+            "id": "WXcAtNi7rQZ5yjJ-kTDPn",
+            "sortKey": "01KNKNAGGQPYZDZVX5M5R7YA2C",
+            "kind": "fact_threshold",
+            "scope": "run",
+            "factType": "cycle_completed",
+            "factAbout": "investigate_accountant_2",
+            "operator": "<",
+            "value": 1
+          }
+        ],
+        "targets": [
+          {
+            "ability": "cycle"
+          }
+        ],
+        "inactiveExplanation": "I have learned all I could about the accountant. I have all his secrets."
+      },
+      "unifiedBlueprints": [
+        {
+          "tag": "accountant",
+          "spawnWhenPeerSpawns": false
+        }
+      ]
+    }
+  }
+}

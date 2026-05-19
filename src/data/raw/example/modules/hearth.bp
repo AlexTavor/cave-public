@@ -1,0 +1,156 @@
+{
+  "id": "hearth",
+  "label": "",
+  "tags": [
+    "anim:spawn"
+  ],
+  "components": {
+    "display": {
+      "label": "hearth",
+      "display_key": "hearth",
+      "glyphKey": "hearth",
+      "style": "hearth"
+    },
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 40,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "body": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mind": {
+            "base": 80,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "storage": [
+        {
+          "resource": "wood",
+          "displayName": "",
+          "initialValue": 0,
+          "capacity": {
+            "base": 260,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": true,
+          "entropy": {
+            "base": 0,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "top_right",
+          "barColorHex": "#4caf50",
+          "barPaletteColorKey": "green",
+          "allowDeposit": true,
+          "allowWithdraw": false,
+          "priority": 0,
+          "autoRequest": {
+            "enabled": true,
+            "cadence_s": 1,
+            "minRequest": 1,
+            "maxRequest": 3
+          }
+        },
+        {
+          "resource": "heat",
+          "displayName": "Heat",
+          "initialValue": 0,
+          "capacity": {
+            "base": 280,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": true,
+          "entropy": {
+            "base": 0.2,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "bottom_left",
+          "barColorHex": "#f44336",
+          "barPaletteColorKey": "red",
+          "allowDeposit": false,
+          "allowWithdraw": true,
+          "priority": 0
+        }
+      ],
+      "conversion": [
+        {
+          "id": "Wood-to-Heat",
+          "inputs": [
+            {
+              "resource": "wood",
+              "amount": {
+                "base": 2,
+                "perBody": 0,
+                "multPerBody": 0
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "resource": "heat",
+              "amount": {
+                "base": 12,
+                "perBody": 0,
+                "multPerBody": 0
+              }
+            }
+          ],
+          "resetCycle": true,
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Hearth",
+        "icon": "hearth",
+        "glyphKey": "hearth",
+        "description": "My fireplace, where dead [icon=wood]wood becomes [icon=heat]heat.\n\nI like heat. My bodies are sluggish without it.\n",
+        "styleId": "hearth",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "inside"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 3203.317506328137,
+        "y": 1827.0521054868698,
+        "radius": {
+          "min": 60,
+          "max": 60
+        }
+      },
+      "unifiedBlueprints": [
+        {
+          "tag": "inside",
+          "spawnWhenPeerSpawns": false
+        }
+      ]
+    }
+  }
+}

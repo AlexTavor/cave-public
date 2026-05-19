@@ -1,0 +1,187 @@
+{
+  "id": "what_am_i",
+  "label": "",
+  "tags": [
+    "anim:spawn",
+    "anim:kill",
+    "understanding",
+    "what_am_i"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 3000,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "body": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mind": {
+            "base": 80,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "sERCIpa9fHkKismicapEF",
+          "blueprintId": "how_did_i_come_to_be",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        },
+        {
+          "id": "LQDHekFq_QLVMrCmh3RA0",
+          "blueprintId": "do_locals_know_of_me",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "What Am I?",
+        "icon": "what_am_I",
+        "description": "Am I my bodies? \nAm I a spirit?\nAm I a god?\n\nI need to explore myself. To experiment.\n\nTo understand.",
+        "nervousVein": true,
+        "permanent": true
+      },
+      "worldPresence": {
+        "x": 3213.409851968007,
+        "y": 1139.2426333236747,
+        "radius": {
+          "min": 75,
+          "max": 75
+        }
+      },
+      "triggeredActions": [
+        {
+          "id": "4ahAc7vysXkBg6e66qWgj",
+          "triggers": [
+            "cycle_complete",
+            "assignment_complete"
+          ],
+          "conditions": [],
+          "actions": [
+            {
+              "type": "GAIN_UNDERSTANDING",
+              "understandingId": "what_am_i"
+            }
+          ]
+        }
+      ],
+      "notifications": [
+        {
+          "title": "The more I know, the less I know",
+          "text": "I am not my bodies. They die, and I remain.\n\nWhen I absorb them, their memories become part of me. I can recall every detail of every life I have lived.\n\nYet without bodies, I remember nothing and feel nothing. Without them, I do not exist at all.\n\nNothing in those memories tells me what I am.\n\nNo one I have absorbed has ever known anything like me.\n\n[i]Permanent Upgrade [color=gold]More Than The Sum Of My Parts[/color][/i]  \n+10% [icon=xp]XP",
+          "imageUrl": null,
+          "id": "wb_tyupFvuVQ6YpQQCXPw"
+        }
+      ],
+      "conditionalActivation": [
+        {
+          "priority": 0,
+          "conditions": [
+            {
+              "id": "LB62PnPFWtKCeSoRRSYXw",
+              "sortKey": "01KNY1MMTWKQ1DFMD1D6697RSF",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "habitus_owned",
+              "factAbout": "Human",
+              "operator": ">=",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "triggeredActions",
+              "targetId": "BApQFwUtPbPiJJdswCmS9"
+            },
+            {
+              "ability": "cycle"
+            },
+            {
+              "ability": "spawner",
+              "targetId": "sERCIpa9fHkKismicapEF"
+            },
+            {
+              "ability": "spawner",
+              "targetId": "LQDHekFq_QLVMrCmh3RA0"
+            }
+          ],
+          "inactiveExplanation": "I don't know enough about myself to even attempt to answer.\n\nThere is something I can do with my bodies, something unique, that is the missing piece. I can feel it."
+        },
+        {
+          "priority": 1,
+          "conditions": [
+            {
+              "id": "lfKppsewCrYBCTslj3t5X",
+              "sortKey": "01KNY9X8Q3PK857MWS6MK4MMYX",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "understanding_owned",
+              "factAbout": "what_am_i",
+              "operator": "<",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "cycle"
+            },
+            {
+              "ability": "spawner",
+              "targetId": "sERCIpa9fHkKismicapEF"
+            },
+            {
+              "ability": "spawner",
+              "targetId": "LQDHekFq_QLVMrCmh3RA0"
+            },
+            {
+              "ability": "triggeredActions",
+              "targetId": "BApQFwUtPbPiJJdswCmS9"
+            }
+          ],
+          "inactiveExplanation": "I am not my bodies. They die, and I remain.\n\nWhen I absorb them, their memories become part of me. I can recall every detail of every life I have lived.\n\nYet without bodies, I remember nothing and feel nothing. Without them, I do not exist at all.\n\nNothing in those memories tells me what I am.\n\nNo one I have absorbed has ever known anything like me.\n"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "id": "sell_wood",
+  "label": "",
+  "tags": [
+    "sell_wood",
+    "anim:spawn",
+    "anim:kill",
+    "trading_post"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 500,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "body": {
+            "base": 10,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mind": {
+            "base": 30,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 60,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "storage": [
+        {
+          "resource": "wood",
+          "displayName": "",
+          "initialValue": 0,
+          "capacity": {
+            "base": 500,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": false,
+          "entropy": {
+            "base": 0,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "top_right",
+          "barColorHex": "#4caf50",
+          "barPaletteColorKey": "green",
+          "allowDeposit": true,
+          "allowWithdraw": false,
+          "priority": 0,
+          "autoRequest": {
+            "enabled": true,
+            "cadence_s": 1,
+            "minRequest": 1,
+            "maxRequest": 10
+          }
+        },
+        {
+          "resource": "coin",
+          "displayName": "",
+          "initialValue": 0,
+          "capacity": {
+            "base": 300,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": false,
+          "entropy": {
+            "base": 0.5,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "bottom_left",
+          "barColorHex": "#ff9800",
+          "barPaletteColorKey": "gold",
+          "allowDeposit": false,
+          "allowWithdraw": true,
+          "priority": 0
+        }
+      ],
+      "conversion": [
+        {
+          "id": "d2EUGSNpiGyF1iIvuehNW",
+          "inputs": [
+            {
+              "resource": "wood",
+              "amount": {
+                "base": 500,
+                "perBody": 0,
+                "multPerBody": 0
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "resource": "coin",
+              "amount": {
+                "base": 150,
+                "perBody": 0,
+                "multPerBody": 0
+              },
+              "target": "tag:storage:coin"
+            }
+          ],
+          "resetCycle": true,
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Wood Wholesaler",
+        "icon": "sell_wood",
+        "description": "This is where large quantities of lumber are bought and sold. Then the [icon=wood]wood is tied together in large rafts and floated downstream, towards the city.\n\n",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "trading_post_root"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 3526.8325102496487,
+        "y": 3259.9605546829393,
+        "radius": {
+          "min": 50,
+          "max": 50
+        }
+      }
+    }
+  }
+}

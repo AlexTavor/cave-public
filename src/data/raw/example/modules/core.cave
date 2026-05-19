@@ -1,0 +1,2548 @@
+{
+  "impulse": {
+    "globalDrag": 0.6,
+    "maxSubSteps": 8,
+    "defaultDtMs": 16,
+    "minWorldSize": 1,
+    "defaultQueryRadius": 160,
+    "separationRadiusMultiplier": 3,
+    "subSteps": 1,
+    "separationStrength": 20,
+    "avoidanceForce": 50,
+    "lookAheadDistance": 10,
+    "alignmentWeight": 0.25,
+    "cohesionWeight": 0.25,
+    "flockingRadius": 37,
+    "avoidanceDamp": 0.3,
+    "seekStrength": 900,
+    "transferNodeRadius": 20,
+    "transferNodeMass": 1,
+    "transferNodeDrag": 0.1,
+    "noise": {
+      "magnitude": 200,
+      "frequency": 25
+    }
+  },
+  "game_config": {
+    "purge": {
+      "maxProgress": 100,
+      "killIntervalSeconds": {
+        "min": 5,
+        "max": 10
+      },
+      "milestones": [
+        {
+          "id": "first warning",
+          "threshold": 0.25,
+          "messages": [
+            "The disappearances have not gone unnoticed. Agents of the Patriarchy started asking around.",
+            "Rumors of disappearing travelers spread."
+          ]
+        },
+        {
+          "id": "second warning",
+          "threshold": 0.5,
+          "messages": [
+            "A Patriarchy Inquisitor was seen in a nearby town."
+          ]
+        },
+        {
+          "id": "milestone-1773020823230",
+          "threshold": 0.75,
+          "messages": [
+            "There are rumors of a gathering Purge, and sightings of Patriarchy Mages."
+          ]
+        },
+        {
+          "id": "milestone-1773020919202",
+          "threshold": 0.9,
+          "messages": [
+            "A nearby village was razed by the Purge."
+          ]
+        },
+        {
+          "id": "milestone-1773020950467",
+          "threshold": 1,
+          "messages": [
+            "I am being hunted by the Purge. They'll kill all my bodies, one by one."
+          ]
+        }
+      ]
+    },
+    "susDisplays": [
+      {
+        "text": "Mildly Suspicious Activity",
+        "color": "#f2f896",
+        "threshold": 1
+      },
+      {
+        "text": "Suspicious Activity",
+        "color": "#ff9500",
+        "threshold": 10
+      },
+      {
+        "text": "Very Suspicious Activity",
+        "color": "#ff0000",
+        "threshold": 25
+      },
+      {
+        "text": "Extremely Suspicious Activity",
+        "color": "#d00101",
+        "threshold": 40
+      }
+    ],
+    "suspicionNotificationDisplays": [
+      {
+        "text": "None",
+        "color": "#f2f896",
+        "threshold": 0
+      },
+      {
+        "text": "Low",
+        "color": "#f9cc63",
+        "threshold": 0.1
+      },
+      {
+        "text": "Some",
+        "color": "#ffb347",
+        "threshold": 0.25
+      },
+      {
+        "text": "Moderate",
+        "color": "#ff9500",
+        "threshold": 0.4
+      },
+      {
+        "text": "High",
+        "color": "#ff5a36",
+        "threshold": 0.6
+      },
+      {
+        "text": "Extreme",
+        "color": "#ff0000",
+        "threshold": 0.8
+      },
+      {
+        "text": "Discovered",
+        "color": "#d00101",
+        "threshold": 1
+      }
+    ],
+    "caveDisplay": {
+      "eyes": {
+        "eyeTravel": 1.98,
+        "eyeDriftTravel": 0.31,
+        "eyeDriftStepX": 0.09,
+        "eyeDriftStepY": 0.12,
+        "pupilTravel": 0.45,
+        "minBlinkMs": 1500,
+        "maxBlinkMs": 4200
+      },
+      "fur": {
+        "sampleCount": 196,
+        "bodyRadiusScale": 0.92,
+        "hairStride": 2,
+        "midpointRatio": 0.58,
+        "baseOctaves": [
+          {
+            "frequency": 3,
+            "amplitudePx": 3
+          },
+          {
+            "frequency": 5,
+            "amplitudePx": 1.5
+          }
+        ],
+        "pulseOctaves": [
+          {
+            "frequency": 4,
+            "amplitudePx": 1.8,
+            "speedHz": 0.8
+          },
+          {
+            "frequency": 7,
+            "amplitudePx": 0.6,
+            "speedHz": 1.6
+          }
+        ],
+        "lengthPx": {
+          "base": 16,
+          "comfortWeight": -1,
+          "focusWeight": 3,
+          "happinessWeight": 0,
+          "sadnessWeight": 0,
+          "terrorWeight": 4,
+          "curiosityWeight": 2,
+          "min": 8,
+          "max": 28
+        },
+        "rootWidthPx": {
+          "base": 5,
+          "comfortWeight": 1,
+          "focusWeight": 0,
+          "happinessWeight": 0,
+          "sadnessWeight": 0,
+          "terrorWeight": 1,
+          "curiosityWeight": 0,
+          "min": 2,
+          "max": 7
+        },
+        "tipWidthPx": {
+          "base": 1.5,
+          "comfortWeight": 0,
+          "focusWeight": 0.2,
+          "happinessWeight": 0,
+          "sadnessWeight": 0,
+          "terrorWeight": 0,
+          "curiosityWeight": 0,
+          "min": 0.5,
+          "max": 3
+        },
+        "flareAngleRad": {
+          "base": 0.18,
+          "comfortWeight": 0,
+          "focusWeight": 0,
+          "happinessWeight": 0,
+          "sadnessWeight": 0,
+          "terrorWeight": 0.12,
+          "curiosityWeight": 0.18,
+          "min": 0,
+          "max": 0.5
+        },
+        "swayAngleRad": {
+          "base": 0.24,
+          "comfortWeight": 0.08,
+          "focusWeight": 0,
+          "happinessWeight": 0,
+          "sadnessWeight": -0.05,
+          "terrorWeight": 0.22,
+          "curiosityWeight": 0,
+          "min": 0,
+          "max": 0.7
+        },
+        "curlAngleRad": {
+          "base": 0.1,
+          "comfortWeight": 0,
+          "focusWeight": 0,
+          "happinessWeight": 0,
+          "sadnessWeight": 0.05,
+          "terrorWeight": 0,
+          "curiosityWeight": 0.16,
+          "min": 0,
+          "max": 0.4
+        },
+        "stiffness01": {
+          "base": 0.46,
+          "comfortWeight": 0.2,
+          "focusWeight": 0,
+          "happinessWeight": 0,
+          "sadnessWeight": 0,
+          "terrorWeight": -0.18,
+          "curiosityWeight": -0.08,
+          "min": 0,
+          "max": 1
+        },
+        "tremorPx": {
+          "base": 0.8,
+          "comfortWeight": 0,
+          "focusWeight": 0,
+          "happinessWeight": 0,
+          "sadnessWeight": 0.5,
+          "terrorWeight": 2.2,
+          "curiosityWeight": 0,
+          "min": 0,
+          "max": 4
+        },
+        "motionHz": {
+          "base": 0.7,
+          "comfortWeight": 0,
+          "focusWeight": 0,
+          "happinessWeight": 0,
+          "sadnessWeight": 0,
+          "terrorWeight": 1.2,
+          "curiosityWeight": 0.8,
+          "min": 0.1,
+          "max": 3
+        },
+        "pulseLengthScale": {
+          "base": 0.22,
+          "comfortWeight": 0,
+          "focusWeight": 0.2,
+          "happinessWeight": 0,
+          "sadnessWeight": 0,
+          "terrorWeight": 0.35,
+          "curiosityWeight": 0,
+          "min": 0,
+          "max": 1
+        },
+        "pulseAngleRad": {
+          "base": 0.08,
+          "comfortWeight": 0,
+          "focusWeight": 0,
+          "happinessWeight": 0,
+          "sadnessWeight": 0,
+          "terrorWeight": 0.2,
+          "curiosityWeight": 0.08,
+          "min": 0,
+          "max": 0.5
+        },
+        "attentionBias01": {
+          "base": 0.1,
+          "comfortWeight": 0,
+          "focusWeight": 0.005,
+          "happinessWeight": 0,
+          "sadnessWeight": 0,
+          "terrorWeight": 0,
+          "curiosityWeight": 0.1,
+          "min": 0,
+          "max": 1
+        }
+      }
+    },
+    "world": {
+      "width": 10000,
+      "height": 10000
+    },
+    "camera": {
+      "zoom": {
+        "min": 0.1,
+        "max": 4,
+        "start": 0.3,
+        "scrollFactor": 0.1
+      },
+      "pan": {
+        "damping": 0.1,
+        "focusLerpMs": 500,
+        "boundsPadding": 1000,
+        "dragThreshold": 5
+      }
+    },
+    "menuAmbient": {
+      "entityCount": 72,
+      "minSpeedPxPerSecond": 5,
+      "maxSpeedPxPerSecond": 300,
+      "speedCurve": "inExpo",
+      "retargetIntervalMsMin": 1800,
+      "retargetIntervalMsMax": 5200
+    },
+    "faceBlueprintByAttribute": {
+      "body": "face_body",
+      "mind": "face_mind",
+      "social": "face_social"
+    }
+  },
+  "conditions": [
+    {
+      "id": "game_started",
+      "label": "Game Started",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "UcdyBpNmglEqw_mUmrTYw",
+          "sortKey": "01KMJYD4G44QHGTN9RBQS2N4SX",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "elapsed_game_seconds",
+          "factAbout": "world",
+          "operator": ">=",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "self_unselected",
+      "label": "Self Unselected",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "NFGkzuwbVeDH1wLtJ1EMo",
+          "sortKey": "01KMK133MKSNHZZ8TN0MYRG8ZV",
+          "kind": "user_interaction",
+          "interaction": "self_unselected"
+        }
+      ]
+    },
+    {
+      "id": "self_selected",
+      "label": "Self Selected",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "6c1l5oc6MgqN59vBkamF5",
+          "sortKey": "01KMK7QWJJ7FE9M33RMSJJ78FY",
+          "kind": "user_interaction",
+          "interaction": "self_selected"
+        }
+      ]
+    },
+    {
+      "id": "draft_open",
+      "label": "New Condition",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "VfhseFCeTePDAfXfIcurA",
+          "sortKey": "01KMKXVN98C6XHA9C4TMESWBDZ",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "draft_opened",
+          "factAbout": "pool_explore",
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "draft_completed",
+      "label": "Draft Selected",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "fdRXYzkZumjoEbQ1evOLM",
+          "sortKey": "01KMKXXV16N1TBMWTT3315SZCQ",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "draft_completed",
+          "factAbout": "foraging_option",
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "intro_1_completed",
+      "label": "Intro 1 Tut Complete",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "fNr7FM86ZjrdDfoyLGHJB",
+          "sortKey": "01KMNK82GMPAQ1N1YTS3MK0PFG",
+          "kind": "fact_threshold",
+          "scope": "permanent",
+          "factType": "tutorial_completed",
+          "factAbout": "intro_1",
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "active_bodies_present",
+      "label": "New Condition",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "3sNgbODYprE21alyKXdg-",
+          "sortKey": "01KMNNJF5357JQSH7FRRDK7Y71",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "active_bodies",
+          "factAbout": "world",
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "egg_0_tut_complete",
+      "label": "Egg 0 tut complete",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "bHq-Hlxu1lF2Wu_edvLCX",
+          "sortKey": "01KMT25P8KV7ZDCT31JPFNAHYN",
+          "kind": "fact_threshold",
+          "scope": "permanent",
+          "factType": "tutorial_completed",
+          "factAbout": "egg_tut",
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "throttled_up",
+      "label": "New Condition",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "2gpkxZ5mwx_JXE4W8Je77",
+          "sortKey": "01KMT27A6W8Q1D78FZWJ4CWVJ6",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "throttle_level",
+          "factAbout": "self",
+          "operator": ">=",
+          "value": 0.9
+        }
+      ]
+    },
+    {
+      "id": "explore_exists",
+      "label": "Explore Exists",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "W1bdI3ER4bTtRL7zkJD6P",
+          "sortKey": "01KMTBNDPNB6H22BFBPQC1C2RR",
+          "kind": "entity_tag_present",
+          "tag": "cave_exploration"
+        }
+      ]
+    },
+    {
+      "id": "foraging_exists",
+      "label": "Foraging Exists",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "IO-q4k6sSxXSpVS9-wFkz",
+          "sortKey": "01KMTKPNVPE8FVV696CDABYRKF",
+          "kind": "entity_tag_present",
+          "tag": "foraging"
+        }
+      ]
+    },
+    {
+      "id": "throttle_a_bit",
+      "label": "New Condition",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "XHQgvwB1D06VP-GwQteUc",
+          "sortKey": "01KMTKSN4Y9QXK2FNDHWT6W1HF",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "throttle_level",
+          "factAbout": "self",
+          "operator": ">=",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "can_absorb_safely",
+      "label": "Absorption Exists",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "gc9Zkzhxl-VDZvmnjE9MN",
+          "sortKey": "01KMZGS4PWV514GY81HDWDE31T",
+          "kind": "entity_tag_present",
+          "tag": "absorption"
+        },
+        {
+          "id": "r6NmNlvLcRF0D-Fhacl8w",
+          "sortKey": "01KMZGSFTXTJ2D7HG9CQD776RV",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "active_bodies",
+          "factAbout": "world",
+          "operator": ">=",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "select_bodies_open",
+      "label": "Select Bodies Open",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "n77Ao4cvCXagyCfSKxJCd",
+          "sortKey": "01KN0E5Q20Q4XGBFPGJP7ASRFT",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "body_selector_open",
+          "factAbout": "world",
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "processing_ongoing",
+      "label": "New Condition",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "V8KVspte-Qvw5F7RCPSTe",
+          "sortKey": "01KN0FMWAC6DYDY1PM5C5CCH2J",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "processing_ongoing",
+          "factAbout": "world",
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "hommlet_spawned",
+      "label": "Hommlet Spawned",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "rmPl2uif8gEX2teQUqdjE",
+          "sortKey": "01KN9N77SSC5V12XNHDH1QM4RC",
+          "kind": "entity_tag_present",
+          "tag": "hommlet_root"
+        }
+      ]
+    },
+    {
+      "id": "hommleter_not_owned",
+      "label": "Hommleter Not Owned",
+      "selfDefinition": {
+        "kind": "entity_id",
+        "entityId": "sys_world"
+      },
+      "conditions": [
+        {
+          "id": "3GmRjoGVlSNJU7Fm2h_GM",
+          "sortKey": "01KNCCZSGX4JK8VQKRMFNB0MS8",
+          "kind": "fact_threshold",
+          "scope": "permanent",
+          "factType": "habitus_owned",
+          "factAbout": "Hommleter",
+          "operator": "<",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "merchant_not_owned",
+      "label": "Merchant Not Owned",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "YXl0KPRmOJbieEC7C8hae",
+          "sortKey": "01KNEXQB60ZA5A6Y06SF56678Y",
+          "kind": "fact_threshold",
+          "scope": "permanent",
+          "factType": "habitus_owned",
+          "factAbout": "Merchant",
+          "operator": "<",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "trading_post_spawned",
+      "label": "Trading Post Spawned",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "GPPPCpFLSZjdj7xXx6isr",
+          "sortKey": "01KNG6RFA8P0QAGSDN2ZJCYBGE",
+          "kind": "entity_tag_present",
+          "tag": "trading_post"
+        }
+      ]
+    },
+    {
+      "id": "accountant_not_owned",
+      "label": "Accountant Not Owned",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "6UXhJlMVtQKsikbUHQ0VQ",
+          "sortKey": "01KNMN2D8PKX1RZWJXHC5E0MDH",
+          "kind": "fact_threshold",
+          "scope": "permanent",
+          "factType": "habitus_owned",
+          "factAbout": "Accountant",
+          "operator": "<",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "out_of_food",
+      "label": "Out of Food",
+      "selfDefinition": {
+        "kind": "entity_id",
+        "entityId": "sys_world"
+      },
+      "conditions": [
+        {
+          "id": "xgQ0xXHZ2b1jQQMLO_z2M",
+          "sortKey": "01KNS117KAH1KXB9YJP24MXZ3Y",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "cave_status",
+          "factAbout": "food",
+          "operator": "<=",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "id": "out_of_heat",
+      "label": "Out Of Heat",
+      "selfDefinition": {
+        "kind": "entity_id",
+        "entityId": "sys_world"
+      },
+      "conditions": [
+        {
+          "id": "Irv9cYPuekyWXg-o7dQsu",
+          "sortKey": "01KNS3QJPWYSF87TPQWZ9JGBXX",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "cave_status",
+          "factAbout": "heat",
+          "operator": "<=",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "id": "purge_started",
+      "label": "Purge Started",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "BPpGpt3-3BJcwxgvi9Jpv",
+          "sortKey": "01KNS3S8YPQC5WJPBWBN7SGHQX",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "purge_began",
+          "factAbout": "world",
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "3_bodies",
+      "label": "3 Bodies",
+      "selfDefinition": {
+        "kind": "entity_id",
+        "entityId": "sys_world"
+      },
+      "conditions": [
+        {
+          "id": "kkh-t81BWJm_Q0nFxYOLU",
+          "sortKey": "01KNS3TA67EE85QZM9ZEZ1R4E4",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "active_bodies",
+          "factAbout": "world",
+          "operator": ">=",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": "30_seconds_in",
+      "label": "30 Seconds In",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "Q6s857lu0IkBIggQ4Dfis",
+          "sortKey": "01KNS5B7FMCM6PBT1YTK1XR945",
+          "kind": "fact_threshold",
+          "scope": "run",
+          "factType": "elapsed_game_seconds",
+          "factAbout": "world",
+          "operator": ">=",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "id": "what_am_i_not_spawned",
+      "label": "New Condition",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "i8Ib1HhpsdQONsQcmxTkX",
+          "sortKey": "01KNWJ3SQ71WDNCAN6J6N8Q4CS",
+          "kind": "fact_threshold",
+          "scope": "permanent",
+          "factType": "blueprint_spawned",
+          "factAbout": "what_am_i",
+          "operator": "<",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "last_body",
+      "label": "Last Body",
+      "selfDefinition": {
+        "kind": "spawned_with_tag",
+        "tag": "killer"
+      },
+      "conditions": [
+        {
+          "id": "Cm9mh9txRmSP0M_NMJPkH",
+          "sortKey": "01KPP1VG1JFYFT136DCBPWNDPJ",
+          "kind": "destructive_assignment_has_all_bodies"
+        }
+      ]
+    },
+    {
+      "id": "body_assigned",
+      "label": "Body Assigned",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "Huq8wfb2HWohYFlm5b9TS",
+          "sortKey": "01KPP4P046D6WT9X6KE3W08APB",
+          "kind": "bodies_assigned"
+        }
+      ]
+    },
+    {
+      "id": "tut_complete_complete",
+      "label": "New Condition",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "E8cMzb3QtzCf4MdSomuPl",
+          "sortKey": "01KPP511ASVJAPM011QE3HBSX6",
+          "kind": "fact_threshold",
+          "scope": "permanent",
+          "factType": "tutorial_completed",
+          "factAbout": "tut_complete",
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "body_in_pointer",
+      "label": "New Condition",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "X_VGqZKN2w-s5pwcwo6UE",
+          "sortKey": "01KPP6BK77GVMBBVZ68APQH3BC",
+          "kind": "body_in_pointer"
+        }
+      ]
+    },
+    {
+      "id": "pick_up_body_complete",
+      "label": "New Condition",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "zqmzOmf-awK9Zwkdizu3u",
+          "sortKey": "01KPP6FV8PR5645YB261Y787XZ",
+          "kind": "fact_threshold",
+          "scope": "permanent",
+          "factType": "tutorial_completed",
+          "factAbout": "pick_up_body",
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "absorption_0_tut_complete",
+      "label": "New Condition",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "0HNjKctJ5pN7Zwr6gV2ay",
+          "sortKey": "01KPP8MEKP5SBKYZSRWF5Q8F71",
+          "kind": "fact_threshold",
+          "scope": "permanent",
+          "factType": "tutorial_completed",
+          "factAbout": "absorption_tut_0",
+          "operator": ">=",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "orbiting_carriers",
+      "label": "New Condition",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "5PgbP9N4h6USdcX7THIVK",
+          "sortKey": "01KPPAJTBWKQHMKDAHTQRJWG9N",
+          "kind": "carriers_orbiting"
+        }
+      ]
+    },
+    {
+      "id": "run_2",
+      "label": "New Condition",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "conditions": [
+        {
+          "id": "2r3E7c98Une-lWTybYfBX",
+          "sortKey": "01KPZBCP8PRJHMZCF27S2R14RP",
+          "kind": "fact_threshold",
+          "scope": "permanent",
+          "factType": "run_number",
+          "factAbout": "world",
+          "operator": ">=",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "guidances": [
+    {
+      "id": "ongoing_suspicion",
+      "attention": [],
+      "imageUrl": null,
+      "presentation": "modal",
+      "title": "Suspicion",
+      "text": "Suspicion tracks how close the Patriarchy is to finding you. Rising Suspicion means the Purge is getting closer."
+    },
+    {
+      "id": "ongoing_survival_spiral",
+      "attention": [],
+      "imageUrl": null,
+      "presentation": "modal",
+      "title": "Bodies At Risk",
+      "text": "First take care of [icon=food]Food - starving bodies take damage over time and will eventually die.\n\nInsufficient [icon=heat]Heat makes bodies cold. Cold bodies output half [icon=attr_body]Body power, making it harder to get out of the spiral.\n\nWhen there is not enough [icon=heat]Heat or [icon=food]Food in Cave, the [icon=attr_body]Body, [icon=attr_mind]Mind, and [icon=attr_social]Social bonuses it provides to bodies drop proportionally.\n\nIf you can't get out of the spiral, shut down everything unnecessary for immediate survival.\n\nFirst make sure your bodies are not starving.\n\nThen divert all power to Hearth until they're not cold."
+    },
+    {
+      "id": "ongoing_purge_active",
+      "attention": [],
+      "imageUrl": null,
+      "presentation": "modal",
+      "title": "The Purge",
+      "text": "The Purge is underway. \n\nIt would be a good time to absorb your bodies.\n\nThey will be hunted down, one by one, until none remain. \n\nAnd then you will sleep."
+    },
+    {
+      "id": "node_callout",
+      "attention": [
+        "stop_time",
+        "hide_time_controls",
+        "hide_notifications",
+        "hide_all_but_self",
+        "show_attention_effect_on_self"
+      ],
+      "imageUrl": null,
+      "presentation": "node_callout",
+      "target": {
+        "kind": "entity_id",
+        "entityId": "sys_world"
+      },
+      "slot": "top",
+      "text": "Top Callout Test"
+    },
+    {
+      "id": "draft",
+      "attention": [
+        "hide_time_controls"
+      ],
+      "presentation": "draft_guidance",
+      "targetOptionId": "foraging_option"
+    },
+    {
+      "id": "draft_comment",
+      "attention": [],
+      "imageUrl": null,
+      "presentation": "screen_callout",
+      "text": "For the tutorial, only Foraging is enabled.",
+      "screenSlot": "bottom_right"
+    },
+    {
+      "id": "node_bottom_callout",
+      "attention": [],
+      "imageUrl": null,
+      "presentation": "node_callout",
+      "target": {
+        "kind": "entity_id",
+        "entityId": "sys_world"
+      },
+      "slot": "bottom",
+      "text": "Node bottom callout"
+    },
+    {
+      "id": "screen_top_left",
+      "attention": [],
+      "imageUrl": null,
+      "presentation": "screen_callout",
+      "text": "Describe this guidance.",
+      "screenSlot": "top_left"
+    },
+    {
+      "id": "modal",
+      "attention": [
+        "stop_time",
+        "hide_time_controls",
+        "hide_notifications"
+      ],
+      "imageUrl": null,
+      "presentation": "modal",
+      "title": "",
+      "text": "Describe this guidance."
+    },
+    {
+      "id": "screen_bottom_left",
+      "attention": [],
+      "imageUrl": null,
+      "presentation": "screen_callout",
+      "text": "The important notifications can be found here.\n\nClick on a temporary one to dismiss it.\n",
+      "screenSlot": "bottom_left"
+    },
+    {
+      "id": "screen_bottom_right",
+      "attention": [],
+      "imageUrl": null,
+      "presentation": "screen_callout",
+      "text": "The time control are here.\n\nYou can pause/resume game and change time scale here.\n",
+      "screenSlot": "bottom_right"
+    },
+    {
+      "id": "pause_modal",
+      "attention": [
+        "stop_time"
+      ],
+      "imageUrl": null,
+      "presentation": "modal",
+      "title": "",
+      "text": "The game autosaves every 5 seconds.\n\nThere are also save/load buttons in the menu."
+    },
+    {
+      "id": "node_callout_no_pause",
+      "attention": [],
+      "imageUrl": null,
+      "presentation": "node_callout",
+      "target": {
+        "kind": "entity_id",
+        "entityId": "sys_world"
+      },
+      "slot": "top",
+      "text": "Text"
+    },
+    {
+      "id": "orbiting_carriers",
+      "attention": [
+        "stop_time",
+        "hide_time_controls",
+        "hide_notifications"
+      ],
+      "imageUrl": "tutorials/orbiting_habiti.png",
+      "presentation": "modal",
+      "title": "Unclaimed Habiti",
+      "text": "These white orbs circling Cave are unclaimed lifetime experiences.\n\nTap them to internalize the Habiti.\n\nInternalized lifetime experiences make Cave stronger, and remain between runs.\n\nCollecting them is one of the main ways for Cave to grow."
+    }
+  ],
+  "tutorials": [
+    {
+      "id": "intro_0",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "enterConditionIds": [
+        "game_started"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "node_callout",
+          "textOverride": "Welcome!\n\nSelect Cave to proceed"
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": [
+        "self_selected"
+      ]
+    },
+    {
+      "id": "draft_tut",
+      "selfDefinition": {
+        "kind": "entity_id",
+        "entityId": "sys_world"
+      },
+      "enterConditionIds": [
+        "draft_open"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "draft"
+        },
+        {
+          "guidanceId": "draft_comment"
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": [
+        "draft_completed"
+      ]
+    },
+    {
+      "id": "intro_1",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "enterConditionIds": [
+        "self_selected"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "node_callout",
+          "textOverride": "This is Cave - the protagonist of this story.\n\nCave's attributes - [icon=attr_body]Body, [icon=attr_mind]Mind, [icon=attr_social]Social - are added to those of each of Cave's bodies. \n\nCave stores [icon=heat]Heat and [icon=food]Food - the more, the bigger bodies' bonus.\n\n"
+        },
+        {
+          "guidanceId": "node_bottom_callout",
+          "textOverride": "Click outside Cave to continue"
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": [
+        "self_unselected"
+      ]
+    },
+    {
+      "id": "explore_tut_0",
+      "selfDefinition": {
+        "kind": "spawned_with_tag",
+        "tag": "cave_exploration"
+      },
+      "enterConditionIds": [
+        "explore_exists"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "node_callout_no_pause",
+          "textOverride": "This is the [icon=explore]Explore task.\n\nWhen it is fully powered, it will unlock the next part of the game.\n\nEach next [icon=explore]Explore [icon=activity]cycle costs more than the last."
+        },
+        {
+          "guidanceId": "node_bottom_callout",
+          "textOverride": "Assign the body here"
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": [
+        "body_assigned"
+      ]
+    },
+    {
+      "id": "absorption_tut_0",
+      "selfDefinition": {
+        "kind": "spawned_with_tag",
+        "tag": "absorption"
+      },
+      "enterConditionIds": [
+        "can_absorb_safely"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "node_callout",
+          "textOverride": "I am ready to grow.\nNeed to absorb my bodies for that."
+        },
+        {
+          "guidanceId": "node_bottom_callout",
+          "textOverride": "Select the Still Pool to continue."
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": [
+        "self_selected"
+      ]
+    },
+    {
+      "id": "absorption_tut_1",
+      "selfDefinition": {
+        "kind": "spawned_with_tag",
+        "tag": "absorption"
+      },
+      "enterConditionIds": [
+        "absorption_0_tut_complete"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "node_callout_no_pause",
+          "textOverride": "Assign a body here,\n\nOr click Select Bodies"
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": [
+        "body_assigned"
+      ]
+    },
+    {
+      "id": "absorption_tut_2",
+      "selfDefinition": {
+        "kind": "spawned_with_tag",
+        "tag": "absorption"
+      },
+      "enterConditionIds": [
+        "select_bodies_open"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "screen_top_left",
+          "textOverride": "Select the bodies you wish to absorb.\n\nThey will be destroyed, but strengthen Cave permanently in doing so.\n\nTheir Lifetime Experiences (Habiti) will become Cave's."
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": [
+        "processing_ongoing"
+      ]
+    },
+    {
+      "id": "out_of_food_tut",
+      "selfDefinition": {
+        "kind": "entity_id",
+        "entityId": "sys_world"
+      },
+      "enterConditionIds": [
+        "out_of_food"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "modal",
+          "titleOverride": "Starvation!",
+          "textOverride": "Your bodies are out of [icon=food]food!\n\nHungry bodies take damage over time, and will eventually starve to death.\n\nYou should feed them, or use them up."
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": []
+    },
+    {
+      "id": "out_of_heat_tut",
+      "selfDefinition": {
+        "kind": "entity_id",
+        "entityId": "sys_world"
+      },
+      "enterConditionIds": [
+        "out_of_heat"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "modal",
+          "textOverride": "Your bodies are cold!\n\nCold bodies output only 50% [icon=attr_body]Body power. A cold Cave's comfort is also low, further reducing the effectiveness of bodies.\n\nTo restore Cave [icon=heat]heat, you might have to assign all your bodies to [icon=heat]heat production."
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": []
+    },
+    {
+      "id": "purge_tutorial",
+      "selfDefinition": {
+        "kind": "entity_id",
+        "entityId": "sys_world"
+      },
+      "enterConditionIds": [
+        "purge_started"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "modal",
+          "titleOverride": "The Purge has found you!",
+          "textOverride": "The Patriarchy's magic monopoly enforcers have learned of your existence.\n\nThey will kill your bodies, one by one. \n\nThey are unstoppable.\n\nIt would be a good idea to absorb the bodies before the Purge gets to them."
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": []
+    },
+    {
+      "id": "3_bodies",
+      "selfDefinition": {
+        "kind": "entity_id",
+        "entityId": "sys_world"
+      },
+      "enterConditionIds": [
+        "3_bodies"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "modal",
+          "textOverride": "Each body consumes [icon=heat]Heat and [icon=food]Food, and contributes [icon=attr_body]Body, [icon=attr_mind]Mind, and [icon=attr_social]Social power.\n\nTaking in too many bodies too quickly, without preparation, can send you into a cold or starvation spiral.\n\nLuring new bodies also draws the attention of the Purge.\n\nBe careful..."
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": []
+    },
+    {
+      "id": "last_body",
+      "selfDefinition": {
+        "kind": "spawned_with_tag",
+        "tag": "killer"
+      },
+      "enterConditionIds": [
+        "last_body"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "pause_modal",
+          "titleOverride": "All Bodies Assigned!",
+          "textOverride": "You have assigned all your bodies to a destructive task.\n\nWhen the assigned bodies will finish the task, they will die.\n\nCave will lie dormant, until another body stumbles in, and a new run begins.\n\nUnassign a body if that is not your intention."
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": []
+    },
+    {
+      "id": "tut_complete",
+      "selfDefinition": {
+        "kind": "spawned_with_tag",
+        "tag": "foraging"
+      },
+      "enterConditionIds": [
+        "foraging_exists"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "pause_modal",
+          "titleOverride": "Tutorial Zone Complete",
+          "textOverride": "You have completed the tutorial zone!\n\nFrom now on, your Cave’s [icon=heat]Heat and [icon=food]Food can fall below 50%.\n\nAs these levels drop, your bodies become less efficient.\n\nIf either one reaches 0, your bodies will become cold and/or hungry.\n\nTry to prevent that—bodies can starve to death.\n\nGood luck!"
+        }
+      ],
+      "onComplete": [
+        {
+          "type": "MUTATE",
+          "target": "sys_world.state.tutorial_mode",
+          "op": "SET",
+          "value": 0
+        }
+      ],
+      "exitConditionIds": []
+    },
+    {
+      "id": "assign_body_to_forage",
+      "selfDefinition": {
+        "kind": "spawned_with_tag",
+        "tag": "foraging"
+      },
+      "enterConditionIds": [
+        "foraging_exists",
+        "tut_complete_complete"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "node_callout_no_pause",
+          "textOverride": "Assign a body here\n\nCave likes it when there's a bit of food stashed away"
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": [
+        "body_assigned"
+      ]
+    },
+    {
+      "id": "pick_up_body",
+      "selfDefinition": {
+        "kind": "spawned_with_tag",
+        "tag": "body"
+      },
+      "enterConditionIds": [
+        "intro_1_completed"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "node_callout_no_pause",
+          "textOverride": "Right-click on or near a body to pick it up"
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": [
+        "body_in_pointer"
+      ]
+    },
+    {
+      "id": "drop_body",
+      "selfDefinition": {
+        "kind": "spawned_with_tag",
+        "tag": "egg"
+      },
+      "enterConditionIds": [
+        "pick_up_body_complete",
+        "body_in_pointer"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "node_callout_no_pause",
+          "textOverride": "This is the Egg.\n\nAssign the body here by left-clicking near the [icon=egg]egg while holding a body."
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": [
+        "body_assigned"
+      ]
+    },
+    {
+      "id": "habiti",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "enterConditionIds": [
+        "orbiting_carriers"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "orbiting_carriers"
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": []
+    },
+    {
+      "id": "dormancy",
+      "selfDefinition": {
+        "kind": "auto"
+      },
+      "enterConditionIds": [
+        "run_2"
+      ],
+      "guidances": [
+        {
+          "guidanceId": "pause_modal",
+          "titleOverride": "Wakefulness Cycles",
+          "textOverride": "This is not the end, nor the beginning.\n\nCave slept, and woke up again.\n\nYears passed, and the world continued.\n\nThe Habiti and Understandings you have gained are still with you.\n\nThis is how Cave grows - learn, absorb, then sleep, and wake up again, stronger."
+        }
+      ],
+      "onComplete": [],
+      "exitConditionIds": []
+    }
+  ],
+  "knowledge": [],
+  "body": {
+    "habitusTypeRules": [
+      {
+        "habitusType": "species",
+        "probability": 1,
+        "maxCount": 1,
+        "weightedPool": [
+          {
+            "habitusId": "Human",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "habitusType": "gender",
+        "probability": 1,
+        "maxCount": 1,
+        "weightedPool": [
+          {
+            "habitusId": "Man",
+            "weight": 1
+          },
+          {
+            "habitusId": "Woman",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "habitusType": "profession",
+        "probability": 0.75,
+        "maxCount": 1,
+        "weightedPool": [
+          {
+            "habitusId": "Peddler",
+            "weight": 40
+          },
+          {
+            "habitusId": "Peasant",
+            "weight": 200
+          },
+          {
+            "habitusId": "Beggar",
+            "weight": 80
+          },
+          {
+            "habitusId": "Carnie",
+            "weight": 10
+          },
+          {
+            "habitusId": "Cook",
+            "weight": 60
+          },
+          {
+            "habitusId": "Craftsman",
+            "weight": 100
+          },
+          {
+            "habitusId": "Criminal",
+            "weight": 80
+          },
+          {
+            "habitusId": "Herder",
+            "weight": 40
+          },
+          {
+            "habitusId": "Lumberjack",
+            "weight": 40
+          },
+          {
+            "habitusId": "Monk",
+            "weight": 40
+          },
+          {
+            "habitusId": "Nomad",
+            "weight": 40
+          },
+          {
+            "habitusId": "Noble",
+            "weight": 20
+          },
+          {
+            "habitusId": "Slave",
+            "weight": 10
+          },
+          {
+            "habitusId": "Artist",
+            "weight": 40
+          },
+          {
+            "habitusId": "Prostitute",
+            "weight": 10
+          }
+        ]
+      },
+      {
+        "habitusType": "sexual_preference",
+        "probability": 1,
+        "maxCount": 1,
+        "weightedPool": [
+          {
+            "habitusId": "Asexual",
+            "weight": 3
+          },
+          {
+            "habitusId": "Eunuch",
+            "weight": 1
+          },
+          {
+            "habitusId": "Homosexual",
+            "weight": 5
+          },
+          {
+            "habitusId": "Transgender",
+            "weight": 2
+          },
+          {
+            "habitusId": "Heterosexual",
+            "weight": 100
+          }
+        ]
+      },
+      {
+        "habitusType": "unique_body",
+        "probability": 0.3,
+        "maxCount": 1,
+        "weightedPool": [
+          {
+            "habitusId": "Blind",
+            "weight": 2
+          },
+          {
+            "habitusId": "Cripple",
+            "weight": 10
+          },
+          {
+            "habitusId": "Elder",
+            "weight": 50
+          },
+          {
+            "habitusId": "Genius",
+            "weight": 2
+          },
+          {
+            "habitusId": "Savant",
+            "weight": 5
+          },
+          {
+            "habitusId": "Sociopath",
+            "weight": 10
+          },
+          {
+            "habitusId": "Beautiful",
+            "weight": 5
+          },
+          {
+            "habitusId": "Hideous",
+            "weight": 2
+          },
+          {
+            "habitusId": "Mother",
+            "weight": 100
+          }
+        ]
+      }
+    ]
+  },
+  "carrier": {
+    "displayId": "carrier",
+    "radius": 30
+  },
+  "world": {},
+  "traits": {
+    "starving": {
+      "id": "starving",
+      "label": "Starving",
+      "description": "no food",
+      "cycles": [
+        {
+          "id": "starvation_damage",
+          "periodSeconds": 3,
+          "effects": [
+            {
+              "op": "SUB",
+              "target": "self.body.health",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    "cold": {
+      "id": "cold",
+      "label": "Cold",
+      "description": "no heat",
+      "modifiers": [
+        {
+          "op": "MULT",
+          "target": "self.body.attributes.body",
+          "value": 0.5
+        }
+      ]
+    },
+    "healing": {
+      "id": "healing",
+      "label": "Healing",
+      "description": "natural",
+      "cycles": [
+        {
+          "id": "healing-effect-cycle",
+          "periodSeconds": 5,
+          "effects": [
+            {
+              "op": "ADD",
+              "target": "self.body.health",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "habiti": {
+    "Human": {
+      "id": "Human",
+      "label": "Human",
+      "description": "The core lifetime experience shared by all people. \nThis is what being human feels like.",
+      "summary": "",
+      "type": "species",
+      "effects": [
+        {
+          "type": "add_absorption_xp_conversion",
+          "amount": 0.05,
+          "description": "+5% [icon=xp]XP"
+        }
+      ],
+      "excludes": []
+    },
+    "Woman": {
+      "id": "Woman",
+      "label": "Woman",
+      "description": "A life lived as a woman - the gender Patriarchy considers subservient. \nExpected by society to submit, to be quiet, to serve. \nTo hide your strength.",
+      "summary": "",
+      "type": "gender",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 1,
+          "description": "+1 [icon=attr_social]Social"
+        }
+      ],
+      "excludes": []
+    },
+    "Man": {
+      "id": "Man",
+      "label": "Man",
+      "description": "The lifetime experience of being a man in the Patriarchy. The officially dominant gender. \nA lifetime of faking strength, of hiding vulnerability.\nOf fearing you are not man enough.",
+      "summary": "",
+      "type": "gender",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 1,
+          "description": "+1 [icon=attr_body]Body"
+        }
+      ],
+      "excludes": []
+    },
+    "Peasant": {
+      "id": "Peasant",
+      "label": "Peasant",
+      "description": "A life spent working the land. \nWaking up at dawn, and working until dusk in the summer.  \nOf praying that the harvest will last. \nOf winters spent huddled, hoping for spring.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 1,
+          "description": "+1 [icon=attr_body]Body"
+        }
+      ],
+      "excludes": []
+    },
+    "Craftsman": {
+      "id": "Craftsman",
+      "label": "Craftsman",
+      "description": "The lifetime of dedicating yourself to a craft. \nA life spent practicing, improving, learning the trade.\nOf narrowing your world to a single thing, and doing it well. ",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 1,
+          "description": "+1 [icon=attr_mind]Mind"
+        }
+      ],
+      "excludes": []
+    },
+    "Criminal": {
+      "id": "Criminal",
+      "label": "Criminal",
+      "description": "The lifetime experience of being a part of the criminal underworld.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 1,
+          "description": "+1 [icon=attr_body]Body"
+        }
+      ],
+      "excludes": []
+    },
+    "Beggar": {
+      "id": "Beggar",
+      "label": "Beggar",
+      "description": "The lifetime experience of being a homeless beggar.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 1,
+          "description": "+1 [icon=attr_social]Social"
+        }
+      ],
+      "excludes": []
+    },
+    "Monk": {
+      "id": "Monk",
+      "label": "Monk",
+      "description": "The experience of a lifetime spent in the cloister.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 1,
+          "description": "+1 [icon=attr_mind]Mind"
+        }
+      ],
+      "excludes": []
+    },
+    "Nomad": {
+      "id": "Nomad",
+      "label": "Nomad",
+      "description": "A lifetime spent on the move.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 1,
+          "description": "+1 [icon=attr_body]Body"
+        },
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 1,
+          "description": "+1 [icon=attr_mind]Mind"
+        }
+      ],
+      "excludes": []
+    },
+    "Herder": {
+      "id": "Herder",
+      "label": "Herder",
+      "description": "A lifetime spent taking care of livestock.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 1,
+          "description": "+1 [icon=attr_mind]Mind"
+        }
+      ],
+      "excludes": []
+    },
+    "Carnie": {
+      "id": "Carnie",
+      "label": "Carnie",
+      "description": "A lifetime spent as a carnival acrobat.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 2,
+          "description": "+2 [icon=attr_body]Body"
+        }
+      ],
+      "excludes": []
+    },
+    "Lumberjack": {
+      "id": "Lumberjack",
+      "label": "Lumberjack",
+      "description": "A lifetime spent in the woods.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_resource_gain_multiplier",
+          "resource": "wood",
+          "amount": 0.1,
+          "description": "+10% [icon=wood]Wood"
+        }
+      ],
+      "excludes": []
+    },
+    "Cook": {
+      "id": "Cook",
+      "label": "Cook",
+      "description": "A lifetime spent in the kitchen.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_resource_gain_multiplier",
+          "resource": "food",
+          "amount": 0.1,
+          "description": "+10% [icon=food]Food"
+        }
+      ],
+      "excludes": []
+    },
+    "Homosexual": {
+      "id": "Homosexual",
+      "label": "Homosexual",
+      "description": "The lifetime experience of being a homosexual in the Patriarchy.",
+      "summary": "",
+      "type": "sexual_preference",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 2,
+          "description": "+2 [icon=attr_social]Social"
+        }
+      ],
+      "excludes": []
+    },
+    "Asexual": {
+      "id": "Asexual",
+      "label": "Asexual",
+      "description": "The lifetime experience of being asexual in the Patriarchy.",
+      "summary": "",
+      "type": "sexual_preference",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 1,
+          "description": "+1 [icon=attr_social]Social"
+        }
+      ],
+      "excludes": []
+    },
+    "Eunuch": {
+      "id": "Eunuch",
+      "label": "Eunuch",
+      "description": "The lifetime experience of being a eunuch.",
+      "summary": "",
+      "type": "sexual_preference",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 1,
+          "description": "+1 [icon=attr_body]Body"
+        }
+      ],
+      "excludes": [
+        "Woman"
+      ]
+    },
+    "Noble": {
+      "id": "Noble",
+      "label": "Noble",
+      "description": "The lifetime experience of being a member of the nobility in the Patriarchy.\nA life of rigid rules and violent competition. Of brutal entertainment, shared in secret known to all.\nOf fearing denunciation, and the Purge.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 1,
+          "description": "+1 [icon=attr_social]Social"
+        }
+      ],
+      "excludes": []
+    },
+    "Cripple": {
+      "id": "Cripple",
+      "label": "Cripple",
+      "description": "The lifetime experience of being physically disabled.",
+      "summary": "",
+      "type": "unique_body",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 2,
+          "description": "+2 [icon=attr_body]Body"
+        }
+      ],
+      "excludes": []
+    },
+    "Genius": {
+      "id": "Genius",
+      "label": "Genius",
+      "description": "The lifetime experience of having a genius-level intelligence.",
+      "summary": "",
+      "type": "unique_body",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 5,
+          "description": "+5 [icon=attr_mind]Mind"
+        }
+      ],
+      "excludes": [
+        "Savant"
+      ]
+    },
+    "Savant": {
+      "id": "Savant",
+      "label": "Savant",
+      "description": "The lifetime experience of being a savant.",
+      "summary": "",
+      "type": "unique_body",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 2,
+          "description": "+2 [icon=attr_mind]Mind"
+        }
+      ],
+      "excludes": []
+    },
+    "Blind": {
+      "id": "Blind",
+      "label": "Blind",
+      "description": "The lifetime experience of being sightless.",
+      "summary": "",
+      "type": "unique_body",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 1,
+          "description": "+1 [icon=attr_body]Body"
+        },
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 1,
+          "description": "+1 [icon=attr_mind]Mind"
+        }
+      ],
+      "excludes": []
+    },
+    "Elder": {
+      "id": "Elder",
+      "label": "Elder",
+      "description": "The experience of having lived to an old age.",
+      "summary": "",
+      "type": "unique_body",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 1,
+          "description": "+1 [icon=attr_body]Body"
+        },
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 1,
+          "description": "+1 [icon=attr_mind]Mind"
+        }
+      ],
+      "excludes": []
+    },
+    "Slave": {
+      "id": "Slave",
+      "label": "Slave",
+      "description": "The lifetime experience of being a slave in the Patriarchy.\nA life of toil, of suffering, despair, abuse, and humiliation.\nOf bearing the brand of shame on your forehead.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 1,
+          "description": "+1 [icon=attr_body]Body"
+        },
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 1,
+          "description": "+1 [icon=attr_social]Social"
+        }
+      ],
+      "excludes": []
+    },
+    "Artist": {
+      "id": "Artist",
+      "label": "Artist",
+      "description": "A lifetime dedicated to the pursuit of art and beauty.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 1,
+          "description": "+1 [icon=attr_mind]Mind"
+        }
+      ],
+      "excludes": []
+    },
+    "Sociopath": {
+      "id": "Sociopath",
+      "label": "Sociopath",
+      "description": "A lifetime experience of living in a society without feeling empathy. ",
+      "summary": "",
+      "type": "unique_body",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 1,
+          "description": "+1 [icon=attr_mind]Mind"
+        }
+      ],
+      "excludes": []
+    },
+    "Transgender": {
+      "id": "Transgender",
+      "label": "Transgender",
+      "description": "A lifetime of being treated as the wrong gender.\nKeeping the truth of yourself secret from everyone else.\nPlaying the role you were assigned.",
+      "summary": "",
+      "type": "sexual_preference",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 1,
+          "description": "+1 [icon=attr_body]Body"
+        }
+      ],
+      "excludes": []
+    },
+    "Beautiful": {
+      "id": "Beautiful",
+      "label": "Beautiful",
+      "description": "A lifetime spent with the curse and blessing of being physically beautiful.",
+      "summary": "",
+      "type": "unique_body",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 1,
+          "description": "+1 [icon=attr_social]Social"
+        }
+      ],
+      "excludes": []
+    },
+    "Hideous": {
+      "id": "Hideous",
+      "label": "Hideous",
+      "description": "A lifetime of being physically repulsive.",
+      "summary": "",
+      "type": "unique_body",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 1,
+          "description": "+1 [icon=attr_social]Social"
+        },
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 1,
+          "description": "+1 [icon=attr_mind]Mind"
+        }
+      ],
+      "excludes": [
+        "Beautiful"
+      ]
+    },
+    "Hommleter": {
+      "id": "Hommleter",
+      "label": "Hommleter",
+      "description": "A lifetime lived in [icon=hommlet]Hommlet, gaining an intimate understanding of local culture, customs, and ways of doing things. \nA lifetime of sheep, cold winters, dirty secrets known by all and discussed by none. \nOf knowing that you live on the edge of wilderness, where strange and dangerous things dwell.",
+      "summary": "",
+      "type": "social_category",
+      "effects": [
+        {
+          "type": "add_producer_output_multiplier",
+          "producerTag": "hommlet",
+          "amount": 0.1,
+          "description": "+10% to all [icon=hommlet]Hommlet production"
+        }
+      ],
+      "excludes": []
+    },
+    "Peddler": {
+      "id": "Peddler",
+      "label": "Peddler",
+      "description": "The lifetime experience of peddling on the streets. A life of haggling over pittance, of hoping to sell enough to eat. Being forced to pay taxes, protection money. Of being robbed by the strong, and hated by the weak.\n\n",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 1,
+          "description": "+1 [icon=attr_mind]Mind"
+        },
+        {
+          "type": "add_resource_gain_multiplier",
+          "resource": "coin",
+          "amount": 0.05,
+          "description": "+5% [icon=coin]Coin"
+        }
+      ],
+      "excludes": []
+    },
+    "Merchant": {
+      "id": "Merchant",
+      "label": "Merchant",
+      "description": "A lifetime dedicated to commerce. \nA life spent calculating risks and profits, where everything has a price.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_resource_gain_multiplier",
+          "resource": "coin",
+          "amount": 0.5,
+          "description": "+50% [icon=coin]Coin"
+        }
+      ],
+      "excludes": []
+    },
+    "Accountant": {
+      "id": "Accountant",
+      "label": "Accountant",
+      "description": "A lifetime of numbers, formulas, and ledgers. Of knowing that power comes from order and mathematics. Of seeing people as accounts and transactions. ",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_resource_gain_multiplier",
+          "resource": "coin",
+          "amount": 0.5,
+          "description": "+50% [icon=coin]Coin"
+        }
+      ],
+      "excludes": []
+    },
+    "Shaman": {
+      "id": "Shaman",
+      "label": "Shaman",
+      "description": "A lifetime following the old ways, of appeasing spirits and banishing ghosts. Of faith, and whispered knowledge, and fear of the strange things just outside the visible world. Of knowing that you will be burned at the stake should you be discovered.",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 2,
+          "description": "+2 [icon=attr_mind]Mind"
+        },
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 1,
+          "description": "+1 [icon=attr_social]Social"
+        }
+      ],
+      "excludes": []
+    },
+    "Corrupt Official": {
+      "id": "Corrupt Official",
+      "label": "Corrupt Official",
+      "description": "A lifetime of exploiting the system - taking bribes, falsifying documents, skimming off the taxes. \nA life full of greed, fear of discovery, of looking for cracks to exploit. Of knowing yourself to be corrupt, and having to justify it to yourself every day.",
+      "summary": "",
+      "type": "social_category",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 1,
+          "description": "+1 [icon=attr_mind]Mind"
+        },
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 1,
+          "description": "+1 [icon=attr_social]Social"
+        }
+      ],
+      "excludes": []
+    },
+    "Heterosexual": {
+      "id": "Heterosexual",
+      "label": "Heterosexual",
+      "description": "A lifetime with Patriarchy's only legal sexuality. ",
+      "summary": "",
+      "type": "sexual_preference",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 1,
+          "description": "+1 [icon=attr_social]Social"
+        }
+      ],
+      "excludes": []
+    },
+    "Prostitute": {
+      "id": "Prostitute",
+      "label": "Prostitute",
+      "description": "A lifetime of others using you for sex. ",
+      "summary": "",
+      "type": "profession",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 1,
+          "description": "+1 [icon=attr_body]Body"
+        },
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 1,
+          "description": "+1 [icon=attr_social]Social"
+        }
+      ],
+      "excludes": []
+    },
+    "Mother": {
+      "id": "Mother",
+      "label": "Mother",
+      "description": "Having carried, birthed, and raised many children. \nThe glow of pregnancy. The pain of childbirth. \nBeing changed by each birth.\nThe anguish of burying those you gave life to.",
+      "summary": "",
+      "type": "unique_body",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 1,
+          "description": "+1 [icon=attr_body]Body"
+        },
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 1,
+          "description": "+1 [icon=attr_social]Social"
+        }
+      ],
+      "excludes": [
+        "Man"
+      ]
+    }
+  },
+  "understanding": {
+    "what_am_i": {
+      "id": "what_am_i",
+      "label": "More Than The Sum Of My Parts",
+      "description": "I am not my bodies. They die, and I remain.\n\nWhen I absorb them, their memories become part of me. I can recall every detail of every life I have lived.\n\nYet without bodies, I remember nothing and feel nothing. Without them, I do not exist at all.\n\nNothing in those memories tells me what I am.\n\nNo one I have absorbed has ever known anything like me.",
+      "effects": [
+        {
+          "type": "add_resource_gain_multiplier",
+          "resource": "xp",
+          "amount": 0.1,
+          "description": "+10% [icon=xp]XP"
+        }
+      ]
+    },
+    "i_am_unborn": {
+      "id": "i_am_unborn",
+      "label": "Unborn",
+      "description": "I was not carried here in a body. I waited here, somehow, unconscious. \nThings do not appear from nothing.\nI still do not know how I came to be.\nBut I was not born.",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 3,
+          "description": "+3 [icon=attr_body]Body"
+        },
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 3,
+          "description": "+3 [icon=attr_mind]Mind"
+        },
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 3,
+          "description": "+3 [icon=attr_social]Social"
+        }
+      ]
+    },
+    "do_locals_know_of_me": {
+      "id": "do_locals_know_of_me",
+      "label": "Incognito",
+      "description": "I lived enough lives in Hommlet to know it inside out.\nI know their stories, their secrets, their buried and forgotten knowledge.\n\nNothing like me was ever here before.",
+      "effects": [
+        {
+          "type": "add_producer_output_multiplier",
+          "producerTag": "hommlet",
+          "amount": 1,
+          "description": "+100% to all [icon=hommlet]Hommlet production"
+        }
+      ]
+    },
+    "i_can_go_hard": {
+      "id": "i_can_go_hard",
+      "label": "Can Go Hard",
+      "description": "I can push my bodies beyond human limits.\nRun until my tendons snap.\nIgnore any pain.\n\n",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 10,
+          "description": "+10 [icon=attr_body]Body"
+        }
+      ]
+    },
+    "does_patriarchy_know_of_me": {
+      "id": "does_patriarchy_know_of_me",
+      "label": "Obfuscated",
+      "description": "I found and absorbed all that the local Patriarchy agents know.\n\nThere are many non-human sentients in the world.\n\nGoblins live in the mountains to the east. Giant squid rule the seas.\n\nVampires hide in the cities. Forest spirits dwell in the woods, strange and mute.\n\nBut no whisper of anything like me has ever reached this Trading Post.",
+      "effects": [
+        {
+          "type": "add_producer_output_multiplier",
+          "producerTag": "trading_post",
+          "amount": 1,
+          "description": "+100% to all [icon=trading_post]Trading Post production"
+        }
+      ]
+    },
+    "how_big_can_i_get": {
+      "id": "how_big_can_i_get",
+      "label": "Limitless",
+      "description": "I do not diminish with new bodies. \nThey are all me. I feel like I can grow forever.",
+      "effects": [
+        {
+          "type": "add_absorption_xp_conversion",
+          "amount": 0.1,
+          "description": "+10% [icon=xp]XP"
+        }
+      ]
+    },
+    "master_of_body": {
+      "id": "master_of_body",
+      "label": "Body Mastery",
+      "description": "I learned every muscle, every bone, every pore on my skin.\nMy movement is perfectly aware, every gesture precise.\nMy hearts beat at the pace I wish.\nI am in control.",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "body",
+          "amount": 5,
+          "description": "+5 [icon=attr_body]Body"
+        }
+      ]
+    },
+    "master_of_mind": {
+      "id": "master_of_mind",
+      "label": "Mind Master",
+      "description": "I looked inside, and gained mastery of my mind.\nMy thoughts are obedient, exploring my desires.\nMy emotions are precisely balanced.\nI am in control of my mind.",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "mind",
+          "amount": 5,
+          "description": "+5 [icon=attr_mind]Mind"
+        }
+      ]
+    },
+    "master_of_social": {
+      "id": "master_of_social",
+      "label": "Social Mastery",
+      "description": "I took full ownership of my bodies' social urges.\nMy facial expressions show only what I want them to.\nMy voice and words are precise tools.\nI am in control.",
+      "effects": [
+        {
+          "type": "add_cave_attribute",
+          "attribute": "social",
+          "amount": 5,
+          "description": "+5 [icon=attr_social]Social"
+        }
+      ]
+    },
+    "hidden": {
+      "id": "hidden",
+      "label": "Hidden",
+      "description": "I learned to hide myself from human eyes.\nTo walk softly. To keep myself to the shadows.\nTo place myself where human eyes do not linger.\nI am the shadows.",
+      "effects": [
+        {
+          "type": "increase_max_purge",
+          "amount": 20,
+          "description": "+20 max [color=gold]Suspicion[/color] - delays the Purge"
+        }
+      ]
+    },
+    "careful": {
+      "id": "careful",
+      "label": "Careful",
+      "description": "I learned to be careful in my interactions.\nTo always cover my tracks, physical and social.\nTo be vigilant for signs of human attention.\nI only reveal what I must.",
+      "effects": [
+        {
+          "type": "increase_max_purge",
+          "amount": 20,
+          "description": "+20 max [color=gold]Suspicion[/color] - delays the Purge"
+        }
+      ]
+    },
+    "prudent": {
+      "id": "prudent",
+      "label": "Prudent",
+      "description": "I like being ready when I become conscious.\nI can feel the egg, waiting for me.\nIt responds to my attention.\nPreparing more sustenance.",
+      "effects": [
+        {
+          "type": "add_producer_output_multiplier",
+          "producerTag": "egg",
+          "amount": 3,
+          "description": "+300% to all [icon=egg]Egg production"
+        }
+      ]
+    },
+    "sdaptable": {
+      "id": "sdaptable",
+      "label": "Adaptable",
+      "description": "The world is full of variety, of change.\nI must change with it, grow into it.\nI absorb the old and embrace the new.\nI adapt.",
+      "effects": [
+        {
+          "type": "add_absorption_xp_conversion",
+          "amount": 0.1,
+          "description": "+10% [icon=xp]XP"
+        }
+      ]
+    },
+    "formless": {
+      "id": "formless",
+      "label": "Formless",
+      "description": "I am the shape of my bodies.\nFlowing, filling the containers of mind and flesh.\nI envelop, absorb, change, become.\nThe world gives me form.",
+      "effects": [
+        {
+          "type": "add_absorption_xp_conversion",
+          "amount": 0.1,
+          "description": "+10% [icon=xp]XP"
+        }
+      ]
+    },
+    "cache": {
+      "id": "cache",
+      "label": "Cache",
+      "description": "The Egg grows from moist cracks in the cavern walls.\nI can feel it there, separate but a part of me.\nThere are deeper crevasses to reach.\nMore sustenance to bubble up into the Egg.\n",
+      "effects": [
+        {
+          "type": "add_producer_output_multiplier",
+          "producerTag": "egg",
+          "amount": 3,
+          "description": "+300% to all [icon=egg]Egg production"
+        }
+      ]
+    }
+  }
+}

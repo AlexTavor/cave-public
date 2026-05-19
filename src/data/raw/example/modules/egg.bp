@@ -1,0 +1,178 @@
+{
+  "id": "egg",
+  "label": "",
+  "tags": [
+    "chest",
+    "anim:kill",
+    "egg"
+  ],
+  "components": {
+    "display": {
+      "label": "egg",
+      "display_key": "egg",
+      "glyphKey": "egg",
+      "style": "egg"
+    },
+    "physics": {
+      "mass": 50,
+      "radius": 20,
+      "drag": 0.1,
+      "isStatic": true,
+      "x": 2600,
+      "y": 2500
+    },
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 50,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "body": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mind": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": true,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "storage": [
+        {
+          "resource": "food",
+          "displayName": "Food",
+          "initialValue": 0,
+          "capacity": {
+            "base": 600,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": true,
+          "entropy": {
+            "base": 0,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "bottom_left",
+          "barColorHex": "#4caf50",
+          "barPaletteColorKey": "green",
+          "allowDeposit": false,
+          "allowWithdraw": true,
+          "priority": 0
+        },
+        {
+          "resource": "heat",
+          "displayName": "Heat",
+          "initialValue": 0,
+          "capacity": {
+            "base": 600,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": true,
+          "entropy": {
+            "base": 0,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "bottom_right",
+          "barColorHex": "#f44336",
+          "barPaletteColorKey": "red",
+          "allowDeposit": false,
+          "allowWithdraw": true,
+          "priority": 0
+        }
+      ],
+      "production": [
+        {
+          "id": "jTGGs6Jrov4vk7G4UAg7z",
+          "resource": "food",
+          "amount": {
+            "base": 150,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "target": "self",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        },
+        {
+          "id": "_drybQY5VgKqfwFwoqJqp",
+          "resource": "heat",
+          "amount": {
+            "base": 150,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "target": "self",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "spawner": [
+        {
+          "id": "VOmZpCDXVMTtQLuZXzR4b",
+          "blueprintId": "explore",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Egg",
+        "icon": "egg",
+        "glyphKey": "egg",
+        "description": "Under the mountain, a trove of food and comfort awaits me.\nI just have to crack the shell.\n\n",
+        "styleId": "egg",
+        "nervousVein": false,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 2882.059073416746,
+        "y": 2391.4496412435956,
+        "radius": {
+          "min": 40,
+          "max": 40,
+          "valueRef": "self.state.food.value",
+          "maxRef": "self.state.food.max"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+import { DEFAULT_PHYSICS_POSITION } from "./v2/worldPositionDefaults";
+
+export const PHYSICS_POSITION_MIN = 0;
+export const PHYSICS_DEFAULT_X = DEFAULT_PHYSICS_POSITION.x;
+export const PHYSICS_DEFAULT_Y = DEFAULT_PHYSICS_POSITION.y;
+export const PHYSICS_DEFAULT_RADIUS = 10;
+export const PHYSICS_DEFAULT_MASS = 1;
+export const PHYSICS_DEFAULT_DRAG = 0.1;
+

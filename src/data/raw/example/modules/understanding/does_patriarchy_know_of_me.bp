@@ -1,0 +1,133 @@
+{
+  "id": "does_patriarchy_know_of_me",
+  "label": "",
+  "tags": [
+    "understanding",
+    "anim:spawn",
+    "anim:kill",
+    "does_patriarchy_know_of_me"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 10000,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "mind": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 80,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "passport": {
+        "label": "Does The Patriarchy Know Of Me?",
+        "icon": "does_patriarchy_know_of_me",
+        "description": "The Patriarchy hoard knowledge and power.\n\nPerhaps their agents in the Trading Post know what I am.\n",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "do_locals_know_of_me"
+        },
+        "nervousVein": true,
+        "permanent": true
+      },
+      "worldPresence": {
+        "x": 2062.865963896339,
+        "y": 897.376310650229,
+        "radius": {
+          "min": 75,
+          "max": 75
+        }
+      },
+      "triggeredActions": [
+        {
+          "id": "-y7oQDQvYpxKCgo0vYnnn",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": [],
+          "actions": [
+            {
+              "type": "GAIN_UNDERSTANDING",
+              "understandingId": "does_patriarchy_know_of_me"
+            }
+          ]
+        }
+      ],
+      "notifications": [
+        {
+          "title": "Obfuscated",
+          "text": "I found and absorbed all that the local Patriarchy agents know.\n\nThere are many non-human sentients in the world.\n\nGoblins live in the mountains to the east. Giant squid rule the seas.\n\nVampires hide in the cities. Forest spirits dwell in the woods, strange and mute.\n\nBut no whisper of anything like me has ever reached this Trading Post.\n\nAm I all alone?\n\n[i]Permanent Upgrade [color=gold]Obfuscated[/color][/i]  \n+100% to all [icon=trading_post]Trading Post production",
+          "imageUrl": null,
+          "id": "9DQCf0y9KpES8Bq30Rhez"
+        }
+      ],
+      "conditionalActivation": [
+        {
+          "priority": 1,
+          "conditions": [
+            {
+              "id": "OuoiWHmqt2-VdBarYzY-N",
+              "sortKey": "01KNYZ4JR7Q7XYAQ602FCRMM7B",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "understanding_owned",
+              "factAbout": "does_patriarchy_know_of_me",
+              "operator": "<",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "cycle"
+            }
+          ],
+          "inactiveExplanation": "I found and absorbed all the local Patriarchy agents know.\n\nThere are many non-human sentients in the world. \n\nGoblins live in the mountains to the East. The seas are ruled by giant squid.\n\nThere are vampires hiding in the cities. Forest spirits live in the woods, strange and mute.\n\nNo whisper of anything like me.\n\n\nAm I all alone?"
+        },
+        {
+          "priority": 0,
+          "conditions": [
+            {
+              "id": "KaAracWYcsAzwJOdScjO4",
+              "sortKey": "01KNYZMN8384EKDPJCFJKV8XZY",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "habitus_owned",
+              "factAbout": "Accountant",
+              "operator": ">=",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "cycle"
+            },
+            {
+              "ability": "triggeredActions",
+              "targetId": "-y7oQDQvYpxKCgo0vYnnn"
+            }
+          ],
+          "inactiveExplanation": "I need to explore Trading Post, and absorb any interesting knowledge I can find there.\nA Patriarchy official would be best."
+        }
+      ]
+    }
+  }
+}

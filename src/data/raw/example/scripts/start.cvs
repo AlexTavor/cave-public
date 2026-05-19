@@ -1,0 +1,11 @@
+# Start example project
+game.reset
+project-load example/manifest.json
+
+# Body
+game.spawn newbody newbody
+
+# Begin simulation
+tick.run
+
+game.spawn egg egg

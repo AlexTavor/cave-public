@@ -1,0 +1,126 @@
+{
+  "id": "how_big_can_i_get",
+  "label": "",
+  "tags": [
+    "understanding",
+    "anim:spawn",
+    "anim:kill",
+    "how_big_can_i_get"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 10000,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "body": {
+            "base": 100,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "passport": {
+        "label": "How Big Can I Get?",
+        "icon": "how_big_can_i_get",
+        "description": "Is there a limit to my bodies? \nCan I be a legion?\n",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "how_hard_can_i_go"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 4572.592322776198,
+        "y": 2001.674461250025,
+        "radius": {
+          "min": 75,
+          "max": 75
+        }
+      },
+      "triggeredActions": [
+        {
+          "id": "7U5ICkTUcBADM8vik0W7B",
+          "triggers": [
+            "cycle_complete",
+            "assignment_complete"
+          ],
+          "conditions": [],
+          "actions": [
+            {
+              "type": "GAIN_UNDERSTANDING",
+              "understandingId": "how_big_can_i_get"
+            }
+          ]
+        }
+      ],
+      "notifications": [
+        {
+          "title": "Limitless",
+          "text": "I do not diminish with new bodies. \n\nThey are all me. I feel like I can grow forever.\n\nBut when I spend some time away from the cave with a body, it starts feeling strange.\n\nPerhaps I have limitations other than size.\n\n[i]Permanent Upgrade [color=gold]Limitless[/color][/i]  \n+10% [icon=xp]XP",
+          "imageUrl": null,
+          "id": "YPSb3KNJSI4x4GAYu9MdP"
+        }
+      ],
+      "conditionalActivation": [
+        {
+          "priority": 0,
+          "conditions": [
+            {
+              "id": "qb7gFe8UqpH04a_ZYKGD_",
+              "sortKey": "01KNYZSMR0R2FVX3H2572MRG84",
+              "kind": "fact_threshold",
+              "scope": "run",
+              "factType": "active_bodies",
+              "factAbout": "world",
+              "operator": ">=",
+              "value": 15
+            }
+          ],
+          "targets": [
+            {
+              "ability": "cycle"
+            }
+          ],
+          "inactiveExplanation": "I need more bodies!"
+        },
+        {
+          "priority": 0,
+          "conditions": [
+            {
+              "id": "jD25Ce9fdR5vUQT_iYce0",
+              "sortKey": "01KNZ0GK3VND74QGE6VJTE2W69",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "understanding_owned",
+              "factAbout": "how_big_can_i_get",
+              "operator": "<",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "cycle"
+            }
+          ],
+          "inactiveExplanation": "I do not diminish with new bodies. \n\nThey are all me. I feel like I can grow forever.\n\nBut when I spend some time away from the cave with a body, it starts feeling strange.\n\nPerhaps I have limitations other than size."
+        }
+      ]
+    }
+  }
+}

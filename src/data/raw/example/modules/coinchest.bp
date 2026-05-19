@@ -1,0 +1,63 @@
+{
+  "id": "coinchest",
+  "label": "",
+  "tags": [
+    "anim:spawn"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "storage": [
+        {
+          "resource": "coin",
+          "displayName": "Coin",
+          "initialValue": 0,
+          "capacity": {
+            "base": 1000,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": true,
+          "entropy": {
+            "base": 0,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "bottom_right",
+          "barColorHex": "#ff9800",
+          "barPaletteColorKey": "gold",
+          "allowDeposit": true,
+          "allowWithdraw": true,
+          "priority": 5,
+          "autoRequest": {
+            "enabled": false,
+            "cadence_s": 1,
+            "minRequest": 1,
+            "maxRequest": 100
+          }
+        }
+      ],
+      "passport": {
+        "label": "Coin Chest",
+        "icon": "coinchest",
+        "description": "A sturdy chest. Keeps my [icon=coin]coin safe, and well hidden.",
+        "nervousVein": false,
+        "permanent": true
+      },
+      "worldPresence": {
+        "x": 1998.3657502820163,
+        "y": 3486.7526533174414,
+        "radius": {
+          "min": 20,
+          "max": 80,
+          "valueRef": "self.state.coin.value",
+          "maxRef": "self.state.coin.max"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "tax_office",
+  "label": "",
+  "tags": [
+    "anim:spawn",
+    "anim:kill",
+    "tax_office_root",
+    "accountant"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "passport": {
+        "label": "Tax Office",
+        "icon": "tax_office",
+        "description": "There is a certified Accountant stationed here. \nOne raised in the big cities, certified by the Patriarchy.\nDeciding who lives and who dies, by writing numbers into columns.\n\nThis should be a unique and fascinating lifetime experience.",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "trading_post_root"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 3764.507912405521,
+        "y": 2859.0250569362674,
+        "radius": {
+          "min": 60,
+          "max": 60
+        }
+      },
+      "unifiedBlueprints": [
+        {
+          "tag": "accountant",
+          "spawnWhenPeerSpawns": false
+        }
+      ]
+    }
+  }
+}

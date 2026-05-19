@@ -1,0 +1,36 @@
+{
+  "id": "outside",
+  "label": "",
+  "tags": [
+    "outside"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "passport": {
+        "label": "Outside",
+        "icon": "outside",
+        "description": "Outside the cavern are the mountains and the forest, sloping down into a wide valley. \nFrom the entrance, high above the treetops, I can see the smoke of distant settlements.\n\nI want to reach down and gather them into me.",
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 1970.352366320762,
+        "y": 2188.1159619981886,
+        "radius": {
+          "min": 50,
+          "max": 50
+        }
+      },
+      "unifiedBlueprints": [
+        {
+          "tag": "outside",
+          "spawnWhenPeerSpawns": true
+        }
+      ]
+    }
+  }
+}

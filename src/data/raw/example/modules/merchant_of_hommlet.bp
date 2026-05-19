@@ -1,0 +1,44 @@
+{
+  "id": "merchant_of_hommlet",
+  "label": "",
+  "tags": [
+    "hommlet",
+    "hommlet_merchant",
+    "hommlet_merchant_root",
+    "anim:spawn",
+    "anim:kill"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "passport": {
+        "label": "The Merchant of Hommlet",
+        "icon": "merchant_of_hommlet",
+        "description": "The merchant who visits [icon=hommlet]Hommlet every few months.\n\nThey bring knowledge and experience rare on the edge of civilization.",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "hommlet_root"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 2446.7684991848287,
+        "y": 3379.4841067881603,
+        "radius": {
+          "min": 60,
+          "max": 60
+        }
+      },
+      "unifiedBlueprints": [
+        {
+          "tag": "hommlet_merchant",
+          "spawnWhenPeerSpawns": true
+        }
+      ]
+    }
+  }
+}

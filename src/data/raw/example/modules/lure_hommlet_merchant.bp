@@ -1,0 +1,158 @@
+{
+  "id": "lure_hommlet_merchant",
+  "label": "",
+  "tags": [
+    "hommlet",
+    "anim:spawn",
+    "anim:kill"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 3000,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "mind": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 80,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": true,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [
+          {
+            "resource": "coin",
+            "amount": {
+              "base": 100,
+              "perBody": 0,
+              "multPerBody": 0
+            },
+            "requestPerSecondAtFullThrottle": 10,
+            "requestCadenceSeconds": 1,
+            "scaleByBodiesOwned": false,
+            "scaleByCyclesCompleted": false,
+            "visible": true,
+            "barPosition": "top_right",
+            "barColorHex": "#ff9800",
+            "barPaletteColorKey": "gold",
+            "priority": 0
+          }
+        ],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "6jP8A_hIo7dsy3YoJNwOP",
+          "blueprintId": "newbody",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn_body",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [
+            "Merchant"
+          ],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Lure the Merchant of Hommlet",
+        "icon": "lure_merchant_of_hommlet",
+        "description": "The Merchant is careful, and slow to trust. \n\nI can befriend them, get close, play the ignorant villager. Plant a story about a hidden treasure in a cave.\n\nThe merchant's greed will bring them to me.\n",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "hommlet_merchant_root"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 2134.354119428718,
+        "y": 3868.124343612344,
+        "radius": {
+          "min": 60,
+          "max": 60
+        }
+      },
+      "updater": [
+        {
+          "id": "hD_AWinhsvXReAOGxhGUo",
+          "target": "sys_world.state.purge_progress.value",
+          "op": "ADD",
+          "value": "10",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "notifications": [
+        {
+          "title": "The Pull Of Greed",
+          "text": "I pretended to be a friendly, weak-minded villager who had stumbled onto a treasure.\nThe merchant fell for it eventually. The promise of coin was impossible to resist.\n\nNow I have the merchant. The disappearance will be noticed, but I made sure the trail would be hard to follow.\n\nGreed is such an interesting weakness. I cannot wait to absorb the merchant and truly [b]know[/b] what it feels like.",
+          "imageUrl": null,
+          "id": "sJRHetMyzJAuDfX5HTXk1"
+        }
+      ],
+      "conditionalActivation": [
+        {
+          "priority": 0,
+          "conditions": [
+            {
+              "id": "3ZtjnOHVLwCeClutD_a4L",
+              "sortKey": "01KNEXYFZBF3SC9BZTKBV6AK28",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "habitus_owned",
+              "factAbout": "Hommleter",
+              "operator": ">=",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "cycle"
+            },
+            {
+              "ability": "updater",
+              "targetId": "hD_AWinhsvXReAOGxhGUo"
+            },
+            {
+              "ability": "spawner",
+              "targetId": "6jP8A_hIo7dsy3YoJNwOP"
+            }
+          ],
+          "inactiveExplanation": "The merchant is suspicious, and won't let me approach.\nPerhaps if I knew more about Hommlet, I could find a way."
+        }
+      ],
+      "unifiedBlueprints": [
+        {
+          "tag": "hommlet_merchant",
+          "spawnWhenPeerSpawns": true
+        }
+      ]
+    }
+  }
+}

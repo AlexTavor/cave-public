@@ -1,0 +1,64 @@
+{
+  "id": "larder",
+  "label": "",
+  "tags": [
+    "anim:spawn"
+  ],
+  "components": {
+    "display": {
+      "label": "larder",
+      "display_key": "larder",
+      "style": "larder"
+    },
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "storage": [
+        {
+          "resource": "food",
+          "displayName": "",
+          "initialValue": 0,
+          "capacity": {
+            "base": 1200,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": true,
+          "entropy": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "bottom_right",
+          "barColorHex": "#f44336",
+          "barPaletteColorKey": "red",
+          "allowDeposit": true,
+          "allowWithdraw": true,
+          "priority": 5
+        }
+      ],
+      "passport": {
+        "label": "Larder",
+        "icon": "larder",
+        "glyphKey": "foraging",
+        "description": "I store my [icon=food]food here, though it rots quickly.",
+        "styleId": "larder",
+        "nervousVein": false,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 1452.2968749726995,
+        "y": 2063.2995534443503,
+        "radius": {
+          "min": 20,
+          "max": 80,
+          "valueRef": "self.state.food.value",
+          "maxRef": "self.state.food.max"
+        }
+      }
+    }
+  }
+}

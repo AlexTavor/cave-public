@@ -1,0 +1,158 @@
+{
+  "id": "how_did_i_come_to_be",
+  "label": "",
+  "tags": [
+    "understanding",
+    "anim:spawn",
+    "anim:kill",
+    "how_did_i_come_to_be"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 5000,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "body": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mind": {
+            "base": 80,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "cMs9Q9h5AsGzL-7IhEslc",
+          "blueprintId": "how_hard_can_i_go",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "How Did I Come To Be?",
+        "icon": "how_did_i_come_to_be",
+        "description": "Where was I, before the first body became me?\n\nDid the body carry me in it?",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "what_am_i"
+        },
+        "nervousVein": true,
+        "permanent": true
+      },
+      "worldPresence": {
+        "x": 3877.851947658022,
+        "y": 971.7296672920007,
+        "radius": {
+          "min": 75,
+          "max": 75
+        }
+      },
+      "triggeredActions": [
+        {
+          "id": "wDwSTEkdyDJj06Kf9hQQL",
+          "triggers": [
+            "cycle_complete",
+            "assignment_complete"
+          ],
+          "conditions": [],
+          "actions": [
+            {
+              "type": "GAIN_UNDERSTANDING",
+              "understandingId": "i_am_unborn"
+            }
+          ]
+        }
+      ],
+      "notifications": [
+        {
+          "title": "Unborn",
+          "text": "I was not carried here in a body. I waited here, somehow, unconscious. \nThings do not appear from nothing.\nI still do not know how I came to be.\nBut I was not born.\n\nIn trying to crack the mystery of how I came to be, I learned a lot about human reproduction. \nI experienced motherhood, and childhood, and birth, and infancy. \nA mother's love. A baby's trust.\n\nIt is sad, that their experiences just... disappear. \nAs if they never lived.\n\n\n[i]Permanent Upgrade [color=gold]Unborn[/color][/i]  \n+3 [icon=attr_body]Body\n+3 [icon=attr_social]Social\n+3 [icon=attr_mind]Mind",
+          "imageUrl": null,
+          "id": "g99NghEes2tY0GOLS9uIW"
+        }
+      ],
+      "conditionalActivation": [
+        {
+          "priority": 0,
+          "conditions": [
+            {
+              "id": "5zXCfAMABbsjsRwptrtVJ",
+              "sortKey": "01KNY74X5WRCKEVXBE3H1JRTAZ",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "habitus_owned",
+              "factAbout": "Mother",
+              "operator": ">=",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "cycle"
+            },
+            {
+              "ability": "triggeredActions",
+              "targetId": "wDwSTEkdyDJj06Kf9hQQL"
+            }
+          ],
+          "inactiveExplanation": "I need to know how life comes to be, first.\n\nThe experience of motherhood might be enough."
+        },
+        {
+          "priority": 1,
+          "conditions": [
+            {
+              "id": "K3V5P590awf7__pdParGc",
+              "sortKey": "01KNYQFHR7TDGV7449JE946B9V",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "understanding_owned",
+              "factAbout": "i_am_unborn",
+              "operator": "<",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "cycle"
+            },
+            {
+              "ability": "triggeredActions",
+              "targetId": "wDwSTEkdyDJj06Kf9hQQL"
+            }
+          ],
+          "inactiveExplanation": "I was not carried here in a body. I waited here, somehow, unconscious. \nThings do not appear from nothing.\nI still do not know how I came to be.\nBut I was not born.\n\nIn trying to crack the mystery of how I came to be, I learned a lot about human reproduction. \nI experienced motherhood, and childhood, and birth, and infancy. \nA mother's love. A baby's trust.\n\nIt is sad, that their experiences just... disappear. \nAs if they never lived."
+        }
+      ]
+    }
+  }
+}

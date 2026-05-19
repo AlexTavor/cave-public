@@ -1,0 +1,567 @@
+{
+  "draftOptions": {
+    "reward_cave_body": {
+      "id": "reward_cave_body",
+      "title": "Body Mastery",
+      "description": "I learned every muscle, every bone, every pore on my skin.\nMy movement is perfectly aware, every gesture precise.\nMy hearts beat at the pace I wish.\nI am in control.\n\n+5 [icon=attr_body]Body",
+      "rarity": "common",
+      "icon": "attr_body",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "GAIN_UNDERSTANDING",
+          "understandingId": "master_of_body"
+        }
+      ]
+    },
+    "reward_cave_mind": {
+      "id": "reward_cave_mind",
+      "title": "Mind Mastery",
+      "description": "I looked inside, and gained mastery of my mind.\nMy thoughts are obedient, exploring my desires.\nMy emotions are precisely balanced.\nI am in control of my mind.\n\n+5 [icon=attr_mind]Mind",
+      "rarity": "common",
+      "icon": "attr_mind",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "GAIN_UNDERSTANDING",
+          "understandingId": "master_of_mind"
+        }
+      ]
+    },
+    "reward_cave_social": {
+      "id": "reward_cave_social",
+      "title": "Social Mastery",
+      "description": "I took full ownership of my bodies' social urges.\nMy facial expressions show only what I want them to.\nMy voice and words are precise tools.\nI am in control.\n\n+5 [icon=attr_social]Social",
+      "rarity": "common",
+      "icon": "attr_social",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "GAIN_UNDERSTANDING",
+          "understandingId": "master_of_social"
+        }
+      ]
+    },
+    "foraging_option": {
+      "id": "foraging_option",
+      "title": "Foraging",
+      "description": "I can go foraging for nuts and berries in the surrounding forest.",
+      "rarity": "common",
+      "icon": "foraging",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "foraging"
+        },
+        {
+          "type": "SPAWN",
+          "blueprintId": "larder"
+        }
+      ]
+    },
+    "luretraveler_option": {
+      "id": "luretraveler_option",
+      "title": "Lure Traveler",
+      "description": "There are travelers on the roads at the edge of Forest. \nI can lure them to the cave, and they'll become my bodies.",
+      "rarity": "common",
+      "icon": "luretraveler",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "luretraveler"
+        }
+      ]
+    },
+    "wood_gathering_option": {
+      "id": "wood_gathering_option",
+      "title": "Gather Wood",
+      "description": "There are many fallen branches and sticks on the floor of Forest.\nI can collect and use them.",
+      "rarity": "common",
+      "icon": "gatherwood",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "woodstorage"
+        },
+        {
+          "type": "SPAWN",
+          "blueprintId": "gatherwood"
+        }
+      ]
+    },
+    "hearth_option": {
+      "id": "hearth_option",
+      "title": "Hearth",
+      "description": "I will build a hearth in the cave. \nMy bodies will be warm, comfortable, and more efficient.",
+      "rarity": "common",
+      "icon": "effect_heat",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "hearth"
+        }
+      ]
+    },
+    "spawn_butcher": {
+      "id": "spawn_butcher",
+      "title": "Butcher",
+      "description": "When my bodies grow too numerous, I can butcher and eat them.\nBetter to lose one than let the rest starve.",
+      "rarity": "common",
+      "icon": "butcher",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "butcher"
+        }
+      ]
+    },
+    "absorption_option": {
+      "id": "absorption_option",
+      "title": "Absorb Bodies",
+      "description": "I can absorb my bodies, internalizing their lifetime experiences.\nThey will become permanently a part of me, eternal.\nAnd I will carry on their knowledge.",
+      "rarity": "common",
+      "icon": "effect_food",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "absorption"
+        }
+      ]
+    },
+    "opt_mneq0j10_8r2h": {
+      "id": "opt_mneq0j10_8r2h",
+      "title": "Hommlet",
+      "description": "The village of Hommlet. \nIt's a huddle of huts at the edge of the forest. \nThe locals make their living mostly from raising sheep.",
+      "rarity": "rare",
+      "icon": "coin",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "hommlet"
+        }
+      ]
+    },
+    "opt_mnhyx30s_hvhc": {
+      "id": "opt_mnhyx30s_hvhc",
+      "title": "Hommlet Lodging",
+      "description": "",
+      "rarity": "none",
+      "icon": "unknown",
+      "oneOff": false,
+      "payload": []
+    },
+    "opt_mnivfht6_a0y0": {
+      "id": "opt_mnivfht6_a0y0",
+      "title": "Lodging in Hommlet",
+      "description": "There is a barn in Hommlet that I can rent. ",
+      "rarity": "rare",
+      "icon": "lodging_hommlet",
+      "oneOff": true,
+      "conditionIds": [
+        "hommlet_spawned"
+      ],
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "lodging_hommlet"
+        }
+      ]
+    },
+    "opt_mnivwuwz_5lm3": {
+      "id": "opt_mnivwuwz_5lm3",
+      "title": "Strongbox Shop",
+      "description": "There is a place where I can buy storage for my coin. ",
+      "rarity": "common",
+      "icon": "buy_coins_chest",
+      "oneOff": true,
+      "conditionIds": [
+        "hommlet_spawned"
+      ],
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "buycoinchest"
+        }
+      ]
+    },
+    "opt_mnivzf63_3667": {
+      "id": "opt_mnivzf63_3667",
+      "title": "Know Thyself",
+      "description": "I can explore myself, in quiet contemplation.",
+      "rarity": "none",
+      "icon": "know_thyself",
+      "payload": [
+        {
+          "type": "MUTATE",
+          "target": "self.state.xp",
+          "op": "SET",
+          "value": 20
+        },
+        {
+          "type": "TRANSFER",
+          "source": "self",
+          "target": "sys_world",
+          "resource": "xp",
+          "amount": 20
+        }
+      ]
+    },
+    "opt_mnj7pfax_5ot6": {
+      "id": "opt_mnj7pfax_5ot6",
+      "title": "Day Labor",
+      "description": "I can earn [icon=coin]coin by hiring myself out in the village.",
+      "rarity": "rare",
+      "icon": "coin",
+      "oneOff": true,
+      "conditionIds": [
+        "hommlet_spawned"
+      ],
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "daylabor"
+        }
+      ]
+    },
+    "opt_mnjhbixo_kh8y": {
+      "id": "opt_mnjhbixo_kh8y",
+      "title": "Lure a Hommlet Native",
+      "description": "I will lure a Hommlet native to me.",
+      "rarity": "rare",
+      "icon": "lure_homlet_native",
+      "oneOff": true,
+      "conditionIds": [
+        "hommlet_spawned",
+        "hommleter_not_owned"
+      ],
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "lure_hommlet_native"
+        }
+      ]
+    },
+    "opt_mnlsy2jp_bp5c": {
+      "id": "opt_mnlsy2jp_bp5c",
+      "title": "Merchant Of Hommlet",
+      "description": "There is a merchant that visits Hommlet every once in a while.\nA merchant has an interesting life, with unusual experiences.\nI want them.",
+      "rarity": "rare",
+      "icon": "merchant_of_hommlet",
+      "oneOff": true,
+      "conditionIds": [
+        "merchant_not_owned",
+        "hommlet_spawned"
+      ],
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "merchant_of_hommlet"
+        }
+      ]
+    },
+    "opt_mnmhb5uj_iv8p": {
+      "id": "opt_mnmhb5uj_iv8p",
+      "title": "Trading Post",
+      "description": "There is a trading post nearby. It is the commercial hub of the wild frontier.\nSeems interesting to check out.",
+      "rarity": "rare",
+      "icon": "trading_post",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "trading_post"
+        }
+      ]
+    },
+    "opt_mnmi55ui_jk1j": {
+      "id": "opt_mnmi55ui_jk1j",
+      "title": "Slave Market",
+      "description": "There is a slave market at the Trading Post.\nCould be interesting.",
+      "rarity": "common",
+      "icon": "slave_market",
+      "oneOff": true,
+      "conditionIds": [
+        "trading_post_spawned"
+      ],
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "slave_market"
+        }
+      ]
+    },
+    "opt_mnnb7avu_lbxk": {
+      "id": "opt_mnnb7avu_lbxk",
+      "title": "Wood Wholesaler",
+      "description": "The yard where lumber is bought and shipped West.",
+      "rarity": "common",
+      "icon": "sell_wood",
+      "oneOff": true,
+      "conditionIds": [
+        "trading_post_spawned"
+      ],
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "sell_wood"
+        }
+      ]
+    },
+    "opt_mnnjmpvt_bcjy": {
+      "id": "opt_mnnjmpvt_bcjy",
+      "title": "Tax Office",
+      "description": "An office of the Patriarchal Tax Authority.",
+      "rarity": "rare",
+      "icon": "tax_office",
+      "oneOff": true,
+      "conditionIds": [
+        "trading_post_spawned",
+        "accountant_not_owned"
+      ],
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "tax_office"
+        }
+      ]
+    },
+    "opt_mntdf6l1_73df": {
+      "id": "opt_mntdf6l1_73df",
+      "title": "What Am I?",
+      "description": "I want to explore myself and understand my nature.\nMy bodies know nothing of anything like me.\nIt's up to me to know myself.",
+      "rarity": "none",
+      "icon": "what_am_I",
+      "oneOff": true,
+      "conditionIds": [
+        "what_am_i_not_spawned"
+      ],
+      "payload": [
+        {
+          "type": "SPAWN",
+          "blueprintId": "what_am_i"
+        }
+      ]
+    },
+    "opt_mnvpcwi6_5m0k": {
+      "id": "opt_mnvpcwi6_5m0k",
+      "title": "Hidden",
+      "description": "I learned to hide myself from human eyes.\nTo walk softly. To keep myself to the shadows.\nTo place myself where human eyes do not linger.\nI am the shadows.\n\n+20 max [color=gold]Suspicion[/color] - delays the Purge",
+      "rarity": "none",
+      "icon": "unknown",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "GAIN_UNDERSTANDING",
+          "understandingId": "hidden"
+        }
+      ]
+    },
+    "opt_mnvpep93_1jnj": {
+      "id": "opt_mnvpep93_1jnj",
+      "title": "Careful",
+      "description": "I learned to be careful in my interactions.\nTo always cover my tracks, physical and social.\nTo be vigilant for signs of human attention.\nI only reveal what I must.\n\n+20 max [color=gold]Suspicion[/color] - delays the Purge",
+      "rarity": "none",
+      "icon": "unknown",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "GAIN_UNDERSTANDING",
+          "understandingId": "careful"
+        }
+      ]
+    },
+    "opt_mnvpfbu2_jp8k": {
+      "id": "opt_mnvpfbu2_jp8k",
+      "title": "Prudent",
+      "description": "I like being ready when I become conscious.\nI can feel the egg, waiting for me.\nIt responds to my attention.\nPreparing more sustenance.\n\n+300% to all [icon=egg]Egg production",
+      "rarity": "none",
+      "icon": "unknown",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "GAIN_UNDERSTANDING",
+          "understandingId": "prudent"
+        }
+      ]
+    },
+    "opt_mnvpg3m9_8gnr": {
+      "id": "opt_mnvpg3m9_8gnr",
+      "title": "Adaptable",
+      "description": "The world is full of variety, of change.\nI must change with it, grow into it.\nI absorb the old and embrace the new.\nI adapt.\n\n\n+10% [icon=xp]XP",
+      "rarity": "none",
+      "icon": "unknown",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "GAIN_UNDERSTANDING",
+          "understandingId": "adaptable"
+        }
+      ]
+    },
+    "opt_mnvpgq9g_a1fe": {
+      "id": "opt_mnvpgq9g_a1fe",
+      "title": "Formless",
+      "description": "I am the shape of my bodies.\nFlowing, filling the containers of mind and flesh.\nI envelop, absorb, change, become.\nThe world gives me form.\n\n+10% [icon=xp]XP",
+      "rarity": "none",
+      "icon": "unknown",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "GAIN_UNDERSTANDING",
+          "understandingId": "formless"
+        }
+      ]
+    },
+    "opt_mnvph6sk_kgfj": {
+      "id": "opt_mnvph6sk_kgfj",
+      "title": "Cache",
+      "description": "The Egg grows from moist cracks in the cavern walls.\nI can feel it there, separate but a part of me.\nThere are deeper crevasses to reach.\nMore sustenance to bubble up into the Egg.\n\n+100% to all [icon=egg]Egg production",
+      "rarity": "none",
+      "icon": "unknown",
+      "oneOff": true,
+      "payload": [
+        {
+          "type": "GAIN_UNDERSTANDING",
+          "understandingId": "cache"
+        }
+      ]
+    }
+  },
+  "draftPools": {
+    "pool_explore": {
+      "id": "pool_explore",
+      "entries": [
+        {
+          "optionId": "foraging_option",
+          "weight": 1000000
+        },
+        {
+          "optionId": "luretraveler_option",
+          "weight": 100
+        },
+        {
+          "optionId": "wood_gathering_option",
+          "weight": 200
+        },
+        {
+          "optionId": "hearth_option",
+          "weight": 200
+        },
+        {
+          "optionId": "spawn_butcher",
+          "weight": 10
+        },
+        {
+          "optionId": "absorption_option",
+          "weight": 10
+        },
+        {
+          "optionId": "opt_mneq0j10_8r2h",
+          "weight": 10
+        },
+        {
+          "optionId": "opt_mnivfht6_a0y0",
+          "weight": 10
+        },
+        {
+          "optionId": "opt_mnivwuwz_5lm3",
+          "weight": 10
+        },
+        {
+          "optionId": "opt_mnivzf63_3667",
+          "weight": 1
+        },
+        {
+          "optionId": "opt_mnj7pfax_5ot6",
+          "weight": 10
+        },
+        {
+          "optionId": "opt_mnjhbixo_kh8y",
+          "weight": 10
+        },
+        {
+          "optionId": "opt_mnlsy2jp_bp5c",
+          "weight": 10
+        },
+        {
+          "optionId": "opt_mnmhb5uj_iv8p",
+          "weight": 10
+        },
+        {
+          "optionId": "opt_mnmi55ui_jk1j",
+          "weight": 10
+        },
+        {
+          "optionId": "opt_mnnb7avu_lbxk",
+          "weight": 10
+        },
+        {
+          "optionId": "opt_mnnjmpvt_bcjy",
+          "weight": 10
+        },
+        {
+          "optionId": "opt_mntdf6l1_73df",
+          "weight": 100
+        }
+      ],
+      "texts": [
+        "I am on a mountain, surrounded by forests.\nFar from roads and fields.\nMy body fled here from far away.",
+        "The forest is vast, old, and stretching far from the mountain.\nBeyond it is civilization - villages, fields, roads.\nI am at the edge of it, in the wilderness.",
+        "The villagers believe that spirits live in the forest.\nI have not seem them yet,\nBut should go looking.",
+        "The villagers believe many things.\nMost of them untrue.\nNone of them are about me.",
+        "Out there, beyond the villages, lies the kingdom.\nIt is ruled by the Patriarchy, who control magic.\nI think I might be magic.",
+        "My bodies cannot go very far from me.\nBut traders come to nearby villages, from the far away cities.\nCities where the Patriarchy is strong.\nAnd magical knowledge is gathered.",
+        "There is so much to explore.\nBodies with experiences I cannot even imagine. So much to see and internalize and build. \nAnd all so far from my mountain. "
+      ]
+    },
+    "pool_level_up": {
+      "id": "pool_level_up",
+      "entries": [
+        {
+          "optionId": "reward_cave_body",
+          "weight": 1
+        },
+        {
+          "optionId": "reward_cave_mind",
+          "weight": 1
+        },
+        {
+          "optionId": "reward_cave_social",
+          "weight": 1
+        },
+        {
+          "optionId": "opt_mnvpcwi6_5m0k",
+          "weight": 1
+        },
+        {
+          "optionId": "opt_mnvpep93_1jnj",
+          "weight": 1
+        },
+        {
+          "optionId": "opt_mnvpfbu2_jp8k",
+          "weight": 1
+        },
+        {
+          "optionId": "opt_mnvpg3m9_8gnr",
+          "weight": 1
+        },
+        {
+          "optionId": "opt_mnvpgq9g_a1fe",
+          "weight": 1
+        },
+        {
+          "optionId": "opt_mnvph6sk_kgfj",
+          "weight": 1
+        }
+      ],
+      "texts": []
+    }
+  }
+}

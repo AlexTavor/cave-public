@@ -1,0 +1,145 @@
+{
+  "id": "trick_accountant",
+  "label": "",
+  "tags": [
+    "anim:kill",
+    "anim:spawn",
+    "accountant"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 1000,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "mind": {
+            "base": 50,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 50,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": true,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "X6R6Itb0Y-l7NYQk80FMf",
+          "blueprintId": "newbody",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn_body",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [
+            "Man",
+            "Accountant",
+            "Corrupt Official"
+          ],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Trick Accountant",
+        "icon": "trick_accountant",
+        "description": "The accountant has been stealing.\n\nI have proof enough to send him to a Patriarchy dungeon — perhaps even into a mage’s laboratory.\n\nPerfect blackmail.\nI only need to confront him and make him come to the cave.",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "investigate_accountant"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 4950.709796888652,
+        "y": 2742.980678326332,
+        "radius": {
+          "min": 50,
+          "max": 50
+        }
+      },
+      "updater": [
+        {
+          "id": "1NGUbIdDZxT7tvcNTROZ_",
+          "target": "sys_world.state.purge_progress.value",
+          "op": "ADD",
+          "value": "5",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "notifications": [
+        {
+          "title": "Blackmailed!",
+          "text": "I confronted the accountant. He bluffed, threatened, almost set his guards on my bodies.\nBut eventually he broke. I let him believe I belonged to some criminal organization, and told him he was coming with me.\n\nWhile some of my bodies escorted him toward the cave, the others staged his disappearance in the office. I scattered the evidence, smashed the window, and made it look as though he had fled into the river.\n\nWith luck, the Purge Inquisitors will mark it down as an ordinary crime and look no deeper.\n\nI am probably safe. Still, I should absorb him quickly.",
+          "imageUrl": null,
+          "id": "2W13MZEbqrThFnTpC1fBq"
+        }
+      ],
+      "conditionalActivation": [
+        {
+          "priority": 0,
+          "conditions": [
+            {
+              "id": "Cx-3VXFrfcqkw8wB6mxip",
+              "sortKey": "01KNKV0Y6H997KNQ5KC1BQNRFH",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "habitus_owned",
+              "factAbout": "Merchant",
+              "operator": ">=",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "spawner",
+              "targetId": "X6R6Itb0Y-l7NYQk80FMf"
+            },
+            {
+              "ability": "cycle"
+            },
+            {
+              "ability": "updater",
+              "targetId": "1NGUbIdDZxT7tvcNTROZ_"
+            },
+            {
+              "ability": "passport"
+            }
+          ],
+          "inactiveExplanation": "I think there is something odd about the accountant's accounts.\n\nIf I knew more about finances, I could probably understand and leverage this."
+        }
+      ],
+      "unifiedBlueprints": [
+        {
+          "tag": "accountant",
+          "spawnWhenPeerSpawns": false
+        }
+      ]
+    }
+  }
+}

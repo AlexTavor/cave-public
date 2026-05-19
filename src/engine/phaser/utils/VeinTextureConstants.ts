@@ -1,0 +1,1 @@
+export const VEIN_STRIP_BASE_HEIGHT_PX = 16;

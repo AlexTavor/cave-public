@@ -1,0 +1,126 @@
+{
+  "id": "kidnap_accountant",
+  "label": "",
+  "tags": [
+    "tax_office",
+    "accountant",
+    "anim:spawn",
+    "anim:kill"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 1000,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "body": {
+            "base": 80,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mind": {
+            "base": 10,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": true,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "2_4UwjvrBwpBLxcQITem3",
+          "blueprintId": "newbody",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn_body",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [
+            "Accountant",
+            "Man"
+          ],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Kidnap Accountant",
+        "icon": "kidnap_accountant",
+        "description": "Just walk into the office with my bodies, grab the Accountant, and run. \n\nI'll have to fight the guards off. And after that, the Purge is sure to follow.",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "tax_office_root"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 4346.3092027946905,
+        "y": 2568.4575756141567,
+        "radius": {
+          "min": 50,
+          "max": 50
+        }
+      },
+      "updater": [
+        {
+          "id": "c-mQi_yfspwq66ozMh8AY",
+          "target": "sys_world.state.purge_progress.value",
+          "op": "ADD",
+          "value": "1000",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "triggeredActions": [
+        {
+          "id": "cexdLDGLfHqWKVUQU5UYy",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": [],
+          "actions": [
+            {
+              "type": "KILL_ALL_BODIES_EXCEPT",
+              "quantity": 5
+            }
+          ]
+        }
+      ],
+      "notifications": [
+        {
+          "title": "Grab And Run",
+          "text": "I grabbed the accountant and dashed out. \nThe guards attacked me, killing some of my bodies. It hurts, when bodies die.\n\nBut now I have the accountant, hog-tied. We'll be in the cave soon. \n\nThe Purge is sure to follow. I must absorb him quickly.",
+          "imageUrl": null,
+          "id": "Xzredjn6vsl12SzaDj1zA"
+        }
+      ],
+      "unifiedBlueprints": [
+        {
+          "tag": "accountant",
+          "spawnWhenPeerSpawns": true
+        }
+      ]
+    }
+  }
+}

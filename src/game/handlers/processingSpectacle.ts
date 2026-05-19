@@ -1,0 +1,1 @@
+export { spawnYieldSpectacle } from "./absorptionBatchSpectacle";

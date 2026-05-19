@@ -1,0 +1,131 @@
+{
+  "id": "how_hard_can_i_go",
+  "label": "",
+  "tags": [
+    "understanding",
+    "anim:spawn",
+    "anim:kill",
+    "how_hard_can_i_go",
+    "killer"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "assignment": {
+        "slots": 10,
+        "locking": false,
+        "filter": [],
+        "minimums": [
+          {
+            "kind": "body_count",
+            "required": 10
+          }
+        ],
+        "duration": 60,
+        "showProgress": true,
+        "oneOff": false,
+        "results": [
+          {
+            "type": "destroy_assigned_bodies"
+          }
+        ]
+      },
+      "spawner": [
+        {
+          "id": "r5lzT9CIHm5Kj291cUdaZ",
+          "blueprintId": "how_big_can_i_get",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [],
+          "triggers": [
+            "assignment_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "How Hard Can I Go?",
+        "icon": "how_hard_can_i_go",
+        "description": "How much can I push my bodies?\nWhat can I achieve if I push my bodies beyond human limits?\n\nI am a bit scared.\nThis is going to hurt.",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "how_did_i_come_to_be"
+        },
+        "nervousVein": true,
+        "permanent": true
+      },
+      "worldPresence": {
+        "x": 4453.557923586004,
+        "y": 1305.3287755904412,
+        "radius": {
+          "min": 75,
+          "max": 75
+        }
+      },
+      "triggeredActions": [
+        {
+          "id": "qCanuIzKXuRJOvfvg2Vl5",
+          "triggers": [
+            "assignment_complete",
+            "cycle_complete"
+          ],
+          "conditions": [],
+          "actions": [
+            {
+              "type": "GAIN_UNDERSTANDING",
+              "understandingId": "i_can_go_hard"
+            }
+          ]
+        }
+      ],
+      "notifications": [
+        {
+          "title": "I Can Go Hard",
+          "text": "I can push my bodies beyond human limits.\nRun until my tendons snap.\nIgnore any pain.\n\nI can ignore a body. \nI cannot will myself to not have it.\nWhen a body dies, I can no longer recall its memories.\nUnless I absorbed it.\n\n[i]Permanent Upgrade [color=gold]Can Go Hard[/color][/i]  \n+10 [icon=attr_body]Body",
+          "imageUrl": null,
+          "id": "ASTp-3grlryvFA07OalSy"
+        }
+      ],
+      "conditionalActivation": [
+        {
+          "priority": 0,
+          "conditions": [
+            {
+              "id": "r78SqxW7xB2osgXYor-4r",
+              "sortKey": "01KNYWH6A33XC3597WG2DX2YWJ",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "understanding_owned",
+              "factAbout": "i_can_go_hard",
+              "operator": "<",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "assignment"
+            },
+            {
+              "ability": "spawner",
+              "targetId": "r5lzT9CIHm5Kj291cUdaZ"
+            },
+            {
+              "ability": "triggeredActions",
+              "targetId": "qCanuIzKXuRJOvfvg2Vl5"
+            }
+          ],
+          "inactiveExplanation": "I can push my bodies beyond human limits.\nRun until my tendons snap.\nIgnore any pain.\n\nI can ignore a body. \nI cannot will myself to not have it.\nWhen a body dies, I can no longer recall its memories.\nUnless I absorbed it.\n"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "trading_post",
+  "label": "",
+  "tags": [
+    "anim:spawn",
+    "anim:kill",
+    "trading_post",
+    "trading_post_root"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "passport": {
+        "label": "Trading Post",
+        "icon": "trading_post",
+        "description": "An official Patriarchal trading post. An outpost of commerce and civilization. This squat, walled compound on the river bend is where local taxes are handled. \nThe wood wholesaler and the local slave market are also here.\n\nSlaves and anxiety go in. Lumber and coin come out.",
+        "nervousVein": false,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 2770.039269894873,
+        "y": 2680.434405561505,
+        "radius": {
+          "min": 60,
+          "max": 60
+        }
+      }
+    }
+  }
+}

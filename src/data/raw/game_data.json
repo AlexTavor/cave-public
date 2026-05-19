@@ -1,0 +1,315 @@
+{
+    "metadata": {
+        "id": "game_data",
+        "name": "New Game",
+        "version": "0.0.1"
+    },
+    "blueprints": {},
+    "config": {
+        "traits": {},
+        "settings": {
+            "impulse": {
+                "globalDrag": 0.9,
+                "maxSubSteps": 8,
+                "defaultDtMs": 16,
+                "minWorldSize": 1,
+                "defaultQueryRadius": 60,
+                "separationRadiusMultiplier": 3,
+                "subSteps": 1,
+                "separationStrength": 1,
+                "avoidanceForce": 2,
+                "lookAheadDistance": 40,
+                "alignmentWeight": 0.5,
+                "cohesionWeight": 0.1,
+                "flockingRadius": 60,
+                "avoidanceDamp": 0.1,
+                "seekStrength": 500,
+                "transferNodeRadius": 3,
+                "transferNodeMass": 1,
+                "transferNodeDrag": 0.1,
+                "noise": {
+                    "magnitude": 0,
+                    "frequency": 0
+                }
+            },
+            "game_config": {
+                "purge": {
+                    "maxProgress": 100,
+                    "killIntervalSeconds": {
+                        "min": 5,
+                        "max": 10
+                    },
+                    "milestones": []
+                },
+                "susDisplays": [],
+                "suspicionNotificationDisplays": [],
+                "caveDisplay": {
+                    "eyes": {
+                        "eyeTravel": 1.98,
+                        "eyeDriftTravel": 0.31,
+                        "eyeDriftStepX": 0.09,
+                        "eyeDriftStepY": 0.12,
+                        "pupilTravel": 0.45,
+                        "minBlinkMs": 1500,
+                        "maxBlinkMs": 4200
+                    },
+                    "fur": {
+                        "sampleCount": 196,
+                        "bodyRadiusScale": 0.92,
+                        "hairStride": 2,
+                        "midpointRatio": 0.58,
+                        "baseOctaves": [
+                            {
+                                "frequency": 3,
+                                "amplitudePx": 3
+                            },
+                            {
+                                "frequency": 5,
+                                "amplitudePx": 1.5
+                            }
+                        ],
+                        "pulseOctaves": [
+                            {
+                                "frequency": 4,
+                                "amplitudePx": 1.8,
+                                "speedHz": 0.8
+                            },
+                            {
+                                "frequency": 7,
+                                "amplitudePx": 0.6,
+                                "speedHz": 1.6
+                            }
+                        ],
+                        "lengthPx": {
+                            "base": 16,
+                            "comfortWeight": -1,
+                            "focusWeight": 3,
+                            "happinessWeight": 0,
+                            "sadnessWeight": 0,
+                            "terrorWeight": 4,
+                            "curiosityWeight": 2,
+                            "min": 8,
+                            "max": 28
+                        },
+                        "rootWidthPx": {
+                            "base": 5,
+                            "comfortWeight": 1,
+                            "focusWeight": 0,
+                            "happinessWeight": 0,
+                            "sadnessWeight": 0,
+                            "terrorWeight": 1,
+                            "curiosityWeight": 0,
+                            "min": 2,
+                            "max": 7
+                        },
+                        "tipWidthPx": {
+                            "base": 1.5,
+                            "comfortWeight": 0,
+                            "focusWeight": 0.2,
+                            "happinessWeight": 0,
+                            "sadnessWeight": 0,
+                            "terrorWeight": 0,
+                            "curiosityWeight": 0,
+                            "min": 0.5,
+                            "max": 3
+                        },
+                        "flareAngleRad": {
+                            "base": 0.18,
+                            "comfortWeight": 0,
+                            "focusWeight": 0,
+                            "happinessWeight": 0,
+                            "sadnessWeight": 0,
+                            "terrorWeight": 0.12,
+                            "curiosityWeight": 0.18,
+                            "min": 0,
+                            "max": 0.5
+                        },
+                        "swayAngleRad": {
+                            "base": 0.24,
+                            "comfortWeight": 0.08,
+                            "focusWeight": 0,
+                            "happinessWeight": 0,
+                            "sadnessWeight": -0.05,
+                            "terrorWeight": 0.22,
+                            "curiosityWeight": 0,
+                            "min": 0,
+                            "max": 0.7
+                        },
+                        "curlAngleRad": {
+                            "base": 0.1,
+                            "comfortWeight": 0,
+                            "focusWeight": 0,
+                            "happinessWeight": 0,
+                            "sadnessWeight": 0.05,
+                            "terrorWeight": 0,
+                            "curiosityWeight": 0.16,
+                            "min": 0,
+                            "max": 0.4
+                        },
+                        "stiffness01": {
+                            "base": 0.46,
+                            "comfortWeight": 0.2,
+                            "focusWeight": 0,
+                            "happinessWeight": 0,
+                            "sadnessWeight": 0,
+                            "terrorWeight": -0.18,
+                            "curiosityWeight": -0.08,
+                            "min": 0,
+                            "max": 1
+                        },
+                        "tremorPx": {
+                            "base": 0.8,
+                            "comfortWeight": 0,
+                            "focusWeight": 0,
+                            "happinessWeight": 0,
+                            "sadnessWeight": 0.5,
+                            "terrorWeight": 2.2,
+                            "curiosityWeight": 0,
+                            "min": 0,
+                            "max": 4
+                        },
+                        "motionHz": {
+                            "base": 0.7,
+                            "comfortWeight": 0,
+                            "focusWeight": 0,
+                            "happinessWeight": 0,
+                            "sadnessWeight": 0,
+                            "terrorWeight": 1.2,
+                            "curiosityWeight": 0.8,
+                            "min": 0.1,
+                            "max": 3
+                        },
+                        "pulseLengthScale": {
+                            "base": 0.22,
+                            "comfortWeight": 0,
+                            "focusWeight": 0.2,
+                            "happinessWeight": 0,
+                            "sadnessWeight": 0,
+                            "terrorWeight": 0.35,
+                            "curiosityWeight": 0,
+                            "min": 0,
+                            "max": 1
+                        },
+                        "pulseAngleRad": {
+                            "base": 0.08,
+                            "comfortWeight": 0,
+                            "focusWeight": 0,
+                            "happinessWeight": 0,
+                            "sadnessWeight": 0,
+                            "terrorWeight": 0.2,
+                            "curiosityWeight": 0.08,
+                            "min": 0,
+                            "max": 0.5
+                        },
+                        "attentionBias01": {
+                            "base": 0.1,
+                            "comfortWeight": 0,
+                            "focusWeight": 0.005,
+                            "happinessWeight": 0,
+                            "sadnessWeight": 0,
+                            "terrorWeight": 0,
+                            "curiosityWeight": 0.1,
+                            "min": 0,
+                            "max": 1
+                        }
+                    }
+                },
+                "world": {
+                    "width": 5000,
+                    "height": 5000
+                },
+                "camera": {
+                    "zoom": {
+                        "min": 0.1,
+                        "max": 4,
+                        "start": 1,
+                        "scrollFactor": 0.2
+                    },
+                    "pan": {
+                        "damping": 0.1,
+                        "boundsPadding": 1000,
+                        "dragThreshold": 5
+                    }
+                },
+                "menuAmbient": {
+                    "entityCount": 72,
+                    "minSpeedPxPerSecond": 5,
+                    "maxSpeedPxPerSecond": 300,
+                    "speedCurve": "inExpo",
+                    "retargetIntervalMsMin": 1800,
+                    "retargetIntervalMsMax": 5200
+                }
+            }
+        }
+    },
+    "assets": {
+        "displays": {},
+        "styles": {},
+        "settings": {
+            "vein_network": {
+                "thickness": {
+                    "min_width": 2,
+                    "max_width": 20,
+                    "pulse_width_multiplier": 3,
+                    "taper_start_width_multiplier_min": 1.1,
+                    "taper_start_width_multiplier_max": 1.15,
+                    "glow_width_multiplier": 1.6
+                },
+                "flow": {
+                    "energy_per_blob": 10,
+                    "min_blob_spacing_px": 18,
+                    "base_blob_speed_px_per_sec": 120,
+                    "blob_size_variance": 0.08,
+                    "blob_spacing_variance": 0.08
+                },
+                "geometry": {
+                    "waviness_per_meter": 0.5,
+                    "waviness_simplex_scale": 6,
+                    "segments_per_meter": 16,
+                    "meander": {
+                        "point_count_min": 0,
+                        "point_count_max": 4,
+                        "offset_min_px": 20,
+                        "offset_max_px": 100
+                    }
+                },
+                "colors": {
+                    "supply_dim_factor": 0.6,
+                    "supply_bright_factor": 1.2,
+                    "base_body": "#e91e63",
+                    "base_mind": "#2196f3",
+                    "base_social": "#ffc107",
+                    "base_nervous": "#9c27b0",
+                    "base_assignable": "#000000",
+                    "base_absorption": "#b71c1c",
+                    "hue_variance_degrees": 4
+                },
+                "heartbeats": {
+                    "blob_saturation_multiplier": 1.25,
+                    "blob_saturation_variance": 0.08,
+                    "default": "healthy",
+                    "presets": {
+                        "healthy": {
+                            "bpm": 60,
+                            "envelope": [
+                                {
+                                    "t": 0,
+                                    "v": 0
+                                },
+                                {
+                                    "t": 0.1,
+                                    "v": 1
+                                },
+                                {
+                                    "t": 0.4,
+                                    "v": 0
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

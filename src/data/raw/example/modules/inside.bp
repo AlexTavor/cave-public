@@ -1,0 +1,36 @@
+{
+  "id": "inside",
+  "label": "",
+  "tags": [
+    "inside"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "passport": {
+        "label": "Inside",
+        "icon": "inside",
+        "description": "The inside is a cavern, vast and echoing. \nNatural rock walls, soot-stained, sleek with moisture.\nIt is quiet here. Peaceful.\n\nMy favorite place. Home.",
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 3177.351015678979,
+        "y": 2251.883228714155,
+        "radius": {
+          "min": 50,
+          "max": 50
+        }
+      },
+      "unifiedBlueprints": [
+        {
+          "tag": "inside",
+          "spawnWhenPeerSpawns": true
+        }
+      ]
+    }
+  }
+}

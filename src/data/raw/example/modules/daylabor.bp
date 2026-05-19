@@ -1,0 +1,110 @@
+{
+  "id": "daylabor",
+  "label": "",
+  "tags": [
+    "daylabor",
+    "hommlet",
+    "anim:spawn"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 500,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "body": {
+            "base": 100,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "storage": [
+        {
+          "resource": "coin",
+          "displayName": "",
+          "initialValue": 0,
+          "capacity": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": false,
+          "entropy": {
+            "base": 0.5,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "bottom_left",
+          "barColorHex": "#ff9800",
+          "barPaletteColorKey": "gold",
+          "allowDeposit": false,
+          "allowWithdraw": true,
+          "priority": 0
+        }
+      ],
+      "production": [
+        {
+          "id": "7fFkb8Sj_ephjyWPQQkR8",
+          "resource": "coin",
+          "amount": {
+            "base": 10,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "target": "tag:storage:coin",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Day Laborer",
+        "icon": "day_labor",
+        "description": "I can work as a day laborer for [icon=coin]coin. \n\nHauling water, harvesting barley, cleaning stables: whatever work locals will pay a stranger to do.\n\nIf I keep my wages with the employer, they'll steal the money, bit by bit.\n\nStrangers are not well liked in [icon=hommlet]Hommlet.",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "hommlet_root"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 1084.2372730118313,
+        "y": 3128.8320038156535,
+        "radius": {
+          "min": 50,
+          "max": 50
+        }
+      },
+      "updater": [
+        {
+          "id": "AcwzrhI2ja8u3M6Baonyb",
+          "target": "sys_world.state.purge_progress.value",
+          "op": "ADD",
+          "value": "0.1",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ]
+    }
+  }
+}

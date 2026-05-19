@@ -1,0 +1,88 @@
+{
+  "id": "explore",
+  "label": "",
+  "tags": [
+    "cave_exploration",
+    "anim:spawn",
+    "anim:kill"
+  ],
+  "components": {
+    "display": {
+      "label": "explore",
+      "display_key": "explore",
+      "glyphKey": "explore",
+      "style": "explore"
+    },
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 500,
+          "perBody": 100,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0.5,
+        "inputs": {
+          "body": {
+            "base": 10,
+            "perBody": 10,
+            "multPerBody": 0
+          },
+          "mind": {
+            "base": 10,
+            "perBody": 10,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 10,
+            "perBody": 10,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "passport": {
+        "label": "Explore",
+        "icon": "explore",
+        "glyphKey": "explore",
+        "description": "Explore myself, the world, and my place in it. \n\nWho knows what I will find?",
+        "styleId": "explore",
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 2374.34082168291,
+        "y": 1480.4574375873824,
+        "radius": {
+          "min": 70,
+          "max": 70
+        }
+      },
+      "draft": [
+        {
+          "id": "ktNT4nwmVyRiSTgXwM-aZ",
+          "poolId": "pool_explore",
+          "count": 3,
+          "label": "Explore",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": [],
+          "onComplete": [
+            {
+              "type": "KILL",
+              "entityId": "self"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

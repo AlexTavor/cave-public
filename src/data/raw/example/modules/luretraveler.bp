@@ -1,0 +1,112 @@
+{
+  "id": "luretraveler",
+  "label": "",
+  "tags": [
+    "anim:spawn"
+  ],
+  "components": {
+    "display": {
+      "label": "luretraveler",
+      "display_key": "luretraveler",
+      "glyphKey": "luretraveler",
+      "style": "luretraveler"
+    },
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 100,
+          "perBody": 50,
+          "multPerBody": 2
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "body": {
+            "base": 0,
+            "perBody": 10,
+            "multPerBody": 0
+          },
+          "mind": {
+            "base": 0,
+            "perBody": 10,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 0,
+            "perBody": 10,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "8VqySUAwZ9Hv-TiryWvcH",
+          "blueprintId": "newbody",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn_body",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Lure Traveler",
+        "icon": "luretraveler",
+        "glyphKey": "luretraveler",
+        "description": "Lure a traveler to me. \nThey will become one of my [icon=cave_body]bodies.\n\nI like having new bodies.\n",
+        "styleId": "luretraveler",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "outside"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 1208.6332725825391,
+        "y": 2488.2881101291896,
+        "radius": {
+          "min": 60,
+          "max": 60,
+          "valueRef": "self.state.cycle.value",
+          "maxRef": "self.state.cycle.max"
+        }
+      },
+      "updater": [
+        {
+          "id": "Yoh5Cn2jtEQOj3MS1dYEv",
+          "target": "sys_world.state.purge_progress.value",
+          "op": "ADD",
+          "value": "10",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "unifiedBlueprints": [
+        {
+          "tag": "outside",
+          "spawnWhenPeerSpawns": false
+        }
+      ]
+    }
+  }
+}

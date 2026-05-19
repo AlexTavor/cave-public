@@ -1,0 +1,126 @@
+{
+  "id": "butcher",
+  "label": "",
+  "tags": [
+    "cave_butcher",
+    "anim:spawn",
+    "killer"
+  ],
+  "components": {
+    "display": {
+      "label": "butcher",
+      "display_key": "butcher",
+      "glyphKey": "butcher",
+      "style": "butcher"
+    },
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "storage": [
+        {
+          "resource": "food",
+          "displayName": "Food",
+          "initialValue": 0,
+          "capacity": {
+            "base": 1000,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": false,
+          "entropy": {
+            "base": 0,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "bottom_left",
+          "barColorHex": "#4caf50",
+          "barPaletteColorKey": "green",
+          "allowDeposit": false,
+          "allowWithdraw": true,
+          "priority": 5
+        },
+        {
+          "resource": "heat",
+          "displayName": "",
+          "initialValue": 0,
+          "capacity": {
+            "base": 3000,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": false,
+          "entropy": {
+            "base": 0,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "bottom_right",
+          "barColorHex": "#f44336",
+          "barPaletteColorKey": "red",
+          "allowDeposit": false,
+          "allowWithdraw": true,
+          "priority": 5
+        }
+      ],
+      "assignment": {
+        "slots": 10000,
+        "locking": true,
+        "filter": [],
+        "minimums": [],
+        "duration": 5,
+        "showProgress": true,
+        "oneOff": false,
+        "results": [
+          {
+            "type": "spawn_resource",
+            "resource": "food",
+            "source": "fixed",
+            "factor": 100,
+            "target": "self"
+          },
+          {
+            "type": "destroy_assigned_bodies"
+          },
+          {
+            "type": "spawn_resource",
+            "resource": "heat",
+            "source": "fixed",
+            "factor": 300,
+            "target": "self"
+          }
+        ]
+      },
+      "passport": {
+        "label": "Butcher",
+        "icon": "butcher",
+        "glyphKey": "butcher",
+        "description": "For when I need to turn a body into [icon=food]food and [icon=heat]heat.\n\nEating my own bodies makes me sad.",
+        "styleId": "butcher",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "inside"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 3761.792506432209,
+        "y": 2338.0808742230447,
+        "radius": {
+          "min": 40,
+          "max": 40
+        }
+      },
+      "unifiedBlueprints": [
+        {
+          "tag": "inside",
+          "spawnWhenPeerSpawns": false
+        }
+      ]
+    }
+  }
+}

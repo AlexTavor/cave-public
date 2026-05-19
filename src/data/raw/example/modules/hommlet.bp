@@ -1,0 +1,36 @@
+{
+  "id": "hommlet",
+  "label": "",
+  "tags": [
+    "hommlet",
+    "hommlet_root",
+    "anim:spawn"
+  ],
+  "components": {
+    "display": {
+      "label": "hommlet",
+      "display_key": "hommlet"
+    },
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "passport": {
+        "label": "Hommlet",
+        "icon": "hommlet",
+        "description": "The village of Hommlet. \nIt's a huddle of huts at the edge of the forest. \nThe locals make their living mostly from raising sheep.",
+        "nervousVein": false,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 2201.0820688680324,
+        "y": 2666.129165409956,
+        "radius": {
+          "min": 60,
+          "max": 60
+        }
+      }
+    }
+  }
+}

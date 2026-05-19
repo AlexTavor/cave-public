@@ -1,0 +1,21 @@
+{
+  "id": "crackedegg",
+  "label": "",
+  "tags": [],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "worldPresence": {
+        "x": 0,
+        "y": 0,
+        "radius": {
+          "min": 10,
+          "max": 20
+        }
+      }
+    }
+  }
+}

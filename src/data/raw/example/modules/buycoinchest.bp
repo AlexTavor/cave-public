@@ -1,0 +1,102 @@
+{
+  "id": "buycoinchest",
+  "label": "",
+  "tags": [
+    "anim:spawn"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 200,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 1,
+        "inputs": {
+          "body": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mind": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 60,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": false,
+        "showThrottleSlider": false,
+        "startActive": false,
+        "resourceCosts": [
+          {
+            "resource": "coin",
+            "amount": {
+              "base": 300,
+              "perBody": 0,
+              "multPerBody": 0
+            },
+            "requestPerSecondAtFullThrottle": 10,
+            "requestCadenceSeconds": 1,
+            "scaleByBodiesOwned": false,
+            "scaleByCyclesCompleted": true,
+            "visible": true,
+            "barPosition": "top_right",
+            "barColorHex": "#ff9800",
+            "barPaletteColorKey": "gold",
+            "priority": 1
+          }
+        ],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "uVIXj8I7GSjWbx5_5qRuU",
+          "blueprintId": "coinchest",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Chestmaker",
+        "icon": "buy_coins_chest",
+        "description": "There is a family in the village famous for making sturdy chests.\nThey don't come cheap.\n\nBut I can bury the chest, and keep my [icon=coin]coin safe from thieves and the Purge.\n",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "hommlet_root"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 1590.0073459472765,
+        "y": 3658.5834642178284,
+        "radius": {
+          "min": 60,
+          "max": 60
+        }
+      }
+    }
+  }
+}

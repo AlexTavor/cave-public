@@ -1,0 +1,171 @@
+{
+  "id": "lodging_hommlet",
+  "label": "",
+  "tags": [
+    "anim:spawn",
+    "hommlet"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 50,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "social": {
+            "base": 100,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "storage": [
+        {
+          "resource": "coin",
+          "displayName": "",
+          "initialValue": 0,
+          "capacity": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": true,
+          "entropy": {
+            "base": 0,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "top_right",
+          "barColorHex": "#ff9800",
+          "barPaletteColorKey": "gold",
+          "allowDeposit": true,
+          "allowWithdraw": false,
+          "priority": 1,
+          "autoRequest": {
+            "enabled": true,
+            "cadence_s": 1,
+            "minRequest": 1,
+            "maxRequest": 20
+          }
+        },
+        {
+          "resource": "heat",
+          "displayName": "",
+          "initialValue": 0,
+          "capacity": {
+            "base": 10,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": true,
+          "entropy": {
+            "base": 0,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "bottom_right",
+          "barColorHex": "#f44336",
+          "barPaletteColorKey": "red",
+          "allowDeposit": false,
+          "allowWithdraw": true,
+          "priority": 10
+        },
+        {
+          "resource": "food",
+          "displayName": "",
+          "initialValue": 0,
+          "capacity": {
+            "base": 10,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": true,
+          "entropy": {
+            "base": 0,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": true,
+          "barPosition": "bottom_left",
+          "barColorHex": "#4caf50",
+          "barPaletteColorKey": "green",
+          "allowDeposit": false,
+          "allowWithdraw": true,
+          "priority": 10
+        }
+      ],
+      "conversion": [
+        {
+          "id": "SGkK-WLg4BQBXYArN_Ala",
+          "inputs": [
+            {
+              "resource": "coin",
+              "amount": {
+                "base": 1,
+                "perBody": 0,
+                "multPerBody": 0
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "resource": "food",
+              "amount": {
+                "base": 10,
+                "perBody": 0,
+                "multPerBody": 0
+              }
+            },
+            {
+              "resource": "heat",
+              "amount": {
+                "base": 10,
+                "perBody": 0,
+                "multPerBody": 0
+              }
+            }
+          ],
+          "resetCycle": true,
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Lodging",
+        "icon": "lodging_hommlet",
+        "description": "I can pay for lodging. My bodies will have a bed and a warm meal. \n\nAll it costs is [icon=coin]coin.",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "hommlet_root"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 1254.9670343486014,
+        "y": 3473.10071688681,
+        "radius": {
+          "min": 50,
+          "max": 50
+        }
+      }
+    }
+  }
+}

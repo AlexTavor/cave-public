@@ -1,0 +1,120 @@
+{
+  "id": "slave_market",
+  "label": "",
+  "tags": [
+    "trading_post",
+    "anim:spawn",
+    "anim:kill",
+    "slave_market"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 100,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "mind": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 80,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [
+          {
+            "resource": "coin",
+            "amount": {
+              "base": 100,
+              "perBody": 0,
+              "multPerBody": 0
+            },
+            "requestPerSecondAtFullThrottle": 10,
+            "requestCadenceSeconds": 1,
+            "scaleByBodiesOwned": false,
+            "scaleByCyclesCompleted": false,
+            "visible": true,
+            "barPosition": "top_right",
+            "barColorHex": "#ff9800",
+            "barPaletteColorKey": "gold",
+            "priority": 0
+          }
+        ],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "0k87GdVCsQ1lrEiGu7Hwv",
+          "blueprintId": "newbody",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn_body",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [
+            "Slave"
+          ],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Slave Market",
+        "icon": "slave_market",
+        "description": "This is where slaves are bought and sold. \n\nThere are many ways to become a slave in the Patriarchy.\nBorn into it. Sold for debt. Sold by parents. Condemned as punishment. Taken in war. Stolen from a distant village.\n\nThe market reeks of unwashed bodies and misery.\n\n\nSlaves are registered and taxed by the Patriarchy. If too many go missing, someone will come asking questions.",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "trading_post_root"
+        },
+        "nervousVein": false,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 3090.770400741541,
+        "y": 3484.0199914913837,
+        "radius": {
+          "min": 50,
+          "max": 50
+        }
+      },
+      "updater": [
+        {
+          "id": "4sAmdSdzk3YU4So1Nvgh3",
+          "target": "sys_world.state.purge_progress.value",
+          "op": "ADD",
+          "value": "5",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "unifiedBlueprints": [
+        {
+          "tag": "slave_market",
+          "spawnWhenPeerSpawns": false
+        }
+      ]
+    }
+  }
+}

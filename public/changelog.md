@@ -1,0 +1,3 @@
+- Make progress bars thicker
+- Increase Egg Food hugely
+- Remove rarity from draft cards

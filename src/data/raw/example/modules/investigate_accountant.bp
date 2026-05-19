@@ -1,0 +1,174 @@
+{
+  "id": "investigate_accountant",
+  "label": "",
+  "tags": [
+    "anim:spawn",
+    "anim:kill",
+    "tax_office",
+    "accountant",
+    "investigate_accountant"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 3000,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "mind": {
+            "base": 80,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [
+          {
+            "resource": "coin",
+            "amount": {
+              "base": 200,
+              "perBody": 0,
+              "multPerBody": 0
+            },
+            "requestPerSecondAtFullThrottle": 10,
+            "requestCadenceSeconds": 1,
+            "scaleByBodiesOwned": false,
+            "scaleByCyclesCompleted": false,
+            "visible": true,
+            "barPosition": "top_right",
+            "barColorHex": "#ff9800",
+            "barPaletteColorKey": "gold",
+            "priority": 0
+          }
+        ],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "ztVe0xjtZLd1ph5twD3mV",
+          "blueprintId": "investigate_accountant_2",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": [
+            {
+              "id": "8dlw6M_v202FYhyiw9pMW",
+              "sortKey": "01KNMZYN6V36AVCWDV4YADWZFG",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "habitus_owned",
+              "factAbout": "Shaman",
+              "operator": "<",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "Xl2IoCZjnBQloykDkkcde",
+          "blueprintId": "trick_accountant",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [],
+          "triggers": [
+            "cycle_complete",
+            "assignment_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Investigate Accountant",
+        "icon": "investigate_accountant",
+        "description": "I wonder what I can find out about this accountant.\n\nTime to listen to rumors, dig in garbage, and spy on the man.\n\nThis feels pregnant with secrets.",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "tax_office_root"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 4365.4394170654905,
+        "y": 3034.2430780600016,
+        "radius": {
+          "min": 50,
+          "max": 50
+        }
+      },
+      "notifications": [
+        {
+          "title": "Sleuth!",
+          "text": "I found out some interesting things about the accountant.\n\nHis finances seem... unusual.\n\nAnd he sneaks out into the forest every once in a while.\n\nVery interesting.",
+          "imageUrl": null,
+          "id": "EOxpK4SHfR6HHbq6GXeUS"
+        }
+      ],
+      "conditionalActivation": [
+        {
+          "priority": 0,
+          "conditions": [
+            {
+              "id": "qUYpsS4HCG68KFu3tPxWa",
+              "sortKey": "01KNJ5ZQA96N4Q684V88V96SET",
+              "kind": "fact_threshold",
+              "scope": "run",
+              "factType": "cycle_completed",
+              "factAbout": "investigate_accountant",
+              "operator": "<",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "cycle"
+            },
+            {
+              "ability": "spawner",
+              "targetId": "ztVe0xjtZLd1ph5twD3mV"
+            },
+            {
+              "ability": "passport"
+            }
+          ],
+          "inactiveExplanation": "I found out everything I could here."
+        }
+      ],
+      "unifiedBlueprints": [
+        {
+          "tag": "accountant",
+          "spawnWhenPeerSpawns": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "id": "lure_hommlet_native",
+  "label": "",
+  "tags": [
+    "anim:kill",
+    "anim:spawn"
+  ],
+  "components": {
+    "display": {
+      "label": "lure_homlet_native",
+      "display_key": "lure_homlet_native"
+    },
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 1000,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "mind": {
+            "base": 50,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 50,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": true,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [
+          {
+            "resource": "food",
+            "amount": {
+              "base": 2000,
+              "perBody": 0,
+              "multPerBody": 0
+            },
+            "requestPerSecondAtFullThrottle": 100,
+            "requestCadenceSeconds": 1,
+            "scaleByBodiesOwned": false,
+            "scaleByCyclesCompleted": false,
+            "visible": true,
+            "barPosition": "top_right",
+            "barColorHex": "#4caf50",
+            "barPaletteColorKey": "green",
+            "priority": 0
+          }
+        ],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "s_tRYRhJxisC8e5xFDI71",
+          "blueprintId": "newbody",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn_body",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [
+            "Hommleter"
+          ],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Lure Villager",
+        "icon": "lure_homlet_native",
+        "description": "I can lure a [icon=hommlet]Hommlet native to me. \nThe locals are wary of strangers, it will not be easy. \nBut they are also constantly on the verge of famine. \nI can bait a villager with promises of a secret food cache, safety from the coming hunger.\n\nIt will be interesting to have one of Hommlet’s own as part of me. What secrets do they hide here?",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "hommlet_root"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 1392.788362785645,
+        "y": 2798.8261623043413,
+        "radius": {
+          "min": 60,
+          "max": 60
+        }
+      },
+      "updater": [
+        {
+          "id": "v3lTMZgVBQauunpgzcMp8",
+          "target": "sys_world.state.purge_progress.value",
+          "op": "ADD",
+          "value": "30",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "notifications": [
+        {
+          "title": "A Friend In Need",
+          "text": "Slowly, I befriended one of the locals. \nPlied them with food, kept them curious with tales of an enormous hidden cache.\nEnough food for the whole village to last a year.\n\nFinally, the villager agreed to see it. Walked with me through the forest, all the way to the cave.\n\nThey are a part of me now. I should absorb the body.",
+          "imageUrl": null,
+          "id": "VjUKqELxZxtAFssSN-1RE"
+        }
+      ]
+    }
+  }
+}

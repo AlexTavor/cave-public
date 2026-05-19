@@ -1,0 +1,122 @@
+{
+  "id": "newbody",
+  "label": "",
+  "tags": [
+    "body",
+    "anim:spawn",
+    "anim:kill"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "storage": [
+        {
+          "resource": "food",
+          "displayName": "",
+          "initialValue": 0,
+          "capacity": {
+            "base": 3,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": false,
+          "entropy": {
+            "base": 0,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": false,
+          "allowDeposit": true,
+          "allowWithdraw": false,
+          "priority": 0,
+          "autoRequest": {
+            "enabled": false,
+            "cadence_s": 1,
+            "minRequest": 1,
+            "maxRequest": 999999
+          }
+        },
+        {
+          "resource": "heat",
+          "displayName": "Heat",
+          "initialValue": 0,
+          "capacity": {
+            "base": 10,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "isDefault": false,
+          "entropy": {
+            "base": 0,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "visible": false,
+          "allowDeposit": true,
+          "allowWithdraw": false,
+          "priority": 0
+        }
+      ],
+      "upkeep": [
+        {
+          "resource": "food",
+          "displayName": "",
+          "rate": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "failureTrait": "starving",
+          "autoRequest": true,
+          "isImmediate": true,
+          "requestSource": "tag:body_provider"
+        },
+        {
+          "resource": "heat",
+          "displayName": "",
+          "rate": {
+            "base": 0.5,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "failureTrait": "cold",
+          "autoRequest": true,
+          "isImmediate": true,
+          "requestSource": "tag:body_provider"
+        }
+      ],
+      "body": {
+        "baseAttributes": {
+          "body": 1,
+          "mind": 1,
+          "social": 1
+        },
+        "health": 100,
+        "traits": [
+          "healing"
+        ],
+        "xp": 1,
+        "level": 1
+      },
+      "passport": {
+        "label": "A body",
+        "icon": "body",
+        "glyphKey": "newbody",
+        "description": "One of my bodies. \nI like having bodies. \nI can walk, think, and do things with them.",
+        "nervousVein": false,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 1976.1917385886622,
+        "y": 2008.7719740085208,
+        "radius": {
+          "min": 28,
+          "max": 28
+        }
+      }
+    }
+  }
+}

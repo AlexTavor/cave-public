@@ -1,0 +1,167 @@
+{
+  "id": "do_locals_know_of_me",
+  "label": "",
+  "tags": [
+    "understanding",
+    "anim:spawn",
+    "anim:kill",
+    "do_locals_know_of_me"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 5000,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "mind": {
+            "base": 30,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 70,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": false,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "DgIOyxCVtWUm7cMcfu4gO",
+          "blueprintId": "does_patriarchy_know_of_me",
+          "count": {
+            "base": 1,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [],
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Do Locals Know Of Me?",
+        "icon": "do_locals_know_of_me",
+        "description": "Maybe the local villagers know what I am. \nEven if not directly, perhaps in the stories they tell each other.\nOr in children's songs.\n\nI like children's songs.",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "what_am_i"
+        },
+        "nervousVein": true,
+        "permanent": true
+      },
+      "worldPresence": {
+        "x": 2872.213094149789,
+        "y": 802.8051659868356,
+        "radius": {
+          "min": 75,
+          "max": 75
+        }
+      },
+      "triggeredActions": [
+        {
+          "id": "lX0RT9k_Wo2OWRIEnDjs5",
+          "triggers": [
+            "cycle_complete"
+          ],
+          "conditions": [],
+          "actions": [
+            {
+              "type": "GAIN_UNDERSTANDING",
+              "understandingId": "do_locals_know_of_me"
+            }
+          ]
+        }
+      ],
+      "notifications": [
+        {
+          "title": "Incognito",
+          "text": "I lived enough lives in Hommlet to know it inside out.\nI know their stories, their secrets, their buried and forgotten knowledge.\nThey have many tales of spirits, ghosts, goblins.\nMonsters in the mountains.\n\nBut nothing like me was ever here before.\nNobody in Hommlet ever heard of anything like me.\n\nI am not from here, it seems.\n\n[i]Permanent Upgrade [color=gold]Incognito[/color][/i]  \n+100% to all [icon=hommlet]Hommlet production",
+          "imageUrl": null,
+          "id": "TeNvQFGZk3SMKg83sTyS6"
+        }
+      ],
+      "conditionalActivation": [
+        {
+          "priority": 0,
+          "conditions": [
+            {
+              "id": "N9xZcbTaWjACaAX2KfxHc",
+              "sortKey": "01KNYRM2674PJ6S67D8BT4YEJR",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "habitus_owned",
+              "factAbout": "Hommleter",
+              "operator": ">=",
+              "value": 1
+            },
+            {
+              "id": "v1BzYw6gK34yp1BLvzQyc",
+              "sortKey": "01KNYRMGTV75WK8PHNH0FXPP6S",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "habitus_owned",
+              "factAbout": "Merchant",
+              "operator": ">=",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "cycle"
+            },
+            {
+              "ability": "spawner",
+              "targetId": "DgIOyxCVtWUm7cMcfu4gO"
+            },
+            {
+              "ability": "triggeredActions",
+              "targetId": "lX0RT9k_Wo2OWRIEnDjs5"
+            }
+          ],
+          "inactiveExplanation": "I don't know enough about Hommlet and its people to be sure.\n\nI should absorb more of them, gain their unique lifetime experiences."
+        },
+        {
+          "priority": 1,
+          "conditions": [
+            {
+              "id": "c1wIpuR8lHY1tsN8PCYhj",
+              "sortKey": "01KNYT265DKB9P7BZBN8XCTSBR",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "understanding_owned",
+              "factAbout": "do_locals_know_of_me",
+              "operator": "<",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "cycle"
+            }
+          ],
+          "inactiveExplanation": "I lived enough lives in Hommlet to know it inside out.\nI know their stories, their secrets, their buried and forgotten knowledge.\nThey have many tales of spirits, ghosts, goblins.\nMonsters in the mountains.\n\nBut nothing like me was ever here before.\nNobody in Hommlet ever heard of anything like me.\n\nI am not from here, it seems."
+        }
+      ]
+    }
+  }
+}

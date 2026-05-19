@@ -1,0 +1,149 @@
+{
+  "id": "slave_uprising",
+  "label": "",
+  "tags": [
+    "slave_market",
+    "trading_post"
+  ],
+  "components": {
+    "passiveEffects": [],
+    "traits": []
+  },
+  "_editor": {
+    "abilities": {
+      "cycle": {
+        "maxProgress": {
+          "base": 5000,
+          "perBody": 0,
+          "multPerBody": 0
+        },
+        "costMultPerCycle": 0,
+        "inputs": {
+          "body": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mind": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "social": {
+            "base": 60,
+            "perBody": 0,
+            "multPerBody": 0
+          }
+        },
+        "oneOff": true,
+        "showProgressBar": true,
+        "showThrottleSlider": true,
+        "startActive": false,
+        "resourceCosts": [],
+        "conditions": []
+      },
+      "spawner": [
+        {
+          "id": "uDoZu059GQnkd4yDAtXXO",
+          "blueprintId": "newbody",
+          "count": {
+            "base": 20,
+            "perBody": 0,
+            "multPerBody": 0
+          },
+          "mode": "spawn_body",
+          "target": "sys_world",
+          "parentOnSpawn": "none",
+          "forcedHabiti": [
+            "Slave"
+          ],
+          "triggers": [
+            "cycle_complete",
+            "assignment_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "passport": {
+        "label": "Slave Uprising",
+        "icon": "slave_uprising",
+        "description": "The slaves are disorganized and terrified. I can unite them, lead them in an uprising. Guide them all to me. \n\nThe Purge is almost sure to follow.",
+        "parent": {
+          "kind": "entity_tag",
+          "tag": "slave_market"
+        },
+        "nervousVein": true,
+        "permanent": false
+      },
+      "worldPresence": {
+        "x": 3582.754588574466,
+        "y": 4074.652723963239,
+        "radius": {
+          "min": 50,
+          "max": 50
+        }
+      },
+      "updater": [
+        {
+          "id": "PSb9Amp9-t-xjrFrpKsax",
+          "target": "sys_world.state.purge_progress.value",
+          "op": "ADD",
+          "value": "100",
+          "triggers": [
+            "cycle_complete",
+            "assignment_complete"
+          ],
+          "conditions": []
+        }
+      ],
+      "notifications": [
+        {
+          "title": "Freedom!",
+          "text": "I prepared the ground meticulously. Convincing, reassuring, planning. \n\nTraining in secret for this moment.\n\nWe rushed the guards. They killed a few of us, and then were torn apart. We ran into the forest, arrows raining down among us. But we escaped, finally free.\n\nThe survivors made their way to the cave.",
+          "imageUrl": null,
+          "id": "HoZEsLimaWZN6696s-BKA"
+        }
+      ],
+      "conditionalActivation": [
+        {
+          "priority": 0,
+          "conditions": [
+            {
+              "id": "kHu2RdUOzT4n0KarfYzIR",
+              "sortKey": "01KNMHDWDVBD77HC313YG8H9PF",
+              "kind": "fact_threshold",
+              "scope": "permanent",
+              "factType": "habitus_owned",
+              "factAbout": "Slave",
+              "operator": ">=",
+              "value": 1
+            }
+          ],
+          "targets": [
+            {
+              "ability": "cycle"
+            },
+            {
+              "ability": "passport"
+            },
+            {
+              "ability": "spawner",
+              "targetId": "uDoZu059GQnkd4yDAtXXO"
+            },
+            {
+              "ability": "updater",
+              "targetId": "PSb9Amp9-t-xjrFrpKsax"
+            }
+          ],
+          "inactiveExplanation": "There is something here that I don't quite understand. \nSome possibility.\n\nPerhaps it is something a slave would see."
+        }
+      ],
+      "unifiedBlueprints": [
+        {
+          "tag": "slave_market",
+          "spawnWhenPeerSpawns": true
+        }
+      ]
+    }
+  }
+}
