@@ -19,7 +19,7 @@ The `docs/` directory contains the full design record — high-level design (HLD
 | Test files / tests passing   | 1,096 / **2,814**                                   |
 | Statement coverage           | **83%**                                             |
 | Line coverage                | **85%**                                             |
-| Average FTA complexity score | **24.4** (industry typical: 35–45 at this scale)    |
+| Average FTA complexity score | **24.4** (cyclomatic and halstead)    |
 | Files scoring "OK" in FTA    | **92%** of 3,224 files                              |
 | Circular dependencies        | **0** across 13,000+ import edges                   |
 | Duplication (TypeScript)     | **4.2%**                                            |
