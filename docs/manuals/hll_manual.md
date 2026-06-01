@@ -1,457 +1,376 @@
 # Cave Engine Abilities Manual (HLL)
 
-Canonical reference for the Designer Mode ability compiler.
+Reference for the high-level ability layer. Verified against the schemas in `src/data/schemas/abilities/` and the compilers in `src/engine/compiler/abilities/`. Field names, defaults, and enums are taken from the code.
 
 ## Overview
 
-Abilities are high-level configuration entries stored in a Blueprint under `_editor.abilities`. The compiler runs on save and translates abilities into runtime components (`state`, `behavior`, `powerSink`, `passiveEffects`, `assignment`, `buffs`, etc.).
+Abilities are high-level configuration stored on a Blueprint under `_editor.abilities`. During linking, the per-blueprint compiler translates abilities into runtime components (`state`, `behavior`, `powerSink`, `passiveEffects`, `assignment`, `buffs`, …).
 
-**Compiler rule:** `_editor` is the source of truth. Manual edits to compiled components are overwritten on save.
+**Source-of-truth rule:** `_editor.abilities` is authoritative. Components an ability manages are regenerated on each link; do not hand-edit them.
 
 ## Ability model
 
-**Single abilities** (only one entry allowed per blueprint):
+`src/data/schemas/abilities/index.ts`.
 
-- `cycle`
-- `assignment`
-- `body`
-- `passport`
-- `worldPresence`
-- `notifications`
-- `conditionalActivation`
-- `unifiedBlueprints`
+**Single abilities** — one entry per blueprint (object value):
 
-**Repeatable abilities** (arrays; multiple entries allowed):
+`cycle`, `assignment`, `body`, `passport`, `worldPresence`, `notifications`, `conditionalActivation`, `unifiedBlueprints`
 
-- `storage`
-- `production`
-- `conversion`
-- `upkeep`
-- `injection`
-- `spawner`
-- `sampler`
-- `draft`
-- `updater`
-- `triggeredActions`
+> Three of these hold list-shaped values even though they occupy a single key: `notifications` is an array of rules; `unifiedBlueprints` is an array of memberships; `conditionalActivation` accepts either a single entry **or** an array of entries.
+
+**Repeatable abilities** — arrays, multiple entries allowed:
+
+`storage`, `production`, `conversion`, `upkeep`, `injection`, `spawner`, `sampler`, `draft`, `updater`, `triggeredActions`
 
 ## Shared types
 
 ### ScalableValue
 
-Many numeric fields scale with population.
+Many numeric fields scale with world population (`src/data/schemas/abilities/utils.ts`).
 
 ```ts
 type ScalableValue = {
-    base: number;       // flat base value
-    perBody: number;    // added per body in the world
-    multPerBody: number; // multiplier per body in the world
+    base: number;        // default 0
+    perBody: number;     // default 0
+    multPerBody: number; // default 0
 };
 ```
 
-Formula: `FinalValue = (base + perBody * population) * (1 + multPerBody * population)`
+**Formula** (`src/engine/compiler/utils/scalableCompiler.ts`):
 
-### ConditionLines
+- If `multPerBody === 0`: `FinalValue = base + perBody * population`
+- If `multPerBody !== 0`: `FinalValue = (base + perBody * population) * (multPerBody * population)`
 
-A list of logic sentence strings. All conditions must pass. An empty list means always.
+`population` is the total world body count. Note there is **no `1 +`** in the multiplier — when `multPerBody` is non-zero the result is multiplied by `multPerBody * population` directly.
 
-```json
-"conditions": ["self.state.food.value > 0", "global.season EQ summer"]
-```
+### ConditionLines vs StructuredConditions
+
+Two different condition formats are used depending on the ability:
+
+- **ConditionLines** (`abilities/conditions.ts`) — an array of logic-sentence **strings**. All must pass; an empty list means "always". Used by `cycle`, `production`, `conversion`, `draft`, `updater`, `triggeredActions`.
+
+  ```json
+  "conditions": ["self.state.food.value > 0", "global.season EQ summer"]
+  ```
+
+- **StructuredCondition[]** — structured condition objects (named conditions from `config.settings.conditions`, plus built-in condition kinds). Used by `spawner` and `conditionalActivation`.
 
 ### AbilityTriggers
 
-Controls when trigger-based abilities fire.
+When trigger-based abilities fire (`abilities/triggers.ts`). A non-empty array; default `["cycle_complete"]`.
 
 ```ts
 type AbilityTriggerKind = "cycle_complete" | "assignment_complete";
 ```
 
-Default: `["cycle_complete"]`.
-
 ## Ability reference
 
-### Cycle
+### Cycle (single)
 
-The heartbeat of an entity. Accumulates progress by drawing from the power grid and optional resource costs.
+The heartbeat of an entity: accumulates progress by drawing from the power grid and optional resource costs (`abilities/cycle.ts`).
 
-**Fields**
+| Field               | Type                  | Default                | Description                                       |
+| ------------------- | --------------------- | ---------------------- | ------------------------------------------------- |
+| `maxProgress`       | `ScalableValue`       | `{ base: 100 }`        | Energy to complete one cycle.                     |
+| `inputs.body`       | `ScalableValue?`      | unset                  | Power demand from body. (optional, no default)    |
+| `inputs.mind`       | `ScalableValue?`      | unset                  | Power demand from mind.                           |
+| `inputs.social`     | `ScalableValue?`      | unset                  | Power demand from social.                         |
+| `resourceCosts`     | `CycleResourceCost[]` | `[]`                   | Resource costs consumed while cycling.            |
+| `costMultPerCycle`  | `number` (≥0)         | `0`                    | Cost multiplier applied after each completed cycle.|
+| `transformTo`       | `string?`             | unset                  | Blueprint id to transform into on completion.     |
+| `keepProgress`      | `boolean?`            | unset                  | Reserved for lifecycle transitions.               |
+| `oneOff`            | `boolean`             | `false`                | Self-destruct when storage empties after a cycle. |
+| `showProgressBar`   | `boolean?`            | unset                  | Show the progress bar.                            |
+| `showThrottleSlider`| `boolean?`            | unset                  | Show the throttle slider.                         |
+| `startActive`       | `boolean?`            | unset                  | Start active.                                     |
+| `conditions`        | `ConditionLines`      | `[]`                   | Gate cycle progress.                              |
 
-| Field               | Type                   | Description                                                       |
-| ------------------- | ---------------------- | ----------------------------------------------------------------- |
-| `maxProgress`       | `ScalableValue`        | Energy required to complete one cycle. Default: `{ base: 100 }`. |
-| `inputs.body`       | `ScalableValue`        | Power demand from the body attribute.                             |
-| `inputs.mind`       | `ScalableValue`        | Power demand from the mind attribute.                             |
-| `inputs.social`     | `ScalableValue`        | Power demand from the social attribute.                           |
-| `resourceCosts`     | `CycleResourceCost[]`  | Additional resource costs consumed each cycle tick.               |
-| `costMultPerCycle`  | `number`               | Multiplier applied to costs after each completed cycle. Default: `0`. |
-| `transformTo`       | `string`               | Blueprint id to transform into on completion.                     |
-| `keepProgress`      | `boolean`              | Reserved for lifecycle transitions.                               |
-| `oneOff`            | `boolean`              | If true, the entity self-destructs when storage is empty after cycle. |
-| `showProgressBar`   | `boolean`              | Show cycle progress bar in UI.                                    |
-| `showThrottleSlider`| `boolean`              | Show throttle slider in UI.                                       |
-| `startActive`       | `boolean`              | Start the cycle in active state.                                  |
-| `conditions`        | `ConditionLines`       | Condition list gating cycle progress.                             |
+**CycleResourceCost** (`abilities/cycle.ts`):
 
-**CycleResourceCost fields**
+| Field                            | Type            | Default         | Description                       |
+| -------------------------------- | --------------- | --------------- | --------------------------------- |
+| `resource`                       | `string`        | —               | Required.                         |
+| `amount`                         | `ScalableValue` | `{ base: 0 }`   | Consumed per request.             |
+| `requestPerSecondAtFullThrottle` | `number` (>0)   | `10`            | Pull rate from storage.           |
+| `requestCadenceSeconds`          | `number` (>0)   | `1`             | How often the cost is requested.  |
+| `scaleByBodiesOwned`             | `boolean`       | `false`         | Scale cost by assigned bodies.    |
+| `scaleByCyclesCompleted`         | `boolean`       | `false`         | Scale cost by completed cycles.   |
+| `visible`                        | `boolean`       | `true`          | Show a bar.                       |
+| `barPosition` / `barColorHex` / `barPaletteColorKey` | — | unset    | Optional bar styling.             |
+| `priority`                       | `number`        | `0`             | Pull priority.                    |
 
-| Field                          | Type      | Description                                              |
-| ------------------------------ | --------- | -------------------------------------------------------- |
-| `resource`                     | `string`  | Resource id to consume.                                  |
-| `amount`                       | `ScalableValue` | Amount consumed per tick at full throttle.          |
-| `requestPerSecondAtFullThrottle` | `number`| Pull rate from storage. Default: `10`.                  |
-| `requestCadenceSeconds`        | `number`  | How often the resource is requested. Default: `1`.       |
-| `scaleByBodiesOwned`           | `boolean` | Scale cost by bodies assigned to this entity.            |
-| `scaleByCyclesCompleted`       | `boolean` | Scale cost by number of completed cycles.                |
-| `visible`                      | `boolean` | Show a bar for this cost. Default: `true`.               |
-| `barPosition`                  | `string`  | Optional UI bar position slot.                           |
-| `barColorHex`                  | `string`  | Optional hex color for bar.                              |
-| `priority`                     | `number`  | Pull priority. Default: `0`.                             |
+### Body (single)
 
-**Compiler output**
+Biological/progression scaffolding (`abilities/body.ts`).
 
-- `state.cycle`, `state.cycle_active` entries.
-- `state.is_depleted` when `oneOff` is enabled.
-- `powerSink.baseDemand` values and accumulation rule.
-- Resource cost pull rules per entry.
-- Optional transform, cycle reset, and one-off GC rules.
+| Field            | Type                 | Default                    |
+| ---------------- | -------------------- | -------------------------- |
+| `baseAttributes` | `{ body, mind, social }` | `{ body: 1, mind: 1, social: 1 }` |
+| `health`         | `number`             | `100`                      |
+| `traits`         | `string[]`           | `[]`                       |
+| `xp`             | `number`             | `0`                        |
+| `level`          | `number`             | `1`                        |
+| `rules`          | `BehaviorRule[]?`    | unset                      |
 
-### Body
+### Passport (single)
 
-Biological and progression scaffolding.
+Identity and display metadata (`abilities/passport.ts`).
 
-**Fields**
+| Field         | Type      | Default     |
+| ------------- | --------- | ----------- |
+| `label`       | `string`  | `"Unknown"` |
+| `icon`        | `string?` | unset       |
+| `glyphKey`    | `string?` | unset       |
+| `description` | `string?` | unset       |
+| `styleId`     | `string?` | unset       |
+| `parent`      | `EntityTargetSpec?` | unset |
+| `nervousVein` | `boolean` | `false`     |
+| `permanent`   | `boolean` | `false`     |
 
-| Field            | Type                   | Description                            |
-| ---------------- | ---------------------- | -------------------------------------- |
-| `baseAttributes` | `{ body, mind, social }` | Base attribute values.               |
-| `health`         | `number`               | Starting health and max health.        |
-| `xp`             | `number`               | Starting XP.                           |
-| `level`          | `number`               | Starting level.                        |
-| `traits`         | `string[]`             | Initial trait ids.                     |
+### WorldPresence (single)
 
-**Compiler output**
+Spatial placement and render-radius binding (`abilities/worldPresence.ts`).
 
-- `components.body` with base attributes, health values, xp/level scaffolding, and trait list.
-
-### Passport
-
-Identity and display metadata for a blueprint.
-
-**Fields**
-
-| Field         | Type     | Description                                                              |
-| ------------- | -------- | ------------------------------------------------------------------------ |
-| `label`       | `string` | Display label.                                                           |
-| `icon`        | `string` | Icon id.                                                                 |
-| `description` | `string` | Optional descriptive text.                                               |
-| `styleId`     | `string` | Optional style id; references `assets.styles` keys.                     |
-
-**Compiler output**
-
-- Blueprint-level label.
-- `components.display` identity fields.
-- Safe merge into body passport metadata when body exists.
-
-### WorldPresence
-
-Spatial placement and render radius binding.
-
-**Fields**
-
-| Field             | Type     | Description                               |
-| ----------------- | -------- | ----------------------------------------- |
-| `x`               | `number` | World X position.                         |
-| `y`               | `number` | World Y position.                         |
-| `radius.min`      | `number` | Minimum display radius.                   |
-| `radius.max`      | `number` | Maximum display radius.                   |
-| `radius.valueRef` | `string` | State path for current radius value.      |
-| `radius.maxRef`   | `string` | State path for current radius max.        |
-
-**Compiler output**
-
-- `components.spatial` and radius references.
-- Safe updates to physics/display radius fields when present.
+| Field    | Type           | Default | Notes                                |
+| -------- | -------------- | ------- | ------------------------------------ |
+| `x`      | `number`       | `0`     |                                      |
+| `y`      | `number`       | `0`     |                                      |
+| `radius` | `SpatialRadius`| —       | Required. `{ min (10), max (20), valueRef?, maxRef? }`. |
 
 ### Storage (repeatable)
 
-Creates a named resource storage slot.
+Creates a named resource slot (`abilities/storage.ts`).
 
-**Fields**
+| Field          | Type            | Default | Notes                                            |
+| -------------- | --------------- | ------- | ------------------------------------------------ |
+| `resource`     | `string`        | —       | Required.                                        |
+| `displayName`  | `string?`       | unset   |                                                  |
+| `initialValue` | `number` (≥0)   | `0`     | Starting value.                                  |
+| `capacity`     | `ScalableValue` | `{ base: 0 }` | Max capacity.                              |
+| `isDefault`    | `boolean`       | `true`  | Adds `storage:<resource>` tag.                   |
+| `entropy`      | `ScalableValue` | `{ base: 0 }` | Passive decay per second.                  |
+| `visible`      | `boolean`       | `true`  | Adds a UI bar.                                   |
+| `allowDeposit` | `boolean`       | `true`  | Allow external transfers in.                     |
+| `allowWithdraw`| `boolean`       | `true`  | Allow external transfers out.                    |
+| `priority`     | `number`        | `0`     | Pull/contention priority.                        |
+| `barPosition` / `barColorHex` / `barPaletteColorKey` | — | unset | Optional bar styling.                  |
+| `autoRequest`  | `StorageAutoRequest?` | unset | Auto-pull config (see below).               |
 
-| Field          | Type            | Description                                                      |
-| -------------- | --------------- | ---------------------------------------------------------------- |
-| `resource`     | `string`        | Resource id (e.g. `wood`, `food`).                              |
-| `capacity`     | `ScalableValue` | Storage max capacity.                                            |
-| `visible`      | `boolean`       | Adds a UI bar when true. Default: `true`.                        |
-| `isDefault`    | `boolean`       | Adds `storage:<resource>` tag.                                   |
-| `entropy`      | `ScalableValue` | Passive decay per second.                                        |
-| `allowDeposit` | `boolean`       | Allows external transfers into this storage. Default: `true`.    |
-
-**Compiler output**
-
-- `state.<resource>` entry with value/max/visible.
-- `state.<resource>.allowDeposit` flag.
-- Optional `passiveEffects` for entropy.
-- If `isDefault`, adds tag `storage:<resource>`.
-- If blueprint has a display radius and this is the first storage entry, radius refs are bound to this resource.
+**StorageAutoRequest** (`abilities/storageAutoRequest.ts`): `enabled` (default `false`), `cadence_s` (>0, default `1`), `source?`, `minRequest` (≥0, default `1`), `maxRequest` (>0, default `999999`); requires `minRequest ≤ maxRequest`.
 
 ### Production (repeatable)
 
-Transfers produced resources on cycle completion.
+Transfers produced resources when triggered (`abilities/production.ts`).
 
-**Fields**
+| Field        | Type             | Default                | Notes                              |
+| ------------ | ---------------- | ---------------------- | ---------------------------------- |
+| `id`         | `string`         | auto (nanoid)          |                                    |
+| `resource`   | `string`         | —                      | Required.                          |
+| `amount`     | `ScalableValue`  | `{ base: 0 }`          | Amount per trigger.                |
+| `target`     | `string?`        | unset (→ `tag:storage:<resource>` at compile) | Destination id or tag. |
+| `triggers`   | `AbilityTriggers`| `["cycle_complete"]`   |                                    |
+| `conditions` | `ConditionLines` | `[]`                   |                                    |
 
-| Field        | Type            | Description                                             |
-| ------------ | --------------- | ------------------------------------------------------- |
-| `resource`   | `string`        | Resource to produce.                                    |
-| `amount`     | `ScalableValue` | Amount per cycle.                                       |
-| `target`     | `string`        | Target id or tag. Default: `tag:storage:<resource>`.    |
-| `conditions` | `ConditionLines` | Condition list gating production.                      |
-
-**Compiler output**
-
-- Scalable amount state entry and `TRANSFER` rule on cycle completion.
-
-**Notes**: Requires a `cycle` ability.
+**Requires** a `cycle` ability when triggered by `cycle_complete`.
 
 ### Conversion (repeatable)
 
-Consumes inputs and grants outputs on cycle completion.
+Consumes inputs and grants outputs on completion (`abilities/conversion.ts`).
 
-**Fields**
+| Field        | Type                          | Default                | Notes                                  |
+| ------------ | ----------------------------- | ---------------------- | -------------------------------------- |
+| `id`         | `string`                      | `"default"`            |                                        |
+| `inputs`     | `{ resource, amount }[]`      | `[]`                   |                                        |
+| `outputs`    | `{ resource, amount, target? }[]` | `[]`               |                                        |
+| `resetCycle` | `boolean`                     | `true`                 | Reset cycle on completion.             |
+| `triggers`   | `AbilityTriggers`             | `["cycle_complete"]`   |                                        |
+| `conditions` | `ConditionLines`              | `[]`                   |                                        |
 
-| Field        | Type                     | Description                                   |
-| ------------ | ------------------------ | --------------------------------------------- |
-| `id`         | `string`                 | Identifier for the conversion rule.           |
-| `inputs`     | `{ resource, amount }[]` | Resources to consume.                         |
-| `outputs`    | `{ resource, amount }[]` | Resources to produce.                         |
-| `resetCycle` | `boolean`                | Reset cycle on completion. Default: `true`.   |
-| `conditions` | `ConditionLines`         | Condition list gating conversion.             |
-
-**Notes**: Requires a `cycle` ability. Collision error if `resetCycle` is true and cycle also writes to `state.cycle`.
+**Requires** a `cycle` ability. If a cycle exists **and** any conversion has `resetCycle !== false`, the compiler errors (both write `state.cycle`).
 
 ### Upkeep (repeatable)
 
-Consumes resources every tick and toggles a trait on failure.
+Consumes a resource passively and toggles a trait on failure (`abilities/upkeep.ts`).
 
-**Fields**
+| Field          | Type            | Default | Notes                                       |
+| -------------- | --------------- | ------- | ------------------------------------------- |
+| `resource`     | `string`        | —       | Required.                                   |
+| `displayName`  | `string?`       | unset   |                                             |
+| `rate`         | `ScalableValue` | `{ base: 0 }` | Consumption per second.               |
+| `failureTrait` | `string`        | —       | Required. Trait toggled when empty.         |
+| `autoRequest`  | `boolean`       | `true`  | Auto-transfer from `tag:storage:<resource>`.|
+| `isImmediate`  | `boolean?`      | unset   | Use immediate transfers.                    |
+| `requestSource`| `string?`       | unset   | Override the auto-request source.           |
 
-| Field          | Type            | Description                                      |
-| -------------- | --------------- | ------------------------------------------------ |
-| `resource`     | `string`        | Resource to consume.                             |
-| `rate`         | `ScalableValue` | Consumption rate per second.                     |
-| `failureTrait` | `string`        | Trait id toggled when resource is empty.         |
-| `autoRequest`  | `boolean`       | Auto-transfer from `tag:storage:<resource>`.     |
-
-**Compiler output**
-
-- Scalable demand state entries and passiveEffects.
-- Rules to toggle `failureTrait` via `ADD_TRAIT` / `REMOVE_TRAIT`.
-- Adds tag `susceptible_to_<failureTrait>`.
+Upkeep is passive — it has **no `triggers`** field. The compiler adds a `susceptible_to_<failureTrait>` tag and emits `ADD_TRAIT`/`REMOVE_TRAIT` rules. (A `warning` is raised if there is no matching storage for the resource.)
 
 ### Injection (repeatable)
 
-Applies passive effects to other entities via tags.
+Applies passive effects to other entities by tag (`abilities/injection.ts`). Compiles into `components.buffs`.
 
-**Fields**
-
-| Field       | Type       | Description                      |
+| Field       | Type       | Notes                            |
 | ----------- | ---------- | -------------------------------- |
-| `targetTag` | `string`   | Tag to match on target entities. |
-| `effects`   | `Effect[]` | Operations to apply.             |
+| `targetTag` | `string`   | Required.                        |
+| `effects`   | `Effect[]` | `{ op, target, value }` each.    |
 
-**Effect**: `{ op: SET|ADD|SUB|MULT|DIV, target: string, value?: number }`
+`op` is `SET | ADD | SUB | MULT | DIV`.
 
-**Compiler output**: `components.buffs` with tag/effects pairs.
+### Assignment (single)
 
-### Assignment
+Accepts assigned bodies and optionally defines completion results (`abilities/assignment.ts`).
 
-Accepts assigned proxies and optionally defines absorb outputs.
+| Field         | Type                | Default | Notes                                    |
+| ------------- | ------------------- | ------- | ---------------------------------------- |
+| `slots`       | `number` (≥0)       | `1`     | Max assigned bodies.                     |
+| `locking`     | `boolean`           | `false` | Prevent automatic recall.                |
+| `filter`      | `AssignmentFilterRule[]` | `[]` | Assignment filter conditions.          |
+| `minimums`    | `AssignmentMinimumRule[]` | `[]`| Minimum-attribute requirements.         |
+| `duration`    | `number` (≥0)       | `0`     | Assignment duration.                     |
+| `showProgress`| `boolean?`          | unset   | Show a progress bar.                     |
+| `oneOff`      | `boolean`           | `false` | Single-use assignment.                   |
+| `results`     | `AssignmentResult[]`| `[]`    | Actions on completion (see below).       |
 
-**Fields**
-
-| Field                | Type                 | Description                    |
-| -------------------- | -------------------- | ------------------------------ |
-| `slots`              | `number`             | Max assigned entities.         |
-| `locking`            | `boolean`            | Prevents automatic recall.     |
-| `filter`             | `Condition[]`        | Assignment filter conditions.  |
-| `processing_outputs` | `ProcessingOutput[]` | Absorb output configuration.   |
-
-**ProcessingOutput**
-
-| Field       | Type                       | Description                                |
-| ----------- | -------------------------- | ------------------------------------------ |
-| `resource`  | `string`                   | Resource to produce.                       |
-| `source`    | `fixed|attribute|lifetime_xp` | Value source.                           |
-| `attribute` | `body|mind|social`         | Required when `source` is `attribute`.     |
-| `factor`    | `number`                   | Multiplier applied to source.              |
-| `target`    | `string`                   | Destination (`sys_world`, `self`, or id).  |
+**AssignmentResult** is a discriminated union: `destroy_assigned_bodies`, `spawn_resource` (`{ resource, source: fixed|attribute|lifetime_xp, attribute?: body|mind|social, factor (default 1), target (default "sys_world") }`), or `transfer_habiti`. At most one `destroy_assigned_bodies` and one `transfer_habiti` per assignment.
 
 ### Spawner (repeatable)
 
-Creates entities on cycle or assignment completion.
+Creates entities when triggered (`abilities/spawner.ts`).
 
-**Fields**
+| Field           | Type                   | Default                | Notes                              |
+| --------------- | ---------------------- | ---------------------- | ---------------------------------- |
+| `id`            | `string`               | auto (nanoid)          |                                    |
+| `blueprintId`   | `string`               | —                      | Required.                          |
+| `count`         | `ScalableValue`        | `{ base: 1 }`          | Number to spawn.                   |
+| `mode`          | `spawn \| spawn_body`  | `spawn_body`           |                                    |
+| `target`        | `string`               | `"sys_world"`          | Target for `spawn_body`.           |
+| `parentOnSpawn` | `none \| self`         | `none`                 |                                    |
+| `forcedHabiti`  | `string[]`             | `[]`                   | Deduplicated.                      |
+| `triggers`      | `AbilityTriggers`      | `["cycle_complete"]`   |                                    |
+| `conditions`    | `StructuredCondition[]`| `[]`                   | **Structured**, not strings.       |
 
-| Field         | Type            | Description                        |
-| ------------- | --------------- | ---------------------------------- |
-| `blueprintId` | `string`        | Blueprint to spawn.                |
-| `count`       | `ScalableValue` | Number of spawns (uses `base`).    |
-| `mode`        | `spawn|spawn_body` | Spawn type.                     |
-| `target`      | `string`        | Target for `spawn_body`.           |
-| `triggers`    | `AbilityTriggers` | When to fire. Default: `["cycle_complete"]`. |
-| `conditions`  | `ConditionLines` | Condition list.                   |
-
-**Notes**: Requires a `cycle` ability (when triggered by cycle).
+**Requires** a `cycle` ability when triggered by `cycle_complete`. Warns if `blueprintId` is unknown (when the blueprint set is available to the validator).
 
 ### Sampler (repeatable)
 
-Mirrors a value from another state path into this entity when triggered.
+Mirrors a value from another state path into this entity when triggered (`abilities/sampler.ts`).
 
-**Fields**
+| Field     | Type             | Default              | Notes                                   |
+| --------- | ---------------- | -------------------- | --------------------------------------- |
+| `id`      | `string`         | auto (nanoid)        |                                         |
+| `source`  | `string`         | —                    | Required. State path to mirror.         |
+| `target`  | `string`         | `"sampled_value"`    | Target state key.                       |
+| `visible` | `boolean`        | `true`               | Show a bar.                             |
+| `max`     | `number`         | `100`                | Initial max for the sampled state.      |
+| `triggers`| `AbilityTriggers`| `["cycle_complete"]` |                                         |
 
-| Field     | Type      | Description                                       |
-| --------- | --------- | ------------------------------------------------- |
-| `source`  | `string`  | State path to mirror.                             |
-| `target`  | `string`  | Target state key (fallback if derivation fails).  |
-| `visible` | `boolean` | Show a UI bar for the sampled value.              |
-| `max`     | `number`  | Initial max for the sampled state.                |
-| `triggers`| `AbilityTriggers` | When to sample. Default: `["cycle_complete"]`. |
-| `conditions` | `ConditionLines` | Condition list.                         |
-
-**Target derivation**: If `source` ends with `.value` or `.max`, the base segment becomes `sampled_<segment>` (with non-word chars as `_`). Example: `sys_world.state.cycle.value` → `sampled_cycle`.
+Sampler has **no `conditions`** field. **Requires** a `cycle` ability when triggered by `cycle_complete`. Duplicate targets and collisions with existing/reserved state keys are errors.
 
 ### Draft (repeatable)
 
-Triggers a draft pool when the trigger fires.
+Triggers a draft pool when fired (`abilities/draft.ts`).
 
-**Fields**
+| Field        | Type              | Default              | Notes                              |
+| ------------ | ----------------- | -------------------- | ---------------------------------- |
+| `id`         | `string`          | auto (nanoid)        |                                    |
+| `poolId`     | `string`          | —                    | Required.                          |
+| `count`      | `number` (1–5)    | `3`                  | Options to present.                |
+| `label`      | `string?`         | unset                |                                    |
+| `triggers`   | `AbilityTriggers` | `["cycle_complete"]` |                                    |
+| `conditions` | `ConditionLines`  | `[]`                 |                                    |
+| `onComplete` | `BehaviorAction[]?`| unset               | Run after an option is selected.   |
 
-| Field        | Type             | Description                                          |
-| ------------ | ---------------- | ---------------------------------------------------- |
-| `id`         | `string`         | Auto-generated nanoid.                               |
-| `poolId`     | `string`         | Draft pool id to trigger.                            |
-| `count`      | `number`         | Number of options to present (1–5). Default: `3`.    |
-| `label`      | `string`         | Optional UI label for the draft prompt.              |
-| `triggers`   | `AbilityTriggers`| When to trigger. Default: `["cycle_complete"]`.      |
-| `conditions` | `ConditionLines` | Condition list.                                      |
-| `onComplete` | `BehaviorAction[]` | Actions to run after a draft option is selected.   |
+**Requires** a `cycle` ability when triggered by `cycle_complete`.
 
 ### Updater (repeatable)
 
-Mutates a target state path when the trigger fires.
+Mutates a target state path when fired (`abilities/updater.ts`).
 
-**Fields**
+| Field        | Type              | Default              | Notes                              |
+| ------------ | ----------------- | -------------------- | ---------------------------------- |
+| `id`         | `string`          | auto (nanoid)        |                                    |
+| `target`     | `string`          | —                    | Required.                          |
+| `op`         | `SET \| ADD \| SUB`| `ADD`               |                                    |
+| `value`      | `number \| string`| `1`                  | Value or logic reference.          |
+| `triggers`   | `AbilityTriggers` | `["cycle_complete"]` |                                    |
+| `conditions` | `ConditionLines`  | `[]`                 |                                    |
 
-| Field        | Type             | Description                                       |
-| ------------ | ---------------- | ------------------------------------------------- |
-| `id`         | `string`         | Auto-generated nanoid.                            |
-| `target`     | `string`         | State path to update.                             |
-| `op`         | `SET|ADD|SUB`    | Mutation operation. Default: `ADD`.               |
-| `value`      | `number|string`  | Value or logic reference.                         |
-| `triggers`   | `AbilityTriggers`| When to fire. Default: `["cycle_complete"]`.      |
-| `conditions` | `ConditionLines` | Condition list.                                   |
+When triggered by `cycle_complete` with no cycle present, the compiler raises a **warning** (not an error).
 
 ### TriggeredActions (repeatable)
 
-Executes arbitrary behavior actions when the trigger fires.
+Executes arbitrary behavior actions when fired (`abilities/triggeredActions.ts`).
 
-**Fields**
+| Field        | Type               | Default              | Notes                              |
+| ------------ | ------------------ | -------------------- | ---------------------------------- |
+| `id`         | `string`           | auto (nanoid)        |                                    |
+| `triggers`   | `AbilityTriggers`  | `["cycle_complete"]` |                                    |
+| `conditions` | `ConditionLines`   | `[]`                 |                                    |
+| `actions`    | `BehaviorAction[]` | — (min 1)            | Required.                          |
 
-| Field        | Type               | Description                                       |
-| ------------ | ------------------ | ------------------------------------------------- |
-| `id`         | `string`           | Auto-generated nanoid.                            |
-| `triggers`   | `AbilityTriggers`  | When to fire. Default: `["cycle_complete"]`.      |
-| `conditions` | `ConditionLines`   | Condition list.                                   |
-| `actions`    | `BehaviorAction[]` | Actions to execute (minimum 1).                   |
+**Requires** a `cycle` ability when triggered by `cycle_complete`.
 
-### Notifications
+### Notifications (single)
 
-Defines notification rules displayed to the player as guidance modals.
+An **array** of notification rules shown to the player as guidance modals (`abilities/notifications.ts`). Each rule is the modal-guidance content extended with an auto-generated `id`.
 
-```ts
-type NotificationAbilityConfig = NotificationAbilityRule[];
-```
+### ConditionalActivation (single)
 
-Each rule extends `ModalGuidanceContentSchema` with an auto-generated `id`.
+Conditionally activates/deactivates other abilities (`abilities/conditionalActivation.ts`). Accepts a single entry or an array.
 
-### ConditionalActivation
+| Field                 | Type                            | Default | Description                                       |
+| --------------------- | ------------------------------- | ------- | ------------------------------------------------- |
+| `priority`            | `number`                        | `0`     | Evaluation order.                                 |
+| `conditions`          | `StructuredCondition[]`         | `[]`    | Must pass for targets to be active.               |
+| `targets`             | `ConditionalActivationTarget[]` | `[]`    | Abilities to toggle.                              |
+| `inactiveExplanation` | `string?`                       | unset   | UI message shown when inactive.                   |
 
-Conditionally activates or deactivates other abilities based on structured conditions.
+**ConditionalActivationTarget**: `{ ability, targetId? }`. `ability` is one of the toggleable ability keys (it does **not** include `unifiedBlueprints` or `conditionalActivation` itself). `targetId` narrows to a specific repeatable entry.
 
-**Entry shape**
+### UnifiedBlueprints (single)
 
-| Field                 | Type                           | Description                                         |
-| --------------------- | ------------------------------ | --------------------------------------------------- |
-| `priority`            | `number`                       | Evaluation order. Default: `0`.                     |
-| `conditions`          | `StructuredCondition[]`        | Conditions that must pass for targets to be active. |
-| `targets`             | `ConditionalActivationTarget[]`| Abilities to toggle.                                |
-| `inactiveExplanation` | `string`                       | UI message shown when ability is inactive.          |
-
-**ConditionalActivationTarget**
-
-| Field      | Type     | Description                                         |
-| ---------- | -------- | --------------------------------------------------- |
-| `ability`  | `string` | Ability key to toggle (e.g. `"cycle"`, `"production"`). |
-| `targetId` | `string` | Optional — targets a specific repeatable entry by id. |
-
-Can be a single entry or an array of entries.
-
-### UnifiedBlueprints
-
-Declares this blueprint as a member of a unified cohort. Cohort members are spawned and managed together.
-
-```ts
-type UnifiedBlueprintsAbilityConfig = UnifiedBlueprintMembership[];
-```
-
-**UnifiedBlueprintMembership**
-
-| Field                 | Type      | Description                                       |
-| --------------------- | --------- | ------------------------------------------------- |
-| `tag`                 | `string`  | Tag identifying the cohort.                       |
-| `spawnWhenPeerSpawns` | `boolean` | Auto-spawn when another cohort member spawns.     |
+An **array** of cohort memberships (`abilities/unifiedBlueprints.ts`). Each: `{ tag, spawnWhenPeerSpawns (default false) }`. Cohort members share a tag and can be managed together; `spawnWhenPeerSpawns: true` auto-spawns when any peer spawns.
 
 ## Validation rules
 
-- Duplicate `storage`, `production`, or `upkeep` entries for the same resource are errors.
-- `Cycle` plus `conversion` that resets cycle is an error (both write `state.cycle`).
-- `production`, `spawner`, and `sampler` require a `cycle` ability (when triggered by cycle).
-- `spawner` warns if the target blueprint id does not exist.
-- Duplicate sampler targets are errors.
-- Sampler targets must not collide with existing state keys or reserved keys (`cycle`, `physics`, `display`).
+Run by the collision detector during compile (`src/engine/compiler/validation/`). Severity (`error` blocks; `warning` is advisory) is noted.
+
+**Malformed entries** (`error`): a `storage`/`production`/`upkeep` entry missing `resource`; a `conversion` input/output missing `resource`; a `spawner` missing `blueprintId`; a `sampler` missing `source`.
+
+**Duplicates** (`error`): duplicate `storage`, `production`, or `upkeep` for the same resource. Duplicate `sampler` targets.
+
+**Resource bars** (`error`): a visible storage entry or visible cycle resource-cost without a `barPosition`; two visible bars sharing a `barPosition`.
+
+**Cycle/conversion collision** (`error`): a `cycle` plus any `conversion` with `resetCycle !== false` (both write `state.cycle`).
+
+**Cycle dependency** — an ability triggered by `cycle_complete` requires a `cycle` ability:
+
+| Ability            | Severity |
+| ------------------ | -------- |
+| `production`       | error    |
+| `spawner`          | error    |
+| `sampler`          | error    |
+| `draft`            | error    |
+| `triggeredActions` | error    |
+| `updater`          | warning  |
+
+**Sampler collision** (`error`): a sampler `target` that collides with an existing non-sampler state key or a reserved key (`cycle`, `physics`, `display`).
+
+**Spawner target** (`warning`): `blueprintId` not found among known blueprints (only checked when the validator is given the blueprint set).
+
+**Upkeep orphan** (`warning`): an upkeep resource with no matching storage.
 
 ## Common patterns
 
-**Basic producer**
+**Basic producer** — `cycle` (`maxProgress: { base: 100 }`, `inputs.body: { base: 10 }`) + `production` (`resource: "wood"`, `amount: { base: 1 }`).
 
-- `cycle`: `maxProgress: { base: 100 }`, `inputs.body: { base: 10 }`
-- `production`: `resource: "wood"`, `amount: { base: 1 }`, `target: "tag:storage:wood"`
+**Processor** — storage inputs/outputs + `cycle` with inputs + `conversion` consuming inputs and emitting outputs.
 
-**Processor**
+**Living worker** — hidden food storage + `upkeep` (`autoRequest: true`, `failureTrait: "malnourished"`) + a `cycle` for labor.
 
-- Storage inputs and outputs
-- Cycle with inputs
-- Conversion consuming inputs and emitting outputs
+**Spawner** — `cycle` + `spawner` (`mode: "spawn_body"`, `target: "sys_world"`).
 
-**Living worker**
+**Sampler** — `cycle` + `sampler` (`source: "sys_world.state.notoriety.value"`).
 
-- Hidden food storage
-- Upkeep consuming food with `autoRequest: true` and `failureTrait: "malnourished"`
-- Cycle for labor
+**Escalating cost** — `cycle` with `resourceCosts` and `costMultPerCycle > 0`.
 
-**Spawner**
-
-- Cycle plus spawner with `mode: "spawn_body"` and `target: "sys_world"`
-
-**Sampler**
-
-- Cycle plus sampler with `source: "sys_world.state.notoriety.value"`
-
-**Escalating cost**
-
-- Cycle with `resourceCosts` and `costMultPerCycle > 0`
-
-**Conditional feature unlock**
-
-- ConditionalActivation with structured conditions gating a production or cycle ability
+**Conditional feature unlock** — `conditionalActivation` with structured conditions gating a `production` or `cycle` ability.
