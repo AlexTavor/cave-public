@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "map": "docs/manuals/code_map.md",
+  "doc": "Freshness manifest for the Code Map. See docs/methodology/code-map.md. `blessed` holds each file's git blob SHA at last verification; a section is STALE when any file's current `git hash-object` differs. Run `npm run code-map:check`; re-verify stale sections then `npm run code-map:bless -- <section> --note \"…\"`.",
+  "exclude": [
+    "**/*.generated.*",
+    "**/*.test.ts"
+  ],
+  "sections": {
+    "1-body-attrs-comfort": {
+      "title": "Body attributes & comfort",
+      "files": [
+        "src/game/systems/body/processEntity.ts",
+        "src/game/systems/BodySystem.ts",
+        "src/game/habiti/resolveEffectiveCaveAttributes.ts",
+        "src/game/habiti/resolveOwnedCaveKnowledgeEffects.ts",
+        "src/data/schemas/v2/worldComfortRules.ts",
+        "src/game/systems/body/worldState.ts",
+        "src/game/systems/body/bodyAttributeModifiers.ts"
+      ],
+      "blessed": {
+        "src/game/systems/body/processEntity.ts": "272bfadec6d8c822359a197d355ee975697f8ee6",
+        "src/game/systems/BodySystem.ts": "6e0c39fcd22104fa7eb2d4af2913aac18cb304a4",
+        "src/game/habiti/resolveEffectiveCaveAttributes.ts": "8b092b8eab8cf691839f6aa2bed00ea65a60f415",
+        "src/game/habiti/resolveOwnedCaveKnowledgeEffects.ts": "4d4ece3378fd1ba8bc0989dadb61dd65204f8132",
+        "src/data/schemas/v2/worldComfortRules.ts": "26d3bcb45d3e8dff8b365d2fbccaba64e6abd93b",
+        "src/game/systems/body/worldState.ts": "d5b79daa3fe552c65d58a267bdb79e417c6091a3",
+        "src/game/systems/body/bodyAttributeModifiers.ts": "a8fd06d4db4f3aa12ec5d2bded8a50ae73f707c9"
+      },
+      "lastBless": {
+        "commit": "bd5f5cb9f235422d09ff037e3cadc96fad7b6491",
+        "note": "bootstrap: initial verification against working tree"
+      }
+    },
+    "2-power-assignment": {
+      "title": "Power pool & assignment (decoupled today)",
+      "files": [
+        "src/game/systems/AttributePoolSystem.ts",
+        "src/game/systems/poolContributors.ts",
+        "src/game/systems/energy/energyDistributionDemandContext.ts",
+        "src/game/systems/EnergyDistributionSystem.ts",
+        "src/game/systems/BodyAssignmentSystem.ts",
+        "src/game/systems/AssignmentOwnerValiditySystem.ts",
+        "src/engine/phaser/scenes/entityDragController.assignment.ts",
+        "src/game/systems/pointer/resolveDraggedBodyDropTarget.ts",
+        "src/game/assignment/assignmentAcceptance.ts",
+        "src/game/main.ts"
+      ],
+      "blessed": {
+        "src/game/systems/AttributePoolSystem.ts": "11191af0284c7b52304a147bd65d46d5f817dcf2",
+        "src/game/systems/poolContributors.ts": "7f1a95c37bdde88ce42eb157861693b36df1e864",
+        "src/game/systems/energy/energyDistributionDemandContext.ts": "e9e124c44be53ff522f1b8435909ec953adb8304",
+        "src/game/systems/EnergyDistributionSystem.ts": "2c87c9f1e9b39c2a5dd2d1f1ae4a44e97e668159",
+        "src/game/systems/BodyAssignmentSystem.ts": "621690ace0c61137bc7f8b7f8588301de300ddc1",
+        "src/game/systems/AssignmentOwnerValiditySystem.ts": "10b1690247a232a74103c64f62da3a7b50d35423",
+        "src/engine/phaser/scenes/entityDragController.assignment.ts": "989b87a6ff44c96bdafd51f23ec9bc56bf4943eb",
+        "src/game/systems/pointer/resolveDraggedBodyDropTarget.ts": "2256ec56ff558cc62c8b384e8e758ba7b6615301",
+        "src/game/assignment/assignmentAcceptance.ts": "f003aa6235a98eedb4631393eeb8ad0adebdabb8",
+        "src/game/main.ts": "fc5e440ba1aa83a0802200fee4a5210f8019df4b"
+      },
+      "lastBless": {
+        "commit": "bd5f5cb9f235422d09ff037e3cadc96fad7b6491",
+        "note": "bootstrap: initial verification against working tree"
+      }
+    },
+    "3-traits": {
+      "title": "Traits",
+      "files": [
+        "src/data/schemas/game/traits.ts",
+        "src/game/systems/trait/traitTickUtils.ts",
+        "src/game/systems/trait/traitCycleUtils.ts",
+        "src/game/systems/TraitSystem.ts",
+        "src/game/systems/body/bodyAttributeModifiers.ts",
+        "src/engine/runtime/systems/BehaviorSystem.ts",
+        "src/engine/runtime/systems/behavior/actionExecutorTraits.ts"
+      ],
+      "blessed": {
+        "src/data/schemas/game/traits.ts": "0274d71e6899c022a0e5d680502b953946bd4a0d",
+        "src/game/systems/trait/traitTickUtils.ts": "3e9505339256f52b92068dcd14659e90ab6b89a8",
+        "src/game/systems/trait/traitCycleUtils.ts": "e7869d20da65330543f9df05f5adac025e53a238",
+        "src/game/systems/TraitSystem.ts": "cb287e3d0192192a8825cb9470fc79bd6476964b",
+        "src/game/systems/body/bodyAttributeModifiers.ts": "a8fd06d4db4f3aa12ec5d2bded8a50ae73f707c9",
+        "src/engine/runtime/systems/BehaviorSystem.ts": "df1735433eee56fb10c97ff43bb655db1496821d",
+        "src/engine/runtime/systems/behavior/actionExecutorTraits.ts": "7e515696cd31ce2ba1793f533050e99b71e2a16a"
+      },
+      "lastBless": {
+        "commit": "bd5f5cb9f235422d09ff037e3cadc96fad7b6491",
+        "note": "bootstrap: initial verification against working tree"
+      }
+    },
+    "4-assignment-filters": {
+      "title": "Assignment filters (incl. by trait)",
+      "files": [
+        "src/data/schemas/assignmentRules.ts",
+        "src/game/assignment/assignmentFilterUtils.ts",
+        "src/game/assignment/assignmentAcceptance.ts",
+        "src/game/handlers/AssignBodiesBatchHandler.applyUpdate.ts",
+        "src/data/schemas/abilities/assignment.ts",
+        "src/ui/runtime/world/selection/absorption/assignmentRequirementsData.ts"
+      ],
+      "blessed": {
+        "src/data/schemas/assignmentRules.ts": "e36e186e7af52e62c7fdc09dc45854a15c0c52a5",
+        "src/game/assignment/assignmentFilterUtils.ts": "88828566fc3929d1c4c9887e99c754fb89078ae6",
+        "src/game/assignment/assignmentAcceptance.ts": "f003aa6235a98eedb4631393eeb8ad0adebdabb8",
+        "src/game/handlers/AssignBodiesBatchHandler.applyUpdate.ts": "b4e4353050f80c6b8c32b074645553a8687785b2",
+        "src/data/schemas/abilities/assignment.ts": "5db8d536a794f9209110bc729ed21bb17853d88c",
+        "src/ui/runtime/world/selection/absorption/assignmentRequirementsData.ts": "38b07332bc0601204a7ac5e9c4cca94bb6fb401a"
+      },
+      "lastBless": {
+        "commit": "bd5f5cb9f235422d09ff037e3cadc96fad7b6491",
+        "note": "bootstrap: initial verification against working tree"
+      }
+    },
+    "5-avatar-identity": {
+      "title": "Avatar & identity",
+      "files": [
+        "src/engine/phaser/display/modules/avatar/avatarStackRender.ts",
+        "src/engine/phaser/display/modules/avatar/AvatarModule.ts",
+        "src/engine/phaser/display/avatar/AvatarTextureGen.ts",
+        "src/engine/phaser/display/avatar/AvatarAppearanceRegistry.ts",
+        "src/engine/phaser/display/avatar/AvatarSeedResolver.ts",
+        "src/engine/phaser/display/avatar/AvatarDisplayTypes.ts",
+        "src/lib/body-identity/avatarDisplayKey.ts",
+        "src/game/systems/body/identityBackfill.ts"
+      ],
+      "blessed": {
+        "src/engine/phaser/display/modules/avatar/avatarStackRender.ts": "3c8058172c3febdddfbb58eb244982f259fa49c7",
+        "src/engine/phaser/display/modules/avatar/AvatarModule.ts": "fc922c4790a4970e2cd1edcc90d1ad7fcdba246b",
+        "src/engine/phaser/display/avatar/AvatarTextureGen.ts": "80cb498a00a9e035ab7efd05a7976f24fd5eb0a4",
+        "src/engine/phaser/display/avatar/AvatarAppearanceRegistry.ts": "a64a2d0dba6455bffb3ec3d5b6f1ffc3db3754df",
+        "src/engine/phaser/display/avatar/AvatarSeedResolver.ts": "21b1051dca3f5078186f22c87fcce6a746ef9193",
+        "src/engine/phaser/display/avatar/AvatarDisplayTypes.ts": "989692b3a7fd6f2e56f0d78397e10800402dced3",
+        "src/lib/body-identity/avatarDisplayKey.ts": "59e263c3491c1362d905b540465f8855e4fd5286",
+        "src/game/systems/body/identityBackfill.ts": "27986ca53427893c7e2c1925bdd62a2f157462ad"
+      },
+      "lastBless": {
+        "commit": "bd5f5cb9f235422d09ff037e3cadc96fad7b6491",
+        "note": "bootstrap: initial verification against working tree"
+      }
+    },
+    "6-suspicion-purge-cycle": {
+      "title": "Suspicion / Purge / cycle timing",
+      "files": [
+        "src/game/purge/suspiciousActivity.ts",
+        "src/engine/compiler/abilities/suspiciousActivityCompiler.ts",
+        "src/game/systems/cave/purgeEvaluate.ts",
+        "src/game/systems/cave/purgeResolvers.ts",
+        "src/game/habiti/resolveOwnedCaveKnowledgeEffects.ts",
+        "src/engine/compiler/abilities/cycleCompilerAccum.ts",
+        "src/engine/compiler/abilities/cycleCompiler.ts"
+      ],
+      "blessed": {
+        "src/game/purge/suspiciousActivity.ts": "fc0fc4acb07221deb675abed9e151c22a0cb0752",
+        "src/engine/compiler/abilities/suspiciousActivityCompiler.ts": "567ef479a69ae313fd918dd4bc7b8cd5dd4705a1",
+        "src/game/systems/cave/purgeEvaluate.ts": "48da038dad73f4eb78941e576bc5408528efe42c",
+        "src/game/systems/cave/purgeResolvers.ts": "c872fd3ef4d8f12bcfb433bb2c128af65623c374",
+        "src/game/habiti/resolveOwnedCaveKnowledgeEffects.ts": "4d4ece3378fd1ba8bc0989dadb61dd65204f8132",
+        "src/engine/compiler/abilities/cycleCompilerAccum.ts": "b65dfc07a24180bdb5f38c01b32426bc0f5df68b",
+        "src/engine/compiler/abilities/cycleCompiler.ts": "e120b22cfa86c491476928509166469d5b15f624"
+      },
+      "lastBless": {
+        "commit": "bd5f5cb9f235422d09ff037e3cadc96fad7b6491",
+        "note": "bootstrap: initial verification against working tree"
+      }
+    }
+  }
+}
