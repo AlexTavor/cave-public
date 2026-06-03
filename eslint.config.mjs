@@ -46,4 +46,23 @@ export default tseslint.config(
       'sonarjs/pseudo-random': 'off',
     },
   },
+  {
+    // Determinism: the headless balancing runner replays runs, so engine code must derive
+    // randomness from (worldSeed/epochSeed, stableId) via src/utils/pseudoRandom.ts — never
+    // Math.random. Benchmarks are exempt (not on the sim path). This is the engine-scoped
+    // replacement for the global sonarjs/pseudo-random rule (which also flagged UI/bench).
+    files: ['src/engine/**/*.{ts,tsx}'],
+    ignores: ['src/engine/**/*.bench.ts'],
+    rules: {
+      'no-restricted-properties': [
+        'error',
+        {
+          object: 'Math',
+          property: 'random',
+          message:
+            'Determinism: Math.random is banned in src/engine. Seed via src/utils/pseudoRandom.ts from (worldSeed, stableId).',
+        },
+      ],
+    },
+  },
 );

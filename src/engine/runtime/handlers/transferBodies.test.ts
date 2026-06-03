@@ -34,23 +34,24 @@ describe("transferBodies helpers", () => {
         ).toEqual({ x: 10, y: 20 });
     });
 
-    it("builds pending bodies with deterministic initial motion", () => {
-        vi.spyOn(Math, "random").mockReturnValue(0);
-        const body = buildPendingBody(
-            "pending",
-            { x: 10, y: 20 },
-            {
+    it("builds pending bodies with deterministic, seeded initial motion", () => {
+        const make = () =>
+            buildPendingBody("pending", { x: 10, y: 20 }, {
                 mass: PHYSICS_DEFAULT_MASS,
                 radius: 12,
                 drag: PHYSICS_DEFAULT_DRAG,
                 impulseMagnitude: 5,
-            },
-        );
+            });
+        const body = make();
 
         expect(body.id).toBe("pending");
         expect(body.position).toEqual({ x: 10, y: 20 });
         expect(body.prevPosition).toEqual({ x: 10, y: 20 });
-        expect(body.velocity?.x).toBeCloseTo(180);
-        expect(body.velocity?.y).toBeCloseTo(0);
+        // Velocity is seeded from the body id (no Math.random), so it replays identically...
+        expect(make().velocity).toEqual(body.velocity);
+        // ...with speed in the [0.6, 1.0) * (impulseMagnitude * 60) band.
+        const speed = Math.hypot(body.velocity?.x ?? 0, body.velocity?.y ?? 0);
+        expect(speed).toBeGreaterThanOrEqual(180);
+        expect(speed).toBeLessThan(300);
     });
 });

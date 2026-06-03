@@ -6,6 +6,8 @@ import type {
 import type { CommandBuffer, RuntimeCommand } from "../../types";
 import { RuntimeCommandType } from "../../types";
 import type { BehaviorContext } from "./ValueResolver";
+import { pseudoRandom } from "../../../../utils/pseudoRandom";
+import { readWorldSeed, withWorldSeed } from "../../../../utils/worldSeed";
 
 type SpawnExtras = { parentId?: string; forcedHabiti?: string[] };
 
@@ -27,7 +29,23 @@ const resolveSpawnPosition = (
     if (!context.self.id) return {};
     const body = context.snapshot.getPhysicsBody(context.self.id);
     if (!body) return {};
-    const angle = Math.random() * Math.PI * 2;
+    // Deterministic spawn angle (no Math.random — the headless balancing runner replays runs).
+    // Seeded from worldSeed + the spawner id + its current position; position supplies per-spawn
+    // variety because BehaviorContext carries no spawn counter. (The spawned body's own nanoid id
+    // below is a separate seeded-ids concern, tracked for the determinism constraint.)
+    const worldSeed = readWorldSeed(
+        context.snapshot.getEntity("sys_world"),
+        "world",
+    );
+    const angle =
+        pseudoRandom(
+            withWorldSeed(
+                worldSeed,
+                `spawn:${context.self.id}:${body.position.x}:${body.position.y}`,
+            ),
+        ) *
+        Math.PI *
+        2;
     const dist = body.radius || 20;
     return {
         x: body.position.x + Math.cos(angle) * dist,
