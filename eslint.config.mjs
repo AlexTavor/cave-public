@@ -63,6 +63,27 @@ export default tseslint.config(
             'Determinism: Math.random is banned in src/engine. Seed via src/utils/pseudoRandom.ts from (worldSeed, stableId).',
         },
       ],
+      // Seeded-ids: nanoid/ulid generate non-deterministic ids, which break headless replay.
+      // Engine ids must be deterministic (seeded from worldSeed + a counter/serial). Existing
+      // sites are ratcheted in eslint-suppressions.json and burned down incrementally — see
+      // constraints/state/determinism.md.
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'nanoid',
+              message:
+                'Determinism: nanoid is banned in src/engine — ids must be deterministic (seeded from worldSeed + a counter). See constraints/state/determinism.md.',
+            },
+            {
+              name: 'ulid',
+              message:
+                'Determinism: ulid is banned in src/engine — ids must be deterministic. See constraints/state/determinism.md.',
+            },
+          ],
+        },
+      ],
     },
   },
   {
