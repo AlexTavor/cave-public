@@ -34,7 +34,9 @@ const resolveSpawnPosition = (
     // variety because BehaviorContext carries no spawn counter. (The spawned body's own nanoid id
     // below is a separate seeded-ids concern, tracked for the determinism constraint.)
     const worldSeed = readWorldSeed(
-        context.snapshot.getEntity("sys_world"),
+        context.snapshot.getEntity("sys_world") as
+            | { state?: Record<string, unknown> }
+            | undefined,
         "world",
     );
     const angle =
