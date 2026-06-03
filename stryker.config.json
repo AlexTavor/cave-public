@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "packageManager": "npm",
+  "testRunner": "vitest",
+  "vitest": {
+    "configFile": "vitest.stryker.config.mjs"
+  },
+  "coverageAnalysis": "perTest",
+  "mutate": [
+    "src/engine/compiler/**/*.ts",
+    "!src/engine/compiler/**/*.test.ts",
+    "!src/engine/compiler/**/*.spec.ts"
+  ],
+  "concurrency": 8,
+  "timeoutMS": 15000,
+  "reporters": ["progress", "html", "json"]
+}
