@@ -1,0 +1,565 @@
+[
+  {
+    "type": "dependency",
+    "from": "src/data/schemas/assets/glyphs.ts",
+    "to": "src/engine/phaser/display/glyph/GlyphTypes.ts",
+    "unresolvedTo": "../../../engine/phaser/display/glyph/GlyphTypes",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "data-is-leaf"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/data/schemas/v2/worldClampRules.test.ts",
+    "to": "src/engine/runtime/Snapshot.ts",
+    "unresolvedTo": "../../../engine/runtime/Snapshot",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "data-is-leaf"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/data/schemas/v2/worldClampRules.test.ts",
+    "to": "src/engine/runtime/systems/BehaviorSystem.ts",
+    "unresolvedTo": "../../../engine/runtime/systems/BehaviorSystem",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "data-is-leaf"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/data/schemas/v2/worldClampRules.test.ts",
+    "to": "src/engine/runtime/types.ts",
+    "unresolvedTo": "../../../engine/runtime/types",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "data-is-leaf"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/data/schemas/v2/worldClampRules.test.ts",
+    "to": "src/game/systems/testUtils.ts",
+    "unresolvedTo": "../../../game/systems/testUtils",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "data-is-leaf"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/data/schemas/v2/worldRuleBuilders.ts",
+    "to": "src/engine/compiler/abilities/autoRequestRuleBuilder.ts",
+    "unresolvedTo": "../../../engine/compiler/abilities/autoRequestRuleBuilder",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "data-is-leaf"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/balancing/HeadlessRunner.test.ts",
+    "to": "src/game/systems/CensusSystem.ts",
+    "unresolvedTo": "../../game/systems/CensusSystem",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/compiler/abilities/resourceGainAmountCompiler.ts",
+    "to": "src/game/habiti/producerOutputBonusState.ts",
+    "unresolvedTo": "../../../game/habiti/producerOutputBonusState",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/compiler/abilities/resourceGainAmountCompiler.ts",
+    "to": "src/game/habiti/resourceGainBonusState.ts",
+    "unresolvedTo": "../../../game/habiti/resourceGainBonusState",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/compiler/abilities/storageDecay.seconds.test.ts",
+    "to": "src/game/systems/passive-effects/PassiveEffectSystem.ts",
+    "unresolvedTo": "../../../game/systems/passive-effects/PassiveEffectSystem",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/compiler/abilities/suspiciousActivityCompiler.ts",
+    "to": "src/game/purge/suspiciousActivity.ts",
+    "unresolvedTo": "../../../game/purge/suspiciousActivity",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/logic/registerBodiesAssignedOp.ts",
+    "to": "src/game/assignment/bodiesAssignedCondition.ts",
+    "unresolvedTo": "../../game/assignment/bodiesAssignedCondition",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/logic/registerBodyInPointerOp.ts",
+    "to": "src/game/assignment/bodyInPointerCondition.ts",
+    "unresolvedTo": "../../game/assignment/bodyInPointerCondition",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/logic/registerCarriersOrbitingOp.ts",
+    "to": "src/game/carriers/carriersOrbitingCondition.ts",
+    "unresolvedTo": "../../game/carriers/carriersOrbitingCondition",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/logic/registerDestructiveAssignmentHasAllBodiesOp.ts",
+    "to": "src/game/assignment/destructiveAssignmentCondition.ts",
+    "unresolvedTo": "../../game/assignment/destructiveAssignmentCondition",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/display-export/DisplayRenderHost.ts",
+    "to": "src/ui/runtime/state/useDisplayImageExportStore.ts",
+    "unresolvedTo": "../../../ui/runtime/state/useDisplayImageExportStore",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/display-export/DisplayRenderHost.ts",
+    "to": "src/ui/runtime/state/useUiAvatarStore.ts",
+    "unresolvedTo": "../../../ui/runtime/state/useUiAvatarStore",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/effects/consumeRuntimeVisualEffectBursts.ts",
+    "to": "src/ui/runtime/effects/runtimeVisualEvents.ts",
+    "unresolvedTo": "../../../ui/runtime/effects/runtimeVisualEvents",
+    "dependencyTypes": [
+      "local",
+      "type-only",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/effects/RuntimeVisualEffectsManager.ts",
+    "to": "src/ui/runtime/effects/runtimeVisualEvents.ts",
+    "unresolvedTo": "../../../ui/runtime/effects/runtimeVisualEvents",
+    "dependencyTypes": [
+      "local",
+      "type-only",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/hooks/usePhaserGame.inputTarget.test.tsx",
+    "to": "src/ui/lib/foundation/theme/ThemeProvider.tsx",
+    "unresolvedTo": "../../../ui/lib/foundation/theme/ThemeProvider",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/hooks/usePhaserGame.inputTarget.test.tsx",
+    "to": "src/ui/runtime/state/useRuntimeStore.ts",
+    "unresolvedTo": "../../../ui/runtime/state/useRuntimeStore",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/hooks/usePhaserGame.layoutRuntime.test.tsx",
+    "to": "src/ui/devtools/layout/context/LayoutWorldAdapter.tsx",
+    "unresolvedTo": "../../../ui/devtools/layout/context/LayoutWorldAdapter",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/hooks/usePhaserGame.layoutRuntime.test.tsx",
+    "to": "src/ui/lib/foundation/theme/ThemeProvider.tsx",
+    "unresolvedTo": "../../../ui/lib/foundation/theme/ThemeProvider",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/hooks/usePhaserGame.layoutRuntime.test.tsx",
+    "to": "src/ui/runtime/state/useRuntimeStore.ts",
+    "unresolvedTo": "../../../ui/runtime/state/useRuntimeStore",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/hooks/usePhaserGame.ts",
+    "to": "src/ui/runtime/state/useRuntimeStore.ts",
+    "unresolvedTo": "../../../ui/runtime/state/useRuntimeStore",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/hooks/usePhaserGame.ts",
+    "to": "src/ui/runtime/world/context/WorldInteractionContext.tsx",
+    "unresolvedTo": "../../../ui/runtime/world/context/WorldInteractionContext",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/scenes/entityDragController.assignment.ts",
+    "to": "src/game/systems/pointer/resolveDraggedBodyDropTarget.ts",
+    "unresolvedTo": "../../../game/systems/pointer/resolveDraggedBodyDropTarget",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/scenes/entityDragController.ts",
+    "to": "src/game/assignment/bodyAssignment.ts",
+    "unresolvedTo": "../../../game/assignment/bodyAssignment",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/scenes/GameScene.ts",
+    "to": "src/ui/runtime/effects/runtimeVisualEvents.ts",
+    "unresolvedTo": "../../../ui/runtime/effects/runtimeVisualEvents",
+    "dependencyTypes": [
+      "local",
+      "type-only",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/phaser/scenes/PointerInputController.ts",
+    "to": "src/game/systems/pointer/pointerTiming.ts",
+    "unresolvedTo": "../../../game/systems/pointer/pointerTiming",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/runtime/handlers/KillHandler.ts",
+    "to": "src/game/assignment/bodyAssignment.ts",
+    "unresolvedTo": "../../../game/assignment/bodyAssignment",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/runtime/handlers/KillHandler.ts",
+    "to": "src/game/facts/factCommands.ts",
+    "unresolvedTo": "../../../game/facts/factCommands",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/runtime/handlers/spawnBodyIdentity.ts",
+    "to": "src/game/habiti/assignBodyHabiti.ts",
+    "unresolvedTo": "../../../game/habiti/assignBodyHabiti",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/runtime/handlers/SpawnHandler.extras.test.ts",
+    "to": "src/game/handlers/UpdateBodiesBatchHandler.ts",
+    "unresolvedTo": "../../../game/handlers/UpdateBodiesBatchHandler",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/runtime/handlers/SpawnHandler.forcedHabiti.test.ts",
+    "to": "src/game/handlers/UpdateBodiesBatchHandler.ts",
+    "unresolvedTo": "../../../game/handlers/UpdateBodiesBatchHandler",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/runtime/handlers/SpawnHandler.identity.test.ts",
+    "to": "src/game/handlers/UpdateBodiesBatchHandler.ts",
+    "unresolvedTo": "../../../game/handlers/UpdateBodiesBatchHandler",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/runtime/handlers/SpawnHandler.ts",
+    "to": "src/game/facts/factCommands.ts",
+    "unresolvedTo": "../../../game/facts/factCommands",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/runtime/handlers/updateCaveHandler.helpers.ts",
+    "to": "src/game/habiti/habitiIds.ts",
+    "unresolvedTo": "../../../game/habiti/habitiIds",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/runtime/systems/behavior/cycleResourceCostRepeat.test.ts",
+    "to": "src/game/systems/passive-effects/PassiveEffectSystem.ts",
+    "unresolvedTo": "../../../../game/systems/passive-effects/PassiveEffectSystem",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/engine/terminal/toggleTelemetryCommand.ts",
+    "to": "src/ui/runtime/state/useRuntimeToolStore.ts",
+    "unresolvedTo": "../../ui/runtime/state/useRuntimeToolStore",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "engine-stays-generic"
+    }
+  }
+]
