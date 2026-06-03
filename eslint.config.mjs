@@ -65,4 +65,11 @@ export default tseslint.config(
       ],
     },
   },
+  {
+    // Build/tooling scripts run under Node, not the browser — declare Node globals so
+    // process/console/etc. resolve (clears no-undef false-positives). Config files and vite/
+    // are already ignored above.
+    files: ['**/*.{js,mjs,cjs}'],
+    languageOptions: { globals: { ...globals.node } },
+  },
 );
