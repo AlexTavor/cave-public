@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { ActionExecutor } from "./ActionExecutor";
 import { RuntimeCommandType } from "../../types";
 import {
@@ -29,7 +29,6 @@ describe("ActionExecutor spawn extras", () => {
     });
 
     it("forwards self parent and forced habitus ids for spawn body", () => {
-        vi.spyOn(Math, "random").mockReturnValue(0);
         const executor = new ActionExecutor();
         const { buffer, commands } = createCommandBuffer();
         const context = buildBehaviorContext({
@@ -56,11 +55,13 @@ describe("ActionExecutor spawn extras", () => {
                     blueprintId: "body",
                     parentId: "self_id",
                     forcedHabiti: ["alpha"],
-                    x: 14,
-                    y: 8,
                 }),
             }),
         );
-        vi.restoreAllMocks();
+        // Spawn position is deterministic (seeded, no Math.random) and sits at the parent
+        // body's radius (10) from its center (4, 8).
+        const { x, y } = (buffer[0] as { payload: { x: number; y: number } })
+            .payload;
+        expect(Math.hypot(x - 4, y - 8)).toBeCloseTo(10);
     });
 });

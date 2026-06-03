@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite --config vite/config.dev.mjs",
     "build": "tsc && vite build --config vite/config.prod.mjs",
-    "depcruise": "depcruise src --config .dependency-cruiser.cjs --output-type err-long",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "depcruise": "depcruise src --config .dependency-cruiser.cjs --output-type err-long --ignore-known",
+    "depcruise:debt": "depcruise src --config .dependency-cruiser.cjs --output-type err --no-ignore-known",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage",
