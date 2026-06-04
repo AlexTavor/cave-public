@@ -5,7 +5,7 @@ import {
     type RuntimeEntity,
 } from "../types";
 import type { CommandHandler, CommandHandlerContext } from "./types";
-import { enqueueMirroredFactAdjust } from "../../../game/facts/factCommands";
+import { enqueueMirroredFactAdjust } from "../factCommands";
 import { removeBodyFromOwners } from "../../../game/assignment/bodyAssignment";
 import { killUnifiedBlueprints } from "./killUnifiedBlueprints";
 

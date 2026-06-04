@@ -5,7 +5,7 @@ import type {
 } from "../../engine/runtime/handlers/types";
 import type { GainHabitiCommand } from "../../engine/runtime/types/runtimeCommandUpdates";
 import { findEntityById } from "../../engine/runtime/handlers/updateCaveHandler.helpers";
-import { enqueueMirroredFactAdjust } from "../facts/factCommands";
+import { enqueueMirroredFactAdjust } from "../../engine/runtime/factCommands";
 import { enqueueHabitiAnnouncement } from "../habiti/habitiAnnouncementUtils";
 import { UpdateCaveWithResourceGainBonusHandler } from "./UpdateCaveWithResourceGainBonusHandler";
 import { readOwnedHabiti } from "../habiti/knownHabiti";

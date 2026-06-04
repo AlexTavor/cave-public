@@ -1,5 +1,5 @@
-import type { CommandBuffer, RuntimeCommand } from "../../engine/runtime/types";
-import { RuntimeCommandType } from "../../engine/runtime/types";
+import type { CommandBuffer, RuntimeCommand } from "./types";
+import { RuntimeCommandType } from "./types";
 import type { FactScope, FactType } from "../../data/schemas/conditions";
 
 export const enqueueFactAdjust = (
