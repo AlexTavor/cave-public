@@ -4,6 +4,7 @@ import type { PhysicsBody } from "../physics/impulse/types";
 import type { SaveGameData } from "./persistence/types";
 import { RuntimeCore } from "./RuntimeCore";
 import type { CommandHandler } from "./handlers/types";
+import type { BodyHabitiAssigner } from "./handlers/bodyHabitiAssigner";
 import type { RuntimeCommand, RuntimeEntity, RuntimeState } from "./types";
 import type { AutomationSnapshot } from "./systems/AutomationSystem";
 import { GlobalEffectsIndexer } from "./systems/GlobalEffectsIndexer";
@@ -85,6 +86,17 @@ export abstract class RuntimeAccessors extends RuntimeCore {
         handler: CommandHandler<RuntimeCommand>,
     ): void {
         this.commandsManager.registerHandler(handler);
+    }
+
+    /**
+     * Injects the game's habiti-assignment algorithm onto the command-handler
+     * context so the engine spawn path can compute habiti without importing
+     * game. Called once when the game wires itself into the runtime
+     * (registerGameCommandHandlers); the context object is stable for the
+     * runtime's lifetime, so this survives state resets.
+     */
+    public setBodyHabitiAssigner(assigner: BodyHabitiAssigner): void {
+        this.context.assignBodyHabiti = assigner;
     }
 
     public registerPhysicsBody(body: PhysicsBody): void {

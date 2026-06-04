@@ -8,6 +8,7 @@ import { createBlueprint, createCartridge } from "../engine/test/factories";
 import { createGameRuntime } from "../engine/runtime/createGameRuntime";
 import type { Runtime } from "../engine/runtime/Runtime";
 import { UpdateBodiesBatchHandler } from "./handlers/UpdateBodiesBatchHandler";
+import { assignBodyHabiti } from "./habiti/assignBodyHabiti";
 
 // End-to-end proof that a headless run is replayable from its seed. The sim
 // exercises every determinism-sensitive path the engine has: deterministic spawn
@@ -76,6 +77,11 @@ const runHeadless = async (seed: string) => {
     const runtime = createGameRuntime(buildCartridge(), seed);
     // Body habiti are applied by the game-layer UPDATE_BODIES_BATCH handler.
     runtime.registerCommandHandler(new UpdateBodiesBatchHandler() as never);
+    // The engine spawn path computes habiti through the game-injected assigner
+    // (the worldSeed-driven roll this test exercises); wire it as
+    // registerGameCommandHandlers would. Without it the roll is a no-op and the
+    // "different seed diverges" assertion below could not hold.
+    runtime.setBodyHabitiAssigner(assignBodyHabiti);
     // initializeWorldState re-establishes the run seed on sys_world.state after
     // replacing it, so the seed-driven habiti rolls below actually depend on the
     // seed — the "different seed diverges" assertion is what guards that.

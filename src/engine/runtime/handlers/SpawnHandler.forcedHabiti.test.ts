@@ -30,6 +30,10 @@ describe("SpawnHandler forced habiti", () => {
                 },
             }),
         );
+        // Stub the game-domain assigner to echo forced habiti: this asserts the
+        // engine forwards payload.forcedHabiti into the assigner input and
+        // applies the result — the rule itself lives in assignBodyHabiti tests.
+        context.assignBodyHabiti = (input) => [...(input.forcedHabiti ?? [])];
         context.world.add({ id: "sys_world", state: {} } as any);
 
         new SpawnHandler().handle(

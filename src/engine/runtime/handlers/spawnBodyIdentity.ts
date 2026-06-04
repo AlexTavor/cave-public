@@ -3,7 +3,7 @@ import { bodyIdentityCatalog } from "../../../lib/body-identity/bodyIdentityCata
 import { resolvePassportAvatarDisplayKey } from "../../../lib/body-identity/avatarDisplayKey";
 import { collectUsedBodyNames } from "../../../lib/body-identity/collectUsedBodyNames";
 import { generateBodyIdentity } from "../../../lib/body-identity/bodyIdentityGenerator";
-import { assignBodyHabiti } from "../../../game/habiti/assignBodyHabiti";
+import type { BodyHabitiAssignerInput } from "./bodyHabitiAssigner";
 import type { CommandHandlerContext } from "./types";
 import { readWorldSeed } from "../../../utils/worldSeed";
 
@@ -70,7 +70,10 @@ export const ensureSpawnedBodyIdentity = (
     }
     passport.avatarDisplayKey ??=
         resolvePassportAvatarDisplayKey(passport) ?? undefined;
-    const nextHabiti = assignBodyHabiti({
+    // Habiti assignment is game-domain logic, injected per-runtime onto the
+    // context (see bodyHabitiAssigner). With no assigner wired, leave habiti
+    // unchanged — equivalent to a cartridge with no habitus rules.
+    const habitiInput: BodyHabitiAssignerInput = {
         identitySerial: passport.identitySerial,
         existingHabiti: body.habiti,
         settings: context.cartridge.config?.settings?.body,
@@ -82,7 +85,9 @@ export const ensureSpawnedBodyIdentity = (
                 "errors",
                 `Skipped forced habitus '${id}' for '${entityId}': ${reason}.`,
             ),
-    });
+    };
+    const nextHabiti =
+        context.assignBodyHabiti?.(habitiInput) ?? sortIds(body.habiti);
     const patch = generateBodyIdentity(
         passport.identitySerial,
         passport.name,

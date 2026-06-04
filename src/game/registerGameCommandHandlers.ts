@@ -23,11 +23,15 @@ import { GainUnderstandingHandler } from "./handlers/GainUnderstandingHandler";
 import { AssignBodiesBatchHandler } from "./handlers/AssignBodiesBatchHandler";
 import { ResolveBodyProcessingHandler } from "./handlers/ResolveBodyProcessingHandler";
 import { registerGameLogicOps } from "./logic/registerGameLogicOps";
+import { assignBodyHabiti } from "./habiti/assignBodyHabiti";
 
 export const registerGameCommandHandlers = (runtime: Runtime) => {
     // Register game-domain JsonLogic ops as part of wiring the game into the
     // runtime (the engine no longer owns these — see registerGameLogicOps).
     registerGameLogicOps();
+    // The engine spawn path computes habiti through this injected hook (the
+    // habitus rules are game-domain content logic — see bodyHabitiAssigner).
+    runtime.setBodyHabitiAssigner(assignBodyHabiti);
     runtime.registerCommandHandler(new UpdateBodiesBatchHandler());
     runtime.registerCommandHandler(new UpdateTraitsBatchHandler());
     runtime.registerCommandHandler(new AssignBodiesBatchHandler());

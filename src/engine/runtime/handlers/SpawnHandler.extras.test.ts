@@ -72,6 +72,10 @@ describe("SpawnHandler extras", () => {
             },
         } as never);
         const context = makeHandlerContext(cartridge);
+        // Stub the game-domain assigner to echo forced habiti: asserts the
+        // engine forwards payload.forcedHabiti for body spawns (and never calls
+        // it for bodyless spawns), not the habitus rules themselves.
+        context.assignBodyHabiti = (input) => [...(input.forcedHabiti ?? [])];
         context.world.add({ id: "sys_world", state: {} } as never);
 
         handler.handle(
