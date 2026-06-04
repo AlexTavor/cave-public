@@ -1,6 +1,6 @@
 import type { CaveMind } from "../../../data/schemas/game/caveMind";
 import type { RuntimeEntity } from "../types";
-import { normalizeHabitiIds } from "../../../game/habiti/habitiIds";
+import { normalizeHabitiIds } from "../../../utils/normalizeHabitiIds";
 
 type Progression = { xp: number; level: number; skillpoints: number };
 type PurgeState = { isActive: boolean; nextKillTimer: number };
