@@ -1,5 +1,11 @@
-export const BODY_AVATAR_DISPLAY_KEY = "body_avatar";
-export const SWARM_AVATAR_DISPLAY_KEY = "swarm_avatar";
+// Canonical home is lib (below engine), so lib's display resolver can share them
+// without reaching up into engine. Re-exported here for the phaser avatar code.
+import {
+    BODY_AVATAR_DISPLAY_KEY,
+    SWARM_AVATAR_DISPLAY_KEY,
+} from "../../../../lib/displays/displayKeyKinds";
+
+export { BODY_AVATAR_DISPLAY_KEY, SWARM_AVATAR_DISPLAY_KEY };
 
 export const AVATAR_ROLE_BY_DISPLAY_KEY = {
     [BODY_AVATAR_DISPLAY_KEY]: "neutral",

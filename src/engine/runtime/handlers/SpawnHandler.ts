@@ -1,4 +1,3 @@
-import { nanoid } from "nanoid";
 import type { RuntimeEntity, SpawnCommand } from "../types";
 import { RuntimeCommandType } from "../types";
 import type { CommandHandler, CommandHandlerContext } from "./types";
@@ -11,6 +10,7 @@ import { resolvePendingHabiti } from "./spawnBodyHabiti";
 import { applySpawnPhysics } from "./spawnPhysics";
 import { applySpawnParent } from "./spawnParentResolver";
 import { spawnUnifiedBlueprints } from "./spawnUnifiedBlueprints";
+import { mintSpawnId } from "./mintSpawnId";
 
 const WORLD_ID = "sys_world";
 
@@ -18,7 +18,7 @@ export class SpawnHandler implements CommandHandler<SpawnCommand> {
     public readonly type = RuntimeCommandType.SPAWN;
 
     public handle(command: SpawnCommand, context: CommandHandlerContext): void {
-        const { blueprintId, id, x, y, parentId, forcedHabiti } =
+        const { blueprintId, id, x, y, parentId, forcedHabiti, assignTo } =
             command.payload;
         const blueprint = resolveBlueprint(blueprintId, context);
 
@@ -30,7 +30,7 @@ export class SpawnHandler implements CommandHandler<SpawnCommand> {
             return;
         }
 
-        const entityId = id ?? nanoid();
+        const entityId = id ?? mintSpawnId(context.world);
         const uniqueComponents = cloneStatefulComponents(
             blueprint.components || {},
         );
@@ -97,6 +97,18 @@ export class SpawnHandler implements CommandHandler<SpawnCommand> {
         }
 
         context.world.add(entity);
+        // Deferred assignment for behavior-phase body spawns (see actionExecutorSpawn).
+        // Enqueued before the habiti update so the ASSIGN still drains ahead of the
+        // body's identity finalization, exactly as it did when the behavior action
+        // enqueued SPAWN + ASSIGN itself.
+        if (assignTo && context.commands) {
+            context.commands.enqueue({
+                type: RuntimeCommandType.ASSIGN_BODIES_BATCH,
+                payload: {
+                    updates: [{ bodyId: entityId, ownerId: assignTo }],
+                },
+            });
+        }
         enqueuePendingBodyHabitiUpdate(context, entityId, pendingHabiti);
         if (blueprintId !== WORLD_ID && context.commands) {
             enqueueMirroredFactAdjust(

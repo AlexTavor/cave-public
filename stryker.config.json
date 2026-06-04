@@ -13,5 +13,6 @@
   ],
   "concurrency": 8,
   "timeoutMS": 15000,
-  "reporters": ["progress", "html", "json"]
+  "reporters": ["progress", "html", "json"],
+  "thresholds": { "high": 95, "low": 90, "break": 90 }
 }

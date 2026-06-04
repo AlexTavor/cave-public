@@ -1,5 +1,5 @@
-import { nanoid } from "nanoid";
 import type { CommandHandlerContext } from "../types";
+import { mintSpawnId } from "../mintSpawnId";
 import type { UnifiedBlueprintMemberships } from "../unifiedBlueprints";
 import {
     hasUnifiedBlueprintSpawnTrigger,
@@ -37,5 +37,5 @@ export const resolveSpawnPeers = (
         .map(([blueprintId, blueprint]) => ({
             blueprintId,
             blueprint,
-            peerId: nanoid(),
+            peerId: mintSpawnId(context.world),
         }));

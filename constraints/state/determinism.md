@@ -23,18 +23,19 @@ The engine is **headless-replayable**: the deterministic balancing runner replay
 ## Status
 
 - **`Math.random` — FIXED, zero debt.** The 4 engine sites (`transferBodies.ts` ×3, `actionExecutorSpawn.ts`) were routed through `pseudoRandom`. Gate is green with nothing suppressed.
-- **`nanoid`/`ulid` — gated, debt ratcheted.** 8 pre-existing uses (7 files) are frozen in `eslint-suppressions.json`. The gate **passes today but fails on any NEW use** — engine id-generation can only get more deterministic from here. (Fixing all 8 at once is a determinism-critical refactor with broad test ripple, so it is ratcheted, not big-banged — per "ratchet large debt, fix small debt".)
+- **`nanoid`/`ulid` — FIXED, zero debt.** All 8 engine uses (7 files) were burned down; nothing is suppressed. The gate is green and fails on any NEW use.
 
-## Burn-down (the 7 ratcheted files)
+## How the id-generation was made deterministic
 
-Each needs a deterministic id source (a seeded counter) threaded in. Priority:
+The burn-down split into two unrelated id problems:
 
-1. **`compiler/conditions/compileStructuredConditions.ts`** (`nanoid` + `ulid`) — highest value: compile-time ids make **compiled output non-reproducible**, breaking the compiler contract. Derive from the blueprint id + a per-compile condition index.
-2. **`runtime/systems/behavior/actionExecutorSpawn.ts`**, **`handlers/SpawnHandler.ts`**, **`handlers/AutomationSpawnHandler.ts`**, **`handlers/spawnUnifiedBlueprints/resolveSpawnPeers.ts`** — spawn entity ids; need a deterministic spawn counter (none exists in `BehaviorContext` today — that plumbing is the work).
-3. **`runtime/handlers/transferPendingBuilder.ts`** — `pending_${nanoid()}` transient body id.
-4. **`runtime/RuntimeCoreBase.ts`** — runtime-instance id; confirm whether it is replay-affecting before fixing.
+1. **Compile-time ids — `compiler/conditions/compileStructuredConditions.ts`** (`nanoid` + `ulid`): compile-time ids made **compiled output non-reproducible**, breaking the compiler contract. Now derives a stable key from the condition kind + index. The ids were never load-bearing (the rules are always consumed as a `.compiled` condition; nothing sorts or keys on id/sortKey). Locked by a cross-compile deep-equal in `compileStructuredConditions.test.ts`.
 
-**See the frozen debt:** the `no-restricted-imports` entries in `eslint-suppressions.json`.
-**Burn it down:** fix a site, then `npx eslint . --prune-suppressions` drops the resolved entry. The count only ratchets down.
+2. **Runtime spawn ids — `handlers/mintSpawnId.ts`** (the shared helper). Entity ids feed `RuntimeEntityStore.getSortedEntities()` (sorted by `id.localeCompare`), and that order drives entity iteration and behavior-rule evaluation — so random ids make replay diverge. `mintSpawnId` mints `<prefix>_<n>` from a monotonic counter on `sys_world.state.spawnSerial` (passthrough state, same home as `bodySerial`, so it persists with saves and rebuilds identically on replay). Read-modify-write is safe because command handlers drain sequentially.
+   - **Command-phase sites** (`SpawnHandler`, `AutomationSpawnHandler`, `resolveSpawnPeers`, `transferPendingBuilder`) call `mintSpawnId(context.world)` directly.
+   - **Behavior-phase site** (`systems/behavior/actionExecutorSpawn.ts`) can't: the snapshot is read-only, so a sequential counter can't be read-then-written mid-tick. It enqueues `SPAWN` with no id plus an `assignTo` payload field; `SpawnHandler` mints the id and issues the `ASSIGN_BODIES_BATCH` in the command phase (the assignment was previously enqueued by the behavior action itself).
+   - **`runtime/RuntimeCoreBase.ts`** — the runtime-instance id is read once, in a debug snapshot; it is **not** replay-affecting, so it just derives from the run `seed` (`runtime_<seed>`).
 
-(`src/game/handlers/spawnFromBlueprint.ts` has one more site, outside this engine-scoped gate — fold in when game determinism is constrained.)
+**Keep it green:** the gate stays at zero. If a new engine id source is needed, route it through `mintSpawnId` (entity ids) or a `(worldSeed, stableId)`-seeded derivation — never `nanoid`/`ulid`.
+
+`src/game/handlers/spawnFromBlueprint.ts` (the game-layer spawn handler, outside this engine-scoped gate) also routes through `mintSpawnId` — game-spawned entities feed the same id-sort, so a random id there would have re-broken replay. The gate doesn't yet cover `src/game`; when a game-scoped determinism gate lands it should already be clean.

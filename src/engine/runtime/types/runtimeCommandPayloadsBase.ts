@@ -5,6 +5,10 @@ export interface SpawnCommandPayload {
     y?: number;
     parentId?: string;
     forcedHabiti?: string[];
+    // When set, the handler assigns the spawned body to this owner after creating
+    // it. Lets behavior-phase spawns (read-only snapshot, can't mint a counter)
+    // defer the entity-id mint to the command phase while keeping the assignment.
+    assignTo?: string;
 }
 
 export interface KillCommandPayload {

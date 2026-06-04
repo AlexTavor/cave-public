@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { BODY_AVATAR_DISPLAY_KEY } from "../../engine/phaser/display/avatar/AvatarDisplayConstants";
+import { BODY_AVATAR_DISPLAY_KEY } from "./displayKeyKinds";
 import { resolveDisplaySource } from "./resolveDisplaySource";
 
 describe("resolveDisplaySource", () => {
