@@ -152,15 +152,15 @@
       "blessed": {
         "src/game/purge/suspiciousActivity.ts": "fc0fc4acb07221deb675abed9e151c22a0cb0752",
         "src/engine/compiler/abilities/suspiciousActivityCompiler.ts": "567ef479a69ae313fd918dd4bc7b8cd5dd4705a1",
-        "src/game/systems/cave/purgeEvaluate.ts": "48da038dad73f4eb78941e576bc5408528efe42c",
+        "src/game/systems/cave/purgeEvaluate.ts": "7c25d1250a9a7b6a3294d6f5b358f122f1fdb3d1",
         "src/game/systems/cave/purgeResolvers.ts": "c872fd3ef4d8f12bcfb433bb2c128af65623c374",
         "src/game/habiti/resolveOwnedCaveKnowledgeEffects.ts": "4d4ece3378fd1ba8bc0989dadb61dd65204f8132",
         "src/engine/compiler/abilities/cycleCompilerAccum.ts": "b65dfc07a24180bdb5f38c01b32426bc0f5df68b",
         "src/engine/compiler/abilities/cycleCompiler.ts": "e120b22cfa86c491476928509166469d5b15f624"
       },
       "lastBless": {
-        "commit": "bd5f5cb9f235422d09ff037e3cadc96fad7b6491",
-        "note": "bootstrap: initial verification against working tree"
+        "commit": "f7472b00a2e061e6e7d0c110992ba5d8a46971f5",
+        "note": "purgeEvaluate.ts: only the factCommands import relocated to engine/runtime (DI seam #2); suspicion/purge/cycle model and anchors unchanged"
       }
     }
   }
