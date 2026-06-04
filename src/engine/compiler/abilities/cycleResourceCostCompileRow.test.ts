@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { Blueprint } from "../../../data/schemas/blueprint";
 import type { CycleResourceCostConfig } from "../../../data/schemas/abilities/cycle";
 import { Op } from "../../../data/schemas/primitives";
+import { DisplayPaletteKey } from "../../../lib/displays/displayKeyKinds";
 import {
     compileCycleCostRow,
     type CostGroup,
@@ -68,9 +69,9 @@ describe("compileCycleCostRow", () => {
             draft,
             cost({
                 priority: 3,
-                barPosition: "bottom",
+                barPosition: "bottom_right",
                 barColorHex: "#abcdef",
-                barPaletteColorKey: "good",
+                barPaletteColorKey: DisplayPaletteKey.Gold,
                 requestPerSecondAtFullThrottle: 4,
                 requestCadenceSeconds: 2,
             }),
@@ -82,9 +83,9 @@ describe("compileCycleCostRow", () => {
             amountRefs: ["self.state.vals_cycle_cost_food_1.value"],
             priority: 3,
             visible: true,
-            barPosition: "bottom",
+            barPosition: "bottom_right",
             barColorHex: "#abcdef",
-            barPaletteColorKey: "good",
+            barPaletteColorKey: "gold",
             requestPerSecondAtFullThrottle: 4,
             requestCadenceSeconds: 2,
             requestIndex: 1,

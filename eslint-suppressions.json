@@ -108,11 +108,6 @@
       "count": 1
     }
   },
-  "src/engine/compiler/abilities/abilityTriggerConditions.test.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 1
-    }
-  },
   "src/engine/compiler/abilities/assignmentCompiler.oneOff.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 2
@@ -161,11 +156,6 @@
   "src/engine/compiler/abilities/cycleCompiler.throttleVisibility.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 1
-    }
-  },
-  "src/engine/compiler/abilities/cycleCompilerAccum.test.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 3
     }
   },
   "src/engine/compiler/abilities/cycleCostScaler.test.ts": {
