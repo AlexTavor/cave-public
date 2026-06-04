@@ -106,16 +106,3 @@ export const setBodyAssignment = (
     body.assignmentId = ownerId;
     body.assignmentStatus = status;
 };
-
-export const removeBodyFromOwners = (
-    entities: RuntimeEntity[],
-    bodyId: string,
-): void => {
-    entities.forEach((entity) => {
-        const assignedIds = readAssignedIds(entity);
-        if (!assignedIds.includes(bodyId)) return;
-        ensureAssignmentComponent(entity).assignedIds = assignedIds.filter(
-            (id) => id !== bodyId,
-        );
-    });
-};
