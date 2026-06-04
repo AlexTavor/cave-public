@@ -1,3 +1,8 @@
+// The contract for runtime-driven visual effects: the UI resolves sim state
+// into these events (producers in ui/runtime/effects) and the phaser layer
+// consumes them to spawn graphics (engine/phaser/effects). Pure type, owned by
+// the engine so the phaser consumer doesn't depend on ui — the UI producers
+// import it from here (ui→engine is allowed).
 export type RuntimeVisualEventKind =
     | "spawn_gold_rings"
     | "spawn_body_pickup_effect"

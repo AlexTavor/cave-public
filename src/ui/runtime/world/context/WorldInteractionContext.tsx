@@ -2,7 +2,7 @@ import { createContext, useContext } from "react";
 import type { Runtime } from "../../../../engine/runtime/Runtime";
 import type { SerializedCameraState } from "../../../../engine/runtime/persistence/types";
 import type { RuntimeEntity } from "../../../../engine/runtime/types";
-import type { RuntimeVisualEvent } from "../../effects/runtimeVisualEvents";
+import type { RuntimeVisualEvent } from "../../../../engine/runtime/runtimeVisualEvents";
 
 export interface WorldInteractionContextValue {
     runtime: Runtime | null;

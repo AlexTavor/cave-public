@@ -13,7 +13,7 @@ import { destroyGameSceneResources } from "./GameScene.cleanup";
 import { initializeGameScene } from "./GameScene.create";
 import { attachRuntimeIfNeeded } from "./GameScene.runtime";
 import { registerGameSceneShutdown } from "./GameScene.shutdown";
-import type { RuntimeVisualEvent } from "../../../ui/runtime/effects/runtimeVisualEvents";
+import type { RuntimeVisualEvent } from "../../runtime/runtimeVisualEvents";
 
 export interface GameSceneParams {
     getRuntime: () => Runtime | null;
