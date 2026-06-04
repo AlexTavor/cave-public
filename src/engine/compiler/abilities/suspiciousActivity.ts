@@ -1,5 +1,5 @@
-import type { EditorAbilities } from "../../data/schemas/abilities";
-import type { UpdaterAbilityConfig } from "../../data/schemas/abilities/updater";
+import type { EditorAbilities } from "../../../data/schemas/abilities";
+import type { UpdaterAbilityConfig } from "../../../data/schemas/abilities/updater";
 
 export const SUSPICIOUS_ACTIVITY_TAG = "suspicious_activity";
 export const PURGE_PROGRESS_TARGET = "sys_world.state.purge_progress.value";

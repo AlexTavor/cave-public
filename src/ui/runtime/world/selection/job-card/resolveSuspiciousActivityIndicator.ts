@@ -3,7 +3,7 @@ import type { RuntimeEntity } from "../../../../../engine/runtime/types";
 import {
     collectSuspiciousPurgeUpdaters,
     PURGE_PROGRESS_TARGET,
-} from "../../../../../game/purge/suspiciousActivity";
+} from "../../../../../engine/compiler/abilities/suspiciousActivity";
 import {
     isPassportPresentationHidden,
     resolveBlueprintById,
