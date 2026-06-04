@@ -468,4 +468,195 @@ describe("productionCompiler (direct build)", () => {
                 .vals_prod_base_wood_amt_0,
         ).toEqual({ value: 5, visible: true });
     });
+
+    // --- residual mutation survivors -------------------------------------
+
+    it("warns about a missing cycle when components has no state object (inner optional-chain)", () => {
+        // L28 `draft.components?.state?.cycle` — components present, state
+        // absent. The inner `?.state` must short-circuit (no throw) and the
+        // cycle is treated as missing, so the warning fires.
+        const draft = createBlueprint("nostate", {});
+        delete (draft.components as { state?: unknown }).state;
+        const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+
+        productionCompiler(
+            draft,
+            {
+                resource: "wood",
+                amount: { base: 1, perBody: 0, multPerBody: 0 },
+                triggers: ["cycle_complete"],
+                conditions: [],
+            },
+            0,
+        );
+
+        expect(warn).toHaveBeenCalledWith(
+            "Production ability requires cycle state on 'nostate'.",
+        );
+        warn.mockRestore();
+    });
+
+    it("warns about a missing cycle when the whole components object is absent (outer optional-chain)", () => {
+        // L28 outer `draft.components?.` — components is undefined; the chain
+        // short-circuits and the cycle is treated as missing.
+        const draft = createBlueprint("nocomps", {});
+        delete (draft as { components?: unknown }).components;
+        const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+
+        productionCompiler(
+            draft,
+            {
+                resource: "wood",
+                amount: { base: 1, perBody: 0, multPerBody: 0 },
+                triggers: ["cycle_complete"],
+                conditions: [],
+            },
+            0,
+        );
+
+        expect(warn).toHaveBeenCalledWith(
+            "Production ability requires cycle state on 'nocomps'.",
+        );
+        warn.mockRestore();
+    });
+
+    it("flows perBody and multPerBody through the scalable pipeline under the temp-var name", () => {
+        // L37 `?? 0` (perBody) and L38 `?? 0` (multPerBody): a `&&` mutant would
+        // zero out non-zero inputs, dropping the per-body / mult-per-body effect
+        // chains. L56 fixes the temp-var name `prod_${resource}_base_${index}`,
+        // observed as the `vals_prod_wood_base_0[/_m]` temp state keys.
+        const draft = withCycle();
+
+        productionCompiler(
+            draft,
+            {
+                resource: "wood",
+                amount: { base: 2, perBody: 3, multPerBody: 4 },
+                conditions: [],
+            },
+            0,
+        );
+
+        const state = draft.components.state as Record<string, unknown>;
+        // Per-body temp key and mult-per-body temp key, both keyed off the
+        // exact temp-var name "prod_wood_base_0".
+        expect(state.vals_prod_wood_base_0).toEqual({ value: 0, visible: false });
+        expect(state.vals_prod_wood_base_0_m).toEqual({
+            value: 0,
+            visible: false,
+        });
+
+        // The per-body (MULT by 3) and mult-per-body (MULT by 4) effects must
+        // both be present and reference the temp-var-named keys.
+        expect(draft.components.passiveEffects).toEqual(
+            expect.arrayContaining([
+                {
+                    op: Op.SET,
+                    target: "self.state.vals_prod_base_wood_amt_0.value",
+                    value: 2,
+                },
+                {
+                    op: Op.SET,
+                    target: "self.state.vals_prod_wood_base_0",
+                    source: "global.population",
+                },
+                {
+                    op: Op.MULT,
+                    target: "self.state.vals_prod_wood_base_0",
+                    value: 3,
+                },
+                {
+                    op: Op.ADD,
+                    target: "self.state.vals_prod_base_wood_amt_0.value",
+                    source: "self.state.vals_prod_wood_base_0",
+                },
+                {
+                    op: Op.SET,
+                    target: "self.state.vals_prod_wood_base_0_m",
+                    source: "global.population",
+                },
+                {
+                    op: Op.MULT,
+                    target: "self.state.vals_prod_wood_base_0_m",
+                    value: 4,
+                },
+                {
+                    op: Op.MULT,
+                    target: "self.state.vals_prod_base_wood_amt_0.value",
+                    source: "self.state.vals_prod_wood_base_0_m",
+                },
+            ]),
+        );
+    });
+
+    it("creates behavior as { rules: [...] } when components has no behavior yet", () => {
+        // L66 `draft.components.behavior ??= { rules: [] }`: with no prior
+        // behavior, the object literal AND its rules array must be created so
+        // the production rule has somewhere to live.
+        const draft = withCycle();
+        expect(draft.components.behavior).toBeUndefined();
+
+        productionCompiler(
+            draft,
+            {
+                resource: "wood",
+                target: "self",
+                amount: { base: 1, perBody: 0, multPerBody: 0 },
+                conditions: [],
+            },
+            0,
+        );
+
+        expect(Array.isArray(draft.components.behavior?.rules)).toBe(true);
+        expect(draft.components.behavior?.rules?.map((r) => r.id)).toEqual([
+            "sys_produce_wood_0",
+        ]);
+    });
+
+    it("reuses an existing behavior object missing its rules array (L67 ??= [])", () => {
+        // L67 `draft.components.behavior.rules ??= []` is only reached when a
+        // behavior object exists WITHOUT a rules array. The production rule must
+        // seed that array.
+        const draft = withCycle();
+        draft.components.behavior = {} as Blueprint["components"]["behavior"];
+
+        productionCompiler(
+            draft,
+            {
+                resource: "wood",
+                target: "self",
+                amount: { base: 1, perBody: 0, multPerBody: 0 },
+                conditions: [],
+            },
+            0,
+        );
+
+        expect(draft.components.behavior?.rules?.map((r) => r.id)).toEqual([
+            "sys_produce_wood_0",
+        ]);
+    });
+
+    it("uses the '<id>:production' context label when an authored condition fails to compile", () => {
+        // L75: appendRuleConditions receives `${draft.id}:production` as the
+        // context label, surfaced verbatim in the warning for a malformed
+        // condition. An empty-string label mutant would drop the prefix.
+        const draft = withCycle();
+        const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+
+        productionCompiler(
+            draft,
+            {
+                resource: "wood",
+                amount: { base: 1, perBody: 0, multPerBody: 0 },
+                // 5 parts -> compileConditionText fails -> warn with context.
+                conditions: ["self.state.active.value too many parts"],
+            },
+            0,
+        );
+
+        expect(warn).toHaveBeenCalledWith(
+            expect.stringContaining("Condition error in prod_bp:production:"),
+        );
+        warn.mockRestore();
+    });
 });

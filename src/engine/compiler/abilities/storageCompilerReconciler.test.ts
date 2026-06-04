@@ -717,4 +717,251 @@ describe("reconcileStorageCompilerArtifacts — direct unit (full-structure)", (
         // the tag IS still removed because the resource came from a config.
         expect(draft.tags).toEqual([]);
     });
+
+    // ----------------------------------------------------------------------
+    // Residual mutation-hardening cases. Each targets one survivor in
+    // isolation so the per-test coverage map attributes the kill cleanly.
+    // ----------------------------------------------------------------------
+
+    it("completes cleanly and still strips the tag when `components` is entirely undefined", () => {
+        // Drives the `draft.components?.` optional chains on L20/L24/L75/L80/L114:
+        // with no components at all, every `?.` must short-circuit. Removing any of
+        // them dereferences `undefined` and throws — so a clean run that still
+        // empties the config-driven tag pins all five chains at once.
+        const draft = createBlueprint("store", {
+            tags: ["storage:food"],
+        }) as Blueprint;
+        delete (draft.components as unknown as Record<string, unknown>).display;
+        delete (draft as unknown as Record<string, unknown>).components;
+
+        expect(() =>
+            reconcileStorageCompilerArtifacts(draft, [
+                makeStorage({ resource: "food" }),
+            ]),
+        ).not.toThrow();
+
+        expect(draft.components).toBeUndefined();
+        expect(draft.tags).toEqual([]);
+    });
+
+    it("tolerates a present behavior with an undefined `rules` array (no cycle-cost marker)", () => {
+        // `isCycleCostResource` reads `draft.components?.behavior?.rules?.some(...)`.
+        // Here `behavior` exists but `rules` is undefined and there is NO
+        // `vals_cycle_cost_total_food` state marker, so the `||` left side is false
+        // and the `rules?.some(...)` clause is actually evaluated. The trailing `?.`
+        // must short-circuit; dropping it throws. A clean run that cleans food's
+        // prefixed state proves the chain held (and that food is NOT cycle-cost).
+        const draft = createBlueprint("store", {
+            components: {
+                state: { vals_storage_food_cap_0: { value: 1 } },
+                behavior: { rules: undefined as never },
+            },
+        }) as Blueprint;
+
+        expect(() =>
+            reconcileStorageCompilerArtifacts(draft, [
+                makeStorage({ resource: "food" }),
+            ]),
+        ).not.toThrow();
+
+        expect(draft.components.state).toEqual({});
+    });
+
+    it("uses the `[] fallback` for tags when `draft.tags` is undefined", () => {
+        // L72 `(draft.tags ?? []).filter(...)`. With `draft.tags` undefined the
+        // fallback array is the one filtered. Mutating `[]` to a non-empty seed
+        // would leave a stray tag behind; an undefined-in / empty-out run kills it.
+        const draft = createBlueprint("store", {
+            components: { state: { vals_storage_food_cap_0: { value: 1 } } },
+        }) as Blueprint;
+        delete (draft as unknown as Record<string, unknown>).tags;
+
+        reconcileStorageCompilerArtifacts(draft, [makeStorage({ resource: "food" })]);
+
+        expect(draft.tags).toEqual([]);
+    });
+
+    it("only matches the bar-resource regex on string keys, not on String()-coercible values", () => {
+        // L17 ternary guards `typeof key === "string"` before running the regex.
+        // A single-element array key stringifies to `state.food` and WOULD match if
+        // the guard were forced true — but as a non-string it must read as null and
+        // the bar is kept. Forcing the guard true removes the bar instead.
+        const draft = createBlueprint("store", {
+            components: {
+                state: { vals_storage_food_cap_0: { value: 1 } },
+                display: {
+                    label: "x",
+                    display_key: "k",
+                    bars: [{ key: ["state.food"] as never }],
+                },
+            },
+        }) as Blueprint;
+
+        reconcileStorageCompilerArtifacts(draft, [makeStorage({ resource: "food" })]);
+
+        expect(draft.components.display?.bars).toEqual([{ key: ["state.food"] }]);
+    });
+
+    it("keeps a passive effect whose target is a non-string selector object", () => {
+        // L86 guards `typeof effect.target === "string"` before `.startsWith`. A
+        // selector-object target must skip the target-prefix clause and survive.
+        // Forcing the guard true calls `.startsWith` on the object and throws.
+        const draft = createBlueprint("store", {
+            components: {
+                state: { vals_storage_food_cap_0: { value: 1 } },
+                passiveEffects: [
+                    {
+                        op: Op.ADD,
+                        target: { from: "self", mode: "ALL" } as never,
+                        value: 1,
+                    },
+                ],
+            },
+        }) as Blueprint;
+
+        expect(() =>
+            reconcileStorageCompilerArtifacts(draft, [
+                makeStorage({ resource: "food" }),
+            ]),
+        ).not.toThrow();
+
+        expect(draft.components.passiveEffects).toEqual([
+            { op: "ADD", target: { from: "self", mode: "ALL" }, value: 1 },
+        ]);
+    });
+
+    it("keeps a SUB-on-food.value effect with a hand-authored string source (final-triple OR-structure)", () => {
+        // The final triple is `!(op===SUB && target===food.value && typeof source
+        // ===string && source.startsWith(entropy_tick_food_))`. This effect reaches
+        // the triple (its source is a string that matches no refs prefix) and is
+        // KEPT because the startsWith leg is false. The two `&&`->`||` rewrites of
+        // the leading conjuncts both collapse to "remove" here (op===SUB alone, or
+        // `typeof source==="string"` alone, becomes sufficient), so asserting it
+        // survives kills both LogicalOperator mutants on L104.
+        const draft = createBlueprint("store", {
+            components: {
+                state: { vals_storage_food_cap_0: { value: 1 } },
+                passiveEffects: [
+                    {
+                        op: Op.SUB,
+                        target: "self.state.food.value",
+                        source: "self.state.manual_drain.value",
+                        value: 1,
+                    },
+                ],
+            },
+        }) as Blueprint;
+
+        reconcileStorageCompilerArtifacts(draft, [makeStorage({ resource: "food" })]);
+
+        expect(draft.components.passiveEffects).toEqual([
+            {
+                op: "SUB",
+                target: "self.state.food.value",
+                source: "self.state.manual_drain.value",
+                value: 1,
+            },
+        ]);
+    });
+
+    it("keeps a SUB drain whose source merely ENDS WITH the entropy-tick prefix (startsWith, not endsWith)", () => {
+        // L107 uses `startsWith`. A source that is *suffixed* by the entropy-tick
+        // prefix (but prefixed by padding) matches no earlier refs clause, so it
+        // reaches the final triple. Under `startsWith` the leg is false -> KEPT;
+        // an `endsWith` mutant would make it true and wrongly drop the effect.
+        const draft = createBlueprint("store", {
+            components: {
+                state: { vals_storage_food_cap_0: { value: 1 } },
+                passiveEffects: [
+                    {
+                        op: Op.SUB,
+                        target: "self.state.food.value",
+                        source: "PAD_self.state.vals_entropy_tick_food_",
+                        value: 1,
+                    },
+                ],
+            },
+        }) as Blueprint;
+
+        reconcileStorageCompilerArtifacts(draft, [makeStorage({ resource: "food" })]);
+
+        expect(draft.components.passiveEffects).toEqual([
+            {
+                op: "SUB",
+                target: "self.state.food.value",
+                source: "PAD_self.state.vals_entropy_tick_food_",
+                value: 1,
+            },
+        ]);
+    });
+
+    it("keeps a behavior rule whose id merely ENDS WITH the xfer_cap prefix (startsWith, not endsWith)", () => {
+        // L119 filters on `startsWith(sys_auto_req_food_xfer_cap_)`. A rule id that
+        // is *suffixed* by that string (but padded in front) does not start with the
+        // need_/xfer_ prefixes either, so original KEEPS it. An `endsWith` mutant
+        // matches the suffix and wrongly removes it.
+        const draft = createBlueprint("store", {
+            components: {
+                state: { vals_storage_food_cap_0: { value: 1 } },
+                behavior: {
+                    rules: [
+                        {
+                            id: "PAD_sys_auto_req_food_xfer_cap_",
+                            sortKey: "a",
+                            conditions: [],
+                            actions: [],
+                        },
+                    ],
+                },
+            },
+        }) as Blueprint;
+
+        reconcileStorageCompilerArtifacts(draft, [makeStorage({ resource: "food" })]);
+
+        expect(draft.components.behavior?.rules).toEqual([
+            {
+                id: "PAD_sys_auto_req_food_xfer_cap_",
+                sortKey: "a",
+                conditions: [],
+                actions: [],
+            },
+        ]);
+    });
+
+    it("drops blank config resources so a `storage:` tag and empty-prefix state survive (filter(Boolean))", () => {
+        // L53 `.filter(Boolean)` removes the trimmed-empty resource so it never
+        // becomes a cleanup target. Without the filter, "" is treated as a resource:
+        // it would strip the `storage:` tag (storage: + "") and the empty-prefix
+        // `vals_storage__cap_0` state. Asserting both SURVIVE pins the filter.
+        const draft = createBlueprint("store", {
+            tags: ["storage:", "keep-me"],
+            components: {
+                state: { vals_storage__cap_0: { value: 1 } },
+            },
+        }) as Blueprint;
+
+        reconcileStorageCompilerArtifacts(draft, [makeStorage({ resource: "   " })]);
+
+        expect(draft.tags).toEqual(["storage:", "keep-me"]);
+        expect(draft.components.state).toEqual({ vals_storage__cap_0: { value: 1 } });
+    });
+
+    it("deletes a state key only via its own clauses, never every key (left-condition not forced true)", () => {
+        // L65's `if` is `(key===resource && owned(state[key])) || prefixes.some(...)`.
+        // An unrelated, non-prefixed, non-storage-owned key must SURVIVE. Forcing the
+        // left ConditionalExpression to `true` would delete every key indiscriminately.
+        const draft = createBlueprint("store", {
+            components: {
+                state: {
+                    vals_storage_food_cap_0: { value: 1 },
+                    // not the resource name, not a food prefix, not storage-owned.
+                    unrelated: { value: 9, max: 20 },
+                },
+            },
+        }) as Blueprint;
+
+        reconcileStorageCompilerArtifacts(draft, [makeStorage({ resource: "food" })]);
+
+        expect(draft.components.state).toEqual({ unrelated: { value: 9, max: 20 } });
+    });
 });
