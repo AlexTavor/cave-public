@@ -7,7 +7,6 @@ import {
 import { createBlueprint, createCartridge } from "../engine/test/factories";
 import { createGameRuntime } from "../engine/runtime/createGameRuntime";
 import type { Runtime } from "../engine/runtime/Runtime";
-import { ensureWorldSeedState } from "../utils/worldSeed";
 import { UpdateBodiesBatchHandler } from "./handlers/UpdateBodiesBatchHandler";
 
 // End-to-end proof that a headless run is replayable from its seed. The sim
@@ -77,16 +76,10 @@ const runHeadless = async (seed: string) => {
     const runtime = createGameRuntime(buildCartridge(), seed);
     // Body habiti are applied by the game-layer UPDATE_BODIES_BATCH handler.
     runtime.registerCommandHandler(new UpdateBodiesBatchHandler() as never);
+    // initializeWorldState re-establishes the run seed on sys_world.state after
+    // replacing it, so the seed-driven habiti rolls below actually depend on the
+    // seed — the "different seed diverges" assertion is what guards that.
     initializeWorldState(runtime, buildCartridge());
-    // initializeWorldState replaces sys_world.state, so re-establish the run seed
-    // there (the same thing runtimeReset does) — otherwise habiti rolls fall back
-    // to the "world" default and stop depending on the seed.
-    const worldEntity = runtime
-        .getWorld()
-        .entities.find((entity) => entity.id === "sys_world") as
-        | { state?: Record<string, unknown> }
-        | undefined;
-    if (worldEntity) ensureWorldSeedState(worldEntity, seed);
     enqueueInitialSpawn(runtime, { blueprintId: "worker", count: BODY_COUNT });
     const loop = await runSimulationLoop(runtime, TICKS);
     return { runtime, history: loop.history };
