@@ -1,12 +1,14 @@
 import jsonLogic from "json-logic-js";
-import type { Snapshot } from "../../engine/runtime/Snapshot";
 import { evaluateCarriersOrbiting } from "../carriers/carriersOrbitingCondition";
+import type { LogicOpContext } from "./logicOpContext";
 
 export const registerCarriersOrbitingOp = (): void => {
-    jsonLogic.add_operation("CARRIERS_ORBITING", function (this: unknown) {
-        const ctx = this as { __snapshot?: Snapshot };
-        return ctx.__snapshot
-            ? evaluateCarriersOrbiting(ctx.__snapshot)
-            : false;
-    });
+    jsonLogic.add_operation(
+        "CARRIERS_ORBITING",
+        function (this: LogicOpContext) {
+            return this.__snapshot
+                ? evaluateCarriersOrbiting(this.__snapshot)
+                : false;
+        },
+    );
 };
