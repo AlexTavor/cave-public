@@ -561,5 +561,90 @@
       "severity": "error",
       "name": "engine-stays-generic"
     }
+  },
+  {
+    "type": "dependency",
+    "from": "src/lib/displays/resolveDisplaySource.test.ts",
+    "to": "src/engine/phaser/display/avatar/AvatarDisplayConstants.ts",
+    "unresolvedTo": "../../engine/phaser/display/avatar/AvatarDisplayConstants",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "lib-stays-low"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/lib/displays/resolveDisplaySource.ts",
+    "to": "src/engine/phaser/display/avatar/AvatarDisplayConstants.ts",
+    "unresolvedTo": "../../engine/phaser/display/avatar/AvatarDisplayConstants",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "lib-stays-low"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/lib/terminal/components/SmartInput.test.tsx",
+    "to": "src/ui/lib/foundation/portal-manager/PortalManager.tsx",
+    "unresolvedTo": "../../../ui/lib/foundation/portal-manager/PortalManager",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "lib-stays-low"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/lib/terminal/components/SmartInput.test.tsx",
+    "to": "src/ui/lib/foundation/theme/ThemeProvider.tsx",
+    "unresolvedTo": "../../../ui/lib/foundation/theme/ThemeProvider",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "lib-stays-low"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/lib/terminal/components/SmartInput.tsx",
+    "to": "src/ui/lib/atoms/popover/Popover.tsx",
+    "unresolvedTo": "../../../ui/lib/atoms/popover/Popover",
+    "dependencyTypes": [
+      "local",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "lib-stays-low"
+    }
+  },
+  {
+    "type": "dependency",
+    "from": "src/lib/terminal/types.providers.ts",
+    "to": "src/engine/runtime/Runtime.ts",
+    "unresolvedTo": "../../engine/runtime/Runtime",
+    "dependencyTypes": [
+      "local",
+      "type-only",
+      "import"
+    ],
+    "rule": {
+      "severity": "error",
+      "name": "lib-stays-low"
+    }
   }
 ]

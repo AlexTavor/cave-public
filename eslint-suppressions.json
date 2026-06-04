@@ -261,6 +261,11 @@
       "count": 2
     }
   },
+  "src/engine/compiler/conditions/compileStructuredConditions.ts": {
+    "no-restricted-imports": {
+      "count": 2
+    }
+  },
   "src/engine/compiler/utils/scalableCompiler.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 1
@@ -1004,6 +1009,11 @@
       "count": 2
     }
   },
+  "src/engine/runtime/RuntimeCoreBase.ts": {
+    "no-restricted-imports": {
+      "count": 1
+    }
+  },
   "src/engine/runtime/RuntimeDeterminism.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 3
@@ -1052,6 +1062,11 @@
   "src/engine/runtime/contention/ContentionResolver.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 13
+    }
+  },
+  "src/engine/runtime/handlers/AutomationSpawnHandler.ts": {
+    "no-restricted-imports": {
+      "count": 1
     }
   },
   "src/engine/runtime/handlers/KillHandler.test.ts": {
@@ -1122,6 +1137,9 @@
   "src/engine/runtime/handlers/SpawnHandler.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 4
+    },
+    "no-restricted-imports": {
+      "count": 1
     }
   },
   "src/engine/runtime/handlers/SpawnHandler.unifiedBlueprints.test.ts": {
@@ -1199,6 +1217,11 @@
       "count": 1
     }
   },
+  "src/engine/runtime/handlers/spawnUnifiedBlueprints/resolveSpawnPeers.ts": {
+    "no-restricted-imports": {
+      "count": 1
+    }
+  },
   "src/engine/runtime/handlers/spawnUtils.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 3
@@ -1212,6 +1235,11 @@
   "src/engine/runtime/handlers/transferPendingBuilder.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 17
+    }
+  },
+  "src/engine/runtime/handlers/transferPendingBuilder.ts": {
+    "no-restricted-imports": {
+      "count": 1
     }
   },
   "src/engine/runtime/handlers/transferResources.helpers.test.ts": {
@@ -1432,6 +1460,11 @@
   "src/engine/runtime/systems/behavior/ValueResolver.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 8
+    }
+  },
+  "src/engine/runtime/systems/behavior/actionExecutorSpawn.ts": {
+    "no-restricted-imports": {
+      "count": 1
     }
   },
   "src/engine/runtime/systems/behavior/actionExecutorTestUtils.ts": {

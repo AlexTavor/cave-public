@@ -205,6 +205,15 @@ module.exports = {
       from: { path: "^src/utils" },
       to: { path: "^src/(data|engine|game|ui|lib|app-shell)" },
     },
+    {
+      name: "lib-stays-low",
+      severity: "error",
+      comment:
+        "lib/ holds shared modules the engine builds on (engine imports lib at 40 sites), so it " +
+        "sits BELOW engine: it must not import engine/game/ui/app-shell. May use data + utils + lib.",
+      from: { path: "^src/lib" },
+      to: { path: "^src/(engine|game|ui|app-shell)" },
+    },
   ],
   options: {
     // Which modules not to follow further when encountered
