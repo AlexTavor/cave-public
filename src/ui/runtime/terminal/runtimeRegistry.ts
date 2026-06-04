@@ -25,6 +25,7 @@ import { setTargetCommand } from "./commands/targetCommands.ts";
 import { gameDormancyCommand } from "./commands/gameDormancyCommand";
 import { gameRebirthCommand } from "./commands/gameRebirthCommand";
 import { tutorialModeCommand } from "./commands/tutorialModeCommand";
+import { toggleTelemetryCommand } from "./commands/toggleTelemetryCommand";
 import { projectCommands } from "../../../engine/terminal/commands/projectCommands.ts";
 export {
     AUTOMATIONS_KEY,
@@ -80,6 +81,7 @@ export const RUNTIME_COMMANDS: CommandDefinition[] = [
     runtimeReloadCommand,
     debugPhysicsCommand,
     balancingScanCommand,
+    toggleTelemetryCommand,
     ...projectCommands,
 ];
 
