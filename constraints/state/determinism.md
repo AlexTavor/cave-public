@@ -38,4 +38,4 @@ The burn-down split into two unrelated id problems:
 
 **Keep it green:** the gate stays at zero. If a new engine id source is needed, route it through `mintSpawnId` (entity ids) or a `(worldSeed, stableId)`-seeded derivation — never `nanoid`/`ulid`.
 
-(`src/game/handlers/spawnFromBlueprint.ts` has one more site, outside this engine-scoped gate — fold in when game determinism is constrained.)
+`src/game/handlers/spawnFromBlueprint.ts` (the game-layer spawn handler, outside this engine-scoped gate) also routes through `mintSpawnId` — game-spawned entities feed the same id-sort, so a random id there would have re-broken replay. The gate doesn't yet cover `src/game`; when a game-scoped determinism gate lands it should already be clean.
