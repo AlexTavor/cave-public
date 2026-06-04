@@ -2,6 +2,7 @@ import type { ModuleCartridge } from "../../data/schemas/module";
 import { deepClone } from "../../utils/objectUtils";
 import type { Runtime } from "../runtime/Runtime";
 import { RuntimeCommandType } from "../runtime/types";
+import { ensureWorldSeedState } from "../../utils/worldSeed";
 
 export type InitialSpawnConfig = {
     blueprintId: string;
@@ -42,6 +43,14 @@ export const initializeWorldState = (
     const worldEntity = getWorldEntity(runtime);
     if (!worldEntity) return;
     worldEntity.state = deepClone(worldBlueprint.components.state);
+    // Replacing the whole state above clobbers the worldSeed that bootstrap
+    // (resetRuntimeState) wrote, which would silently drop every seed-driven roll
+    // (purge events, spawn angles, habiti/identity) to the "world" fallback —
+    // making the run's seed a no-op. Re-establish it from the authoritative seed.
+    ensureWorldSeedState(
+        worldEntity as { state?: Record<string, unknown> },
+        runtime.getState().seed,
+    );
 };
 
 export const enqueueInitialSpawn = (
