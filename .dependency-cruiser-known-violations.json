@@ -382,20 +382,6 @@
   },
   {
     "type": "dependency",
-    "from": "src/engine/terminal/toggleTelemetryCommand.ts",
-    "to": "src/ui/runtime/state/useRuntimeToolStore.ts",
-    "unresolvedTo": "../../ui/runtime/state/useRuntimeToolStore",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "engine-stays-generic"
-    }
-  },
-  {
-    "type": "dependency",
     "from": "src/lib/terminal/components/SmartInput.test.tsx",
     "to": "src/ui/lib/foundation/portal-manager/PortalManager.tsx",
     "unresolvedTo": "../../../ui/lib/foundation/portal-manager/PortalManager",

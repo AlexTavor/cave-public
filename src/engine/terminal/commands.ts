@@ -10,7 +10,6 @@ import { helpCommand } from "./helpCommand";
 import { lsCommand } from "./lsCommand";
 import { rmCommand } from "./rmCommand";
 import { saveCommand } from "./saveCommand";
-import { toggleTelemetryCommand } from "./toggleTelemetryCommand";
 
 // Export Bundles
 export const STANDARD_COMMANDS = [
@@ -26,6 +25,5 @@ export const STANDARD_COMMANDS = [
     catCommand,
     rmCommand,
     saveCommand,
-    toggleTelemetryCommand,
 ];
 

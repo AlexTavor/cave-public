@@ -1,5 +1,5 @@
-import { CommandDefinition } from "../../lib/terminal";
-import { useRuntimeToolStore } from "../../ui/runtime/state/useRuntimeToolStore";
+import { CommandDefinition } from "../../../../lib/terminal";
+import { useRuntimeToolStore } from "../../state/useRuntimeToolStore";
 
 export const toggleTelemetryCommand: CommandDefinition = {
     name: "telemetry",
