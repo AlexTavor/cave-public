@@ -7,14 +7,12 @@ import type {
 import type { HabitusDefinition } from "../../data/schemas/game/habiti";
 import type { UnderstandingDefinition } from "../../data/schemas/game/understanding";
 import { resolveOwnedCaveKnowledgeEffects } from "./resolveOwnedCaveKnowledgeEffects";
+import { listResourceGainBonusResources } from "./resourceGainBonusState";
+import { listProducerOutputBonusTags } from "./producerOutputBonusState";
 import {
-    listResourceGainBonusResources,
-    resourceGainBonusStateKey,
-} from "./resourceGainBonusState";
-import {
-    listProducerOutputBonusTags,
     producerOutputBonusStateKey,
-} from "./producerOutputBonusState";
+    resourceGainBonusStateKey,
+} from "../../utils/habitiBonusStateKeys";
 import { purgeProgressMaxBonusStateKey } from "./purgeProgressBonusState";
 
 export const enqueueResourceGainBonusStateSync = (input: {

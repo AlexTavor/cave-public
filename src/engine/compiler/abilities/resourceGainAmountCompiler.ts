@@ -1,7 +1,9 @@
 import type { Blueprint } from "../../../data/schemas/blueprint";
 import { Op } from "../../../data/schemas/primitives";
-import { producerOutputBonusStateKey } from "../../../game/habiti/producerOutputBonusState";
-import { resourceGainBonusStateKey } from "../../../game/habiti/resourceGainBonusState";
+import {
+    producerOutputBonusStateKey,
+    resourceGainBonusStateKey,
+} from "../../../utils/habitiBonusStateKeys";
 import { ensureStateEntry } from "./conversionCompilerUtils";
 
 export const appendResourceGainAdjustedAmount = (input: {
