@@ -1,5 +1,6 @@
 import type { HabitusDefinition } from "../../data/schemas/game/habiti";
 import type { UnderstandingDefinition } from "../../data/schemas/game/understanding";
+import { resourceGainBonusStateKey } from "../../utils/habitiBonusStateKeys";
 
 const byText = (left: string, right: string) => left.localeCompare(right);
 
@@ -10,9 +11,6 @@ const listDefinitions = (
     ...Object.values(habitusIndex ?? {}),
     ...Object.values(understandingIndex ?? {}),
 ];
-
-export const resourceGainBonusStateKey = (resource: string) =>
-    `habiti_resource_gain_bonus_${resource.trim()}`;
 
 export const listResourceGainBonusResources = (
     habitusIndex: Record<string, HabitusDefinition>,

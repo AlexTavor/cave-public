@@ -141,7 +141,7 @@
     "6-suspicion-purge-cycle": {
       "title": "Suspicion / Purge / cycle timing",
       "files": [
-        "src/game/purge/suspiciousActivity.ts",
+        "src/engine/compiler/abilities/suspiciousActivity.ts",
         "src/engine/compiler/abilities/suspiciousActivityCompiler.ts",
         "src/game/systems/cave/purgeEvaluate.ts",
         "src/game/systems/cave/purgeResolvers.ts",
@@ -150,8 +150,8 @@
         "src/engine/compiler/abilities/cycleCompiler.ts"
       ],
       "blessed": {
-        "src/game/purge/suspiciousActivity.ts": "fc0fc4acb07221deb675abed9e151c22a0cb0752",
-        "src/engine/compiler/abilities/suspiciousActivityCompiler.ts": "567ef479a69ae313fd918dd4bc7b8cd5dd4705a1",
+        "src/engine/compiler/abilities/suspiciousActivity.ts": "fc76f17a3926efc7fb36a86f24f87a4dad44b5e9",
+        "src/engine/compiler/abilities/suspiciousActivityCompiler.ts": "7c564713588c4477dc187036253e71ca627bfdaf",
         "src/game/systems/cave/purgeEvaluate.ts": "7c25d1250a9a7b6a3294d6f5b358f122f1fdb3d1",
         "src/game/systems/cave/purgeResolvers.ts": "c872fd3ef4d8f12bcfb433bb2c128af65623c374",
         "src/game/habiti/resolveOwnedCaveKnowledgeEffects.ts": "4d4ece3378fd1ba8bc0989dadb61dd65204f8132",
@@ -159,8 +159,8 @@
         "src/engine/compiler/abilities/cycleCompiler.ts": "e120b22cfa86c491476928509166469d5b15f624"
       },
       "lastBless": {
-        "commit": "f7472b00a2e061e6e7d0c110992ba5d8a46971f5",
-        "note": "purgeEvaluate.ts: only the factCommands import relocated to engine/runtime (DI seam #2); suspicion/purge/cycle model and anchors unchanged"
+        "commit": "9df940d0b8f1be205febc509fca778656fd423e3",
+        "note": "suspiciousActivity.ts relocated game/purge → engine/compiler/abilities (DI seam, pure ability-analysis used by compiler+UI); behavior + anchors unchanged, compiler only changed its import"
       }
     }
   }

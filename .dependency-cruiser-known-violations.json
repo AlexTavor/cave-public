@@ -99,51 +99,9 @@
   },
   {
     "type": "dependency",
-    "from": "src/engine/compiler/abilities/resourceGainAmountCompiler.ts",
-    "to": "src/game/habiti/producerOutputBonusState.ts",
-    "unresolvedTo": "../../../game/habiti/producerOutputBonusState",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "engine-stays-generic"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/engine/compiler/abilities/resourceGainAmountCompiler.ts",
-    "to": "src/game/habiti/resourceGainBonusState.ts",
-    "unresolvedTo": "../../../game/habiti/resourceGainBonusState",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "engine-stays-generic"
-    }
-  },
-  {
-    "type": "dependency",
     "from": "src/engine/compiler/abilities/storageDecay.seconds.test.ts",
     "to": "src/game/systems/passive-effects/PassiveEffectSystem.ts",
     "unresolvedTo": "../../../game/systems/passive-effects/PassiveEffectSystem",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "engine-stays-generic"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/engine/compiler/abilities/suspiciousActivityCompiler.ts",
-    "to": "src/game/purge/suspiciousActivity.ts",
-    "unresolvedTo": "../../../game/purge/suspiciousActivity",
     "dependencyTypes": [
       "local",
       "import"

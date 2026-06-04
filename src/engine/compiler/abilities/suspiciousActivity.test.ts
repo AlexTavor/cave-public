@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import type { EditorAbilities } from "../../../data/schemas/abilities";
 import { collectSuspiciousPurgeUpdaters } from "./suspiciousActivity";
 
 describe("collectSuspiciousPurgeUpdaters", () => {
@@ -34,7 +35,7 @@ describe("collectSuspiciousPurgeUpdaters", () => {
                     conditions: [],
                 },
             ],
-        } as any);
+        } as EditorAbilities);
         expect(updaters).toHaveLength(2);
         expect(updaters.map((entry) => entry.value)).toEqual([1, 2]);
     });
@@ -49,7 +50,7 @@ describe("collectSuspiciousPurgeUpdaters", () => {
                     conditions: [],
                 },
             ],
-        } as any);
+        } as EditorAbilities);
         expect(updaters).toHaveLength(1);
         expect(updaters[0]?.value).toBe(10);
     });
