@@ -155,62 +155,6 @@
   },
   {
     "type": "dependency",
-    "from": "src/engine/logic/registerBodiesAssignedOp.ts",
-    "to": "src/game/assignment/bodiesAssignedCondition.ts",
-    "unresolvedTo": "../../game/assignment/bodiesAssignedCondition",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "engine-stays-generic"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/engine/logic/registerBodyInPointerOp.ts",
-    "to": "src/game/assignment/bodyInPointerCondition.ts",
-    "unresolvedTo": "../../game/assignment/bodyInPointerCondition",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "engine-stays-generic"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/engine/logic/registerCarriersOrbitingOp.ts",
-    "to": "src/game/carriers/carriersOrbitingCondition.ts",
-    "unresolvedTo": "../../game/carriers/carriersOrbitingCondition",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "engine-stays-generic"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/engine/logic/registerDestructiveAssignmentHasAllBodiesOp.ts",
-    "to": "src/game/assignment/destructiveAssignmentCondition.ts",
-    "unresolvedTo": "../../game/assignment/destructiveAssignmentCondition",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "engine-stays-generic"
-    }
-  },
-  {
-    "type": "dependency",
     "from": "src/engine/phaser/display-export/DisplayRenderHost.ts",
     "to": "src/ui/runtime/state/useDisplayImageExportStore.ts",
     "unresolvedTo": "../../../ui/runtime/state/useDisplayImageExportStore",
