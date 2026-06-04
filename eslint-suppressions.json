@@ -314,26 +314,6 @@
       "count": 1
     }
   },
-  "src/engine/logic/registerBodiesAssignedOp.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 1
-    }
-  },
-  "src/engine/logic/registerBodyInPointerOp.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 1
-    }
-  },
-  "src/engine/logic/registerCarriersOrbitingOp.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 1
-    }
-  },
-  "src/engine/logic/registerDestructiveAssignmentHasAllBodiesOp.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 1
-    }
-  },
   "src/engine/phaser/avatar/resolveBodyAvatarPresentation.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 7

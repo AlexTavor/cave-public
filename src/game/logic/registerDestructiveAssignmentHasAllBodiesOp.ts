@@ -1,11 +1,11 @@
 import jsonLogic from "json-logic-js";
-import type { Snapshot } from "../runtime/Snapshot";
-import { evaluateDestructiveAssignmentHasAllBodies } from "../../game/assignment/destructiveAssignmentCondition";
+import type { Snapshot } from "../../engine/runtime/Snapshot";
+import { evaluateDestructiveAssignmentHasAllBodies } from "../assignment/destructiveAssignmentCondition";
 
 export const registerDestructiveAssignmentHasAllBodiesOp = (): void => {
     jsonLogic.add_operation(
         "DESTRUCTIVE_ASSIGNMENT_HAS_ALL_BODIES",
-        function (this: any) {
+        function (this: unknown) {
             const ctx = this as {
                 __snapshot?: Snapshot;
                 self?: { id?: string };

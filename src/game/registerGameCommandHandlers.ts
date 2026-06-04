@@ -22,8 +22,12 @@ import { GainHabitiHandler } from "./handlers/GainHabitiHandler";
 import { GainUnderstandingHandler } from "./handlers/GainUnderstandingHandler";
 import { AssignBodiesBatchHandler } from "./handlers/AssignBodiesBatchHandler";
 import { ResolveBodyProcessingHandler } from "./handlers/ResolveBodyProcessingHandler";
+import { registerGameLogicOps } from "./logic/registerGameLogicOps";
 
 export const registerGameCommandHandlers = (runtime: Runtime) => {
+    // Register game-domain JsonLogic ops as part of wiring the game into the
+    // runtime (the engine no longer owns these — see registerGameLogicOps).
+    registerGameLogicOps();
     runtime.registerCommandHandler(new UpdateBodiesBatchHandler());
     runtime.registerCommandHandler(new UpdateTraitsBatchHandler());
     runtime.registerCommandHandler(new AssignBodiesBatchHandler());
