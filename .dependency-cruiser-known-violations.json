@@ -564,34 +564,6 @@
   },
   {
     "type": "dependency",
-    "from": "src/lib/displays/resolveDisplaySource.test.ts",
-    "to": "src/engine/phaser/display/avatar/AvatarDisplayConstants.ts",
-    "unresolvedTo": "../../engine/phaser/display/avatar/AvatarDisplayConstants",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "lib-stays-low"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/lib/displays/resolveDisplaySource.ts",
-    "to": "src/engine/phaser/display/avatar/AvatarDisplayConstants.ts",
-    "unresolvedTo": "../../engine/phaser/display/avatar/AvatarDisplayConstants",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "lib-stays-low"
-    }
-  },
-  {
-    "type": "dependency",
     "from": "src/lib/terminal/components/SmartInput.test.tsx",
     "to": "src/ui/lib/foundation/portal-manager/PortalManager.tsx",
     "unresolvedTo": "../../../ui/lib/foundation/portal-manager/PortalManager",
