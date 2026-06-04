@@ -102,13 +102,13 @@
         "src/data/schemas/assignmentRules.ts": "e36e186e7af52e62c7fdc09dc45854a15c0c52a5",
         "src/game/assignment/assignmentFilterUtils.ts": "88828566fc3929d1c4c9887e99c754fb89078ae6",
         "src/game/assignment/assignmentAcceptance.ts": "f003aa6235a98eedb4631393eeb8ad0adebdabb8",
-        "src/game/handlers/AssignBodiesBatchHandler.applyUpdate.ts": "b4e4353050f80c6b8c32b074645553a8687785b2",
+        "src/game/handlers/AssignBodiesBatchHandler.applyUpdate.ts": "2fc0aece79733e9c91b9c003bf9ceb64fc45d742",
         "src/data/schemas/abilities/assignment.ts": "5db8d536a794f9209110bc729ed21bb17853d88c",
         "src/ui/runtime/world/selection/absorption/assignmentRequirementsData.ts": "38b07332bc0601204a7ac5e9c4cca94bb6fb401a"
       },
       "lastBless": {
-        "commit": "bd5f5cb9f235422d09ff037e3cadc96fad7b6491",
-        "note": "bootstrap: initial verification against working tree"
+        "commit": "4cb8078cc4c52154d16f637123c1474538d8d7fb",
+        "note": "removeBodyFromOwners import relocated game→engine (DI seam); filter-rejection logic at :47-58 unchanged"
       }
     },
     "5-avatar-identity": {

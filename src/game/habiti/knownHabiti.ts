@@ -1,6 +1,6 @@
 import type { RuntimeEntity } from "../../engine/runtime/types";
 import { isCarrierEntity, readCarrierCommands } from "../carriers/carrier";
-import { normalizeHabitiIds } from "./habitiIds";
+import { normalizeHabitiIds } from "../../utils/normalizeHabitiIds";
 
 const readIds = (value: unknown) =>
     Array.isArray(value)

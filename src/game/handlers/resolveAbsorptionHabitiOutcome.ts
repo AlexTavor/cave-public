@@ -1,5 +1,5 @@
 import type { RuntimeEntity } from "../../engine/runtime/types";
-import { normalizeHabitiIds } from "../habiti/habitiIds";
+import { normalizeHabitiIds } from "../../utils/normalizeHabitiIds";
 import {
     resolveOutputAmount,
     resolveProcessingOutputs,

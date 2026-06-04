@@ -368,34 +368,6 @@
   },
   {
     "type": "dependency",
-    "from": "src/engine/runtime/handlers/KillHandler.ts",
-    "to": "src/game/assignment/bodyAssignment.ts",
-    "unresolvedTo": "../../../game/assignment/bodyAssignment",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "engine-stays-generic"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/engine/runtime/handlers/spawnBodyIdentity.ts",
-    "to": "src/game/habiti/assignBodyHabiti.ts",
-    "unresolvedTo": "../../../game/habiti/assignBodyHabiti",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "engine-stays-generic"
-    }
-  },
-  {
-    "type": "dependency",
     "from": "src/engine/runtime/handlers/SpawnHandler.extras.test.ts",
     "to": "src/game/handlers/UpdateBodiesBatchHandler.ts",
     "unresolvedTo": "../../../game/handlers/UpdateBodiesBatchHandler",
@@ -427,20 +399,6 @@
     "from": "src/engine/runtime/handlers/SpawnHandler.identity.test.ts",
     "to": "src/game/handlers/UpdateBodiesBatchHandler.ts",
     "unresolvedTo": "../../../game/handlers/UpdateBodiesBatchHandler",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "engine-stays-generic"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/engine/runtime/handlers/updateCaveHandler.helpers.ts",
-    "to": "src/game/habiti/habitiIds.ts",
-    "unresolvedTo": "../../../game/habiti/habitiIds",
     "dependencyTypes": [
       "local",
       "import"

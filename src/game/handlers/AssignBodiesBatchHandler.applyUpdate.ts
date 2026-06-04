@@ -6,11 +6,11 @@ import {
     ensureAssignmentComponent,
     isBodyEntity,
     readAssignmentStatus,
-    removeBodyFromOwners,
     resetBodyAssignmentProgress,
     setAssignmentRequiredMs,
     setBodyAssignment,
 } from "../assignment/bodyAssignment";
+import { removeBodyFromOwners } from "../../engine/runtime/handlers/removeBodyFromOwners";
 import { canAssignBodyToOwner } from "../assignment/assignmentAcceptance";
 import { readAssignmentDurationMs } from "../assignment/assignmentDurationMs";
 import {

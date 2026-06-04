@@ -42,6 +42,9 @@ const makeCartridge = () =>
 describe("SpawnHandler body identity", () => {
     it("queues UPDATE_BODIES_BATCH and applies spawned Habiti through the handler", () => {
         const context = makeHandlerContext(makeCartridge());
+        // Stub the game-domain assigner: these tests cover the engine spawn
+        // flow (pending habiti → UPDATE_BODIES_BATCH → applied), not the rules.
+        context.assignBodyHabiti = () => ["chosen"];
         context.world.add({
             id: "sys_world",
             state: { bodySerial: { value: 0, visible: false } },
@@ -68,6 +71,9 @@ describe("SpawnHandler body identity", () => {
 
     it("logs loudly and leaves Habiti unchanged when follow-up commands are unavailable", () => {
         const context = makeHandlerContext(makeCartridge());
+        // Stub the game-domain assigner: these tests cover the engine spawn
+        // flow (pending habiti → UPDATE_BODIES_BATCH → applied), not the rules.
+        context.assignBodyHabiti = () => ["chosen"];
         context.commands = undefined;
         context.world.add({ id: "sys_world", state: {} } as any);
         new SpawnHandler().handle(
