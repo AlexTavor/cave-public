@@ -1,4 +1,3 @@
-import { nanoid } from "nanoid";
 import type { ModuleCartridge } from "../../data/schemas/module";
 import { CommandsManager } from "./CommandsManager";
 import type { RuntimeTelemetryAdapter } from "./RuntimeTelemetry";
@@ -36,7 +35,11 @@ export class RuntimeCoreBase {
     telemetry?: RuntimeTelemetryAdapter,
     executeCommand?: (command: string) => void,
   ) {
-    this.id = nanoid();
+    // Debug-only handle (read once, in publishGameSceneDebugSnapshot) — not on the
+    // sim path, so it isn't replay-affecting. Derive it from the seed instead of
+    // nanoid() to satisfy the engine determinism gate; same seed → same id is fine
+    // (and handy when correlating replay debug snapshots).
+    this.id = `runtime_${seed}`;
     this.cartridge = cartridge;
     this.commandsManager = commandsManager;
     this.commands = commandsManager;
