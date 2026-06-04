@@ -5,7 +5,7 @@ import { deepMerge } from "../../../utils/objectUtils";
 import { resolveBlueprint, syncPhysicsRadiusFromDisplay } from "./spawnUtils";
 import { cloneStatefulComponents } from "./spawnCloneUtils";
 import { enqueuePendingBodyHabitiUpdate } from "./spawnPendingHabiti";
-import { enqueueMirroredFactAdjust } from "../../../game/facts/factCommands";
+import { enqueueMirroredFactAdjust } from "../factCommands";
 import { resolvePendingHabiti } from "./spawnBodyHabiti";
 import { applySpawnPhysics } from "./spawnPhysics";
 import { applySpawnParent } from "./spawnParentResolver";

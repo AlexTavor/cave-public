@@ -4,7 +4,7 @@ import type { CommandBuffer, RuntimeCommand } from "../../engine/runtime/types";
 import {
     enqueueFactAdjust,
     enqueueMirroredFactAdjust,
-} from "../facts/factCommands";
+} from "../../engine/runtime/factCommands";
 import {
     ACTIVE_BODIES_FACT_ABOUT,
     resolveActiveBodiesFactDelta,

@@ -382,20 +382,6 @@
   },
   {
     "type": "dependency",
-    "from": "src/engine/runtime/handlers/KillHandler.ts",
-    "to": "src/game/facts/factCommands.ts",
-    "unresolvedTo": "../../../game/facts/factCommands",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "engine-stays-generic"
-    }
-  },
-  {
-    "type": "dependency",
     "from": "src/engine/runtime/handlers/spawnBodyIdentity.ts",
     "to": "src/game/habiti/assignBodyHabiti.ts",
     "unresolvedTo": "../../../game/habiti/assignBodyHabiti",
@@ -441,20 +427,6 @@
     "from": "src/engine/runtime/handlers/SpawnHandler.identity.test.ts",
     "to": "src/game/handlers/UpdateBodiesBatchHandler.ts",
     "unresolvedTo": "../../../game/handlers/UpdateBodiesBatchHandler",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "engine-stays-generic"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/engine/runtime/handlers/SpawnHandler.ts",
-    "to": "src/game/facts/factCommands.ts",
-    "unresolvedTo": "../../../game/facts/factCommands",
     "dependencyTypes": [
       "local",
       "import"
