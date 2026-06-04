@@ -133,3 +133,38 @@ describe("compileStructuredConditions", () => {
         expect(compileStructuredConditionNotAllGate([])).toBeNull();
     });
 });
+
+describe("compileStructuredConditions deterministic identity", () => {
+    it("derives per-condition id/sortKey from kind + index (no random ids)", () => {
+        const [factRule, worldRule] = compileStructuredConditions([
+            ...conditions,
+        ]);
+        expect(factRule.id).toBe("structured_fact_threshold_0");
+        expect(factRule.sortKey).toBe("structured_fact_threshold_0");
+        expect(worldRule.id).toBe("structured_world_state_threshold_1");
+        expect(worldRule.sortKey).toBe("structured_world_state_threshold_1");
+    });
+
+    it("labels the AND gate and negated gate with stable keys", () => {
+        const allGate = compileStructuredConditionAllGate([...conditions]);
+        const notAllGate = compileStructuredConditionNotAllGate([
+            ...conditions,
+        ]);
+        expect(allGate?.id).toBe("structured_all_gate");
+        expect(allGate?.sortKey).toBe("structured_all_gate");
+        expect(notAllGate?.id).toBe("structured_not_all_gate");
+        expect(notAllGate?.sortKey).toBe("structured_not_all_gate");
+    });
+
+    it("is reproducible: same input compiles to byte-identical rules", () => {
+        // The whole point of dropping nanoid()/ulid(): recompiling a blueprint
+        // must yield identical output. A deep-equal across two compiles only
+        // holds because id/sortKey are now deterministic.
+        expect(compileStructuredConditions([...conditions])).toEqual(
+            compileStructuredConditions([...conditions]),
+        );
+        expect(compileStructuredConditionAllGate([...conditions])).toEqual(
+            compileStructuredConditionAllGate([...conditions]),
+        );
+    });
+});

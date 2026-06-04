@@ -1,5 +1,3 @@
-import { nanoid } from "nanoid";
-import { ulid } from "ulid";
 import type { LogicRule } from "../../../data/schemas/logic";
 import type { StructuredConditionInput } from "../../../data/schemas/conditions";
 
@@ -56,9 +54,14 @@ const toCompiledExpression = (condition: StructuredConditionInput) => {
     }
 };
 
-const createRule = (compiled: unknown): LogicRule => ({
-    id: nanoid(),
-    sortKey: ulid(),
+// Deterministic id/sortKey. These rules are always consumed as a *condition*
+// (their `.compiled` expression is evaluated; the id/sortKey never drive ordering
+// or keying), so a stable key derived from the condition is enough — and required:
+// nanoid()/ulid() made the compiled output non-reproducible, breaking the compiler
+// contract (and the engine determinism gate). See constraints/state/determinism.md.
+const createRule = (compiled: unknown, key: string): LogicRule => ({
+    id: key,
+    sortKey: key,
     tokens: [],
     compiled,
 });
@@ -66,19 +69,29 @@ const createRule = (compiled: unknown): LogicRule => ({
 export const compileStructuredConditions = (
     conditions: StructuredConditionInput[],
 ): LogicRule[] =>
-    conditions.map((condition) => createRule(toCompiledExpression(condition)));
+    conditions.map((condition, index) =>
+        createRule(
+            toCompiledExpression(condition),
+            `structured_${condition.kind}_${index}`,
+        ),
+    );
 
 export const compileStructuredConditionAllGate = (
     conditions: StructuredConditionInput[],
 ): LogicRule | null => {
     if (conditions.length === 0) return null;
     const compiled = conditions.map(toCompiledExpression);
-    return createRule(compiled.length === 1 ? compiled[0] : { and: compiled });
+    return createRule(
+        compiled.length === 1 ? compiled[0] : { and: compiled },
+        "structured_all_gate",
+    );
 };
 
 export const compileStructuredConditionNotAllGate = (
     conditions: StructuredConditionInput[],
 ): LogicRule | null => {
     const allGate = compileStructuredConditionAllGate(conditions);
-    return allGate ? createRule({ "!": [allGate.compiled] }) : null;
+    return allGate
+        ? createRule({ "!": [allGate.compiled] }, "structured_not_all_gate")
+        : null;
 };
