@@ -1,8 +1,8 @@
 import type Phaser from "phaser";
 import type { DisplayDestroyContext, DisplayTickContext } from "../../types";
 import type { GlyphRegistry } from "../../glyph/GlyphRegistry";
-import type { GlyphShape } from "../../glyph/GlyphTypes";
-import { GLYPH_POSITION_COORDS } from "../../glyph/GlyphTypes";
+import type { GlyphShape } from "../../../../../data/schemas/assets/GlyphTypes";
+import { GLYPH_POSITION_COORDS } from "../../../../../data/schemas/assets/GlyphTypes";
 import { resolveGlyphPlacementTransform } from "../../glyph/glyphRenderMath";
 import { BLEND_MODE_NORMAL } from "../../blendModes";
 import { isRadiusVisible } from "../../../scenes/gameSceneMath";

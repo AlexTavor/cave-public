@@ -1,6 +1,6 @@
 import type Phaser from "phaser";
 import type { DisplayDestroyContext, DisplayInitContext } from "../../types";
-import { GLYPH_POSITION_COORDS } from "../../glyph/GlyphTypes";
+import { GLYPH_POSITION_COORDS } from "../../../../../data/schemas/assets/GlyphTypes";
 
 export type ProgressBarSlotRenderState = {
     geometryKey: string;

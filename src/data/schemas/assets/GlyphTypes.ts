@@ -1,4 +1,4 @@
-import type { DisplayPaletteKey } from "../../../../lib/displays/displayKeyKinds";
+import type { DisplayPaletteKey } from "../../../lib/displays/displayKeyKinds";
 
 export type GlyphShape =
     | "line"

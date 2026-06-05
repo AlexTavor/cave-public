@@ -2,7 +2,7 @@ import type { Blueprint } from "../../../data/schemas/blueprint";
 import type { StorageAutoRequestConfig } from "../../../data/schemas/abilities/storageAutoRequest";
 import { Op } from "../../../data/schemas/primitives";
 import { ensureStateEntry } from "./upkeepCompilerUtils";
-import { buildAutoReqTransferRule } from "./autoRequestRuleBuilder";
+import { buildAutoReqTransferRule } from "../../../data/schemas/v2/autoRequestRuleBuilder";
 import { withThrottleCondition } from "./storageAutoRequestCompiler.helpers";
 
 export const compileStorageAutoRequest = (

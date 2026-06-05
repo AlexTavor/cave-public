@@ -1,4 +1,4 @@
-import { DELAY_BASE, DELAY_SIGNATURE_LEN, DELAY_STEP_MS } from "./GlyphTypes";
+import { DELAY_BASE, DELAY_SIGNATURE_LEN, DELAY_STEP_MS } from "../../../../data/schemas/assets/GlyphTypes";
 
 /** Compute the 9-element delay array for a given ordinal. */
 export const computeDelaySignature = (ordinal: number): number[] => {

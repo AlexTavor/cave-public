@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { generateGlyph } from "./GlyphGenerator";
-import { ALL_GLYPH_SHAPES } from "./GlyphTypes";
+import { ALL_GLYPH_SHAPES } from "../../../../data/schemas/assets/GlyphTypes";
 import { canonicalKey } from "./glyphCanonical";
 
 describe("GlyphGenerator", () => {

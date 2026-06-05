@@ -1,12 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { Snapshot } from "../../../engine/runtime/Snapshot";
-import { RuntimeCommandType } from "../../../engine/runtime/types";
-import { BehaviorSystem } from "../../../engine/runtime/systems/BehaviorSystem";
-import { createCommandBuffer } from "../../../game/systems/testUtils";
-import { WORLD_CLAMP_RULES } from "./worldClampRules";
+import { Snapshot } from "../../engine/runtime/Snapshot";
+import {
+    RuntimeCommandType,
+    type RuntimeEntity,
+} from "../../engine/runtime/types";
+import { BehaviorSystem } from "../../engine/runtime/systems/BehaviorSystem";
+import type { ImpulseEngine } from "../../engine/physics/impulse/ImpulseEngine";
+import { createCommandBuffer } from "./testUtils";
+import { WORLD_CLAMP_RULES } from "../../data/schemas/v2/worldClampRules";
 
-const makeSnapshot = (world: any) =>
-    new Snapshot([world], { getBody: () => undefined } as any, {});
+const makeSnapshot = (world: ReturnType<typeof makeWorld>) =>
+    new Snapshot(
+        [world as unknown as RuntimeEntity],
+        { getBody: () => undefined } as unknown as ImpulseEngine,
+        {},
+    );
 
 const makeWorld = (tutorialMode: number, food: number, heat: number) => ({
     id: "sys_world",
