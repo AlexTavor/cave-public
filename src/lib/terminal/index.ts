@@ -5,4 +5,5 @@ export * from "./hooks/useSmartInput";
 export * from "./components/Terminal";
 export * from "./components/SmartInput";
 export * from "./components/styles";
+export * from "./PopoverSlot";
 

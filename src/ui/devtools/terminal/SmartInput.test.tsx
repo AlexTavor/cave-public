@@ -2,20 +2,27 @@
 import React from "react";
 import { render, fireEvent, screen, cleanup } from "@testing-library/react";
 import { describe, it, expect, vi, afterEach } from "vitest";
-import { SmartInput } from "./SmartInput";
-import { Suggestion } from "../types";
-import { ThemeProvider } from "../../../ui/lib/foundation/theme/ThemeProvider";
-import { PortalManager } from "../../../ui/lib/foundation/portal-manager/PortalManager";
+import { SmartInput } from "../../../lib/terminal/components/SmartInput";
+import { Suggestion } from "../../../lib/terminal/types";
+import { PopoverSlotProvider } from "../../../lib/terminal/PopoverSlot";
+import { renderPopoverSlot } from "../../lib/atoms/popover/popoverSlotRenderer";
+import { ThemeProvider } from "../../lib/foundation/theme/ThemeProvider";
+import { PortalManager } from "../../lib/foundation/portal-manager/PortalManager";
 
 afterEach(() => {
     cleanup();
 });
 
-// Wrapper to provide theme context
+// Wrapper to provide theme + portal + the real Popover (injected via the slot
+// the app wires up in production) so SmartInput's suggestions reach the portal.
 const renderWithTheme = (ui: React.ReactElement) => {
     return render(
         <ThemeProvider>
-            <PortalManager>{ui}</PortalManager>
+            <PortalManager>
+                <PopoverSlotProvider value={renderPopoverSlot}>
+                    {ui}
+                </PopoverSlotProvider>
+            </PortalManager>
         </ThemeProvider>,
     );
 };
