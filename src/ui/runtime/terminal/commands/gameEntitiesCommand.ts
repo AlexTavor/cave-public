@@ -1,4 +1,5 @@
 import { CommandDefinition } from "../../../../lib/terminal";
+import { getCommandRuntime } from "../getCommandRuntime";
 import {
     buildInvalidArgsResult,
     gameEntitiesSchema,
@@ -12,7 +13,7 @@ export const gameEntitiesCommand: CommandDefinition = {
         const parsed = gameEntitiesSchema.safeParse(args);
         if (!parsed.success) return buildInvalidArgsResult("game.entities");
 
-        const runtime = context.runtime?.getRuntime?.();
+        const runtime = getCommandRuntime(context);
         if (!runtime) {
             return {
                 type: "error",

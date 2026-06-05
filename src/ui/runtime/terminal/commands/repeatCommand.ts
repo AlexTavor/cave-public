@@ -1,4 +1,5 @@
 import { CommandDefinition } from "../../../../lib/terminal";
+import { getCommandRuntime } from "../getCommandRuntime";
 import { RuntimeCommandType } from "../../../../engine/runtime/types";
 import { buildInvalidArgsResult, repeatSchema } from "../runtimeConstants";
 
@@ -40,7 +41,7 @@ export const repeatCommand: CommandDefinition = {
             };
         }
 
-        const runtime = context.runtime?.getRuntime?.();
+        const runtime = getCommandRuntime(context);
         if (!runtime) {
             return {
                 type: "error",

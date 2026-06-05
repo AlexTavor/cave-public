@@ -96,20 +96,5 @@
       "severity": "error",
       "name": "lib-stays-low"
     }
-  },
-  {
-    "type": "dependency",
-    "from": "src/lib/terminal/types.providers.ts",
-    "to": "src/engine/runtime/Runtime.ts",
-    "unresolvedTo": "../../engine/runtime/Runtime",
-    "dependencyTypes": [
-      "local",
-      "type-only",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "lib-stays-low"
-    }
   }
 ]
