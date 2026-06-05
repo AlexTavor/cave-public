@@ -36,7 +36,7 @@ then trait modifiers applied (SET/ADD/SUB/MULT/DIV)                            /
 - **Assignment mechanism (universal).** Every body has an owner (`body.assignmentId`, default `sys_world`); invalid
   owners are re-homed to `sys_world` (`BodyAssignmentSystem.ts:26-36`, `AssignmentOwnerValiditySystem.ts:18-30`).
   Drag&drop: a valid `power|processing` drop target sets the owner; a miss restores origin
-  (`entityDragController.assignment.ts:31-38`, `resolveDraggedBodyDropTarget.ts`). Acceptance = filter-then-slots
+  (`entityDragController.assignment.ts:42-49`, `resolveDraggedBodyDropTarget.ts`). Acceptance = filter-then-slots
   (slots default ∞) (`assignmentAcceptance.ts:5-39`). Assigned bodies navigate→orbit (`BodyAssignmentSystem.ts:40-61`).
   The authored `assignment` *ability* only configures slots/filter; it is NOT required for a node to receive bodies.
 - System order: `AssignmentOwnerValiditySystem → BodyAssignmentSystem → AttributePoolSystem → EnergyDistributionSystem`

@@ -53,14 +53,14 @@
         "src/game/systems/EnergyDistributionSystem.ts": "2c87c9f1e9b39c2a5dd2d1f1ae4a44e97e668159",
         "src/game/systems/BodyAssignmentSystem.ts": "621690ace0c61137bc7f8b7f8588301de300ddc1",
         "src/game/systems/AssignmentOwnerValiditySystem.ts": "10b1690247a232a74103c64f62da3a7b50d35423",
-        "src/engine/phaser/scenes/entityDragController.assignment.ts": "989b87a6ff44c96bdafd51f23ec9bc56bf4943eb",
+        "src/engine/phaser/scenes/entityDragController.assignment.ts": "544bed3e1756cd137598e4aca2b2b33f25aa5d1e",
         "src/game/systems/pointer/resolveDraggedBodyDropTarget.ts": "2256ec56ff558cc62c8b384e8e758ba7b6615301",
         "src/game/assignment/assignmentAcceptance.ts": "f003aa6235a98eedb4631393eeb8ad0adebdabb8",
         "src/game/main.ts": "fc5e440ba1aa83a0802200fee4a5210f8019df4b"
       },
       "lastBless": {
-        "commit": "bd5f5cb9f235422d09ff037e3cadc96fad7b6491",
-        "note": "bootstrap: initial verification against working tree"
+        "commit": "3f4c801514eafca4e8c1cc21345d35c3a6f13248",
+        "note": "entityDragController.assignment: drop-target resolver now injected (DI seam); valid→set-owner / miss→restore behavior unchanged, anchor moved to :42-49"
       }
     },
     "3-traits": {
