@@ -1,10 +1,11 @@
 import { describe, it, expect } from "vitest";
-import { HeadlessRunner } from "./HeadlessRunner";
-import { createBlueprint, createCartridge } from "../test/factories";
-import { createGameRuntime } from "../runtime/createGameRuntime";
-import { CensusSystem } from "../../game/systems/CensusSystem";
+import { HeadlessRunner } from "../engine/balancing/HeadlessRunner";
+import { createBlueprint, createCartridge } from "../engine/test/factories";
+import { createGameRuntime } from "../engine/runtime/createGameRuntime";
+import { CensusSystem } from "./systems/CensusSystem";
+import type { ModuleCartridge } from "../data/schemas/module";
 
-const defaultFactory = (cartridge: any, seed: string) =>
+const defaultFactory = (cartridge: ModuleCartridge, seed: string) =>
     createGameRuntime(cartridge, seed);
 
 describe("HeadlessRunner", () => {
@@ -35,7 +36,7 @@ describe("HeadlessRunner", () => {
                 }),
                 worker: createBlueprint("worker", {
                     components: {
-                        body: { health: 100 } as any,
+                        body: { health: 100 },
                     },
                 }),
             },
