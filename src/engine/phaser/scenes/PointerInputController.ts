@@ -4,7 +4,7 @@ import { RuntimeCommandType } from "../../runtime/types";
 import {
     POINTER_DROP_STARTED_AT_MS,
     POINTER_PICKUP_STARTED_AT_MS,
-} from "../../../game/systems/pointer/pointerTiming";
+} from "../../../utils/pointerTiming";
 
 const syncPausedRuntime = (runtime: Runtime | null) => {
     if (runtime?.getState().status !== "paused") return;
