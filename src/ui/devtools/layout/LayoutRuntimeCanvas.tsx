@@ -1,5 +1,5 @@
 import type { RefObject } from "react";
-import { usePhaserGame } from "../../../engine/phaser/hooks/usePhaserGame";
+import { usePhaserGame } from "../../runtime/world/usePhaserGame";
 import { GameCanvas } from "../../runtime/shell/RuntimeShell.styles";
 
 export interface LayoutRuntimeCanvasProps {

@@ -1,11 +1,12 @@
 import { useContext, useEffect, useRef } from "react";
 import { useTheme } from "@emotion/react";
 import Phaser from "phaser";
-import { WorldInteractionContext } from "../../../ui/runtime/world/context/WorldInteractionContext";
-import { useRuntimeStore } from "../../../ui/runtime/state/useRuntimeStore";
-import { GameScene } from "../scenes/GameScene";
-import type { RuntimeEntity } from "../../runtime/types";
-import { createDebugGame, destroyPhaserGame } from "./destroyPhaserGame";
+import { WorldInteractionContext } from "./context/WorldInteractionContext";
+import { useRuntimeStore } from "../state/useRuntimeStore";
+import { GameScene } from "../../../engine/phaser/scenes/GameScene";
+import { resolveDraggedBodyDropTarget } from "../../../game/systems/pointer/resolveDraggedBodyDropTarget";
+import type { RuntimeEntity } from "../../../engine/runtime/types";
+import { createDebugGame, destroyPhaserGame } from "../../../engine/phaser/hooks/destroyPhaserGame";
 
 export interface UsePhaserGameParams {
     containerRef: React.RefObject<HTMLDivElement | null>;
@@ -49,17 +50,22 @@ export const usePhaserGame = ({
         ((entity: RuntimeEntity) => boolean) | undefined
     >(shouldRenderEntity);
 
-    runtimeRef.current = runtime;
-    selectedIdRef.current = selectedEntityId;
-    selectRef.current = selectEntity;
-    getCamRef.current = getCameraState;
-    setCamRef.current = setCameraState;
-    restoreRef.current = consumeRestore;
-    consumeEffectsRef.current = consumeRuntimeVisualEffects;
-    backgroundColorRef.current = backgroundColor ?? theme.colors.background;
-    rendererTypeRef.current = rendererPreference;
-    inputTargetRef.current = inputTarget;
-    shouldRenderEntityRef.current = shouldRenderEntity;
+    // Keep the refs the Phaser scene closures read fresh. Synced in an effect
+    // (not during render) so the UI react-hooks/refs rule is satisfied; the
+    // scene reads them asynchronously from the game loop, so post-render is fine.
+    useEffect(() => {
+        runtimeRef.current = runtime;
+        selectedIdRef.current = selectedEntityId;
+        selectRef.current = selectEntity;
+        getCamRef.current = getCameraState;
+        setCamRef.current = setCameraState;
+        restoreRef.current = consumeRestore;
+        consumeEffectsRef.current = consumeRuntimeVisualEffects;
+        backgroundColorRef.current = backgroundColor ?? theme.colors.background;
+        rendererTypeRef.current = rendererPreference;
+        inputTargetRef.current = inputTarget;
+        shouldRenderEntityRef.current = shouldRenderEntity;
+    });
 
     useEffect(() => {
         if (runtime === null) {
@@ -78,6 +84,9 @@ export const usePhaserGame = ({
             consumeRuntimeVisualEffects: () => consumeEffectsRef.current(),
             shouldRenderEntity: (entity) =>
                 shouldRenderEntityRef.current?.(entity) ?? true,
+            // Game-domain drop-target resolver, injected so engine/phaser stays
+            // game-free (ui→game is allowed).
+            resolveDropTarget: resolveDraggedBodyDropTarget,
         });
 
         const config: Phaser.Types.Core.GameConfig = {

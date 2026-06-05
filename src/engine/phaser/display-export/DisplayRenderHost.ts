@@ -1,20 +1,28 @@
 import Phaser from "phaser";
 import { DisplayImageExportService } from "./DisplayImageExportService";
 import { DisplayRenderHostScene } from "./DisplayRenderHostScene";
-import { useDisplayImageExportStore } from "../../../ui/runtime/state/useDisplayImageExportStore";
-import { useUiAvatarStore } from "../../../ui/runtime/state/useUiAvatarStore";
+
+export interface DisplayRenderHostCallbacks {
+    onServiceReady: (service: DisplayImageExportService) => void;
+    onTeardown: () => void;
+}
 
 export class DisplayRenderHost {
     private game: Phaser.Game | null = null;
     private container: HTMLDivElement | null = null;
     private ready = false;
 
+    // The host renders avatars off-screen and publishes an export service to UI
+    // stores. Those store writes are injected (see the ui DisplayRenderHost
+    // wrapper) so the engine host doesn't depend on ui.
+    constructor(private readonly callbacks: DisplayRenderHostCallbacks) {}
+
     public start(): void {
         if (this.game) return;
         const scene = new DisplayRenderHostScene(() => {
-            useDisplayImageExportStore
-                .getState()
-                .setService(new DisplayImageExportService(scene));
+            this.callbacks.onServiceReady(
+                new DisplayImageExportService(scene),
+            );
             this.ready = true;
         });
         this.container = document.createElement("div");
@@ -33,8 +41,7 @@ export class DisplayRenderHost {
     }
 
     public destroy(): void {
-        useDisplayImageExportStore.getState().clear();
-        useUiAvatarStore.getState().clear();
+        this.callbacks.onTeardown();
         this.ready = false;
         const scene = this.game?.scene.getScene("DisplayRenderHostScene");
         if (scene instanceof DisplayRenderHostScene)

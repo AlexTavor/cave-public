@@ -8,6 +8,7 @@ import { RuntimeCommandType } from "../../runtime/types";
 import {
     enqueueDragAssignment,
     resolveDragReleaseUpdate,
+    type ResolveDraggedBodyDropTarget,
 } from "./entityDragController.assignment";
 import { syncCaveDragState } from "./syncCaveDragState";
 
@@ -24,16 +25,19 @@ export class EntityDragController {
     private readonly scene: Phaser.Scene;
     private readonly getRuntime: () => Runtime | null;
     private readonly selectEntity: (id: string | null) => void;
+    private readonly resolveDropTarget: ResolveDraggedBodyDropTarget;
     private drag: DragState | null = null;
 
     constructor(
         scene: Phaser.Scene,
         getRuntime: () => Runtime | null,
         selectEntity: (id: string | null) => void,
+        resolveDropTarget: ResolveDraggedBodyDropTarget,
     ) {
         this.scene = scene;
         this.getRuntime = getRuntime;
         this.selectEntity = selectEntity;
+        this.resolveDropTarget = resolveDropTarget;
     }
 
     public bind(): void {
@@ -116,6 +120,7 @@ export class EntityDragController {
                         worldX: pointer.worldX,
                         worldY: pointer.worldY,
                     },
+                    this.resolveDropTarget,
                 ),
             );
         }
