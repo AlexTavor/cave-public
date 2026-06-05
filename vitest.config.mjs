@@ -13,6 +13,9 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   test: {
     environment: 'node',
+    // Auto-unmount React trees after each test (prevents floating-ui rAF leaking
+    // past jsdom teardown → "window is not defined"; node tests skip via guard).
+    setupFiles: ['./vitest.setup.ts'],
     // Emit machine-readable test results so the PDD snapshot can track test count.
     reporters: ['default', 'json'],
     outputFile: { json: 'reports/vitest/results.json' },
