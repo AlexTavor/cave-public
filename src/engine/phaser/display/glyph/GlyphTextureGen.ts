@@ -1,7 +1,7 @@
 import Phaser from "phaser";
 import { GLYPH_GLOW_VERSION } from "./GlyphGlowStyle";
-import type { GlyphShape } from "./GlyphTypes";
-import { ALL_GLYPH_SHAPES } from "./GlyphTypes";
+import type { GlyphShape } from "../../../../data/schemas/assets/GlyphTypes";
+import { ALL_GLYPH_SHAPES } from "../../../../data/schemas/assets/GlyphTypes";
 import { GLYPH_TEXTURE_SIZE } from "./glyphShapeDrawFnsRings";
 import { resolveGlyphGlowPasses } from "./glyphGlowMath";
 import { drawCoreGlyphShape } from "./glyphTextureDrawCore";

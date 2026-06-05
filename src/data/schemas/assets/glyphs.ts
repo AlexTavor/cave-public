@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ALL_GLYPH_SHAPES } from "../../../engine/phaser/display/glyph/GlyphTypes";
+import { ALL_GLYPH_SHAPES } from "./GlyphTypes";
 import { DISPLAY_PALETTE_KEYS } from "../../../lib/displays/displayKeyKinds";
 const HEX_COLOR = /^#[0-9a-fA-F]{6}$/;
 const MAX_GLYPH_SLOTS = 9;

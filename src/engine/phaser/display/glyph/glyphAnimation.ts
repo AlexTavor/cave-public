@@ -2,7 +2,7 @@ import type {
     GlyphAnimationEnvelope,
     GlyphPlacement,
     GlyphPulseConfig,
-} from "./GlyphTypes";
+} from "../../../../data/schemas/assets/GlyphTypes";
 
 export const toAnimationEnvelope = (
     pulse: GlyphPulseConfig,

@@ -1,20 +1,6 @@
 [
   {
     "type": "dependency",
-    "from": "src/data/schemas/assets/glyphs.ts",
-    "to": "src/engine/phaser/display/glyph/GlyphTypes.ts",
-    "unresolvedTo": "../../../engine/phaser/display/glyph/GlyphTypes",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "data-is-leaf"
-    }
-  },
-  {
-    "type": "dependency",
     "from": "src/data/schemas/v2/worldClampRules.test.ts",
     "to": "src/engine/runtime/Snapshot.ts",
     "unresolvedTo": "../../../engine/runtime/Snapshot",

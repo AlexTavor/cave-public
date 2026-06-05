@@ -1,5 +1,5 @@
-import type { GlyphConfig } from "./GlyphTypes";
-import { MAX_GLYPH_CAPACITY } from "./GlyphTypes";
+import type { GlyphConfig } from "../../../../data/schemas/assets/GlyphTypes";
+import { MAX_GLYPH_CAPACITY } from "../../../../data/schemas/assets/GlyphTypes";
 import { generateGlyph } from "./GlyphGenerator";
 import type { GlyphConfigWithoutId } from "./GlyphGenerator";
 import { buildAttributePoolGlyph } from "./glyphDisplayDefaults";

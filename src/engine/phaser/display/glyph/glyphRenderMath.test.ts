@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { resolveGlyphPlacementTransform } from "./glyphRenderMath";
-import type { GlyphPlacement, GlyphPulseConfig } from "./GlyphTypes";
+import type { GlyphPlacement, GlyphPulseConfig } from "../../../../data/schemas/assets/GlyphTypes";
 
 const makePulse = (
     overrides?: Partial<GlyphPulseConfig>,
