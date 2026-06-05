@@ -5,8 +5,9 @@
 // are "as of the last gate run". Run it after the gates pass — e.g. before/at a merge.
 // One row per commit: re-running on the same commit replaces that row.
 //
-//   node scripts/pdd-snapshot.mjs              # harvest HEAD
-//   node scripts/pdd-snapshot.mjs --commit X   # stamp a specific commit (backfill)
+//   node scripts/pdd-snapshot.mjs                          # HEAD: violations + suppressions only
+//   node scripts/pdd-snapshot.mjs --gates coverage,tests   # + record those (caller vouches they ran)
+//   node scripts/pdd-snapshot.mjs --commit X               # backfill committed metrics at commit X
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
@@ -17,6 +18,16 @@ const commitArg = (() => {
     const i = argv.indexOf("--commit");
     return i >= 0 ? argv[i + 1] : null;
 })();
+// Volatile metrics come from un-stamped output files (mutation.json, coverage
+// summary, vitest results). Record one ONLY when the caller asserts via --gates
+// that its gate just ran at HEAD — so a snapshot can never misattribute a stale
+// result to the wrong commit. (violations + suppressions are read from committed
+// files and are always accurate at HEAD, so they need no assertion.)
+const gates = (() => {
+    const i = argv.indexOf("--gates");
+    return new Set(i >= 0 ? argv[i + 1].split(",").map((s) => s.trim()) : []);
+})();
+const fresh = (gate) => !commitArg && gates.has(gate);
 
 const git = (...args) =>
     execFileSync("git", args, { encoding: "utf8" }).trim();
@@ -52,9 +63,9 @@ if (supp)
         for (const r of Object.values(rules)) suppressions += r.count || 0;
 
 // Coverage + mutation are not versioned per-commit; only harvest for HEAD.
-const covTotal = commitArg
-    ? null
-    : readJSON("coverage/coverage-summary.json")?.total;
+const covTotal = fresh("coverage")
+    ? readJSON("coverage/coverage-summary.json")?.total
+    : null;
 const coverage = covTotal
     ? {
           statements: covTotal.statements.pct,
@@ -64,7 +75,7 @@ const coverage = covTotal
       }
     : null;
 
-const mut = commitArg ? null : readJSON("reports/mutation/mutation.json");
+const mut = fresh("mutation") ? readJSON("reports/mutation/mutation.json") : null;
 let mutationScore = null;
 if (mut?.files) {
     let killed = 0,
@@ -80,7 +91,7 @@ if (mut?.files) {
     if (denom) mutationScore = +((killed / denom) * 100).toFixed(2);
 }
 
-const results = commitArg ? null : readJSON("reports/vitest/results.json");
+const results = fresh("tests") ? readJSON("reports/vitest/results.json") : null;
 const tests =
     typeof results?.numTotalTests === "number" ? results.numTotalTests : null;
 
@@ -103,4 +114,5 @@ rows.push(row);
 rows.sort((a, b) => a.ts.localeCompare(b.ts));
 fs.writeFileSync(histPath, rows.map((r) => JSON.stringify(r)).join("\n") + "\n");
 
-console.log("pdd snapshot", commit, JSON.stringify(row));
+const provenance = gates.size ? `gates:${[...gates].join(",")}` : "committed-only";
+console.log("pdd snapshot", commit, `[${provenance}]`, JSON.stringify(row));
