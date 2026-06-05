@@ -1,4 +1,4 @@
-import type { GlyphPlacement, GlyphPulseConfig } from "./GlyphTypes";
+import type { GlyphPlacement, GlyphPulseConfig } from "../../../../data/schemas/assets/GlyphTypes";
 import type { GlyphConfigWithoutId } from "./GlyphGenerator";
 import { resolvePlacementAnimation } from "./glyphAnimation";
 

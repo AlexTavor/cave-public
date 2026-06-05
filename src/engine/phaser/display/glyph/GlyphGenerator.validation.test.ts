@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { generateGlyph } from "./GlyphGenerator";
-import { PALETTE } from "./GlyphTypes";
+import { PALETTE } from "../../../../data/schemas/assets/GlyphTypes";
 import {
     ROTATION_SETS,
     SAT_SCALE_CHOICES,

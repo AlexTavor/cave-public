@@ -4,7 +4,7 @@ import type {
     DisplayModuleRuntime,
 } from "../../moduleTypes";
 import type { GlyphRegistry } from "../../glyph/GlyphRegistry";
-import { GLYPH_POSITION_COORDS } from "../../glyph/GlyphTypes";
+import { GLYPH_POSITION_COORDS } from "../../../../../data/schemas/assets/GlyphTypes";
 import { destroyGlyphImages, tickGlyphImages } from "./glyphModuleRuntime";
 
 const MODULE_ID = "GlyphModule";

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../../../lib/atoms/button";
-import { ALL_GLYPH_SHAPES } from "../../../../engine/phaser/display/glyph/GlyphTypes";
+import { ALL_GLYPH_SHAPES } from "../../../../data/schemas/assets/GlyphTypes";
 import {
     FieldLabel,
     SelectInput,

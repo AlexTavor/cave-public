@@ -1,5 +1,5 @@
 import React from "react";
-import { ALL_GLYPH_SHAPES } from "../../../../../engine/phaser/display/glyph/GlyphTypes";
+import { ALL_GLYPH_SHAPES } from "../../../../../data/schemas/assets/GlyphTypes";
 import { Button } from "../../../../lib/atoms/button";
 import { GlyphVisualMotionFields } from "./GlyphVisualMotionFields";
 import type { GlyphVisualInspectorProps } from "./GlyphVisualInspector.types";

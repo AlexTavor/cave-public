@@ -1,5 +1,5 @@
-import type { GlyphPlacement, GlyphPulseConfig } from "./GlyphTypes";
-import { GLYPH_POSITION_COORDS } from "./GlyphTypes";
+import type { GlyphPlacement, GlyphPulseConfig } from "../../../../data/schemas/assets/GlyphTypes";
+import { GLYPH_POSITION_COORDS } from "../../../../data/schemas/assets/GlyphTypes";
 import { resolvePlacementAnimation } from "./glyphAnimation";
 
 const TEXTURE_SIZE_PX = 128;

@@ -1,9 +1,10 @@
 import { CommandDefinition } from "../../../../lib/terminal";
+import { getCommandRuntime } from "../getCommandRuntime";
 import { RuntimeCommandType } from "../../../../engine/runtime/types";
 import { buildInvalidArgsResult, setTargetSchema } from "../runtimeConstants";
 
 const resolveRuntime = (context: { runtime?: any }) =>
-    context.runtime?.getRuntime?.() ?? null;
+    getCommandRuntime(context);
 
 export const setTargetCommand: CommandDefinition = {
     name: "target.set",

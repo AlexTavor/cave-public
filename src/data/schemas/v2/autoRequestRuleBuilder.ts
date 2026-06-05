@@ -1,4 +1,4 @@
-import type { BehaviorRule } from "../../../data/schemas/behavior";
+import type { BehaviorRule } from "../behavior";
 
 export interface TransferRuleParams {
     id: string;

@@ -1,5 +1,4 @@
 import type { ModuleCartridge } from "../../data/schemas/module";
-import type { Runtime } from "../../engine/runtime/Runtime";
 
 export interface ResourceProvider {
     /** Checks if a file exists in the VFS or loaded modules */
@@ -19,8 +18,12 @@ export interface RuntimeProvider {
     getActiveEntityIds: () => string[];
     /** Returns list of blueprint IDs available in the currently loaded cartridge */
     getLoadedBlueprintIds: () => string[];
-    /** Returns the runtime when available */
-    getRuntime?: () => Runtime | null;
+    /**
+     * Returns the runtime handle when available — opaque to lib, which sits below
+     * the engine and cannot name `Runtime`. The ui host narrows it to the real
+     * Runtime at the boundary via `getCommandRuntime`.
+     */
+    getRuntime?: () => unknown;
     /** Load a cartridge into the runtime */
     loadCartridge?: (cartridge: ModuleCartridge, seed?: string) => void;
     /** Start the runtime tick loop */

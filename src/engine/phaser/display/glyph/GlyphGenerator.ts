@@ -1,5 +1,5 @@
-import type { GlyphPlacement, GlyphPulseConfig } from "./GlyphTypes";
-import { PALETTE } from "./GlyphTypes";
+import type { GlyphPlacement, GlyphPulseConfig } from "../../../../data/schemas/assets/GlyphTypes";
+import { PALETTE } from "../../../../data/schemas/assets/GlyphTypes";
 import { GlyphPRNG } from "./GlyphPRNG";
 import { computeDelaySignature } from "./glyphDelaySignature";
 import {

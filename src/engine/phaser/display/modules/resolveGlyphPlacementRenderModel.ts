@@ -2,7 +2,7 @@ import type {
     GlyphConfig,
     GlyphPlacement,
     GlyphShape,
-} from "../glyph/GlyphTypes";
+} from "../../../../data/schemas/assets/GlyphTypes";
 import type { GlyphPaletteColors } from "../glyph/glyphPlacementColor";
 import { resolveGlyphPlacementColor } from "../glyph/glyphPlacementColor";
 import { resolveGlyphPlacementTransform } from "../glyph/glyphRenderMath";

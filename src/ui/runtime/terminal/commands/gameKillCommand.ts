@@ -1,4 +1,5 @@
 import { CommandDefinition } from "../../../../lib/terminal";
+import { getCommandRuntime } from "../getCommandRuntime";
 import { RuntimeCommandType } from "../../../../engine/runtime/types";
 import { buildInvalidArgsResult, gameKillSchema } from "../runtimeConstants";
 
@@ -11,7 +12,7 @@ export const gameKillCommand: CommandDefinition = {
         if (!parsed.success) return buildInvalidArgsResult("game.kill");
 
         const [entityId] = parsed.data;
-        const runtime = context.runtime?.getRuntime?.();
+        const runtime = getCommandRuntime(context);
         if (!runtime) {
             return {
                 type: "error",

@@ -1,6 +1,6 @@
 import type Phaser from "phaser";
 import type { GlyphRegistry } from "../../glyph/GlyphRegistry";
-import type { GlyphShape } from "../../glyph/GlyphTypes";
+import type { GlyphShape } from "../../../../../data/schemas/assets/GlyphTypes";
 import type { DisplayDestroyContext, DisplayTickContext } from "../../types";
 import { isRadiusVisible } from "../../../scenes/gameSceneMath";
 import { BLEND_MODE_NORMAL } from "../../blendModes";

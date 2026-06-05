@@ -1,4 +1,5 @@
 import { CommandDefinition } from "../../../../lib/terminal";
+import { getCommandRuntime } from "../getCommandRuntime";
 import { RuntimeCommandType } from "../../../../engine/runtime/types";
 import {
     buildInvalidArgsResult,
@@ -17,7 +18,7 @@ export const gameKillAllBodiesExceptCommand: CommandDefinition = {
         }
 
         const [quantity] = parsed.data;
-        const runtime = context.runtime?.getRuntime?.();
+        const runtime = getCommandRuntime(context);
         if (!runtime) {
             return {
                 type: "error",

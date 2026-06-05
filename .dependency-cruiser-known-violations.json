@@ -1,34 +1,6 @@
 [
   {
     "type": "dependency",
-    "from": "src/data/schemas/assets/glyphs.ts",
-    "to": "src/engine/phaser/display/glyph/GlyphTypes.ts",
-    "unresolvedTo": "../../../engine/phaser/display/glyph/GlyphTypes",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "data-is-leaf"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/data/schemas/v2/worldRuleBuilders.ts",
-    "to": "src/engine/compiler/abilities/autoRequestRuleBuilder.ts",
-    "unresolvedTo": "../../../engine/compiler/abilities/autoRequestRuleBuilder",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "data-is-leaf"
-    }
-  },
-  {
-    "type": "dependency",
     "from": "src/lib/terminal/components/SmartInput.test.tsx",
     "to": "src/ui/lib/foundation/portal-manager/PortalManager.tsx",
     "unresolvedTo": "../../../ui/lib/foundation/portal-manager/PortalManager",
@@ -62,21 +34,6 @@
     "unresolvedTo": "../../../ui/lib/atoms/popover/Popover",
     "dependencyTypes": [
       "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "lib-stays-low"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/lib/terminal/types.providers.ts",
-    "to": "src/engine/runtime/Runtime.ts",
-    "unresolvedTo": "../../engine/runtime/Runtime",
-    "dependencyTypes": [
-      "local",
-      "type-only",
       "import"
     ],
     "rule": {
