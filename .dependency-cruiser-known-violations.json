@@ -1,62 +1,6 @@
 [
   {
     "type": "dependency",
-    "from": "src/data/schemas/v2/worldClampRules.test.ts",
-    "to": "src/engine/runtime/Snapshot.ts",
-    "unresolvedTo": "../../../engine/runtime/Snapshot",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "data-is-leaf"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/data/schemas/v2/worldClampRules.test.ts",
-    "to": "src/engine/runtime/systems/BehaviorSystem.ts",
-    "unresolvedTo": "../../../engine/runtime/systems/BehaviorSystem",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "data-is-leaf"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/data/schemas/v2/worldClampRules.test.ts",
-    "to": "src/engine/runtime/types.ts",
-    "unresolvedTo": "../../../engine/runtime/types",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "data-is-leaf"
-    }
-  },
-  {
-    "type": "dependency",
-    "from": "src/data/schemas/v2/worldClampRules.test.ts",
-    "to": "src/game/systems/testUtils.ts",
-    "unresolvedTo": "../../../game/systems/testUtils",
-    "dependencyTypes": [
-      "local",
-      "import"
-    ],
-    "rule": {
-      "severity": "error",
-      "name": "data-is-leaf"
-    }
-  },
-  {
-    "type": "dependency",
     "from": "src/lib/terminal/components/SmartInput.test.tsx",
     "to": "src/ui/lib/foundation/portal-manager/PortalManager.tsx",
     "unresolvedTo": "../../../ui/lib/foundation/portal-manager/PortalManager",

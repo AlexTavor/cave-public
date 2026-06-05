@@ -83,11 +83,6 @@
       "count": 9
     }
   },
-  "src/data/schemas/v2/worldClampRules.test.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 2
-    }
-  },
   "src/engine/balancing/InstantTransferHandler.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 3
