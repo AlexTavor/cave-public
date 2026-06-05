@@ -38,3 +38,6 @@ context_bundle*.md
 src/vite-env.d.ts
 coverage/*
 plans
+
+# PDD proof-trend dashboard — regenerable; the data lives in docs/pdd/history.jsonl
+docs/pdd/dashboard.html

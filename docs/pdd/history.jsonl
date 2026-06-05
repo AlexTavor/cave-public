@@ -1,0 +1,8 @@
+{"commit":"1fa5f42","ts":"2026-06-04T11:25:57+02:00","mutationScore":null,"violations":46,"coverage":null,"suppressions":2913,"tests":null}
+{"commit":"58fff94","ts":"2026-06-04T14:53:32+02:00","mutationScore":null,"violations":44,"coverage":null,"suppressions":2901,"tests":null}
+{"commit":"9df940d","ts":"2026-06-05T00:50:19+02:00","mutationScore":null,"violations":35,"coverage":null,"suppressions":2897,"tests":null}
+{"commit":"21a8d72","ts":"2026-06-05T03:36:52+02:00","mutationScore":null,"violations":10,"coverage":null,"suppressions":2844,"tests":null}
+{"commit":"7879295","ts":"2026-06-05T16:08:01+02:00","mutationScore":null,"violations":9,"coverage":null,"suppressions":2844,"tests":null}
+{"commit":"8078432","ts":"2026-06-05T16:08:47+02:00","mutationScore":null,"violations":8,"coverage":null,"suppressions":2843,"tests":null}
+{"commit":"b2d0ae5","ts":"2026-06-05T16:12:13+02:00","mutationScore":null,"violations":3,"coverage":null,"suppressions":2841,"tests":null}
+{"commit":"f386e7e","ts":"2026-06-05T17:13:36+02:00","mutationScore":92.81,"violations":0,"coverage":{"statements":82.88,"branches":70.28,"functions":79.74,"lines":85.13},"suppressions":2842,"tests":3299}

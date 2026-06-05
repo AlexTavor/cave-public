@@ -13,8 +13,14 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   test: {
     environment: 'node',
+    // Emit machine-readable test results so the PDD snapshot can track test count.
+    reporters: ['default', 'json'],
+    outputFile: { json: 'reports/vitest/results.json' },
     coverage: {
       provider: 'v8',
+      // json-summary emits coverage/coverage-summary.json (totals) for the PDD
+      // proof-trend snapshot; the rest are vitest's defaults.
+      reporter: ['text', 'html', 'clover', 'json', 'json-summary'],
       thresholds: {
         statements: 81,
         branches: 68,

@@ -13,7 +13,10 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "code-map:check": "node scripts/code-map.mjs check",
-    "code-map:bless": "node scripts/code-map.mjs bless"
+    "code-map:bless": "node scripts/code-map.mjs bless",
+    "pdd:snapshot": "node scripts/pdd-snapshot.mjs",
+    "pdd:dashboard": "node scripts/pdd-dashboard.mjs",
+    "pdd:report": "npm run pdd:snapshot && npm run pdd:dashboard"
   },
   "dependencies": {
     "@bbob/preset-react": "^4.3.1",

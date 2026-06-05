@@ -25,6 +25,11 @@
       "count": 1
     }
   },
+  "scripts/pdd-snapshot.mjs": {
+    "sonarjs/no-os-command-from-path": {
+      "count": 1
+    }
+  },
   "src/app-shell/tutorialSessionState.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 4
