@@ -1,17 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { createBlueprint, createCartridge } from "../../test/factories";
-import { CommandsManager } from "../CommandsManager";
-import { RuntimeCommandType } from "../types";
-import { makeHandlerContext } from "./handlerTestUtils";
-import { SpawnHandler } from "./SpawnHandler";
-import { UpdateBodiesBatchHandler } from "../../../game/handlers/UpdateBodiesBatchHandler";
+import { createBlueprint, createCartridge } from "../../engine/test/factories";
+import { CommandsManager } from "../../engine/runtime/CommandsManager";
+import { RuntimeCommandType } from "../../engine/runtime/types";
+import type { RuntimeEntity } from "../../engine/runtime/types";
+import { makeHandlerContext } from "../../engine/runtime/handlers/handlerTestUtils";
+import { SpawnHandler } from "../../engine/runtime/handlers/SpawnHandler";
+import { UpdateBodiesBatchHandler } from "./UpdateBodiesBatchHandler";
+
+type BodyView = { body?: { habiti?: string[] } };
 
 const makeCartridge = () =>
     createCartridge("core.json", {
         blueprints: {
             worker: createBlueprint("worker", {
                 tags: ["body"],
-                components: { body: { passport: { name: "" } } as any },
+                components: { body: { passport: { name: "" } } },
             }),
         },
         config: {
@@ -48,7 +51,7 @@ describe("SpawnHandler body identity", () => {
         context.world.add({
             id: "sys_world",
             state: { bodySerial: { value: 0, visible: false } },
-        } as any);
+        } as unknown as RuntimeEntity);
         new SpawnHandler().handle(
             {
                 type: RuntimeCommandType.SPAWN,
@@ -58,15 +61,15 @@ describe("SpawnHandler body identity", () => {
         );
 
         const entity = context.world.entities.find(
-            (item: any) => item.id === "body-1",
-        ) as any;
-        expect(entity?.body.habiti).toBeUndefined();
+            (item: RuntimeEntity) => item.id === "body-1",
+        ) as BodyView | undefined;
+        expect(entity?.body?.habiti).toBeUndefined();
 
         const commands = context.commands as CommandsManager;
-        commands.registerHandler(new UpdateBodiesBatchHandler() as any);
-        commands.process(context as any);
+        commands.registerHandler(new UpdateBodiesBatchHandler());
+        commands.process(context);
 
-        expect(entity?.body.habiti).toEqual(["chosen"]);
+        expect(entity?.body?.habiti).toEqual(["chosen"]);
     });
 
     it("logs loudly and leaves Habiti unchanged when follow-up commands are unavailable", () => {
@@ -75,7 +78,10 @@ describe("SpawnHandler body identity", () => {
         // flow (pending habiti → UPDATE_BODIES_BATCH → applied), not the rules.
         context.assignBodyHabiti = () => ["chosen"];
         context.commands = undefined;
-        context.world.add({ id: "sys_world", state: {} } as any);
+        context.world.add({
+            id: "sys_world",
+            state: {},
+        } as unknown as RuntimeEntity);
         new SpawnHandler().handle(
             {
                 type: RuntimeCommandType.SPAWN,
@@ -85,9 +91,9 @@ describe("SpawnHandler body identity", () => {
         );
 
         const entity = context.world.entities.find(
-            (item: any) => item.id === "body-2",
-        ) as any;
-        expect(entity?.body.habiti).toBeUndefined();
+            (item: RuntimeEntity) => item.id === "body-2",
+        ) as BodyView | undefined;
+        expect(entity?.body?.habiti).toBeUndefined();
         expect(context.telemetry.log).toHaveBeenCalledWith(
             "errors",
             "Spawn queued Habiti update failed: commands missing for 'body-2'.",

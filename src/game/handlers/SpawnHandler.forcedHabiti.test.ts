@@ -1,10 +1,15 @@
 import { describe, expect, it } from "vitest";
-import { createBlueprint, createCartridge } from "../../test/factories";
-import { CommandsManager } from "../CommandsManager";
-import { RuntimeCommandType } from "../types";
-import { makeHandlerContext } from "./handlerTestUtils";
-import { SpawnHandler } from "./SpawnHandler";
-import { UpdateBodiesBatchHandler } from "../../../game/handlers/UpdateBodiesBatchHandler";
+import { createBlueprint, createCartridge } from "../../engine/test/factories";
+import { CommandsManager } from "../../engine/runtime/CommandsManager";
+import {
+    RuntimeCommandType,
+    type RuntimeEntity,
+} from "../../engine/runtime/types";
+import { makeHandlerContext } from "../../engine/runtime/handlers/handlerTestUtils";
+import { SpawnHandler } from "../../engine/runtime/handlers/SpawnHandler";
+import { UpdateBodiesBatchHandler } from "./UpdateBodiesBatchHandler";
+
+type BodyView = { body?: { habiti?: string[] } };
 
 describe("SpawnHandler forced habiti", () => {
     it("applies forced habiti even without a matching body type rule", () => {
@@ -13,7 +18,7 @@ describe("SpawnHandler forced habiti", () => {
                 blueprints: {
                     villager: createBlueprint("villager", {
                         tags: ["body"],
-                        components: { body: { passport: { name: "" } } as any },
+                        components: { body: { passport: { name: "" } } },
                     }),
                 },
                 config: {
@@ -34,7 +39,10 @@ describe("SpawnHandler forced habiti", () => {
         // engine forwards payload.forcedHabiti into the assigner input and
         // applies the result — the rule itself lives in assignBodyHabiti tests.
         context.assignBodyHabiti = (input) => [...(input.forcedHabiti ?? [])];
-        context.world.add({ id: "sys_world", state: {} } as any);
+        context.world.add({
+            id: "sys_world",
+            state: {},
+        } as unknown as RuntimeEntity);
 
         new SpawnHandler().handle(
             {
@@ -49,10 +57,10 @@ describe("SpawnHandler forced habiti", () => {
         );
 
         const commands = context.commands as CommandsManager;
-        commands.registerHandler(new UpdateBodiesBatchHandler() as any);
-        commands.process(context as any);
+        commands.registerHandler(new UpdateBodiesBatchHandler());
+        commands.process(context);
 
-        expect((context.world.entities[1] as any).body.habiti).toEqual([
+        expect((context.world.entities[1] as BodyView).body?.habiti).toEqual([
             "Hommleter",
         ]);
     });

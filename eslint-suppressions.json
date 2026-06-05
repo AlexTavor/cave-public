@@ -88,11 +88,6 @@
       "count": 2
     }
   },
-  "src/engine/balancing/HeadlessRunner.test.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 2
-    }
-  },
   "src/engine/balancing/InstantTransferHandler.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 3
@@ -216,11 +211,6 @@
   "src/engine/compiler/abilities/storageCompilerReconciler.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 3
-    }
-  },
-  "src/engine/compiler/abilities/storageDecay.seconds.test.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 5
     }
   },
   "src/engine/compiler/abilities/suspiciousActivityCompiler.test.ts": {
@@ -816,21 +806,6 @@
       "count": 2
     }
   },
-  "src/engine/phaser/hooks/usePhaserGame.inputTarget.test.tsx": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 2
-    }
-  },
-  "src/engine/phaser/hooks/usePhaserGame.layoutRuntime.test.tsx": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 2
-    }
-  },
-  "src/engine/phaser/hooks/usePhaserGame.ts": {
-    "react-hooks/refs": {
-      "count": 11
-    }
-  },
   "src/engine/phaser/pointer/PointerPreviewSystem.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 6
@@ -1044,24 +1019,9 @@
       "count": 4
     }
   },
-  "src/engine/runtime/handlers/SpawnHandler.extras.test.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 5
-    }
-  },
   "src/engine/runtime/handlers/SpawnHandler.flyweight.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 3
-    }
-  },
-  "src/engine/runtime/handlers/SpawnHandler.forcedHabiti.test.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 5
-    }
-  },
-  "src/engine/runtime/handlers/SpawnHandler.identity.test.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 9
     }
   },
   "src/engine/runtime/handlers/SpawnHandler.overlap.test.ts": {
@@ -1412,14 +1372,6 @@
   "src/engine/runtime/systems/behavior/cycleResourceCostBehavior.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 4
-    }
-  },
-  "src/engine/runtime/systems/behavior/cycleResourceCostRepeat.test.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 9
-    },
-    "@typescript-eslint/no-unsafe-function-type": {
-      "count": 1
     }
   },
   "src/engine/runtime/systems/behavior/cycleResourceCostRequestCadence.test.ts": {
@@ -1986,11 +1938,6 @@
     }
   },
   "src/game/notificationAbility/notificationAbilityGuidanceUtils.test.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 2
-    }
-  },
-  "src/game/purge/suspiciousActivity.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 2
     }

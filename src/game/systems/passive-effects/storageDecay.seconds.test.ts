@@ -1,8 +1,17 @@
 import { describe, expect, it } from "vitest";
-import { createBlueprint } from "../../test/factories";
-import { CompilerService } from "../CompilerService";
-import { PassiveEffectsSystem } from "../../../game/systems/passive-effects/PassiveEffectSystem";
-import { Snapshot } from "../../runtime/Snapshot";
+import { createBlueprint } from "../../../engine/test/factories";
+import { CompilerService } from "../../../engine/compiler/CompilerService";
+import { PassiveEffectsSystem } from "./PassiveEffectSystem";
+import { Snapshot } from "../../../engine/runtime/Snapshot";
+import { ImpulseEngine } from "../../../engine/physics/impulse/ImpulseEngine";
+import type {
+    RuntimeCommand,
+    RuntimeEntity,
+} from "../../../engine/runtime/types";
+
+type KeyedPayload = { key?: string; value?: number };
+const payloadOf = (command: RuntimeCommand) =>
+    (command as { payload?: KeyedPayload }).payload;
 
 const compileEntity = () => {
     const blueprint = createBlueprint("heater", {
@@ -20,7 +29,7 @@ const compileEntity = () => {
                     },
                 ],
             },
-        } as any,
+        },
     });
     const compiled = new CompilerService().compile(blueprint);
     return {
@@ -30,31 +39,31 @@ const compileEntity = () => {
             ...compiled.components.state,
             heat: { value: 10, max: 10, visible: true },
         },
-    } as any;
+    } as unknown as RuntimeEntity;
 };
 
 const tickDecay = (dt: number) => {
-    const commands: any[] = [];
+    const commands: RuntimeCommand[] = [];
     const snapshot = new Snapshot([compileEntity()], {
         getBody: () => undefined,
-    } as any);
+    } as unknown as ImpulseEngine);
     new PassiveEffectsSystem().tick(
         snapshot,
         {
-            enqueue: (c: any) => commands.push(c),
+            enqueue: (command: RuntimeCommand) => commands.push(command),
             drain: () => [],
             clear: () => undefined,
             size: () => commands.length,
         },
         dt,
     );
-    return [...commands]
+    const match = [...commands]
         .reverse()
-        .find(
-            (c) =>
-                c.payload?.key === "heat" &&
-                typeof c.payload?.value === "number",
-        )?.payload?.value;
+        .find((command) => {
+            const payload = payloadOf(command);
+            return payload?.key === "heat" && typeof payload?.value === "number";
+        });
+    return match ? payloadOf(match)?.value : undefined;
 };
 
 describe("storage decay timing", () => {

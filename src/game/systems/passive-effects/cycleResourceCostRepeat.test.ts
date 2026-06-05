@@ -1,18 +1,31 @@
 import { describe, expect, it } from "vitest";
-import { CompilerService } from "../../../compiler/CompilerService";
-import { createBlueprint } from "../../../test/factories";
-import { Snapshot } from "../../Snapshot";
-import { ImpulseEngine } from "../../../physics/impulse/ImpulseEngine";
-import { DEFAULT_IMPULSE_CONFIG } from "../../../../data/schemas/physics";
-import { makeHandlerContext } from "../../handlers/handlerTestUtils";
-import { UpdateStateHandler } from "../../handlers/UpdateStateHandler";
-import { AdjustStateHandler } from "../../handlers/AdjustStateHandler";
-import { UpdatePowerSinkHandler } from "../../handlers/UpdatePowerSinkHandler";
-import { RuntimeCommandType, type RuntimeCommand } from "../../types";
-import { BehaviorSystem } from "../BehaviorSystem";
-import { PassiveEffectsSystem } from "../../../../game/systems/passive-effects/PassiveEffectSystem";
+import { CompilerService } from "../../../engine/compiler/CompilerService";
+import { createBlueprint } from "../../../engine/test/factories";
+import { Snapshot } from "../../../engine/runtime/Snapshot";
+import { ImpulseEngine } from "../../../engine/physics/impulse/ImpulseEngine";
+import { DEFAULT_IMPULSE_CONFIG } from "../../../data/schemas/physics";
+import { makeHandlerContext } from "../../../engine/runtime/handlers/handlerTestUtils";
+import { UpdateStateHandler } from "../../../engine/runtime/handlers/UpdateStateHandler";
+import { AdjustStateHandler } from "../../../engine/runtime/handlers/AdjustStateHandler";
+import { UpdatePowerSinkHandler } from "../../../engine/runtime/handlers/UpdatePowerSinkHandler";
+import {
+    RuntimeCommandType,
+    type RuntimeCommand,
+    type RuntimeEntity,
+    type CommandBuffer,
+} from "../../../engine/runtime/types";
+import type { System } from "../../../engine/runtime/systems/System";
+import { BehaviorSystem } from "../../../engine/runtime/systems/BehaviorSystem";
+import { PassiveEffectsSystem } from "./PassiveEffectSystem";
 
-const entity = () =>
+type StateEntry = { value?: number; max?: number };
+type Subject = {
+    id: string;
+    state: Record<string, StateEntry>;
+    powerSink: { baseDemand: { mind: number } };
+};
+
+const entity = (): Subject =>
     ({
         ...new CompilerService().compile(
             createBlueprint("buy", {
@@ -47,41 +60,47 @@ const entity = () =>
                             conditions: [],
                         },
                     },
-                } as any,
+                },
             }),
         ).components,
         id: "buy",
-    }) as any;
+    }) as unknown as Subject;
 
-const tick = (subject: any, system: { tick: Function }) => {
+const tick = (subject: Subject, system: System) => {
     const list: RuntimeCommand[] = [];
     const buffer = {
         enqueue: (command: RuntimeCommand) => list.push(command),
         drain: () => [],
         clear: () => undefined,
         size: () => list.length,
-    } as any;
+    } as unknown as CommandBuffer<RuntimeCommand>;
     system.tick(
         new Snapshot(
-            [{ id: "sys_world", state: {} } as any, subject],
+            [
+                { id: "sys_world", state: {} } as unknown as RuntimeEntity,
+                subject as unknown as RuntimeEntity,
+            ],
             new ImpulseEngine(DEFAULT_IMPULSE_CONFIG),
         ),
         buffer,
         16,
     );
     const context = makeHandlerContext();
-    context.world.add({ id: "sys_world", state: {} } as any);
-    context.world.add(subject);
+    context.world.add({
+        id: "sys_world",
+        state: {},
+    } as unknown as RuntimeEntity);
+    context.world.add(subject as unknown as RuntimeEntity);
     const update = new UpdateStateHandler();
     const adjust = new AdjustStateHandler();
     const power = new UpdatePowerSinkHandler();
     for (const command of list) {
         if (command.type === RuntimeCommandType.UPDATE_STATE)
-            update.handle(command as any, context);
+            update.handle(command, context);
         if (command.type === RuntimeCommandType.ADJUST_STATE)
-            adjust.handle(command as any, context);
+            adjust.handle(command, context);
         if (command.type === RuntimeCommandType.UPDATE_POWER_SINK)
-            power.handle(command as any, context);
+            power.handle(command, context);
     }
 };
 

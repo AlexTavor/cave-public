@@ -1,10 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { SpawnHandler } from "./SpawnHandler";
-import { CommandsManager } from "../CommandsManager";
-import { RuntimeCommandType } from "../types";
-import { makeHandlerContext } from "./handlerTestUtils";
-import { createBlueprint, createCartridge } from "../../test/factories";
-import { UpdateBodiesBatchHandler } from "../../../game/handlers/UpdateBodiesBatchHandler";
+import { SpawnHandler } from "../../engine/runtime/handlers/SpawnHandler";
+import { CommandsManager } from "../../engine/runtime/CommandsManager";
+import { RuntimeCommandType } from "../../engine/runtime/types";
+import { makeHandlerContext } from "../../engine/runtime/handlers/handlerTestUtils";
+import { createBlueprint, createCartridge } from "../../engine/test/factories";
+import { UpdateBodiesBatchHandler } from "./UpdateBodiesBatchHandler";
+
+type BodyView = { body?: { habiti?: string[] } };
+type ParentView = { parent?: { parentId?: string } };
 
 describe("SpawnHandler extras", () => {
     it("overrides blueprint parent with payload parent id", () => {
@@ -28,7 +31,7 @@ describe("SpawnHandler extras", () => {
             context,
         );
 
-        expect((context.world.entities[0] as any).parent).toEqual({
+        expect((context.world.entities[0] as ParentView).parent).toEqual({
             parentId: "payload_parent",
         });
     });
@@ -94,12 +97,12 @@ describe("SpawnHandler extras", () => {
         );
 
         const commands = context.commands as CommandsManager;
-        commands.registerHandler(new UpdateBodiesBatchHandler() as any);
-        commands.process(context as any);
+        commands.registerHandler(new UpdateBodiesBatchHandler());
+        commands.process(context);
 
-        expect((context.world.entities[1] as any).body.habiti).toContain(
+        expect((context.world.entities[1] as BodyView).body?.habiti).toContain(
             "alpha",
         );
-        expect((context.world.entities[2] as any).body).toBeUndefined();
+        expect((context.world.entities[2] as BodyView).body).toBeUndefined();
     });
 });
