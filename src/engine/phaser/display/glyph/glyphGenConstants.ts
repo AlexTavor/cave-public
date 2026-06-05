@@ -1,4 +1,4 @@
-import type { GlyphShape } from "./GlyphTypes";
+import type { GlyphShape } from "../../../../data/schemas/assets/GlyphTypes";
 
 export const CORE_SHAPES: readonly GlyphShape[] = [
     "ring",

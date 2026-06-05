@@ -15,7 +15,7 @@ import {
     generateGlyphTexture,
     generateGlyphTextures,
 } from "../display/glyph/GlyphTextureGen";
-import type { GlyphShape } from "../display/glyph/GlyphTypes";
+import type { GlyphShape } from "../../../data/schemas/assets/GlyphTypes";
 import type { TextureManagerStats } from "../debug/phaserDebugStats";
 import { ensureProgressBarStripTexture } from "./ProgressBarTextureGen";
 import { ensureSolidStripTexture } from "./SolidStripTextureGen";

@@ -1,4 +1,4 @@
-import type { GlyphPaletteColorKey, GlyphPlacement } from "./GlyphTypes";
+import type { GlyphPaletteColorKey, GlyphPlacement } from "../../../../data/schemas/assets/GlyphTypes";
 
 export type GlyphPaletteColors = Partial<Record<GlyphPaletteColorKey, string>>;
 

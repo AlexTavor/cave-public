@@ -1,4 +1,4 @@
-import { GLYPH_POSITION_COORDS } from "../../../../../engine/phaser/display/glyph/GlyphTypes";
+import { GLYPH_POSITION_COORDS } from "../../../../../data/schemas/assets/GlyphTypes";
 import { makePlacement } from "./blueprintVisualsDraft";
 import { createGlyphAnimationActions } from "./visualsGlyphAnimationActions";
 import { createGlyphFieldActions } from "./visualsGlyphFieldActions";
