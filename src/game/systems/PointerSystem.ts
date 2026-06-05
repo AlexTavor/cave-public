@@ -15,7 +15,7 @@ import {
     POINTER_PICKUP_STARTED_AT_MS,
     resolvePointerElapsedMs,
     resolvePointerPickupTimerMs,
-} from "./pointer/pointerTiming";
+} from "../../utils/pointerTiming";
 
 const LONG_DROP_MS = 260;
 

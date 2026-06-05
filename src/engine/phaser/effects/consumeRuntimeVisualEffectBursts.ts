@@ -2,7 +2,7 @@ import type Phaser from "phaser";
 import type { LayerRegistry } from "../display/layers/LayerRegistry";
 import type { DisplayPoolRegistry } from "../display/pooling/DisplayPoolRegistry";
 import type { TextureManager } from "../utils/TextureManager";
-import type { RuntimeVisualEvent } from "../../../ui/runtime/effects/runtimeVisualEvents";
+import type { RuntimeVisualEvent } from "../../runtime/runtimeVisualEvents";
 import {
     BODY_PICKUP_RING_COUNT,
     spawnGoldRings,

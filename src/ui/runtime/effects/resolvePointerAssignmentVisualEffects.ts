@@ -7,7 +7,7 @@ import {
     type RuntimeAssignmentTransition,
 } from "../../../engine/runtime/commandMetadata";
 import type { Snapshot } from "../../../engine/runtime/Snapshot";
-import type { RuntimeVisualEvent } from "./runtimeVisualEvents";
+import type { RuntimeVisualEvent } from "../../../engine/runtime/runtimeVisualEvents";
 
 const readBody = (snapshot: Snapshot, bodyId: string) =>
     snapshot.getPhysicsBody(bodyId);

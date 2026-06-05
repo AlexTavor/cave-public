@@ -11,7 +11,7 @@ import {
     resolvePickupCadenceMs,
 } from "./pointerResolvers";
 import { resolvePickupBodies } from "./pointerPickupBodies";
-import { POINTER_PICKUP_LAST_AT_MS } from "./pointerTiming";
+import { POINTER_PICKUP_LAST_AT_MS } from "../../../utils/pointerTiming";
 
 export const handlePointerPickup = (input: {
     snapshot: Snapshot;

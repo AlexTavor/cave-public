@@ -3,7 +3,7 @@ import type { Runtime } from "../../runtime/Runtime";
 import {
     isBodyEntity,
     readAssignmentId,
-} from "../../../game/assignment/bodyAssignment";
+} from "../../runtime/assignment/assignmentReaders";
 import { RuntimeCommandType } from "../../runtime/types";
 import {
     enqueueDragAssignment,
