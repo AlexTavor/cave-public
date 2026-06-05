@@ -1,4 +1,5 @@
 import { CommandDefinition } from "../../../../lib/terminal";
+import { getCommandRuntime } from "../getCommandRuntime";
 import { RuntimeCommandType } from "../../../../engine/runtime/types";
 
 export const gameDormancyCommand: CommandDefinition = {
@@ -6,7 +7,7 @@ export const gameDormancyCommand: CommandDefinition = {
     description: "Trigger dormancy (board wipe, enter dormant state)",
     usage: "game.dormancy",
     execute: (_args, context) => {
-        const runtime = context.runtime?.getRuntime?.();
+        const runtime = getCommandRuntime(context);
         if (!runtime) {
             return {
                 type: "error",
