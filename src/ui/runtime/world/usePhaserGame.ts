@@ -4,6 +4,7 @@ import Phaser from "phaser";
 import { WorldInteractionContext } from "./context/WorldInteractionContext";
 import { useRuntimeStore } from "../state/useRuntimeStore";
 import { GameScene } from "../../../engine/phaser/scenes/GameScene";
+import { resolveDraggedBodyDropTarget } from "../../../game/systems/pointer/resolveDraggedBodyDropTarget";
 import type { RuntimeEntity } from "../../../engine/runtime/types";
 import { createDebugGame, destroyPhaserGame } from "../../../engine/phaser/hooks/destroyPhaserGame";
 
@@ -83,6 +84,9 @@ export const usePhaserGame = ({
             consumeRuntimeVisualEffects: () => consumeEffectsRef.current(),
             shouldRenderEntity: (entity) =>
                 shouldRenderEntityRef.current?.(entity) ?? true,
+            // Game-domain drop-target resolver, injected so engine/phaser stays
+            // game-free (ui→game is allowed).
+            resolveDropTarget: resolveDraggedBodyDropTarget,
         });
 
         const config: Phaser.Types.Core.GameConfig = {

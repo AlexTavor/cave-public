@@ -7,6 +7,7 @@ import { TextureManager } from "../utils/TextureManager";
 import { VeinsSystem } from "../veins/VeinsSystem";
 import { CameraController } from "../camera/CameraController";
 import { EntityDragController } from "./entityDragController";
+import type { ResolveDraggedBodyDropTarget } from "./entityDragController.assignment";
 import type { GameDisplaySystem } from "./GameSceneDisplayInit";
 import { publishDebugSnapshotIfNeeded } from "./GameScene.debug";
 import { destroyGameSceneResources } from "./GameScene.cleanup";
@@ -24,6 +25,7 @@ export interface GameSceneParams {
     consumePendingCameraRestore: () => SerializedCameraState | null;
     consumeRuntimeVisualEffects?: () => RuntimeVisualEvent[];
     shouldRenderEntity?: (entity: RuntimeEntity) => boolean;
+    resolveDropTarget: ResolveDraggedBodyDropTarget;
 }
 export class GameScene extends Phaser.Scene {
     private static nextDebugSceneId = 1;
@@ -60,6 +62,7 @@ export class GameScene extends Phaser.Scene {
             this,
             this.getRuntime,
             params.selectEntity,
+            params.resolveDropTarget,
         );
     }
 
