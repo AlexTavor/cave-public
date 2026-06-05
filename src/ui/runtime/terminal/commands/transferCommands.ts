@@ -1,4 +1,5 @@
 import { CommandDefinition, ExecutionContext, Suggestion } from "../../../../lib/terminal";
+import { getCommandRuntime } from "../getCommandRuntime";
 import { RuntimeCommandType } from "../../../../engine/runtime/types";
 import {
     buildInvalidArgsResult,
@@ -28,7 +29,7 @@ const autocompleteResources = (
 ): AutocompleteResult => {
     const token = args.at(-1)?.toLowerCase() ?? "";
     const sourceId = args[0];
-    const runtime = context.runtime?.getRuntime?.();
+    const runtime = getCommandRuntime(context);
     if (!runtime) return [];
     const sourceEntity = runtime.getEntities().find((e) => e.id === sourceId);
     if (!sourceEntity?.state) return [];
@@ -90,7 +91,7 @@ export const transferStartCommand: CommandDefinition = {
         }
 
         // 3. Validate Runtime State
-        const runtime = context.runtime?.getRuntime?.();
+        const runtime = getCommandRuntime(context);
         if (!runtime) {
             return {
                 type: "error",
@@ -169,7 +170,7 @@ export const transferCancelCommand: CommandDefinition = {
         if (!parsed.success) return buildInvalidArgsResult("transfer.cancel");
 
         const [targetId] = parsed.data;
-        const runtime = context.runtime?.getRuntime?.();
+        const runtime = getCommandRuntime(context);
         if (!runtime) {
             return {
                 type: "error",

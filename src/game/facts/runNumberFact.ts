@@ -1,5 +1,5 @@
 import type { CommandBuffer, RuntimeCommand } from "../../engine/runtime/types";
-import { enqueueFactAdjust } from "./factCommands";
+import { enqueueFactAdjust } from "../../engine/runtime/factCommands";
 
 export const RUN_NUMBER_FACT_TYPE = "run_number";
 export const RUN_NUMBER_FACT_ABOUT = "world";

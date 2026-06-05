@@ -1,7 +1,7 @@
-import { nanoid } from "nanoid";
 import type { SpawnAutomationCommand, RuntimeEntity } from "../types";
 import { RuntimeCommandType } from "../types";
 import type { CommandHandler, CommandHandlerContext } from "./types";
+import { mintSpawnId } from "./mintSpawnId";
 import {
     AutomationComponentSchema,
     type AutomationComponent,
@@ -63,7 +63,7 @@ export class AutomationSpawnHandler implements CommandHandler<SpawnAutomationCom
             return;
         }
 
-        const entityId = nanoid();
+        const entityId = mintSpawnId(context.world);
 
         const entity: RuntimeEntity = {
             id: entityId,

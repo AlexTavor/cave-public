@@ -1,7 +1,9 @@
 import type { Blueprint } from "../../data/schemas/blueprint";
 import type { DisplayAsset } from "../../data/schemas/assets";
-import { BODY_AVATAR_DISPLAY_KEY } from "../../engine/phaser/display/avatar/AvatarDisplayConstants";
-import { isBuiltInDisplayKey } from "./displayKeyKinds";
+import {
+    BODY_AVATAR_DISPLAY_KEY,
+    isBuiltInDisplayKey,
+} from "./displayKeyKinds";
 
 export type DisplaySource =
     | { kind: "display"; key: string; asset: DisplayAsset }

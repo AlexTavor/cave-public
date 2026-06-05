@@ -9,7 +9,7 @@ import {
     isBodyEntity,
     resolveSpawnEntities,
 } from "../notifications/resolveRuntimeNotificationEvents.helpers";
-import type { RuntimeVisualEvent } from "./runtimeVisualEvents";
+import type { RuntimeVisualEvent } from "../../../engine/runtime/runtimeVisualEvents";
 import { collectBodyDeaths } from "./runtimeVisualBodyDeaths";
 import { resolvePointerAssignmentVisualEffects } from "./resolvePointerAssignmentVisualEffects";
 

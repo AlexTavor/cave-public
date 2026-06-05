@@ -47,12 +47,16 @@ describe("WorkspaceService", () => {
         const service = new WorkspaceService(vfs, linker);
 
         await service.loadProject("project/manifest.json");
-        const firstId = service.activeRuntime?.id;
+        const firstRuntime = service.activeRuntime;
 
         db.set("project/A.json", makeModule("A::entity_v2"));
         await service.reloadModules(["A.json"]);
 
-        expect(service.activeRuntime?.id).not.toBe(firstId);
+        // A reload replaces the runtime instance — assert object replacement
+        // directly rather than via id inequality (runtime.id is now a
+        // deterministic, seed-derived debug handle, not a per-instance nonce).
+        expect(service.activeRuntime).toBeDefined();
+        expect(service.activeRuntime).not.toBe(firstRuntime);
         expect(
             service.moduleCache.get("A.json")?.blueprints["A::entity_v2"],
         ).toBeTruthy();

@@ -17,7 +17,7 @@ import {
     type LayoutEditorController,
 } from "./useLayoutEditorController";
 
-vi.mock("../../../engine/phaser/hooks/usePhaserGame", () => ({
+vi.mock("../../runtime/world/usePhaserGame", () => ({
     usePhaserGame: vi.fn(),
 }));
 

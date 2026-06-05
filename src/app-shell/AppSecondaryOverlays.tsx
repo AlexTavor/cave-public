@@ -1,6 +1,8 @@
 import { Cinematic } from "../ui/runtime/cinematic/Cinematic";
 import { SaveMenuDialog } from "../ui/production/save-menu/SaveMenuDialog";
 import { EditorShell } from "../ui/devtools/shell/EditorShell";
+import { PopoverSlotProvider } from "../lib/terminal/PopoverSlot";
+import { renderPopoverSlot } from "../ui/lib/atoms/popover/popoverSlotRenderer";
 import { AppFadeLayer } from "./AppFadeLayer";
 
 interface AppSecondaryOverlaysProps {
@@ -73,7 +75,9 @@ export const AppSecondaryOverlays = ({
             layer="overlay"
             interactive
         >
-            <EditorShell />
+            <PopoverSlotProvider value={renderPopoverSlot}>
+                <EditorShell />
+            </PopoverSlotProvider>
         </AppFadeLayer>
     </>
 );

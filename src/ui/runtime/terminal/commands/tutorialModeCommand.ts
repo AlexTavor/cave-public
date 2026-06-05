@@ -1,4 +1,5 @@
 import { CommandDefinition } from "../../../../lib/terminal";
+import { getCommandRuntime } from "../getCommandRuntime";
 import {
     buildInvalidArgsResult,
     tutorialModeSchema,
@@ -6,7 +7,7 @@ import {
 import { restoreTutorialMode } from "../../tutorials/tutorialModeMemory";
 
 const resolveRuntime = (context: { runtime?: any }) =>
-    context.runtime?.getRuntime?.() ?? null;
+    getCommandRuntime(context);
 
 const parseTutorialMode = (value: string): 0 | 1 | null => {
     const normalized = value.toLowerCase();

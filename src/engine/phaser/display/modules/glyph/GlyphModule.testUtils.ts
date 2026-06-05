@@ -2,7 +2,7 @@ import type {
     GlyphConfig,
     GlyphPlacement,
     GlyphPulseConfig,
-} from "../../glyph/GlyphTypes";
+} from "../../../../../data/schemas/assets/GlyphTypes";
 import type { GlyphRegistry } from "../../glyph/GlyphRegistry";
 import { BLEND_MODE_NORMAL } from "../../blendModes";
 

@@ -1,3 +1,9 @@
+// Canonical avatar display-key identifiers. These live in lib (below engine and
+// ui) because both the lib display resolver and the engine/phaser avatar renderer
+// need them; the engine's AvatarDisplayConstants re-exports them for convenience.
+export const BODY_AVATAR_DISPLAY_KEY = "body_avatar";
+export const SWARM_AVATAR_DISPLAY_KEY = "swarm_avatar";
+
 export enum DisplayPaletteKey {
     Body = "body",
     Mind = "mind",
@@ -79,8 +85,8 @@ export const isBuiltInDisplayKey = (displayKey: string): boolean =>
     displayKey === "generic_node" ||
     displayKey === "loading" ||
     displayKey === "veins_display" ||
-    displayKey === "body_avatar" ||
-    displayKey === "swarm_avatar" ||
+    displayKey === BODY_AVATAR_DISPLAY_KEY ||
+    displayKey === SWARM_AVATAR_DISPLAY_KEY ||
     displayKey === "cave_level" ||
     isAttributeDisplayKey(displayKey) ||
     displayKey.startsWith("menu_ambient_entity_");

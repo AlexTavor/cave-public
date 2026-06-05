@@ -1,8 +1,8 @@
-import { nanoid } from "nanoid";
 import type { ImpulseConfig } from "../../../data/schemas/physics";
 import type { RuntimeEntity } from "../types";
 import type { CommandHandlerContext } from "./types";
 import type { PhysicsBody } from "../../physics/impulse/types";
+import { mintSpawnId } from "./mintSpawnId";
 import {
     buildPayloadLabel,
     buildPendingBody,
@@ -30,7 +30,10 @@ export const buildPendingTransfer = (params: {
     const { source, target, payload, context, impulseConfig } = params;
     const sourceId = source.id;
     const targetId = target.id;
-    const pendingId = `pending_${nanoid()}`;
+    // Deterministic id (the pending entity joins the sorted world, so a random id
+    // would break replay). Keeps the "pending_" namespace for readability; it is
+    // identified by its PENDING_TAG, not the id prefix.
+    const pendingId = mintSpawnId(context.world, "pending");
     const label = buildPayloadLabel(payload);
     const displayKey = resolveTransferVisualType(payload) ?? "unknown";
     const { spawn, direction } = resolvePendingTransferSpawn({

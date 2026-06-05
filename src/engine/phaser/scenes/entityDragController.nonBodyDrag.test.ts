@@ -20,6 +20,7 @@ describe("EntityDragController non-body drag", () => {
             createScene(),
             () => runtime as any,
             vi.fn(),
+            () => ({ valid: false as const }),
         );
 
         (controller as any).onObjectDown(

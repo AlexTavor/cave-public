@@ -1,10 +1,8 @@
 import type { HabitusDefinition } from "../../data/schemas/game/habiti";
 import type { UnderstandingDefinition } from "../../data/schemas/game/understanding";
+import { producerOutputBonusStateKey } from "../../utils/habitiBonusStateKeys";
 
 const byText = (left: string, right: string) => left.localeCompare(right);
-
-export const producerOutputBonusStateKey = (tag: string) =>
-    `habiti_producer_output_bonus_${tag.trim()}`;
 
 export const listProducerOutputBonusTags = (
     habitusIndex: Record<string, HabitusDefinition>,

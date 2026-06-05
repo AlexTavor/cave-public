@@ -3,7 +3,7 @@ import type { Blueprint } from "../../../data/schemas/blueprint";
 import {
     collectSuspiciousPurgeUpdaters,
     SUSPICIOUS_ACTIVITY_TAG,
-} from "../../../game/purge/suspiciousActivity";
+} from "./suspiciousActivity";
 
 export const suspiciousActivityCompiler = (
     draft: Blueprint,

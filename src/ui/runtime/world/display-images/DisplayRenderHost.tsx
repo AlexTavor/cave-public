@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { useDisplayImageExportStore } from "../../state/useDisplayImageExportStore";
+import { useUiAvatarStore } from "../../state/useUiAvatarStore";
 
 export const DisplayRenderHost = (): null => {
     useEffect(() => {
@@ -8,7 +10,17 @@ export const DisplayRenderHost = (): null => {
         void import("../../../../engine/phaser/display-export/DisplayRenderHost").then(
             ({ DisplayRenderHost: DisplayRenderHostController }) => {
                 if (!active) return;
-                host = new DisplayRenderHostController();
+                // Wire the host's store writes here so the engine host stays ui-free.
+                host = new DisplayRenderHostController({
+                    onServiceReady: (service) =>
+                        useDisplayImageExportStore
+                            .getState()
+                            .setService(service),
+                    onTeardown: () => {
+                        useDisplayImageExportStore.getState().clear();
+                        useUiAvatarStore.getState().clear();
+                    },
+                });
                 host.start();
             },
         );

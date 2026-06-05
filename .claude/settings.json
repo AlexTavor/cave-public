@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/code-map-hook.mjs",
+            "timeout": 15,
+            "statusMessage": "code-map: checking edited file"
+          }
+        ]
+      }
+    ]
+  }
+}

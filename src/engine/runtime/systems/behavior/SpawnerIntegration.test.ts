@@ -72,13 +72,22 @@ describe("Spawner integration", () => {
         const { buffer, commandBuffer } = createCommandBuffer();
         system.tick(buildSnapshot([world, spawner]), commandBuffer, 16);
 
+        const spawn = buffer.find(
+            (command) => command.type === RuntimeCommandType.SPAWN,
+        );
+        expect(spawn).toBeDefined();
+        // The entity id is no longer minted in the behavior phase (read-only
+        // snapshot). The body→owner assignment rides on the SPAWN payload via
+        // `assignTo`; SpawnHandler mints the id and issues the ASSIGN_BODIES_BATCH
+        // in the command phase. So the behavior phase emits exactly one SPAWN with
+        // no pre-assigned id and the target carried as assignTo.
+        const payload = spawn?.payload as { id?: string; assignTo?: string };
+        expect(payload.id).toBeUndefined();
+        expect(payload.assignTo).toBe("self");
         expect(
-            buffer.some((command) => command.type === RuntimeCommandType.SPAWN),
-        ).toBe(true);
-        expect(
-            buffer.some(
+            buffer.every(
                 (command) =>
-                    command.type === RuntimeCommandType.ASSIGN_BODIES_BATCH,
+                    command.type !== RuntimeCommandType.ASSIGN_BODIES_BATCH,
             ),
         ).toBe(true);
     });

@@ -4,7 +4,7 @@ import {
     type RuntimeCommand,
     type RuntimeKilledEntityPresentation,
 } from "../../engine/runtime/types";
-import { enqueueMirroredFactAdjust } from "../facts/factCommands";
+import { enqueueMirroredFactAdjust } from "../../engine/runtime/factCommands";
 
 export const applyAbsorptionBatchMetadata = (input: {
     command: RuntimeCommand;

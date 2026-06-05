@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
     listProducerOutputBonusTags,
-    producerOutputBonusStateKey,
     readProducerOutputBonusValue,
 } from "./producerOutputBonusState";
+import { producerOutputBonusStateKey } from "../../utils/habitiBonusStateKeys";
 
 describe("producerOutputBonusState", () => {
     it("lists unique producer tags in sorted order", () => {

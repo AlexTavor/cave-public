@@ -1,0 +1,96 @@
+name: pdd
+
+# PDD proof-trend machinery. On every push to main / pdd-pass: run the gates, and
+# only if they're all green, capture a snapshot AT this commit (the --gates flag
+# asserts which gate outputs are fresh, so a point can never be misattributed),
+# commit the history row back, and publish the dashboard to GitHub Pages.
+#
+# Stryker (mutation testing, several minutes) runs on MAIN ONLY — so mutation points
+# accrue when work reaches main; the cheap signals (coverage/tests/violations/
+# suppressions) are captured on every push.
+#
+# One-time setup: repo Settings → Pages → Source = "GitHub Actions" (else the deploy
+# job fails while everything else still works).
+
+on:
+  push:
+    branches: [main, pdd-pass]
+
+permissions:
+  contents: write # commit the history row back to the branch
+  pages: write # deploy the dashboard to Pages
+  id-token: write # Pages OIDC
+
+concurrency:
+  group: pdd-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  gates-and-snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      # Gates — each blocks; a red commit never gets a data point.
+      - name: tsc
+        run: npx tsc --noEmit
+      - name: lint
+        run: npm run lint
+      - name: depcruise
+        run: npm run depcruise
+      - name: code-map freshness
+        run: node scripts/code-map.mjs check
+      - name: coverage (floor gate; emits coverage-summary + vitest results)
+        run: npm run coverage
+
+      # Mutation testing — main only.
+      - name: stryker
+        if: github.ref == 'refs/heads/main'
+        run: npx stryker run
+
+      # Snapshot — assert exactly the gates that just ran at this commit.
+      - name: snapshot
+        run: |
+          GATES="coverage,tests"
+          if [ "$GITHUB_REF" = "refs/heads/main" ]; then GATES="coverage,tests,mutation"; fi
+          node scripts/pdd-snapshot.mjs --gates "$GATES"
+      - name: dashboard
+        run: node scripts/pdd-dashboard.mjs
+
+      # Commit the new history row back ([skip ci] so it doesn't re-trigger).
+      - name: commit history
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- docs/pdd/history.jsonl; then
+            echo "history unchanged — nothing to commit"
+          else
+            git add docs/pdd/history.jsonl
+            git commit -m "chore(pdd): proof snapshot @ ${GITHUB_SHA:0:7} [skip ci]"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      # Stage the Pages site (dashboard as index.html, + the raw data).
+      - name: stage pages site
+        run: |
+          mkdir -p _site
+          cp docs/pdd/dashboard.html _site/index.html
+          cp docs/pdd/history.jsonl  _site/history.jsonl
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: gates-and-snapshot
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

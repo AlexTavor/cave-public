@@ -5,7 +5,7 @@ import type {
     RuntimeCommand,
     RuntimeEntity,
 } from "../../engine/runtime/types";
-import { enqueueMirroredFactAdjust } from "../facts/factCommands";
+import { enqueueMirroredFactAdjust } from "../../engine/runtime/factCommands";
 
 const getCompletedCycleBlueprintId = (
     entity: Readonly<RuntimeEntity>,

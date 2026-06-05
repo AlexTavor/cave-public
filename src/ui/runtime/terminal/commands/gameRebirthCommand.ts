@@ -4,6 +4,7 @@ import {
 } from "../../../../engine/runtime/persistence/passportPermanentCarryover";
 import { RuntimeCommandType } from "../../../../engine/runtime/types";
 import { CommandDefinition } from "../../../../lib/terminal";
+import { getCommandRuntime } from "../getCommandRuntime";
 import { buildInvalidArgsResult, gameRebirthSchema } from "../runtimeConstants";
 import {
     enqueueRebirthCarriers,
@@ -30,7 +31,7 @@ export const gameRebirthCommand: CommandDefinition = {
         if (!parsed.success) return buildInvalidArgsResult("game.rebirth");
 
         const scriptPath = parsed.data[0] ?? DEFAULT_SCRIPT;
-        const runtime = context.runtime?.getRuntime?.();
+        const runtime = getCommandRuntime(context);
         if (!runtime) {
             return {
                 type: "error",
@@ -59,7 +60,7 @@ export const gameRebirthCommand: CommandDefinition = {
 
         if (result.type === "error") return result;
 
-        const newRuntime = context.runtime?.getRuntime?.();
+        const newRuntime = getCommandRuntime(context);
         if (!newRuntime) {
             return {
                 type: "error",

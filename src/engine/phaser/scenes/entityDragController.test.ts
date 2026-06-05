@@ -16,6 +16,7 @@ describe("EntityDragController", () => {
             createScene(),
             () => runtime as any,
             vi.fn(),
+            () => ({ valid: false as const }),
         );
 
         (controller as any).onObjectDown(
@@ -56,6 +57,7 @@ describe("EntityDragController", () => {
             createScene(),
             () => runtime as any,
             vi.fn(),
+            () => ({ valid: false as const }),
         );
 
         (controller as any).onObjectDown(

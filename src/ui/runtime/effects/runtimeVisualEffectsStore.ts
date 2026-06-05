@@ -1,4 +1,4 @@
-import type { RuntimeVisualEvent } from "./runtimeVisualEvents";
+import type { RuntimeVisualEvent } from "../../../engine/runtime/runtimeVisualEvents";
 
 const pending: RuntimeVisualEvent[] = [];
 

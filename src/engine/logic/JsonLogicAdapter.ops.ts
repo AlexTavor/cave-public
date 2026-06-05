@@ -3,20 +3,15 @@ import type { Snapshot } from "../runtime/Snapshot";
 import type { RuntimeEntity } from "../runtime/types";
 import type { LogicMode } from "./JsonLogicAdapter.types";
 import { AccessViolationError } from "./errors";
-import { registerCarriersOrbitingOp } from "./registerCarriersOrbitingOp";
-import { registerBodyInPointerOp } from "./registerBodyInPointerOp";
-import { registerBodiesAssignedOp } from "./registerBodiesAssignedOp";
-import { registerDestructiveAssignmentHasAllBodiesOp } from "./registerDestructiveAssignmentHasAllBodiesOp";
 
 let opsRegistered = false;
 
+// Engine-generic JsonLogic ops only. Game-domain ops (CARRIERS_ORBITING,
+// BODY_IN_POINTER, BODIES_ASSIGNED, DESTRUCTIVE_ASSIGNMENT_HAS_ALL_BODIES) are
+// owned and registered by the game — see src/game/logic/registerGameLogicOps.ts.
 export const registerOperations = (): void => {
     if (opsRegistered) return;
     opsRegistered = true;
-    registerCarriersOrbitingOp();
-    registerBodyInPointerOp();
-    registerBodiesAssignedOp();
-    registerDestructiveAssignmentHasAllBodiesOp();
 
     jsonLogic.add_operation("QUERY", function (this: any, tag: unknown) {
         const ctx = this as { __mode?: LogicMode; __snapshot?: Snapshot };

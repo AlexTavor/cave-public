@@ -4,6 +4,8 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { CvsEditor } from "./CvsEditor";
 import { ThemeProvider } from "../../../lib/foundation/theme/ThemeProvider";
 import { PortalManager } from "../../../lib/foundation/portal-manager/PortalManager";
+import { renderPopoverSlot } from "../../../lib/atoms/popover/popoverSlotRenderer";
+import { PopoverSlotProvider } from "../../../../lib/terminal/PopoverSlot";
 
 let state: any = { sessions: {}, updateDraft: vi.fn() };
 let moduleSession: any = { isReady: true, draft: null };
@@ -42,7 +44,9 @@ const renderEditor = () =>
     render(
         <ThemeProvider>
             <PortalManager>
-                <CvsEditor filename="scripts/init.cvs" />
+                <PopoverSlotProvider value={renderPopoverSlot}>
+                    <CvsEditor filename="scripts/init.cvs" />
+                </PopoverSlotProvider>
             </PortalManager>
         </ThemeProvider>,
     );

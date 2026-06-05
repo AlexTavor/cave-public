@@ -1,6 +1,6 @@
-import { nanoid } from "nanoid";
 import type { RuntimeEntity } from "../../engine/runtime/types";
 import type { CommandHandlerContext } from "../../engine/runtime/handlers/types";
+import { mintSpawnId } from "../../engine/runtime/handlers/mintSpawnId";
 import {
     resolveBlueprint,
     buildPhysicsBody,
@@ -24,7 +24,7 @@ export const spawnFromBlueprint = (
         );
         return;
     }
-    const entityId = id ?? nanoid();
+    const entityId = id ?? mintSpawnId(context.world);
     const components = cloneStatefulComponents(blueprint.components || {});
     const entity: RuntimeEntity = {
         id: entityId,

@@ -1,0 +1,5003 @@
+{
+  "plans/notion-update.mjs": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 2
+    }
+  },
+  "scripts/code-map-hook.mjs": {
+    "sonarjs/no-os-command-from-path": {
+      "count": 1
+    }
+  },
+  "scripts/code-map.mjs": {
+    "sonarjs/cognitive-complexity": {
+      "count": 1
+    },
+    "sonarjs/no-os-command-from-path": {
+      "count": 2
+    }
+  },
+  "scripts/mutation-survivors.mjs": {
+    "@typescript-eslint/no-unused-expressions": {
+      "count": 1
+    },
+    "sonarjs/no-nested-assignment": {
+      "count": 1
+    }
+  },
+  "scripts/pdd-snapshot.mjs": {
+    "sonarjs/no-os-command-from-path": {
+      "count": 1
+    }
+  },
+  "src/app-shell/tutorialSessionState.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/app-shell/useAppShellController.cinematic.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app-shell/useAppShellController.newGame.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app-shell/useAppShellController.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app-shell/useAppShellController.ts": {
+    "sonarjs/void-use": {
+      "count": 6
+    }
+  },
+  "src/app-shell/useAppShellController.tutorialMode.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/app-shell/useRuntimeAutosave.ts": {
+    "sonarjs/void-use": {
+      "count": 1
+    }
+  },
+  "src/data/schemas/assets/normalizeLegacyArt.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 3
+    },
+    "sonarjs/no-unused-vars": {
+      "count": 3
+    }
+  },
+  "src/data/schemas/assets/styles.ts": {
+    "sonarjs/redundant-type-aliases": {
+      "count": 1
+    }
+  },
+  "src/data/schemas/conditions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/data/schemas/module.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
+    }
+  },
+  "src/engine/balancing/InstantTransferHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/balancing/Scanner.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/balancing/Scanner.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/compiler/abilities/assignmentCompiler.oneOff.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/compiler/abilities/assignmentCompiler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/compiler/abilities/conditionalActivationCompiler.multiInstance.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/compiler/abilities/conditionalActivationCompiler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/compiler/abilities/cycleCompiler.conditionalActivation.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/compiler/abilities/cycleCompiler.costMult.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/engine/compiler/abilities/cycleCompiler.startActive.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/compiler/abilities/cycleCompiler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
+    }
+  },
+  "src/engine/compiler/abilities/cycleCompiler.throttleVisibility.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/compiler/abilities/cycleCostScaler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/compiler/abilities/cycleResourceCostRequestCompiler.test.ts": {
+    "sonarjs/slow-regex": {
+      "count": 1
+    }
+  },
+  "src/engine/compiler/abilities/hommletBlueprintContent.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/compiler/abilities/hommletBlueprintHydration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/engine/compiler/abilities/lureAccountantBlueprintContent.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/compiler/abilities/newbodyBlueprintContent.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/compiler/abilities/passportCompiler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/compiler/abilities/spatialCompiler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/compiler/abilities/storageAutoRequestCompiler.helpers.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/compiler/abilities/storageAutoRequestThrottle.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
+    }
+  },
+  "src/engine/compiler/abilities/storageCompiler.initialValue.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/compiler/abilities/storageCompilerReconciler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/compiler/abilities/suspiciousActivityCompiler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/compiler/abilities/understandingRewardsContent.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    },
+    "sonarjs/assertions-in-tests": {
+      "count": 1
+    }
+  },
+  "src/engine/compiler/abilities/updaterCompiler.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/compiler/abilities/upkeep.assignedLocked.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
+    }
+  },
+  "src/engine/compiler/abilities/upkeepCompiler.immediate.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/compiler/utils/scalableCompiler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/linker/CompileProject.system.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/linker/Gatekeeper.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/linker/ModuleLinker.compilation.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/linker/ModuleSerializer.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/linker/ModuleSerializer.ts": {
+    "sonarjs/slow-regex": {
+      "count": 1
+    }
+  },
+  "src/engine/linker/impulseConfig.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/linker/normalizeBpInput.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    },
+    "sonarjs/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/engine/linker/registryMerge.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/logic/JsonLogicAdapter.ops.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/logic/JsonLogicAdapter.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/logic/JsonLogicAdapter.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/avatar/resolveBodyAvatarPresentation.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/engine/phaser/background/BiologicalFogBackground.purge.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/background/BiologicalFogBackground.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/background/BiologicalFogBackground.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/camera/cameraControllerBootstrap.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/phaser/camera/cameraControllerBootstrap.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/phaser/camera/cameraInputHandlers.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/phaser/camera/cameraRestore.requested.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/camera/cameraTouch.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/engine/phaser/debug/phaserDebugToggle.ts": {
+    "no-empty": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display-export/DisplayImageExportService.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/display-export/buildDisplayImageRequest.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/phaser/display-export/displayImageRequestSupport.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display-export/renderBodyAvatarImage.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display-export/renderResolvedDisplayImage.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/display-export/resolveBodyAvatarExportInputs.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/display/DisplayDefinitionCatalog.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/phaser/display/MenuAmbientDisplayDefinition.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/display/VeinsDisplayData.ts": {
+    "sonarjs/redundant-type-aliases": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/avatar/AvatarSeedResolver.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/phaser/display/avatar/AvatarSeedResolver.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/avatar/avatarBlink.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/displayActivity.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/phaser/display/glyph/GlyphPresetParser.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/glyph/GlyphPresetParser.validation.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/glyph/GlyphTextureGen.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/display/glyph/glyphTextureDrawStroke.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/instance-manager/DisplayInstanceManager.lifecycle.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/instance-manager/DisplayInstanceManager.nodeOverlayDisplayBounds.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/engine/phaser/display/instance-manager/DisplayInstanceManager.structural.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/engine/phaser/display/instance-manager/DisplayInstanceManager.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    },
+    "sonarjs/assertions-in-tests": {
+      "count": 4
+    }
+  },
+  "src/engine/phaser/display/instance-manager/DisplayInstanceManager.testUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 13
+    }
+  },
+  "src/engine/phaser/display/instance-manager/DisplayInstanceManager.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/display/instance-manager/DisplayInstanceManager.tutorialAttention.alpha.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/phaser/display/instance-manager/DisplayInstanceManager.tutorialAttention.interaction.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/phaser/display/instance-manager/DisplayInstanceManager.tutorialAttention.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 15
+    }
+  },
+  "src/engine/phaser/display/instance-manager/DisplayInstanceManager.tutorialAttention.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/engine/phaser/display/instance-manager/DisplayInstanceManagerTick.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 13
+    }
+  },
+  "src/engine/phaser/display/interactionHitArea.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/layers/LayerRegistry.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 2
+    },
+    "sonarjs/assertions-in-tests": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/attribute/AttributePoolShapeModule.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/attribute/AttributePoolShapeModule.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/avatar/AvatarModule.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/phaser/display/modules/avatar/AvatarModule.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/cave/CaveBackgroundModule.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/cave/CaveEyesModule.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/distress/DistressModule.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/distress/DistressModule.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/glyph/glyphModuleRuntime.stateful.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/engine/phaser/display/modules/glyph/glyphModuleRuntime.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 12
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/glyph/glyphModuleRuntime.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/interaction/InteractionModule.attention.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/display/modules/interaction/InteractionModule.destroy.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/display/modules/interaction/InteractionModule.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/light/LightModule.cycleLights.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/light/LightModule.lights.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/engine/phaser/display/modules/light/MenuAmbientProximityLightModule.pointer.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/light/MenuAmbientProximityLightModule.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/display/modules/light/lightModuleBaseState.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/display/modules/light/lightModuleDecorState.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/display/modules/light/lightModuleState.attention.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/menu/PulseModule.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/progress-bar/progressBarIcon.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/progress-bar/progressBarTick.positioned.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/phaser/display/modules/progress-bar/progressBarTick.slot.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/display/modules/progress-bar/progressBarTick.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/engine/phaser/display/modules/progress-bar/progressBarTick.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/selection/SelectionModule.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/selection/SelectionModule.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/transfer/TransferDisplayModule.testUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/transfer/TransferGlyphModule.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/display/modules/transfer/TransferGlyphModule.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    },
+    "sonarjs/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/transfer/TransformModule.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/display/modules/transfer/transferGlyphRuntime.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/veins/VeinsModule.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/veins/VeinsModule.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/veins/veinsEdgeState.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/display/modules/veins/veinsEdgeTick.pulses.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/display/modules/veins/veinsPulseLifecycle.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/modules/veins/veinsRopeRenderer.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/display/modules/veins/veinsRuntimeAlpha.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/display/node-overlay/nodeOverlayDisplayBoundsStore.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    },
+    "sonarjs/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/pooling/DisplayObjectPool.availableOnScene.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/display/pooling/DisplayObjectPool.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/pooling/DisplayTypePool.sceneCleanup.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    },
+    "sonarjs/void-use": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/resolve-display/resolveDisplaySpec.static.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/display/resolve-display/resolveDisplaySpec.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
+    }
+  },
+  "src/engine/phaser/display/resolve-display/resolveDisplaySpec.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/display/testFakes.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 12
+    }
+  },
+  "src/engine/phaser/display/visual-instance/EntityVisualInstanceRuntime.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/phaser/display/visual-instance/EntityVisualInstanceRuntime.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/engine/phaser/effects/PersistentAttentionRings.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/phaser/effects/RuntimeVisualEffectsManager.attention.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 23
+    }
+  },
+  "src/engine/phaser/effects/RuntimeVisualEffectsManager.deathShake.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/engine/phaser/effects/RuntimeVisualEffectsManager.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/pointer/PointerPreviewSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/phaser/scenes/PointerInputController.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/scenes/PointerInputController.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
+    "@typescript-eslint/no-unused-expressions": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/scenes/entityDragController.dragAssignment.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/engine/phaser/scenes/entityDragController.nonBodyDrag.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/phaser/scenes/entityDragController.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
+    }
+  },
+  "src/engine/phaser/scenes/entityDragController.testUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/scenes/entityDragController.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/scenes/gameSceneMath.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
+    }
+  },
+  "src/engine/phaser/scenes/gameSceneMath.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/scenes/gameSceneVisualParsers.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/scenes/publishGameSceneDebugSnapshot.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/utils/ShapeTextureGen.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/utils/SolidStripTextureGen.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/utils/VeinTextureGen.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/veins/GraphBuilder.missingParent.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/veins/GraphBuilder.nervousPassport.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/veins/GraphBuilder.parentRouting.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/phaser/veins/GraphBuilder.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/phaser/veins/graphBuilderUtils.oneOff.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/phaser/veins/nervousVeinFlow.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 3
+    }
+  },
+  "src/engine/phaser/visuals/distressTarget.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/engine/physics/impulse/ImpulseSeparation.ts": {
+    "prefer-const": {
+      "count": 1
+    }
+  },
+  "src/engine/physics/quadtree/Quadtree.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/registry/types.ts": {
+    "sonarjs/redundant-type-aliases": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/CommandsManager.test.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 4
+    }
+  },
+  "src/engine/runtime/Runtime.divergence.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/engine/runtime/Runtime.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/RuntimeDeterminism.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/RuntimeSafetyValve.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/Snapshot.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/Ticker.test.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/behavior.elasticCapacity.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/behavior.elasticCapacity.softShrink.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/behavior.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/components/tutorialSelectors.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/contention/ContentionResolver.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/engine/runtime/contention/ContentionResolver.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 13
+    }
+  },
+  "src/engine/runtime/handlers/KillHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/handlers/SetGlobalHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/engine/runtime/handlers/ShowCinematicHandler.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/handlers/SpawnHandler.body.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/runtime/handlers/SpawnHandler.flyweight.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/handlers/SpawnHandler.overlap.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/handlers/SpawnHandler.parentResolution.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
+    }
+  },
+  "src/engine/runtime/handlers/SpawnHandler.refs.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/engine/runtime/handlers/SpawnHandler.storage.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/handlers/SpawnHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/handlers/SpawnHandler.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/runtime/handlers/SpawnHandler.unifiedBlueprints.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/handlers/TransferHandler.clamping.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/handlers/TransferHandler.immediate.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/engine/runtime/handlers/TransferHandler.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/handlers/TransferHandler.permissions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/runtime/handlers/TransferHandler.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/handlers/UpdateAssignmentHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/handlers/UpdateCaveHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/runtime/handlers/UpdateCaveHandler.understanding.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/handlers/UpdatePowerSinkHandler.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/handlers/UpdateStateHandler.preserveValueOnMaxDecrease.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/handlers/UpdateStateHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 11
+    }
+  },
+  "src/engine/runtime/handlers/UpdateStateHandler.visibility.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/engine/runtime/handlers/spawnBodyIdentity.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/runtime/handlers/spawnBodyIdentity.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/handlers/spawnUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/handlers/transferBodies.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/handlers/transferPendingBuilder.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 17
+    }
+  },
+  "src/engine/runtime/handlers/transferResources.helpers.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/logic.smoke.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/persistence/RuntimeSerializer.flyweight.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/persistence/RuntimeSerializer.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/persistence/flyweightPersistence.scaleOnMaxChange.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/runtime/persistence/flyweightPersistence.serialize.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/engine/runtime/persistence/hydrateRawSystemWorld.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/persistence/hydrateRuntime.flyweight.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/runtime/persistence/hydrateRuntime.sysWorld.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/persistence/hydrateRuntime.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/persistence/hydrateRuntime.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/persistence/normalizeHydratedDisplayKeys.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/persistence/passportPermanentCarryover.extract.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/persistence/passportPermanentCarryover.parentResolution.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/persistence/passportPermanentCarryover.restore.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/runtimeCollectCommands.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/runtime/runtimeImpulseConfig.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/runtimeInvalidationSummary.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/runtime/runtimePhases.systemPhase.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/runtimePhysicsSeed.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/runtimeReset.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/runtimeSystemRunner.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/engine/runtime/systems/AutomationSystem.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/systems/GlobalEffectsIndexer.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/systems/GlobalEffectsIndexer.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/systems/behavior/ActionExecutor.gainHabiti.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/systems/behavior/ActionExecutor.gainUnderstanding.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/systems/behavior/ActionExecutor.spawnCarrier.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/systems/behavior/ActionExecutor.traits.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/systems/behavior/AdjustState.atomic.cases.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/systems/behavior/AdjustState.global.cases.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/systems/behavior/AdjustState.test.ts": {
+    "sonarjs/no-empty-test-file": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/systems/behavior/BehaviorSystem.core.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/systems/behavior/BehaviorSystem.flyweight.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/systems/behavior/BehaviorSystem.guards.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/systems/behavior/BehaviorSystem.provenance.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/systems/behavior/CycleConditionalActivationThrottle.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/engine/runtime/systems/behavior/CycleConditionalActivationThrottle.multi.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/engine/runtime/systems/behavior/OneOffCycle.powerSink.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/runtime/systems/behavior/SamplerIntegration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/systems/behavior/SpawnerIntegration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/systems/behavior/TriggeredActions.gainUnderstanding.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/systems/behavior/TriggeredActions.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/runtime/systems/behavior/ValueResolver.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/engine/runtime/systems/behavior/actionExecutorTestUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/systems/behavior/cycleResourceCostBehavior.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/runtime/systems/behavior/cycleResourceCostRequestCadence.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/engine/runtime/systems/behavior/cycleResourceCostTolerance.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/systems/behavior/targetSelector.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/runtime/systems/behavior/valueResolverPath.incoming.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/systems/behavior/valueResolverPath.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/types/runtimeCommandPayloadsHabiti.ts": {
+    "@typescript-eslint/no-empty-object-type": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/types/runtimeCommandPayloadsNotificationAbilityGuidance.ts": {
+    "@typescript-eslint/no-empty-object-type": {
+      "count": 1
+    }
+  },
+  "src/engine/runtime/worldSeed.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/engine/terminal/commands/fsCommands.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/terminal/commands/makeCommands.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 11
+    }
+  },
+  "src/engine/terminal/commands/projectCartridgeAdapter.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/terminal/commands/projectCommands.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/terminal/commands/projectDuplicateCommand.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/engine/terminal/commands/projectDuplicateCommand.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    },
+    "sonarjs/slow-regex": {
+      "count": 1
+    }
+  },
+  "src/engine/terminal/commands/projectSaveCommand.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/terminal/commands/projectSaveCommand.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/terminal/commands/vfsCommands.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
+    }
+  },
+  "src/engine/terminal/smartPathUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/engine/test/Scenario.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/test/factories.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/vfs/FileSystem.batch.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/vfs/FileSystem.snapshot.test.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/engine/vfs/FileSystem.test.ts": {
+    "@typescript-eslint/no-wrapper-object-types": {
+      "count": 1
+    }
+  },
+  "src/engine/vfs/bootstrap.absorption.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/workspace/RefactorService.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/engine/workspace/RefactorService.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/workspace/WorkspaceService.bootstrapSnapshot.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/engine/workspace/WorkspaceService.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/engine/workspace/WorkspaceService.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    },
+    "sonarjs/slow-regex": {
+      "count": 1
+    }
+  },
+  "src/engine/workspace/projectManifest.errors.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/engine/workspace/projectManifest.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/engine/workspace/projectManifest.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    },
+    "no-useless-assignment": {
+      "count": 1
+    },
+    "preserve-caught-error": {
+      "count": 1
+    }
+  },
+  "src/engine/workspace/projectVersionPersistence.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/assignment/assignmentAcceptance.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/game/assignment/assignmentAcceptance.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/assignment/assignmentMinimums.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/assignment/assignmentMinimums.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/assignment/assignmentOwnerUsability.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/assignment/assignmentOwnerUsability.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/assignment/bodiesAssignedCondition.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/assignment/bodyAssignment.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/assignment/bodyInPointerCondition.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/assignment/destructiveAssignmentCondition.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/assignment/destructiveAssignmentCondition.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/assignment/extantBodyIds.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/carriers/carriersOrbitingCondition.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/conditions/evaluateConditionDefinitions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/game/conditions/evaluateStructuredConditionSet.bodiesAssigned.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/conditions/evaluateStructuredConditionSet.bodyInPointer.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/conditions/evaluateStructuredConditionSet.carriersOrbiting.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/conditions/evaluateStructuredConditionSet.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/facts/runNumberFact.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/habiti/assignBodyHabiti.forced.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/habiti/assignBodyHabiti.maxCount.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/habiti/assignBodyHabiti.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/habiti/assignBodyHabiti.worldSeed.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/game/habiti/habitiAnnouncementUtils.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/habiti/knownHabiti.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/habiti/producerOutputBonusState.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/habiti/resolveHabitiDisplayEntries.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/habiti/resolveHabitiEligibility.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/habiti/resolveOwnedCaveKnowledgeEffects.purgeProgress.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/game/habiti/resolveResourceGainBonusBreakdown.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/handlers/AcknowledgeNotificationAbilityGuidanceHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/AcknowledgeThoughtHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/handlers/AcknowledgeTutorialModalGuidanceHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/AdjustFactHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/AssignBodiesBatchHandler.applyUpdate.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/handlers/AssignBodiesBatchHandler.processing.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
+    }
+  },
+  "src/game/handlers/AssignBodiesBatchHandler.resolveUpdate.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/handlers/AssignBodiesBatchHandler.testUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/handlers/GainHabitiHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/handlers/GainHabitiHandler.ts": {
+    "@typescript-eslint/no-unused-expressions": {
+      "count": 1
+    }
+  },
+  "src/game/handlers/GainUnderstandingHandler.errors.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/GainUnderstandingHandler.purgeProgress.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/handlers/GainUnderstandingHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/game/handlers/ResolveBodyProcessingHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 17
+    }
+  },
+  "src/game/handlers/ResolveDraftHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/game/handlers/ShowNotificationAbilityGuidanceHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/ShowThoughtHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/SpawnCarrierHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/handlers/SpawnCarrierHandler.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
+    "@typescript-eslint/no-unused-expressions": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/TriggerDraftHandler.conditions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/TriggerDraftHandler.facts.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/handlers/TriggerDraftHandler.oneOff.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/handlers/TriggerDraftHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/TriggerDraftHandler.texts.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/handlers/UpdateBodiesBatchHandler.passport.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/handlers/UpdateBodiesBatchHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/handlers/UpdateCaveWithResourceGainBonusHandler.producerTag.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/UpdateCaveWithResourceGainBonusHandler.purgeProgress.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/handlers/UpdateCaveWithResourceGainBonusHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/handlers/UpdateCaveWithResourceGainBonusHandler.understanding.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/UpdateTraitsBatchHandler.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/handlers/absorptionBatchFinalization.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/handlers/absorptionBatchOutputs.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/handlers/absorptionBatchSpectacle.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 19
+    }
+  },
+  "src/game/handlers/absorptionBatchUtils.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/handlers/dormancyFlush.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/handlers/draftConditionFilter.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/draftConditionFilter.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/handlers/processingPendingHabiti.multiple.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/handlers/processingPendingHabiti.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/handlers/resolveAbsorptionHabitiOutcome.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/resolveBodyProcessingCommand.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
+    }
+  },
+  "src/game/handlers/resolveBodyProcessingCommand.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/handlers/triggerDraftCompletion.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/larderArrival.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/larderEntropy.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/notificationAbility/notificationAbilityGuidanceUtils.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/services/SaveGameService.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/AssignmentOwnerValiditySystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/AssignmentOwnerValiditySystem.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/AttributePoolSystem.exclusion.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
+    }
+  },
+  "src/game/systems/AttributePoolSystem.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/game/systems/BodyAssignmentSystem.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/BodySystem.cause.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/BodySystem.cave.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/BodySystem.death.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/BodySystem.identity.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/BodySystem.identityUniqueness.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/BodySystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/BodySystem.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/CarrierInteractionSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/CarrierInteractionSystem.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/game/systems/CarrierSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/game/systems/CarrierSystem.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
+    "@typescript-eslint/no-unused-expressions": {
+      "count": 3
+    }
+  },
+  "src/game/systems/CaveMindSystem.emotionMemory.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/CaveMindSystem.emotions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/CaveMindSystem.testUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/CaveMindSystem.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/CaveSystem.purge.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/game/systems/CaveSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/CensusSystem.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/CensusSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/CensusSystem.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/game/systems/CycleCompletedFactsSystem.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/CycleCompletedFactsSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/DraftSystem.facts.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/DraftSystem.levelUp.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/DraftSystem.provenance.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/DraftSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/DraftSystem.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/DynamicPhysicsSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/DynamicPhysicsSystem.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 2
+    }
+  },
+  "src/game/systems/EnergyDistributionSystem.status.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/EnergyDistributionSystem.supply.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/EnergyDistributionSystem.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/game/systems/FactsSystem.processing.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/FactsSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
+    }
+  },
+  "src/game/systems/HardTutorialSystem.activation.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/HardTutorialSystem.defer.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/HardTutorialSystem.invalid.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/HardTutorialSystem.onComplete.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/game/systems/HardTutorialSystem.preemption.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/HardTutorialSystem.priority.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/HardTutorialSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/game/systems/HardTutorialSystem.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/game/systems/MetabolicLoop.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/PointerSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/PointerSystem.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/game/systems/PowerAssignmentSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/PowerAssignmentSystem.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/ProcessingNodeSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/ProcessingNodeSystem.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 12
+    }
+  },
+  "src/game/systems/RuntimeInjection.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/ThoughtSystem.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/game/systems/TraitSystem.cycles.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/game/systems/TraitSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/systems/_cycle-debug.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/assignedBodyCycle.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/body-assignment/bodyAssignmentMotion.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/systems/body-assignment/bodyAssignmentMotion.testUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/game/systems/body-assignment/orbitAssignedBody.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/game/systems/body-assignment/orbitRadiusBand.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/game/systems/body-assignment/resourceProgressBarOrbit.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/body/identityBackfill.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/cave/bodyStatusCounts.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/cave/caveEventCounters.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/cave/caveMindReadUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/systems/cave/collectCaveCandidate.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/cave/collectCaveStimuli.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/cave/purgeEvaluate.bodyPresence.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/cave/purgeEvaluate.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/game/systems/cave/purgeEvaluate.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/cave/purgeNarrative.effectiveMax.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/cave/purgeNarrative.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/cave/purgeTestUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/coreTutorialCandidates.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/energy/energyDistributionDemandContext.parentThrottle.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/evaluateTutorialCandidate.destructiveAssignment.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/systems/evaluateTutorialCandidate.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/facts/processingOngoingFact.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/hardTutorialSystemUtils.modalExit.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/hardTutorialSystemUtils.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/hardTutorialSystemUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/luretravelerCycle.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/luretravelerPurge.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/passive-effects/PassiveEffectSystem.flyweight.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/passive-effects/PassiveEffectsSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/passive-effects/passiveEffectsPowerSink.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/passive-effects/passiveEffectsSystemUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/pointer/pointerDropChoice.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/game/systems/pointer/pointerDropChoice.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/pointer/pointerInteractionState.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/game/systems/pointer/pointerPickupBodies.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/game/systems/pointer/pointerPowerPreview.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/pointer/pointerState.conditionalActivation.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/pointer/pointerState.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 17
+    }
+  },
+  "src/game/systems/pointer/pointerState.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/pointer/pointerSystemActions.cadence.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/pointer/pointerSystemActions.drop.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/pointer/pointerSystemActions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/systems/pointer/resolveDraggedBodyDropTarget.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/game/systems/pointer/resolveDraggedBodyDropTarget.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/game/systems/processingProgress.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/systems/resolveTutorialTickState.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/systemTestUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/game/systems/trait/traitCycleUtils.ts": {
+    "prefer-const": {
+      "count": 1
+    }
+  },
+  "src/game/thoughts/thoughtEligibility.structuredConditions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/thoughts/thoughtEligibility.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/tutorials/resolveConditionRefs.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/game/tutorials/resolveTutorialAttentionPlan.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/game/tutorials/resolveTutorialBindings.draftGuidance.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
+    }
+  },
+  "src/game/tutorials/resolveTutorialBindings.self.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 12
+    }
+  },
+  "src/game/tutorials/resolveTutorialBindings.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
+    }
+  },
+  "src/lib/body-identity/bodyIdentityGenerator.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/lib/displays/resolveDisplaySource.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/lib/displays/resourceProgressBars.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/lib/terminal/components/syntaxHighlight.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/lib/terminal/components/syntaxHighlight.tsx": {
+    "sonarjs/slow-regex": {
+      "count": 1
+    }
+  },
+  "src/lib/terminal/components/useSmartInputState.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/lib/terminal/hooks/useSmartInput.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/types/json-logic-js.d.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/devtools/balancing/hooks/useBalancingRunner.ts": {
+    "sonarjs/void-use": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/assets/AssetEditorFlow.testUtils.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/ui/devtools/editors/assets/create-asset-modal/useCreateDisplayAssetModal.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/assets/display/DisplayEditor.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/assets/display/DisplayEditor.transferNodeRadius.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/assets/display/buildDisplayAssetViewEditor.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/devtools/editors/assets/display/displayEditorHelpers.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/assets/display/displayViewEditorActions.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/devtools/editors/assets/display/useDisplayRename.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/assets/display/useDisplayTransferNodeRadiusForm.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/assets/useAssetTabGuard.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/behaviors/BehaviorInput.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/behaviors/BehaviorsPanel.test.tsx": {
+    "sonarjs/assertions-in-tests": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/behaviors/autocomplete/behaviorStateMachine.actions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/behaviors/autocomplete/behaviorStateMachine.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/editors/behaviors/autocomplete/schemaIntrospection.handlers.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    },
+    "sonarjs/redundant-type-aliases": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/behaviors/compiler/actionCompiler.cinematic.ts": {
+    "preserve-caught-error": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/behaviors/useBehaviorCard.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/components/component-deck/ComponentList.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/components/toolbar-actions/SaveButton.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/blueprint/editor/BlueprintEditorValidation.manifest.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/blueprint/editor/useBlueprintEditorMode.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/hooks/useBlueprintReferenceCatalog.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/hooks/useBlueprintTagSuggestions.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/AssemblyDeck.tsx": {
+    "react-hooks/exhaustive-deps": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/CycleAbilityForm.crossFile.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/DesignerMode.worldPresence.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/conditionalActivationTargetLabels.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/conditionalActivationTargetOptions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/conditionalActivationTargetOptions.ts": {
+    "sonarjs/redundant-type-aliases": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/forms/AssignmentAbilityForm.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/forms/AssignmentFiltersSection.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/forms/AssignmentMinimumRow.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/forms/ConditionalActivationAbilityForm.tsx": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/forms/CycleResourceCostsSection.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/forms/PassportAbilityForm.parent.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/forms/PassportAbilityForm.visuals.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/forms/SamplerAbilityForm.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/forms/SpawnerAbilityForm.manifest.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/forms/UnifiedBlueprintsAbilityForm.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/forms/useInjectionSuggestions.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/forms/usePassportDisplayKeys.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/hooks/useHabitusReferenceCatalog.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/hooks/useTraitReferenceCatalog.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/mode/useDesignerAbilities.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/tags-bar/useTagsBar.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/BlueprintVisualsPreview.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/blueprintVisualsDraft.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/buildBlueprintViewEditor.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/createBlueprintVisualsPreviewRuntime.assignment.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/previewSystemEntities.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/useBlueprintVisualsEditor.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/useBlueprintVisualsEditorActions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/visualsCycleProgressActions.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/visualsGlyphActions.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/visualsGlyphAnimationActions.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/visualsGlyphFieldActions.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/visualsLightActions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/visualsLightActions.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/visualsRadiusActions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/blueprint/visuals/visualsRadiusActions.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/conditions/ConditionReferenceList.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/conditions/ConditionReferenceRow.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/conditions/ConditionsField.tsx": {
+    "react-hooks/refs": {
+      "count": 7
+    }
+  },
+  "src/ui/devtools/editors/conditions/StructuredConditionsField.bodiesAssigned.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/conditions/StructuredConditionsField.bodyInPointer.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/conditions/StructuredConditionsField.carriersOrbiting.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/conditions/StructuredConditionsField.destructiveAssignment.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/conditions/StructuredConditionsField.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/editors/config/BackgroundConfigEditor.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/config/SessionJsonEditor.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/config/VeinConfigEditor.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/config/body/bodyConfigSessionActions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/editors/config/body/bodyConfigSessionActions.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    },
+    "sonarjs/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/config/body/bodyRuleValidation.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/config/body/habiti/HabitusEffectRow.generateDescription.disabled.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
+    "sonarjs/assertions-in-tests": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/config/body/habiti/HabitusEffectRow.generateDescription.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/config/body/identity/BodyIdentityCatalogEditor.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/config/body/rules/HabitiRuleRow.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/config/body/rules/WeightedHabitusPoolField.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/config/guidances/GuidancePreview.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/config/guidances/createGuidancePreviewRuntime.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/config/knowledge/KnowledgeEditor.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/config/traits/useStateSuggestions.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/config/tutorials/TutorialForm.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/config/tutorials/TutorialGuidanceRow.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/devtools/editors/config/tutorials/TutorialGuidanceTargetOverrideFields.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/config/tutorials/TutorialsEditor.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/config/tutorials/resolveTutorialAutoSummary.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/config/tutorials/tutorialFormConstants.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/config/tutorials/useNormalizeTutorialGuidanceDraft.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/config/understanding/useUnderstandingConfigSession.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    },
+    "sonarjs/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/draft/DraftPackEditor.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/draft/options/DraftOptionsPanel.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/draft/options/EditableOptionIdField.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/draft/options/useDraftOptionsPanel.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/editors/draft/pools/DraftPoolEditor.texts.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/draft/pools/useDraftPoolEditor.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/draft/pools/useDraftPoolListPanel.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/fields/body-field/BodyField.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/devtools/editors/fields/boolean-field/BooleanField.tsx": {
+    "@typescript-eslint/no-empty-object-type": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/fields/enum-field/useEnumField.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/fields/icon-picker/useIconPicker.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/fields/module-explorer/DeleteAssetConfirmModal.tsx": {
+    "react-hooks/exhaustive-deps": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/fields/module-explorer/DeleteConfirmModal.tsx": {
+    "react-hooks/exhaustive-deps": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/fields/module-explorer/DisplayAssetPreviewRuntime.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/fields/module-explorer/hooks/useBlueprintActions.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/fields/number-field/NumberField.tsx": {
+    "@typescript-eslint/no-empty-object-type": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/fields/number-field/useNumberField.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/fields/object-field/useObjectField.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/devtools/editors/fields/schemaFieldProxy.ts": {
+    "sonarjs/no-extra-arguments": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/fields/state-editor/useStateEditor.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/devtools/editors/fields/state-editor/useStateRow.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    },
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/fields/string-array-field/StringArrayField.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/fields/string-field/useStringField.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/file/AssetPackEditor.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/file/BlueprintFileEditor.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/file/CvsEditor.autocomplete.integration.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/devtools/editors/file/CvsEditor.undoRedo.integration.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/editors/file/CvsEditor.values.integration.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/devtools/editors/file/FileEditors.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/devtools/editors/file/SystemConfigEditor.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/manifest/ManifestEditor.tsx": {
+    "sonarjs/void-use": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/manifest/RawJsonEditor.tsx": {
+    "sonarjs/void-use": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/manifest/useJsonSession.ts": {
+    "sonarjs/void-use": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/manifest/useManifestDraft.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    },
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    },
+    "sonarjs/void-use": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/manifest/useManifestEditorController.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/utils/schemaDefaults.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/editors/utils/schemaGuards.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/editors/utils/schemaIntrospection.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/ui/devtools/editors/utils/schemaShape.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/editors/view-editor/ViewEditorColorField.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/view-editor/ViewEditorCycleProgressSection.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/view-editor/ViewEditorDisplayPreview.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/view-editor/ViewEditorPreview.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/editors/view-editor/buildViewEditorVisualSections.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/editors/wrappers/EditorItemWrapper.styles.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/devtools/hooks/useScrollMemory.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/layout/context/LayoutWorldAdapter.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/devtools/layout/context/LayoutWorldAdapter.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/layout/persistence/layoutPersistence.relativePosition.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/layout/persistence/layoutPersistence.saveIds.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/layout/persistence/layoutPersistence.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/layout/simulation/createLayoutRuntime.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/layout/useLayoutEditorHydration.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/project/newFileTemplates.ts": {
+    "sonarjs/slow-regex": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/project/projectExplorerOps.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/project/projectExplorerSelection.ts": {
+    "@typescript-eslint/no-unused-expressions": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/project/projectUtils.ts": {
+    "sonarjs/slow-regex": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/project/useProjectExplorer.ts": {
+    "react-hooks/refs": {
+      "count": 3
+    },
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/project/useProjectExplorerActions.ts": {
+    "sonarjs/void-use": {
+      "count": 5
+    }
+  },
+  "src/ui/devtools/shell/EditorShell.loading.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/shell/EditorShell.texts.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/shell/GlobalEditorToolbar.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/shell/WindowManager.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/shell/overlays/LayoutGhostLayer.tsx": {
+    "@typescript-eslint/no-empty-object-type": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/shell/overlays/useLayoutGhost.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/shell/useGlobalEditorToolbar.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/shell/useGlobalEditorToolbar.texts.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/devtools/shell/useGlobalEditorToolbar.ts": {
+    "sonarjs/void-use": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/shell/useGlobalEditorToolbarActions.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/shell/window-manager/ProjectHome.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/devtools/shell/window-manager/WindowLayoutResolver.core.tsx": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/shell/window-manager/hooks/openConfigRouteTab.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
+    "sonarjs/void-use": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/shell/window-manager/useFlexlayoutCloseGuard.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/shell/window-manager/useWindowManagerLayoutAction.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/shell/window-manager/virtualPath.node.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/devtools/state/layoutModelUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    },
+    "sonarjs/redundant-type-aliases": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/state/moduleSession/useEnsureModuleSession.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/state/moduleSession/useModuleSession.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    },
+    "sonarjs/void-use": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/state/moduleSession/useSessionFlush.ts": {
+    "react-hooks/refs": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/state/moduleStore.actions.eject.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    },
+    "sonarjs/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/state/moduleStore.assets.displays.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/devtools/state/moduleStore.assets.normalize.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/state/moduleStore.assets.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/devtools/state/moduleStore.blueprint.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/devtools/state/moduleStore.blueprints.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/state/moduleStore.conditionSanitizer.spawner.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/state/moduleStore.io.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/state/moduleStore.io.versioning.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/devtools/state/moduleStore.labels.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/state/moduleStore.reducer.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/state/moduleStore.sanitization.module.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/state/moduleStore.sanitization.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/state/moduleStore.saveModuleCartridge.validation.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/state/moduleStore.store.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
+    }
+  },
+  "src/ui/devtools/state/sessionLogic.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    },
+    "sonarjs/redundant-type-aliases": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/state/sessionStore/actionsEditing.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/state/sessionStore/utils.persistedAssets.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/devtools/state/useLayoutStore.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/state/useTerminalStore.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/state/useTerminalStore/terminalHistorySlice.ts": {
+    "no-useless-assignment": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/state/useUnifiedUndo.test.ts": {
+    "no-unexpected-multiline": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/telemetry/TelemetryView.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/devtools/telemetry/TelemetryView.tsx": {
+    "@typescript-eslint/no-unused-expressions": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/terminal/closeWorkspaceState.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/devtools/texts/TextsEditor.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/devtools/texts/buildTextRegistry.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/devtools/texts/useTextsEditorController.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/ui/devtools/texts/useTextsEditorController.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/lib/atoms/animatable/Animatable.tsx": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/ui/lib/atoms/popover/Popover.tsx": {
+    "react-hooks/refs": {
+      "count": 1
+    }
+  },
+  "src/ui/lib/atoms/tooltip/TooltipTrigger.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/lib/atoms/tooltip/useTooltipVisibility.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/lib/foundation/icon-registry/IconRegistryProvider.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/lib/foundation/icon-registry/useResolvedDisplayIcon.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/lib/foundation/portal-manager/Portal.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/lib/foundation/portal-manager/PortalManager.tsx": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    },
+    "react-hooks/refs": {
+      "count": 2
+    },
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/lib/foundation/theme/emotion.d.ts": {
+    "@typescript-eslint/no-empty-object-type": {
+      "count": 1
+    }
+  },
+  "src/ui/production/main-menu/MainMenuPanel.resetTutorial.storage.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/production/main-menu/MainMenuPanel.resetTutorial.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/runtime/ambient/MenuAmbientRuntime.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    },
+    "sonarjs/void-use": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/ambient/MenuAmbientWanderSystem.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/attention/useActiveRuntimeAttention.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/cinematic/Cinematic.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/cinematic/evaluateCinematicCommands.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/debug/buildPhaserDebugHudView.poolStats.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/debug/buildPhaserDebugHudView.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/debug/buildPhaserDebugHudView.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/debug/usePhaserDebugGlobals.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/debug/usePhaserDebugSnapshots.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/dormancy/DormancyOverlay.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/dormancy/useDormancyState.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/draft/DraftOverlay.guidance.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/ui/runtime/draft/DraftOverlay.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/effects/resolveRuntimeVisualEffects.commandMetadata.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 9
+    }
+  },
+  "src/ui/runtime/effects/resolveRuntimeVisualEffects.deathShake.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/runtime/effects/resolveRuntimeVisualEffects.pointerAssignment.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/effects/resolveRuntimeVisualEffects.purge.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/effects/resolveRuntimeVisualEffects.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/habiti/HabitiGainDisplay.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/habiti/RuntimeHabitiGainModal.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/hooks/useEntityQuery.test.tsx": {
+    "sonarjs/assertions-in-tests": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/hooks/useEntityQuery.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 2
+    },
+    "react-hooks/refs": {
+      "count": 1
+    },
+    "react-hooks/use-memo": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/hooks/useImperativeRuntimeDerivedValue.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    },
+    "react-hooks/refs": {
+      "count": 15
+    }
+  },
+  "src/ui/runtime/hooks/useRuntimeRevisionToken.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/hooks/useRuntimeSelector.ts": {
+    "react-hooks/refs": {
+      "count": 13
+    }
+  },
+  "src/ui/runtime/inspector/RuntimeInspectorViewport.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/inspector/runtimeInspectorToggle.ts": {
+    "no-empty": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/modal-guidance/RuntimeModalGuidanceOverlay.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    },
+    "prefer-const": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/modal-guidance/useActiveRuntimeModalGuidance.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/notifications/RuntimeNotificationViewport.attention.cases.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/runtime/notifications/RuntimeNotificationViewport.entityClick.cases.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/notifications/RuntimeNotificationViewport.events.cases.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/notifications/RuntimeNotificationViewport.habitiAttention.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/notifications/RuntimeNotificationViewport.ongoingClick.cases.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/notifications/RuntimeNotificationViewport.purgeMilestone.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/notifications/RuntimeNotificationViewport.test.tsx": {
+    "sonarjs/no-empty-test-file": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/notifications/addPurgeMilestoneRuntimeEvents.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/notifications/formatRuntimeNotificationText.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/notifications/formatRuntimeNotificationText.unlock.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/notifications/resolveOngoingRuntimeNotifications.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/notifications/resolveOngoingRuntimeNotifications.timeControls.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/notifications/resolveRuntimeNotificationEventAccumulator.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/notifications/resolveRuntimeNotificationEvents.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/notifications/runtimeNotificationTestUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/notifications/runtimeNotificationToneStyles.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/notifications/useRuntimeOngoingNotifications.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/shell/RuntimeShell.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/shell/RuntimeShellCanvas.nodeOverlays.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/shell/RuntimeShellCanvas.notifications.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/shell/RuntimeShellCanvas.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/state/persistenceSlice.resourceGain.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/state/persistenceSlice.selection.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/state/persistenceSlice.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/state/runtimeFactory.notifications.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/state/runtimeFactory.ts": {
+    "sonarjs/void-use": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/state/simulationSlice.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/state/simulationSlice.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/state/useRuntimeStore.inspector.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/state/useRuntimeStore.notifications.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/state/useRuntimeStore.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/state/useRuntimeStore.tutorialMode.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/status/CaveStatusNote.anchor.cases.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/status/CaveStatusNote.content.cases.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/status/CaveStatusNote.test.tsx": {
+    "sonarjs/no-empty-test-file": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/status/CaveStatusNote.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/status/RunStartCycleBanner.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/status/RunStartCycleBanner.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/status/RuntimeClock.attention.cases.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/runtime/status/RuntimeClock.hotkeys.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/status/RuntimeClock.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/status/RuntimeClockTimer.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/status/caveStatusUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/runtime/status/evaluateRunStartCycleBannerCommands.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/runtime/status/useRuntimeClockControls.ts": {
+    "react-hooks/refs": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/terminal/commands/balancingScanCommand.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/terminal/commands/gameKillAllBodiesExceptCommand.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/terminal/commands/gameRebirthCommand.integration.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/terminal/commands/gameRebirthCommand.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/runtime/terminal/commands/gameRebirthCommand.testUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/terminal/commands/gameRebirthSupport.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/terminal/commands/gameResetCommand.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/terminal/commands/gameSpawnCommand.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/terminal/commands/loadCommand.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/runtime/terminal/commands/loadCommand.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/terminal/commands/targetCommands.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/terminal/commands/transferCommands.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/terminal/commands/transferCommands.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/terminal/commands/tutorialModeCommand.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/terminal/commands/tutorialModeCommand.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/thoughts/ThoughtOverlay.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/tutorials/resolveCameraFocusPosition.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/tutorials/resolveCameraFocusPosition.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/tutorials/resolveRuntimeTutorials.self.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/tutorials/resolveRuntimeTutorials.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/tutorials/tutorialCompletionMemory.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/tutorials/tutorialModeMemory.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/tutorials/tutorialModeMemory.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/tutorials/useActiveTutorialAttention.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/tutorials/usePersistTutorialCompletionMemory.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/tutorials/useResetTutorial.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/tutorials/useResetTutorial.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/tutorials/useSelectedEntityCameraFocus.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/ui/runtime/tutorials/useTutorialAttentionCameraFocus.rings.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/runtime/tutorials/useTutorialAttentionCameraFocus.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/ui/runtime/tutorials/useTutorialAttentionPlayback.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/EntityStateLink.noWakeups.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    },
+    "react-hooks/immutability": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/EntityStateLink.numericText.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    },
+    "react-hooks/immutability": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/EntityStateLink.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    },
+    "sonarjs/assertions-in-tests": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/EntityStateLink.text.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/runtime/world/PhysicsDebugOverlay.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/SelectionOverlay.interaction.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/SelectionOverlay.selection-guard.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/body-avatar/UiAvatar.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/body-avatar/useBodyAvatarPresentation.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/body-avatar/useUiAvatarUrl.ts": {
+    "sonarjs/void-use": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/context/GameWorldAdapter.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/context/useSyncRuntimeSelection.paused.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/context/useSyncRuntimeSelection.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/context/useSyncRuntimeSelection.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/display-images/DisplayRenderHost.tsx": {
+    "sonarjs/void-use": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/display-images/useDisplayImageUrl.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    },
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/entity-state-link/entityStateLinkRuntime.helpers.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/entity-state-link/entityStateLinkRuntime.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    },
+    "react-hooks/refs": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/entity-state-link/entityStateLinkRuntime.types.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/runtime/world/entity-state-link/entityStateLinkTextBinding/bindingTypes.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/entity-state-link/entityStateLinkTextBinding/resolve.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/entity-state-link/entityStateLinkTextRuntime.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/entity-state-link/pathResolvers.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/entity-state-link/useEntityLinkInvalidation.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/entity-state-link/useEntityTextRef.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/entity-state-link/useEntityTextRuntime.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    },
+    "react-hooks/refs": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/NodeOverlayViewport.guidance.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/NodeOverlayViewport.guidanceAnchor.displayBounds.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/NodeOverlayViewport.guidanceAnchor.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/NodeOverlayViewport.screenCalloutLayer.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/NodeOverlayViewportView.tsx": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/filterNodeOverlayModelsByCallouts.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/filterNodeOverlayModelsByCallouts.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/node-overlays/filterVisibleNodeOverlayModels.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/focusedNodeOverlayRuntime.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/guidanceCalloutLayout.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/guidanceCalloutLayoutPlacement.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/node-overlays/nodeOverlayTestUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/node-overlays/nodeOverlayToggle.ts": {
+    "no-empty": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/nodeOverlayValuesToggle.ts": {
+    "no-empty": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/nodeOverlayViewportDataEqual.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 8
+    }
+  },
+  "src/ui/runtime/world/node-overlays/nodeOverlayViewportHydration.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/overlayViewportNodeModels.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/resolveGuidanceCalloutLayout.anchor.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/node-overlays/resolveGuidanceCalloutLayout.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/node-overlays/resolveNodeOverlayDisplayBounds.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/resolveNodeOverlayEntries.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/resolveNodeOverlayModel.helpers.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/node-overlays/resolveNodeOverlayModel.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/runtime/world/node-overlays/resolveNodeOverlayModel.valuesToggle.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/node-overlays/resolveNodeOverlayModel.waitingResource.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/node-overlays/resolveNodeOverlayThrottle.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/runtime/world/node-overlays/useCaveStatusOverlayPosition.ts": {
+    "react-hooks/refs": {
+      "count": 15
+    }
+  },
+  "src/ui/runtime/world/node-overlays/useNodeOverlayAuxiliaryData.ts": {
+    "react-hooks/refs": {
+      "count": 15
+    }
+  },
+  "src/ui/runtime/world/node-overlays/useNodeOverlayNodeModels.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/node-overlays/useNodeOverlayNodeModels.ts": {
+    "react-hooks/refs": {
+      "count": 30
+    }
+  },
+  "src/ui/runtime/world/node-overlays/useNodeOverlayViewportData.ts": {
+    "react-hooks/refs": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/node-overlays/useNodeOverlayViewportInputs.ts": {
+    "react-hooks/refs": {
+      "count": 7
+    }
+  },
+  "src/ui/runtime/world/node-overlays/useResolvedNodeOverlayEntries.ts": {
+    "react-hooks/refs": {
+      "count": 12
+    }
+  },
+  "src/ui/runtime/world/pointer/usePointerBodySelector.testHarness.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/pointer/usePointerBodySelector.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/CaveCard.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/runtime/world/selection/DisplayCard.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/ResourceCard.flyweight.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/ResourceCard.live.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/selection/ResourceCard.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/selection/ability-display/AbilityBarDisplay.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/ability-display/AbilityEffectList.styles.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/ability-display/AbilityEffectList.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/ability-display/abilityDisplay.utils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/ability-display/resolveStorageAbilityBars.cycleCost.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/ability-display/resolveStorageAbilityBars.decay.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/ability-display/resolveStorageAbilityBars.palette.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/ability-display/resolveStorageAbilityBars.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/selection/ability-display/resolveStorageAbilityBars.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/AbsorptionCard.progress.contract.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/AbsorptionCard.suspicious.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/AbsorptionCard.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/BodyBrick.flyweight.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/BodySelector.test.tsx": {
+    "sonarjs/slow-regex": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/BodySelector.testHarness.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/absorptionUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/resolveAbsorptionPreview.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/resolveBodyBrickData.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/useAbsorptionActions.pause.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/useAbsorptionActions.ts": {
+    "react-hooks/refs": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/useAbsorptionData.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/useAbsorptionRuntimeState.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/selection/absorption/useBodySelectorCandidateIds.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/selection/body/BodyAvatar.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/body/BodyCard.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/body/bodyCardSelectors.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 11
+    }
+  },
+  "src/ui/runtime/world/selection/card-display/adaptAbilityBarsToCapsules.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/card-display/resolveAssignmentJobCardModel.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/card-display/resolveBodyCardModel.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/card-display/resolveCaveCardModel.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/card-display/resolvePowerJobCardModel.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/selection/cave/CaveSustainmentSection.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/cave/CaveSustainmentSection.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/cave/CaveVitalsSection.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/cave/LiveNumericValue.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/cave/LiveNumericValue.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/cave/caveCardHydration.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/cave/resolveCaveCardData.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/selection/cave/resolveDynamicRate.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/cave/useLiveNumericValue.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/components/HabitiList.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/components/SelectionTitleRow.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/conditionalActivationTestUtils.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/selection/entityAnalysis/useEntityAnalysis.ts": {
+    "react-hooks/refs": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/AssignmentJobCardView.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/JobCard.storage.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 6
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/JobCard.suspicious.defaultCycle.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/JobCard.suspicious.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/JobCard.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/JobCard.throttleVisibility.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/jobAnalysis.cycle.idle.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/jobAnalysis.resourceGain.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/jobAnalysis.resourceGainEffects.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/jobAnalysis.resourceGainEffects.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/jobAnalysis.resourceGainRuntime.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/jobAnalysis.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/jobAnalysis.utils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/jobCardAssignmentHydration.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/jobCardHydration.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/resolveJobCardData.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 3
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/resolveNextCycleEffectGroups.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/resolveNextCycleEffectGroups.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/resolveSuspiciousActivityIndicator.sources.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/resolveSuspiciousActivityIndicator.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/resolveSuspiciousActivityIndicator.thresholdRatio.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/job-card/resolveSuspiciousActivityIndicator.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/runtime/world/selection/jobCardSelectors.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/resolveTransferCardData.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/resourceCardHydration.ts": {
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/selectionHydrationUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 5
+    }
+  },
+  "src/ui/runtime/world/selection/selectionLensMap.job.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/selectionLensMap.resource.flyweight.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/selectionLensMap.resource.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/selectionUtils/power.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/selectionUtils/power.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/selectionUtils/progress.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/transferCardHydration.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    },
+    "@typescript-eslint/no-unused-vars": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/useEntitySelector.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/useEntitySelector.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selection/usePowerSinkThrottle.test.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 2
+    }
+  },
+  "src/ui/runtime/world/selection/usePowerSinkThrottle.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/ui/runtime/world/selectionOverlayTestUtils.tsx": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 4
+    }
+  },
+  "src/ui/runtime/world/useTransferActions.ts": {
+    "react-hooks/exhaustive-deps": {
+      "count": 1
+    }
+  },
+  "src/utils/objectUtils.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 7
+    }
+  }
+}

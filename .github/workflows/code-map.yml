@@ -1,0 +1,21 @@
+name: code-map
+
+# Canonical enforcement layer for the Code Map (docs/methodology/code-map.md).
+# Fails the PR when a documented source file changed without its map section
+# being re-verified ("blessed"). Dependency-free: needs only node + git.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Code Map freshness gate
+        run: node scripts/code-map.mjs check

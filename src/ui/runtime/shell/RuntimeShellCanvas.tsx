@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { EntityStateLinkProvider } from "../world/entity-state-link";
-import { usePhaserGame } from "../../../engine/phaser/hooks/usePhaserGame";
+import { usePhaserGame } from "../world/usePhaserGame";
 import { SelectionOverlay } from "../world/SelectionOverlay";
 import { DraftOverlay } from "../draft";
 import { DormancyOverlay } from "../dormancy";

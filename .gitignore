@@ -27,11 +27,17 @@ dist-ssr
 .env.*
 !.env.example
 
+# Mutation testing — large/regenerable artifacts (HTML/JSON reports, logs).
+# The survivor-analysis tool lives in scripts/mutation-survivors.mjs (tracked).
+reports/
+
 # Generated
 context.txt
 architecture.md
 context_bundle*.md
 src/vite-env.d.ts
 coverage/*
-.dependency-cruiser.cjs
 plans
+
+# PDD proof-trend dashboard — regenerable; the data lives in docs/pdd/history.jsonl
+docs/pdd/dashboard.html

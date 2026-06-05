@@ -8,7 +8,7 @@ import {
     applyOwnedUnderstanding,
     findEntityById,
 } from "../../engine/runtime/handlers/updateCaveHandler.helpers";
-import { enqueueMirroredFactAdjust } from "../facts/factCommands";
+import { enqueueMirroredFactAdjust } from "../../engine/runtime/factCommands";
 import { enqueueResourceGainBonusStateSync } from "../habiti/enqueueResourceGainBonusStateSync";
 
 export class GainUnderstandingHandler implements CommandHandler<GainUnderstandingCommand> {

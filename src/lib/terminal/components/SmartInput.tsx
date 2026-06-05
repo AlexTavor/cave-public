@@ -2,7 +2,7 @@ import React from "react";
 import { InputWrapper, PromptLabel } from "./styles";
 import { Suggestion } from "../types";
 import { SuggestionBox } from "./SuggestionBox";
-import { Popover } from "../../../ui/lib/atoms/popover/Popover";
+import { usePopoverSlot } from "../PopoverSlot";
 import { useSmartInputState } from "./useSmartInputState";
 import { SmartInputTextArea } from "./SmartInputTextArea";
 import { SmartInputInline } from "./SmartInputInline";
@@ -32,6 +32,7 @@ export const SmartInput: React.FC<SmartInputProps> = ({
     autoFocus = false,
     multiline = false,
 }) => {
+    const renderPopover = usePopoverSlot();
     const {
         suggestionIndex,
         showSuggestions,
@@ -56,15 +57,18 @@ export const SmartInput: React.FC<SmartInputProps> = ({
 
     return (
         <>
-            {showSuggestions && (
-                <Popover triggerRef={inputRef} isOpen>
-                    <SuggestionBox
-                        suggestions={suggestions}
-                        selectedIndex={suggestionIndex}
-                        onSelect={handleSelectSuggestion}
-                    />
-                </Popover>
-            )}
+            {showSuggestions &&
+                renderPopover({
+                    triggerRef: inputRef,
+                    isOpen: true,
+                    children: (
+                        <SuggestionBox
+                            suggestions={suggestions}
+                            selectedIndex={suggestionIndex}
+                            onSelect={handleSelectSuggestion}
+                        />
+                    ),
+                })}
             <InputWrapper
                 style={
                     multiline

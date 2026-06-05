@@ -1,5 +1,5 @@
 import type { DisplayPaletteKey } from "../../../../../lib/displays/displayKeyKinds";
-import type { GlyphShape } from "../../../../../engine/phaser/display/glyph/GlyphTypes";
+import type { GlyphShape } from "../../../../../data/schemas/assets/GlyphTypes";
 import { clamp, withPlacement } from "./blueprintVisualsActionUtils";
 
 export const createGlyphFieldActions = (

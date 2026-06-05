@@ -1,15 +1,18 @@
 import type { RuntimeEntity } from "../../engine/runtime/types";
 
+// isBodyEntity / readAssignmentId are generic engine-component readers; they
+// live in engine and are re-exported here for this module's many game callers.
+export {
+    isBodyEntity,
+    readAssignmentId,
+} from "../../engine/runtime/assignment/assignmentReaders";
+
 export type BodyAssignmentStatus = "navigating" | "orbiting";
 
-const DEFAULT_OWNER_ID = "sys_world";
 const DEFAULT_STATUS: BodyAssignmentStatus = "orbiting";
 export const ORBIT_PHASE_OFFSET_KEY = "assignment_orbit_phase_offset";
 export const ORBIT_RADIUS_OFFSET_KEY = "assignment_orbit_radius_offset";
 export const REQUIRED_MS_KEY = "assignment_required_ms";
-
-export const isBodyEntity = (entity: RuntimeEntity | undefined): boolean =>
-    Boolean((entity as { body?: unknown } | undefined)?.body);
 
 export const readAssignedIds = (
     entity: RuntimeEntity | undefined,
@@ -17,12 +20,6 @@ export const readAssignedIds = (
     const assignedIds = (entity as { assignment?: { assignedIds?: string[] } })
         ?.assignment?.assignedIds;
     return Array.isArray(assignedIds) ? assignedIds : [];
-};
-
-export const readAssignmentId = (entity: RuntimeEntity | undefined): string => {
-    const id = (entity as { body?: { assignmentId?: unknown } })?.body
-        ?.assignmentId;
-    return typeof id === "string" && id ? id : DEFAULT_OWNER_ID;
 };
 
 export const readAssignmentStatus = (
@@ -105,17 +102,4 @@ export const setBodyAssignment = (
     if (!body) return;
     body.assignmentId = ownerId;
     body.assignmentStatus = status;
-};
-
-export const removeBodyFromOwners = (
-    entities: RuntimeEntity[],
-    bodyId: string,
-): void => {
-    entities.forEach((entity) => {
-        const assignedIds = readAssignedIds(entity);
-        if (!assignedIds.includes(bodyId)) return;
-        ensureAssignmentComponent(entity).assignedIds = assignedIds.filter(
-            (id) => id !== bodyId,
-        );
-    });
 };

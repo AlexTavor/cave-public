@@ -13,7 +13,7 @@ import {
     resolveEffectiveMaxProgress,
 } from "./purgeResolvers";
 import type { PurgeRuntime } from "./purgeResolvers";
-import { enqueueMirroredFactAdjust } from "../../facts/factCommands";
+import { enqueueMirroredFactAdjust } from "../../../engine/runtime/factCommands";
 import { enqueueCaveCounterAdjust } from "./caveEventCounters";
 import { handleExpiredPurgeTimer } from "./purgeExpiredTimer";
 

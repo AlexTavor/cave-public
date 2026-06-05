@@ -16,6 +16,7 @@ describe("EntityDragController drag assignment", () => {
             createScene(),
             () => runtime as any,
             vi.fn(),
+            () => ({ valid: false as const }),
         );
 
         (controller as any).onObjectDown(
@@ -56,6 +57,9 @@ describe("EntityDragController drag assignment", () => {
             createScene(),
             () => runtime as any,
             vi.fn(),
+            // Resolution is unit-tested in game's resolveDraggedBodyDropTarget
+            // test; stub a valid target here to cover the engine forward path.
+            () => ({ valid: true as const, ownerId: "target-node" }),
         );
 
         (controller as any).onObjectDown(
@@ -91,6 +95,7 @@ describe("EntityDragController drag assignment", () => {
             createScene(),
             () => runtime as any,
             vi.fn(),
+            () => ({ valid: false as const }),
         );
 
         (controller as any).onObjectDown(

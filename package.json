@@ -6,11 +6,17 @@
   "scripts": {
     "dev": "vite --config vite/config.dev.mjs",
     "build": "tsc && vite build --config vite/config.prod.mjs",
-    "depcruise": "depcruise src --config .dependency-cruiser.cjs --output-type err-long",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "depcruise": "depcruise src --config .dependency-cruiser.cjs --output-type err-long --ignore-known",
+    "depcruise:debt": "depcruise src --config .dependency-cruiser.cjs --output-type err --no-ignore-known",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "code-map:check": "node scripts/code-map.mjs check",
+    "code-map:bless": "node scripts/code-map.mjs bless",
+    "pdd:snapshot": "node scripts/pdd-snapshot.mjs",
+    "pdd:dashboard": "node scripts/pdd-dashboard.mjs",
+    "pdd:report": "npm run pdd:snapshot && npm run pdd:dashboard"
   },
   "dependencies": {
     "@bbob/preset-react": "^4.3.1",
@@ -41,6 +47,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@stryker-mutator/core": "^9.6.1",
+    "@stryker-mutator/vitest-runner": "^9.6.1",
     "@testing-library/react": "^16.3.1",
     "@types/node": "^25.0.6",
     "@types/react": "^19.2.8",
