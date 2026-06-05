@@ -8,7 +8,7 @@ import { PortalManager } from "../../lib/foundation/portal-manager/PortalManager
 import { RuntimeShell } from "./RuntimeShell";
 import { useRuntimeStore } from "../state/useRuntimeStore";
 
-vi.mock("../../../engine/phaser/hooks/usePhaserGame", () => ({
+vi.mock("../world/usePhaserGame", () => ({
     usePhaserGame: vi.fn(),
 }));
 vi.mock("../inspector/RuntimeInspectorViewport", () => ({

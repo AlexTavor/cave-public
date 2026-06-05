@@ -5,7 +5,7 @@ import { ThemeProvider } from "../../lib/foundation/theme/ThemeProvider";
 import { TestWorldInteractionProvider } from "../world/testUtils";
 import { RuntimeShellCanvas } from "./RuntimeShellCanvas";
 
-vi.mock("../../../engine/phaser/hooks/usePhaserGame", () => ({
+vi.mock("../world/usePhaserGame", () => ({
     usePhaserGame: vi.fn(),
 }));
 vi.mock("../world/SelectionOverlay", () => ({
