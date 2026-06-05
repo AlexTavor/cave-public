@@ -1,4 +1,4 @@
-import { buildAutoReqTransferRule } from "../../../engine/compiler/abilities/autoRequestRuleBuilder";
+import { buildAutoReqTransferRule } from "./autoRequestRuleBuilder";
 import { buildWorldAutoRequestMaxRules } from "./worldAutoRequestMaxRules";
 
 export interface WorldAutoRequestDefaults {

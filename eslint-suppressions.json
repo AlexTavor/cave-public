@@ -113,11 +113,6 @@
       "count": 2
     }
   },
-  "src/engine/compiler/abilities/autoRequestRuleBuilder.test.ts": {
-    "@typescript-eslint/no-explicit-any": {
-      "count": 1
-    }
-  },
   "src/engine/compiler/abilities/conditionalActivationCompiler.multiInstance.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 1

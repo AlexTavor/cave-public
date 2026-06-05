@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { buildAutoReqTransferRule } from "./autoRequestRuleBuilder";
-import type { BehaviorRule } from "../../../data/schemas/behavior";
+import type { BehaviorRule } from "../behavior";
 
 const makeTimerCondition = (): BehaviorRule["conditions"][number] => ({
     id: "timer_ready",
@@ -44,7 +44,7 @@ describe("buildAutoReqTransferRule", () => {
         const rule = buildAutoReqTransferRule(makeParams());
 
         const resetAction = rule.actions.find(
-            (a) => a.type === "MUTATE" && (a as any).op === "SET",
+            (a) => a.type === "MUTATE" && a.op === "SET",
         );
         expect(resetAction).toMatchObject({
             target: "self.state.auto_req_food_timer_0.value",
