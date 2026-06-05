@@ -2,9 +2,10 @@
 import { useRef } from "react";
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { render } from "@testing-library/react";
-import { ThemeProvider } from "../../../ui/lib/foundation/theme/ThemeProvider";
-import { LayoutWorldAdapter } from "../../../ui/devtools/layout/context/LayoutWorldAdapter";
-import { useRuntimeStore } from "../../../ui/runtime/state/useRuntimeStore";
+import { ThemeProvider } from "../../lib/foundation/theme/ThemeProvider";
+import { LayoutWorldAdapter } from "../../devtools/layout/context/LayoutWorldAdapter";
+import { useRuntimeStore } from "../state/useRuntimeStore";
+import type { Runtime } from "../../../engine/runtime/Runtime";
 import { usePhaserGame } from "./usePhaserGame";
 
 class TestEventHub {
@@ -37,7 +38,7 @@ vi.mock("phaser", () => ({
     },
 }));
 
-vi.mock("../scenes/GameScene", () => ({
+vi.mock("../../../engine/phaser/scenes/GameScene", () => ({
     GameScene: class {
         public events = new TestEventHub();
         constructor(params: { getRuntime: () => unknown }) {
@@ -55,11 +56,11 @@ const Probe = () => {
 describe("usePhaserGame layout runtime", () => {
     beforeEach(() => {
         sceneParams.length = 0;
-        useRuntimeStore.setState({ runtime: { id: "game" } as any });
+        useRuntimeStore.setState({ runtime: { id: "game" } as unknown as Runtime });
     });
 
     it("prefers layout context runtime over the global game runtime", () => {
-        const layoutRuntime = { id: "layout" } as any;
+        const layoutRuntime = { id: "layout" } as unknown as Runtime;
 
         render(
             <ThemeProvider>

@@ -2,11 +2,15 @@
 import { useRef } from "react";
 import { describe, expect, it, vi } from "vitest";
 import { render } from "@testing-library/react";
-import { ThemeProvider } from "../../../ui/lib/foundation/theme/ThemeProvider";
-import { useRuntimeStore } from "../../../ui/runtime/state/useRuntimeStore";
+import { ThemeProvider } from "../../lib/foundation/theme/ThemeProvider";
+import { useRuntimeStore } from "../state/useRuntimeStore";
+import type { Runtime } from "../../../engine/runtime/Runtime";
 import { usePhaserGame } from "./usePhaserGame";
 
-const gameConfigs: any[] = [];
+type CapturedGameConfig = {
+    input: { mouse: { target: unknown }; touch: { target: unknown } };
+};
+const gameConfigs: unknown[] = [];
 
 vi.mock("phaser", () => ({
     default: {
@@ -22,7 +26,7 @@ vi.mock("phaser", () => ({
     },
 }));
 
-vi.mock("../scenes/GameScene", () => ({ GameScene: class {} }));
+vi.mock("../../../engine/phaser/scenes/GameScene", () => ({ GameScene: class {} }));
 
 const Probe = () => {
     const ref = useRef<HTMLDivElement>(null);
@@ -33,13 +37,14 @@ const Probe = () => {
 describe("usePhaserGame input target", () => {
     it("configures Phaser to read mouse and touch input from window", () => {
         gameConfigs.length = 0;
-        useRuntimeStore.setState({ runtime: { id: "game" } as any });
+        useRuntimeStore.setState({ runtime: { id: "game" } as unknown as Runtime });
         render(
             <ThemeProvider>
                 <Probe />
             </ThemeProvider>,
         );
-        expect(gameConfigs[0].input.mouse.target).toBe(globalThis);
-        expect(gameConfigs[0].input.touch.target).toBe(globalThis);
+        const config = gameConfigs[0] as CapturedGameConfig;
+        expect(config.input.mouse.target).toBe(globalThis);
+        expect(config.input.touch.target).toBe(globalThis);
     });
 });
