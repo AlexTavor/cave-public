@@ -1,6 +1,6 @@
 # Phase 21 — Bodies as Individuals (PRD)
 
-**Status:** Draft · **Branch:** `phase-21-bodies-as-individuals`
+**Status:** Draft — **not started.** Gated behind the **PDD pass** (complete; substrate hardened — see [`docs/pdd-pass.md`](../pdd-pass.md)). That pass lives on branch `pdd-pass`; this feature is cut fresh as `phase-21-bodies-as-individuals` when work begins.
 **Verified foundation:** `docs/manuals/code_map.md` (§1–§6). Every "today" claim below is anchored there; changes to
 those files will flip their map sections STALE — re-bless is part of done (see §"Methodology").
 
