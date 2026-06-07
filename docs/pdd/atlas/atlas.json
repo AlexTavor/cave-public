@@ -301,11 +301,11 @@
       "id": "CODEMAP-linker-001",
       "kind": "code-map",
       "subsystem": "linker",
-      "title": "Verified linker runtime model authored (new code-map section)",
-      "anchor": "docs/pdd/atlas/system-truth-atlas.md",
+      "title": "Verified linker runtime model authored + promoted into code_map.md §7",
+      "anchor": "docs/manuals/code_map.md:88",
       "status": "accepted",
       "verified_on": "2026-06-07",
-      "note": "The linker had no code_map.md section before this run. The verified model (pipeline, merge semantics, namespacing, serializer, gatekeeper) is in the atlas report §'Verified linker model', every claim anchored. Candidate for promotion into docs/manuals/code_map.md as a 7th section in a later pass. Informational — not a remediation item.",
+      "note": "The linker had no code_map.md section before this run. The full verified model is in the atlas report §'Verified linker model'; a condensed, anchored §7 was PROMOTED into docs/manuals/code_map.md (2026-06-07) and is gated by code_map.manifest.json (npm run code-map:check → 7/7 fresh). Informational — not a remediation item.",
       "links": []
     },
     {

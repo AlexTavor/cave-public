@@ -162,6 +162,47 @@
         "commit": "9df940d0b8f1be205febc509fca778656fd423e3",
         "note": "suspiciousActivity.ts relocated game/purge → engine/compiler/abilities (DI seam, pure ability-analysis used by compiler+UI); behavior + anchors unchanged, compiler only changed its import"
       }
+    },
+    "7-linker": {
+      "title": "Module linker — content pipeline (manifest + .cave/.draft/.art/.bp → RuntimeCartridge)",
+      "files": [
+        "src/engine/linker/ModuleLinker.ts",
+        "src/engine/linker/moduleLinkerRuntime.ts",
+        "src/engine/linker/Gatekeeper.ts",
+        "src/engine/linker/ModuleSerializer.ts",
+        "src/engine/linker/types.ts",
+        "src/engine/linker/deepMerge.ts",
+        "src/engine/linker/registryMerge.ts",
+        "src/engine/linker/normalizeBpInput.ts",
+        "src/engine/linker/linkerUtils.ts",
+        "src/engine/linker/errors.ts",
+        "src/engine/linker/semanticParser.ts",
+        "src/engine/linker/semanticParser.types.ts",
+        "src/engine/linker/semanticArtSchema.ts",
+        "src/engine/linker/blueprintV2Schema.ts",
+        "src/engine/linker/utils/namespaces.ts"
+      ],
+      "blessed": {
+        "src/engine/linker/ModuleLinker.ts": "0e6cc4cd3989723027c50a73dd053850ebeb7f9c",
+        "src/engine/linker/moduleLinkerRuntime.ts": "db8359027218417d19bb411a69c826da38b41055",
+        "src/engine/linker/Gatekeeper.ts": "aacde914b33d6d0e3d60f8cff5936af80a0bbe76",
+        "src/engine/linker/ModuleSerializer.ts": "e9a814083cd7b52dd25c3c2e8e2cbfa720fe99e2",
+        "src/engine/linker/types.ts": "d1e462b029c3f024b9712c76c22888ed69cfbea3",
+        "src/engine/linker/deepMerge.ts": "9b832708bc0813e693759dcf37cce0dc3d0e2950",
+        "src/engine/linker/registryMerge.ts": "79cb7075eeaae7543aa95c3c44354177736f794d",
+        "src/engine/linker/normalizeBpInput.ts": "77593d722d27cdd65dc3f17ba47ec305779ab913",
+        "src/engine/linker/linkerUtils.ts": "2180924296b2c9f8f02008fa09c04c65cee1f24d",
+        "src/engine/linker/errors.ts": "027698cd864f5859a6b5df2dec9613b5023cbb84",
+        "src/engine/linker/semanticParser.ts": "9db3288a2c6f6d3af480ddf0d6e700e645e63722",
+        "src/engine/linker/semanticParser.types.ts": "96c127469dc2c2ca69f14ddbf7e6293be8ba4a23",
+        "src/engine/linker/semanticArtSchema.ts": "15a6e970e67a854de69a5175cb51ea146a54aa6f",
+        "src/engine/linker/blueprintV2Schema.ts": "d0b5437781a3125403cd7a02cf6c0ae52bd4d6e7",
+        "src/engine/linker/utils/namespaces.ts": "3795a9ef6806ffaece4350f20546c804f6a4ab2d"
+      },
+      "lastBless": {
+        "commit": "e4d6c25b862144d19076d28da03b72db051ff69a",
+        "note": "MAP atlas: first verified read of the linker (map-experiment-linker). All 15 production files read end-to-end; behavioral claims anchored in §7 + docs/pdd/atlas/."
+      }
     }
   }
 }
