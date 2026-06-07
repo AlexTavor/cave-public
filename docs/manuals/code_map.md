@@ -7,7 +7,7 @@ before reasoning about or changing a subsystem.
 **Discipline:** every claim is backed by a real read. When one is found wrong, overwrite it — a stale map is worse
 than none. Re-verify after major refactors.
 
-_Last verified: 2026-06-03, working tree (pre "tranche-1" body/assignment redesign)._
+_Last verified: §1–6 on 2026-06-03, working tree (pre "tranche-1" body/assignment redesign); §7 (linker) added 2026-06-07 (MAP atlas). Per-section freshness is gated by `code_map.manifest.json` + `npm run code-map:check`._
 
 ## 1. Body attributes & comfort
 Per-body effective attributes, each tick (`processEntity.ts:47-79`):
@@ -84,6 +84,30 @@ then trait modifiers applied (SET/ADD/SUB/MULT/DIV)                            /
   (`cycleCompilerAccum.ts:36-59`). Completion = `cycle.value ≥ cycle.max`, where **`cycle.max` = the ability's OWN
   `maxProgress.base` (default 100), NOT `purge.maxProgress`** (`cycleCompiler.ts:16-49`). At full supply, completion
   time = `cycle.max / Σ(inputs)`.
+
+## 7. Module linker — content pipeline (`.cave/.draft/.art/.bp` → `RuntimeCartridge`)
+Turns a project dir (`manifest.json` + semantic files) into the cartridge the engine runs. `ModuleLinker.linkProject`
+is the LIVE active-cartridge loader (`WorkspaceService.ts:49`) + menu-config loader (`loadMenuAmbientConfig.ts:14`).
+Full recovered model, footgun + risk registers: `docs/pdd/atlas/system-truth-atlas.md`.
+- **Pipeline** (`ModuleLinker.ts:84-99`): seed empty cartridge (`config = SysConfigSchema.parse({})`,
+  `moduleLinkerRuntime.ts:11-18`) → read `manifest.json` (`{files:string[]}`; missing → `LinkerParseError`,
+  `ModuleLinker.ts:51-63`) → per file: extension gate `.cave/.draft/.art/.bp`, unsupported → **warn + skip**
+  (`ModuleLinker.ts:71-74`) → `parseSemanticFragment` → `mergeSemanticFragment` by kind → `compileRuntimeBlueprints`
+  (`new CompilerService().compile()` each, `moduleLinkerRuntime.ts:46-53`).
+- **Merge is destructive at boundaries** (`deepMerge.ts:12-25`): an override **`null` ERASES** the base subtree, an
+  override **array REPLACES** wholesale; only `undefined` is skipped. Drives cave→`config`, draft→`draft`, art→`assets`.
+- **A `.bp` registry KEY is not the blueprint id** — an explicit `blueprint.id` overrides the map key, and an id
+  already containing `::` skips namespacing (`linkerUtils.ts:28-32`, `utils/namespaces.ts:2`).
+- **`Gatekeeper` does NOT link.** It takes a `ModuleLinker` but only checks `typeof linkProject === "function"`
+  (`Gatekeeper.ts:52`); validation is pure schema + FQ-ref collection on the payload. Real linking is `WorkspaceService.ts:49`.
+- **`.cave` is TYPED `Partial<SysConfig>` but VALIDATED by a divergent strict schema** (`semanticParser.types.ts:8`
+  vs `semanticParser.ts:25-41`): the schema accepts `swarm`/`understanding` (absent from `SysConfig`) and rejects
+  `pointer` (present in `SysConfig`) — so `pointer` is unauthorable via `.cave` and the type is a promise unkept.
+- **`BlueprintV2Schema` ⊋ the `BlueprintV2` type** (`blueprintV2Schema.ts:21-22` vs `types.ts:28-44`): schema accepts
+  `components`/`_editor` the type omits; the linker→compiler step then casts `as unknown as Blueprint` (`moduleLinkerRuntime.ts:49-51`).
+- **Never mutation-tested** — `stryker.config.json` mutates `src/engine/compiler/**` only; 36 green tests, adequacy
+  ungraded. Error handling is clean (one re-throwing `catch`, `linkerUtils.ts:11-19`); the real silent failures are
+  data-shaped — heuristic wrong-pick (`normalizeBpInput.ts:10`) and empty-cartridge-on-typo'd-manifest (`ModuleLinker.ts:12`).
 
 ## Corrections ledger — models that were confidently wrong this session
 - "Assigned bodies are excluded from the power pool / muscle-or-labour." **Wrong** — assignment has zero power effect
