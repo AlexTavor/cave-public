@@ -12,7 +12,18 @@ const rows = fs
     .filter(Boolean)
     .map((l) => JSON.parse(l));
 
+// MAP atlas burn-down lives in a PARALLEL feed (changes on atlas re-runs, not per commit).
+const atlasPath = path.join(root, "docs/pdd/atlas-history.jsonl");
+const atlasRows = fs.existsSync(atlasPath)
+    ? fs
+          .readFileSync(atlasPath, "utf8")
+          .split("\n")
+          .filter(Boolean)
+          .map((l) => JSON.parse(l))
+    : [];
+
 // key, label, target line, and direction (higher-is-better → target is a floor).
+// A metric with feed:"atlas" reads atlasRows instead of the per-commit history rows.
 const METRICS = [
     { label: "Mutation score (engine/compiler)", unit: "%", target: 90, higher: true, get: (r) => r.mutationScore },
     { label: "Boundary violations", unit: "", target: 0, higher: false, get: (r) => r.violations },
@@ -22,13 +33,20 @@ const METRICS = [
     { label: "Coverage — lines", unit: "%", target: 84, higher: true, get: (r) => r.coverage?.lines },
     { label: "ESLint suppressions (debt)", unit: "", target: null, higher: false, get: (r) => r.suppressions },
     { label: "Test count", unit: "", target: null, higher: true, get: (r) => r.tests },
+    // MAP — System Truth Atlas burn-down (feed: docs/pdd/atlas-history.jsonl, derived from atlas.json). All → 0.
+    { label: "MAP — open risks (high)", unit: "", target: 0, higher: false, feed: "atlas", get: (r) => r.openRisksHigh },
+    { label: "MAP — open risks (total)", unit: "", target: 0, higher: false, feed: "atlas", get: (r) => r.openRisksTotal },
+    { label: "MAP — footguns open", unit: "", target: 0, higher: false, feed: "atlas", get: (r) => r.footgunsOpen },
+    { label: "MAP — silent failures (real)", unit: "", target: 0, higher: false, feed: "atlas", get: (r) => r.silentFailuresReal },
+    { label: "MAP — coverage gaps", unit: "", target: 0, higher: false, feed: "atlas", get: (r) => r.coverageGaps },
 ];
 
 const W = 520, H = 170, P = 36;
 const fmt = (v, unit) => (unit ? v.toFixed(1) : String(Math.round(v)));
 
 function chart(m) {
-    const pts = rows
+    const src = m.feed === "atlas" ? atlasRows : rows;
+    const pts = src
         .map((r) => ({ commit: r.commit, y: m.get(r) }))
         .filter((p) => p.y != null);
     if (pts.length === 0)
