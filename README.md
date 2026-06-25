@@ -6,9 +6,7 @@ A browser-based management and simulation game built on a custom data-driven eng
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Built with Vite](https://img.shields.io/badge/Built%20with-Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tests](https://img.shields.io/badge/Tests-2%2C814%20passing-brightgreen?logo=vitest&logoColor=white)](docs/promo/cave-tests-run.png)
-[![Coverage](https://img.shields.io/badge/Coverage-83%25-brightgreen)](docs/promo/cave-coverage.png)
-[![FTA avg](https://img.shields.io/badge/FTA%20avg-24.4-brightgreen)](https://ftaproject.dev/)
-[![Circular deps](https://img.shields.io/badge/Circular%20deps-0-brightgreen)](https://github.com/sverweij/dependency-cruiser)
+[![Coverage](https://img.shields.io/badge/Coverage-83%25-brightgreen)](docs/promo/cave-coverage.png)[![Circular deps](https://img.shields.io/badge/Circular%20deps-0-brightgreen)](https://github.com/sverweij/dependency-cruiser)
 
 **Play it:** https://speaks-with-stone.itch.io/cave
 
@@ -27,18 +25,7 @@ Most of the work in Cave is in the engine. Content is defined as data, and the e
 
 ## How it's built
 
-Cave is written end-to-end by AI coding agents. They work inside a fixed architecture, with deterministic build gates and a full test suite. The implementation is automated; the architecture and the quality bar are fixed by hand. The numbers below come from the actual build.
-
-| Metric                       | Result                                              |
-| ---------------------------- | --------------------------------------------------- |
-| Test files / tests passing   | 1,096 / **2,814**                                   |
-| Statement coverage           | **83%**                                             |
-| Line coverage                | **85%**                                             |
-| Average FTA complexity score | **24.4** (cyclomatic + halstead)                    |
-| Files scoring "OK" in FTA    | **92%** of 3,224 files                              |
-| Circular dependencies        | **0** across 13,000+ import edges                   |
-| Duplication (TypeScript)     | **4.2%**                                            |
-| Runtime CVEs                 | **0** (all 6 audit findings are build-tooling only) |
+Cave is written end-to-end by AI coding agents. They work inside a fixed architecture, with deterministic build gates and a full test suite. The implementation is automated; the architecture and the quality bar are fixed by hand. From the actual build: **2,814 tests** at **83% coverage**, **zero circular dependencies** across 13,000+ import edges, and **zero runtime CVEs**.
 
 ## Getting started
 
