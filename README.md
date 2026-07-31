@@ -1,20 +1,28 @@
 # Cave
 
-A browser-based management and simulation game built on a custom data-driven engine. Game content is authored as JSON blueprints with composable abilities. A compiler turns those blueprints into the runtime components that run physics, resource logistics, trait systems, and progression.
+A browser-based management and simulation game built on a custom data-driven engine — and the sandbox where I worked out how to build a large codebase end-to-end with AI coding agents.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Built with Vite](https://img.shields.io/badge/Built%20with-Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tests](https://img.shields.io/badge/Tests-2%2C814%20passing-brightgreen?logo=vitest&logoColor=white)](docs/promo/cave-tests-run.png)
-[![Coverage](https://img.shields.io/badge/Coverage-83%25-brightgreen)](docs/promo/cave-coverage.png)[![Circular deps](https://img.shields.io/badge/Circular%20deps-0-brightgreen)](https://github.com/sverweij/dependency-cruiser)
 
 **Play it:** https://speaks-with-stone.itch.io/cave
 
 ![Gameplay](docs/promo/gameplay-screenshot-13-05-2026.png)
 
+## What this is
+
+Two things at once, and it helps to know which one you're looking at.
+
+**A game.** It's finished and playable — click the link above. Content is authored as JSON blueprints with composable abilities; a compiler turns those into the runtime components that run physics, resource logistics, trait systems, and progression.
+
+**An experiment.** Cave is written end-to-end by AI coding agents working inside a fixed architecture. I set the architecture and the gates by hand; the implementation is automated. Most of what I know about driving agents on a codebase this size came from watching it go wrong here first — some of that is written up in [docs/methodology/](docs/methodology/).
+
+It worked as both. It is not a reference codebase, and I won't pretend otherwise: it carries the scars of an experiment run at speed — dead config, names that lie about what the code does, mechanisms that drifted away from the design they started from. [CLAUDE.md](CLAUDE.md) keeps a running list of the traps. Read it for the ideas, not the craftsmanship.
+
 ## The engine
 
-Most of the work in Cave is in the engine. Content is defined as data, and the engine runs it.
+Most of the work in Cave is in the engine, and it's the part worth looking at.
 
 - Data-driven: every entity, ability, and system is defined in JSON and validated against Zod schemas at the boundary.
 - A high-level ability language (HLL) compiles blueprints into runtime components.
@@ -22,10 +30,6 @@ Most of the work in Cave is in the engine. Content is defined as data, and the e
 - Resource logistics, trait and habitus systems, and progression are built on the same set of components.
 
 ![Editor](docs/promo/tools-screenshot-13-05-2026.png)
-
-## How it's built
-
-Cave is written end-to-end by AI coding agents. They work inside a fixed architecture, with deterministic build gates and a full test suite. The implementation is automated; the architecture and the quality bar are fixed by hand. From the actual build: **2,814 tests** at **83% coverage**, **zero circular dependencies** across 13,000+ import edges, and **zero runtime CVEs**.
 
 ## Getting started
 
@@ -50,6 +54,7 @@ npm run dev
 - [DSL Manual](docs/manuals/dsl_manual.md): blueprint schema, components, behavior actions, scripting language
 - [Abilities Manual (HLL)](docs/manuals/hll_manual.md): the high-level ability compiler reference
 - [Data Architecture](docs/manuals/data_architecture.md): design philosophy, economic model, trait and habitus systems
+- [The Code Map](docs/methodology/code-map.md): the methodology that came out of the experiment — keeping codebase knowledge verified and enforceably fresh so agents stop inferring behavior from names
 
 ## Project structure
 
@@ -64,4 +69,5 @@ src/
 docs/
   phase-*/       # HLD and LLD design documents per feature phase
   manuals/       # engine reference
+  methodology/   # how the AI-agent build was run
 ```
