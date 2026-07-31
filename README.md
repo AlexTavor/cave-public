@@ -1,6 +1,6 @@
 # Cave
 
-A browser-based management and simulation game built on a custom data-driven engine — and the sandbox where I worked out how to build a large codebase end-to-end with AI coding agents.
+A browser-based management and simulation game built on a custom data-driven engine. It was also my sandbox for building a large codebase end-to-end with AI coding agents.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -12,17 +12,17 @@ A browser-based management and simulation game built on a custom data-driven eng
 
 ## What this is
 
-Two things at once, and it helps to know which one you're looking at.
+Two things at once.
 
-**A game.** It's finished and playable — click the link above. Content is authored as JSON blueprints with composable abilities; a compiler turns those into the runtime components that run physics, resource logistics, trait systems, and progression.
+**A game.** Finished and playable at the link above. Content is authored as JSON blueprints with composable abilities, and a compiler turns those into the runtime components that run physics, resource logistics, trait systems, and progression.
 
-**An experiment.** Cave is written end-to-end by AI coding agents working inside a fixed architecture. I set the architecture and the gates by hand; the implementation is automated. Most of what I know about driving agents on a codebase this size came from watching it go wrong here first — some of that is written up in [docs/methodology/](docs/methodology/).
+**An experiment.** Cave is written end-to-end by AI coding agents working inside a fixed architecture. I set the architecture and the gates by hand; the implementation is automated. What came out of that is written up in [docs/methodology/](docs/methodology/).
 
-It worked as both. It is not a reference codebase, and I won't pretend otherwise: it carries the scars of an experiment run at speed — dead config, names that lie about what the code does, mechanisms that drifted away from the design they started from. [CLAUDE.md](CLAUDE.md) keeps a running list of the traps. Read it for the ideas, not the craftsmanship.
+It worked as both. It is not a reference codebase. There is dead config, there are names that lie about what the code does, and there are mechanisms that drifted from the design they started from. [CLAUDE.md](CLAUDE.md) keeps a running list of the traps.
 
 ## The engine
 
-Most of the work in Cave is in the engine, and it's the part worth looking at.
+Most of the work in Cave is in the engine.
 
 - Data-driven: every entity, ability, and system is defined in JSON and validated against Zod schemas at the boundary.
 - A high-level ability language (HLL) compiles blueprints into runtime components.
@@ -54,7 +54,7 @@ npm run dev
 - [DSL Manual](docs/manuals/dsl_manual.md): blueprint schema, components, behavior actions, scripting language
 - [Abilities Manual (HLL)](docs/manuals/hll_manual.md): the high-level ability compiler reference
 - [Data Architecture](docs/manuals/data_architecture.md): design philosophy, economic model, trait and habitus systems
-- [The Code Map](docs/methodology/code-map.md): the methodology that came out of the experiment — keeping codebase knowledge verified and enforceably fresh so agents stop inferring behavior from names
+- [The Code Map](docs/methodology/code-map.md): keeping codebase knowledge verified and fresh so agents stop inferring behavior from names
 
 ## Project structure
 
